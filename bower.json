@@ -1,0 +1,23 @@
+{
+  "name": "project-template",
+  "version": "0.0.0",
+  "authors": [
+    "darryl-snow <dazsnow63@yahoo.com>"
+  ],
+  "description": "Front-End templates for Project",
+  "main": "public/index.html",
+  "keywords": [
+  ],
+  "license": "Copyright Project",
+  "private": true,
+  "ignore": [
+    "node_modules",
+    "bower_components",
+    "src/lib",
+    "npm-debug.log",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+  }
+}

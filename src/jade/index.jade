@@ -1,7 +1,7 @@
 extends templates/master
 
 block title
-	| Project
+	| Darryl Snow - Your Web Expert
 
 block styles
 
@@ -11,50 +11,6 @@ block content
 
 		.o-section__content
 
-			.c-introduction(aria-labelledby="introduction__header", itemscope="", itemtype="http://data-vocabulary.org/Person")
-
-				meta(itemprop="url", content="https://yourweb.expert")
-
-				.c-introduction__image__container
-					img.c-introduction__image(src="/images/darryl-snow.jpg", alt="Darryl Snow", itemprop="photo")
-
-				.c-introduction__content__container
-
-					h1#introduction__header.c-introduction__header(itemprop="name") Darryl Snow
-						.subheading(itemprop="title") web expert
-
-					p.c-introduction__text I'm a freelancer, based in 
-						a.js-map-link.o-inline-link(href="https://www.google.com/maps/place/Kunming,+Yunnan,+China/@25.021747,102.4608384,10z/data=!3m1!4b1!4m2!3m1!1s0x36d083c31227d3cb:0xccb1f3a4984f0a36", title="View Kunming (UTC-8:00) on a map", itemprop="address" itemscope="", itemtype="http://data-vocabulary.org/Address")
-							span(itemprop="locality") Kunming,&nbsp;
-							span(itemprop="country") China
-						| , with over&nbsp;
-						span.js-years-of-experience 17
-						| &nbsp;years of experience working on the web.
-
-					ul.c-introduction__contact-list
-
-						li.c-introduction__contact-list__item
-							a.c-introduction__contact-list__item__link(href="mailto:darryl@yourweb.expert", title="Contact me via email: darryl@yourweb.expert")
-								span.c-introduction__contact-list__item__text dazsnow@gmail.com
-								svg.o-icon.o-icon--email(viewBox="0 0 32 32")
-									use(xlink:href="#icon--mail")
-
-						li.c-introduction__contact-list__item
-							a.c-introduction__contact-list__item__link(href="callto://+darryl.snow", title="Add me on Skype: darryl.snow")
-								span.c-introduction__contact-list__item__text darryl.snow
-								svg.o-icon.o-icon--skype(viewBox="0 0 32 32")
-									use(xlink:href="#icon--skype")
-
-						li.c-introduction__contact-list__item
-							a.c-introduction__contact-list__item__link(href="tel:008618669117013", title="Phone me: (+86) 186-6911-7013")
-								span.c-introduction__contact-list__item__text (+86) 186-6911-7013
-								svg.o-icon.o-icon--phone(viewBox="0 0 32 32")
-									use(xlink:href="#icon--phone")
-
-						li.c-introduction__contact-list__item
-							a.c-introduction__contact-list__item__link(href="https://github.com/darryl-snow", title="Follow me on Github: darryl-snow")
-								span.c-introduction__contact-list__item__text https://github.com/darryl-snow
-								svg.o-icon.o-icon--github(viewBox="0 0 32 32")
-									use(xlink:href="#icon--github-alt")
+			include components/introduction
 
 block scripts

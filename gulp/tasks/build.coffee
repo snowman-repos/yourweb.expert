@@ -2,4 +2,4 @@
 
 module.exports = (gulp, $, config) ->
 
-	gulp.task "build", ["coffeescript", "stylus", "copy-files", "images", "jade", "libs"], ->
+	gulp.task "build", ["jade", "coffeescript", "stylus", "copy-files", "libs"], ->

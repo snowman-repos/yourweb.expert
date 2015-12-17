@@ -1,7 +1,7 @@
 # Lovely welcome message
-console.log "%c Welcome to [Project] ", """
-background: #25a8e0;
-color: #ffffff;
+console.log "%c Welcome to YourWeb.Expert ", """
+background: #243342;
+color: #ffffcb;
 font-size: 18px;
 font-family: 'Helvetica Neue';
 font-weight: 300;
@@ -10,16 +10,16 @@ height: 30px;
 padding: 5px
 """
 
-# Non-react component
-MyComponent = require "./components/my-component/my-component.coffee"
+# # Non-react component
+# MyComponent = require "./components/my-component/my-component.coffee"
 
-React = require "react"
-ReactDOM = require "react-dom"
+# React = require "react"
+# ReactDOM = require "react-dom"
 
-ReactComponent = require "./components/react-component/react-component.coffee"
+# ReactComponent = require "./components/react-component/react-component.coffee"
 
-MyApp = React.createClass
-	render: ->
-		<ReactComponent name="world" />
+# MyApp = React.createClass
+# 	render: ->
+# 		<ReactComponent name="world" />
 
-ReactDOM.render <MyApp />, document.querySelectorAll(".js-my-app")[0]
+# ReactDOM.render <MyApp />, document.querySelectorAll(".js-my-app")[0]

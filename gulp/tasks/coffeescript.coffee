@@ -23,17 +23,17 @@ module.exports = (gulp, $, config) ->
 			transform: ["coffee-reactify"]
 
 		b.bundle()
+			.pipe source config.names.js.compiled
 			.on "error", (err) ->
 				notifier.notify
 					message: "Error: " + err.message
 				$.util.log $.util.colors.red err.message
 				@.end()
-			.pipe source config.names.js.compiled
 			.pipe $.plumber()
 			.pipe buffer()
-			.pipe $.sourcemaps.init()
-			.pipe $.sourcemaps.write()
+			.pipe $.if config.env is "dev", $.sourcemaps.init()
 			.pipe $.header "/* " + config.names.project + " : " + config.version + " : " + new Date() + " */"
 			.pipe $.size
 				showFiles: true
+			.pipe $.if config.env is "dev", $.sourcemaps.write "./"
 			.pipe gulp.dest config.paths.js.dest

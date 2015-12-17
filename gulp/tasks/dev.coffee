@@ -43,6 +43,9 @@ module.exports = (gulp, $, config) ->
 			config.paths.lib.dest + "/*.{js,css}"
 		], notifyLivereload
 
+		$.watch config.paths.js.entry + "**/*.coffee", ->
+			gulp.start "coffeescript"
+
 		$.watch config.paths.css.entry + "**/*.styl", ->
 			gulp.start "stylus"
 

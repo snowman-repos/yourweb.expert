@@ -4,6 +4,7 @@ pkg	= require "../package.json"
 
 module.exports =
 	description: pkg.description
+	env: "dev"
 	keywords: pkg.keywords
 	libs: [] #put here the filenames of any 3rd party libraries, e.g. "bootstrap/dist/css/bootstrap.css"
 	livereloadPort: 35729
@@ -12,6 +13,9 @@ module.exports =
 			compiled: "main.css"
 			minified: "main.min.css"
 			source: "main.styl"
+		html:
+			compiled: "index.html"
+			source: "index.jade"
 		js:
 			compiled: "main.js"
 			minified: "main.min.js"

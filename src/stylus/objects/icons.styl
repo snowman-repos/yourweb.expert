@@ -5,10 +5,31 @@
 // 	<use xlink:href="#icon--namespace"></use>
 // </svg>
 .o-icon
-	background					none
-	display						inline-block
-	fill						currentColor
-	height						1.25em
-	transform					translateY(-0.1em)
-	vertical-align				middle
-	width						1.25em
+	background						none
+	display							inline-block
+	fill							currentColor
+	height							1.25em
+	transform						translateY(-0.1em)
+	vertical-align					middle
+	width							1.25em
+
+	&--checkmark
+		overflow					visible !important
+
+		&.is-checked
+
+			.o-icon--checkmark__check
+				animation			dash 10s ease-out forwards normal
+				stroke-dasharray	745.74853515625
+				stroke-dashoffset	745.74853515625
+
+			.o-icon--checkmark__circle
+				animation			dash 1s ease-out forwards normal
+				stroke-dasharray	745.74853515625
+				stroke-dashoffset	745.74853515625
+
+@keyframes dash
+	0%
+		stroke-dashoffset			745.74853515625
+	100%
+		stroke-dashoffset			0

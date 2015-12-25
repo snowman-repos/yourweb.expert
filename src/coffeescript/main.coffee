@@ -9,9 +9,19 @@ line-height: 30px;
 height: 30px;
 padding: 5px
 """
+console.log "%c darryl@yourweb.expert ", """
+background: #243342;
+color: #ffffcb;
+font-size: 13px;
+font-family: 'Helvetica Neue';
+font-weight: 300;
+line-height: 14px;
+height: 30px;
+padding: 5px 55px;
+"""
 
-# # Non-react component
-# MyComponent = require "./components/my-component/my-component.coffee"
+ScrollWatcher = require "./components/scroll-watcher/scroll-watcher.coffee"
+FullHeightSections = require "./components/full-height-section/full-height-section.coffee"
 
 # React = require "react"
 # ReactDOM = require "react-dom"

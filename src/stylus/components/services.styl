@@ -1,0 +1,49 @@
+$module-colour = $blue--sky
+
+.c-services
+	row()
+	background						$module-colour
+	color							$blue--navy
+	text-align						center
+
+	&__button
+		border-color				$blue--navy
+		color						$blue--navy
+
+		+ActiveFocusHover()
+			background				$blue--navy
+			color					$module-colour
+
+		&__container
+			col(12)
+			margin-top				$base-spacing-unit
+
+	&__header
+		color						$blue--navy
+
+	&__list
+		col(8)
+		unstyled-list()
+		offset(4)
+		color						$blue--navy
+		font-size					1rem
+		text-align					left
+
+		&__item
+			align-items				center
+			display					flex
+			justify-content			flex-start
+			margin					0.5rem 0
+			
+	.o-icon--checkmark
+		margin-right				0.5rem
+		opacity						0.75
+		vertical-align				middle
+
+		&.is-checked
+
+			.o-icon--checkmark__check
+				stroke				$blue--navy
+
+			.o-icon--checkmark__circle
+				stroke				$blue--navy

@@ -1,10 +1,6 @@
 .c-introduction
-	row()
-	background						darken($dark-blue, 30%)
+	background						$blue--dark
 	color							$silver
-	height							100%
-	padding							$base-spacing-unit 10%
-	text-align						center
 
 	+bp($screen-sm-min)
 		text-align					left
@@ -23,24 +19,45 @@
 			border-bottom			1px solid $yellow
 
 		+ActiveFocusHover()
-			color					darken($dark-blue, 30%)
+			color					$blue--dark
 
 	&__image
-		border						0.5rem solid rgba($dark-blue, 0.3)
+		relative()
 		border-radius				50%
 		filter						contrast(200%) saturate(30%)
 		height						7rem
-		margin-top					0.75rem
+		margin-right				0.5rem
+		margin-top					1.25rem
 		width						7rem
 
 		&__container
 			col(12)
+			relative()
+			margin-bottom			$base-spacing-unit
 			text-align				center
+
+			&:before
+				absolute()
+				background			rgba($blue--medium, 0.4)
+				border-radius		50%
+				content				""
+				display				block
+				height				8rem
+				left				50%
+				margin-left			-4.25rem
+				top					0.75rem
+				width				8rem
 
 			+bp($screen-sm-min)
 				col(4)
-				padding-right		$base-spacing-unit
+				margin-bottom		0
+				padding-right		1rem
 				text-align			right
+				
+				&:before
+					left			auto
+					margin-left		0
+					right			1rem
 
 	&__content__container
 		col(12)
@@ -56,7 +73,7 @@
 
 			&__link
 				relative()
-				background			rgba($dark-blue, 0.3)
+				background			rgba($blue--medium, 0.4)
 				border-radius		50%
 				display				block
 				line-height			50%
@@ -85,9 +102,10 @@
 
 				+ActiveFocusHover()
 					background		$yellow
+					outline			none
 
 					.o-icon
-						fill		$dark-blue
+						fill		$blue--dark
 
 					&:after
 						opacity		1

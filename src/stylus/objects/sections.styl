@@ -1,17 +1,72 @@
 .o-section
 	relative()
-	height			100vh
-	overflow		hidden
+
+	&--full-height
+		height				100vh
+
+		.o-section__content__container
+			vertical-centre()
+			max-height		100vh
+
+	&--padding-top
+		padding-top			100px
 
 	&__content
-		vertical-centre()
+		row()
+		height				100%
+		padding				$base-spacing-unit 10%
+		text-align			center
 
-	&__top
+		&__container
+			overflow		hidden
+
+	&__header
+		col(12)
+		color						$blue--navy
+		font-size					2rem
+		margin-bottom				$base-spacing-unit
+		text-align					center
+
+	&__end
 		absolute()
-		fill		$red
-		left		0
-		top			-100px
-		width		100%
+		bottom				-100px
+		left				0
+		pointer-events		none
+		width				100%
+		z-index				2
+
+	&--blue
+		background-color	$blue
+
+		.o-section__end
+			fill			@background-color
+
+	&--cerulean-blue
+		background-color	$blue--cerulean
+
+		.o-section__end
+			fill			@background-color
 
 	&--dark-blue
-		background	darken($dark-blue, 30%)
+		background-color	$blue--dark
+
+		.o-section__end
+			fill			@background-color
+
+	&--navy-blue
+		background-color	$blue--navy
+
+		.o-section__end
+			fill			@background-color
+
+	&--sky-blue
+		background-color	$blue--sky
+
+		.o-section__end
+			fill			@background-color
+
+	&--white
+		background-color	$white
+
+		.o-section__end
+			fill			@background-color

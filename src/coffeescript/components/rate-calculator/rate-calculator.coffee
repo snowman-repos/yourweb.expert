@@ -16,7 +16,8 @@ class RateCalculator
 		@config =
 			baseRate: 3000
 			currency: "usd"
-			discountRate: 1200 / 11
+			discountRate: 0.33333
+			discountTime: 12
 			rate: 3000
 			rates: {}
 
@@ -52,17 +53,18 @@ class RateCalculator
 	calculateRates: (currency) ->
 
 		@config.rate = @config.rates[currency]
+		discount = (@config.rate * @config.discountRate) / (@config.discountTime - 1)
 
 		# weekly rate
-		rate = Math.ceil(@config.rate - (@config.discountRate * (@el.slider.value - 1)))
+		rate = Math.floor(@config.rate - (discount * (@el.slider.value - 1)))
 		@el.weeklyRate.innerText = @formatNumber rate
 
 		# hourly rate
-		weeklyRate = Math.ceil rate / 40
+		weeklyRate = Math.floor rate / 40
 		@el.hourlyRate.innerText = @formatNumber weeklyRate
 
 		# minimum rate
-		minimumRate = Math.ceil(@config.rate - (@config.discountRate * 11))
+		minimumRate = Math.floor(@config.rate - (discount * (@config.discountTime - 1)))
 		@el.minRate.innerText = @formatNumber minimumRate
 
 	formatNumber: (number) ->

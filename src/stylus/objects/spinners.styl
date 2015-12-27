@@ -1,0 +1,18 @@
+.o-spinner
+	relative()
+	animation				rotatePlane 1.2s infinite ease-in-out
+	height					4rem
+	margin					100px auto
+	transform-origin		50% 50%
+	width					4rem
+
+	&--white
+		background-color	$white
+
+@keyframes rotatePlane
+	0% 
+		transform			perspective(8rem) rotateX(0deg) rotateY(0deg)
+	50% 
+		transform			perspective(8rem) rotateX(-180.1deg) rotateY(0deg)
+	100% 
+		transform			perspective(8rem) rotateX(-180deg) rotateY(-179.9deg)

@@ -18,6 +18,11 @@ mixin contact-list-item(item)
 			span.c-introduction__contact-list__item__text!= item.text
 			+icon(item.icon)
 
+mixin form-check
+
+	svg.o-icon.o-icon--check.c-contact__form__check(viewBox="0 0 32 32")
+		use(xlink:href="#icon--check")
+
 mixin icon(name)
 
 	svg.o-icon(class="o-icon--#{name}", viewBox="0 0 32 32")

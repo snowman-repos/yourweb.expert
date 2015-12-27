@@ -18,14 +18,16 @@ class FormValidation
 				sending: document.querySelector ".js-sending-form"
 				sent: document.querySelector ".js-sent-form"
 
-		@validations =
-			name: false
-			email: false
-			message: true
+		@resetForm()
 
 		@addEventListeners()
 
 	addEventListeners: ->
+
+		@el.button.addEventListener "click", (e) =>
+
+			e.preventDefault()
+			@submitForm()
 
 		# Focus events
 
@@ -106,6 +108,21 @@ class FormValidation
 		for error in errors
 			error.parentNode.removeChild error
 
+	resetForm: ->
+
+		@validations =
+			name: false
+			email: false
+			message: true
+
+		@el.name.input.value = ""
+		@el.name.group.classList.remove "is-complete"
+		@el.email.input.value = ""
+		@el.email.group.classList.remove "is-complete"
+		@el.message.input.value = ""
+		@el.message.group.classList.remove "is-complete"
+		@disableButton()
+
 	sanitiseInput: (input) ->
 
 		input.replace /[\/!@#£\$\%\^&*0-9()\[\]+~?<>.|\"]+/, ""
@@ -141,13 +158,40 @@ class FormValidation
 
 	showNotifcation: (notification) ->
 
-		@hideAllNotifications()
+		switch notification
+			when "sending" then @el.notifications.sending.classList.remove "is-hidden"
+			when "sent" then @el.notifications.sent.classList.remove "is-hidden"
 
-		if @el.form.classList.contains "is-sending" or @el.form.classList.contains "is-sent"
+	submitForm: ->
 
-			switch notification
-				when "sending" then @el.notifications.sending.classList.remove "is-hidden"
-				when "sent" then @el.notifications.sent.classList.remove "is-hidden"
+		if @validations.name and @validations.email and @validations.message
+
+			@el.form.classList.add "is-sending"
+
+			@showNotifcation "sending"
+
+			# send form
+
+			# pretend it's sent
+			setTimeout =>
+
+				@hideAllNotifications()
+				@el.form.classList.remove "is-sending"
+				@el.form.classList.add "is-sent"
+				@showNotifcation "sent"
+
+				setTimeout =>
+
+					@resetForm()
+					@el.form.classList.remove "is-sent"
+					@hideAllNotifications()
+
+				, 10000
+
+			, 3000
+
+		else
+			console.log "wdwdknon"
 
 	validateForm: ->
 

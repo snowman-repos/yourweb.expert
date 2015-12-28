@@ -3,103 +3,175 @@ class FormValidation
 	constructor: ->
 
 		@el =
-			button: document.querySelector ".js-form-submit"
-			email:
-				group: document.querySelector ".js-email"
-				input: document.querySelector ".js-email-input"
-			form: document.querySelector ".js-form"
-			message:
-				group: document.querySelector ".js-message"
-				input: document.querySelector ".js-message-input"
-			name:
-				group: document.querySelector ".js-name"
-				input: document.querySelector ".js-name-input"
-			notifications:
-				sending: document.querySelector ".js-sending-form"
-				sent: document.querySelector ".js-sent-form"
+			contactForm:
+				button: document.querySelector ".js-form-submit"
+				email:
+					group: document.querySelector ".js-email"
+					input: document.querySelector ".js-email-input"
+				form: document.querySelector ".js-form"
+				message:
+					group: document.querySelector ".js-message"
+					input: document.querySelector ".js-message-input"
+				name:
+					group: document.querySelector ".js-name"
+					input: document.querySelector ".js-name-input"
+				notifications:
+					sending: document.querySelector ".js-sending-form"
+					sent: document.querySelector ".js-sent-form"
+			loginForm:
+				button: document.querySelector ".js-login-button"
+				email:
+					group: document.querySelector ".js-login-email"
+					input: document.querySelector ".js-login-email-input"
+				form: document.querySelector ".js-login-form"
+				password:
+					group: document.querySelector ".js-login-password"
+					input: document.querySelector ".js-login-password-input"
+				notifications:
+					loggingIn: document.querySelector ".js-logging-in"
 
-		@resetForm()
+		@validations =
+			contactForm: {}
+			loginForm: {}
+
+		@resetForm "contactForm"
+		@resetForm "loginForm"
 
 		@addEventListeners()
 
 	addEventListeners: ->
 
-		@el.button.addEventListener "click", (e) =>
+		# Click events
+
+		@el.contactForm.button.addEventListener "click", (e) =>
 
 			e.preventDefault()
 			@submitForm()
 
+		@el.loginForm.button.addEventListener "click", (e) =>
+
+			e.preventDefault()
+			@login()
+
 		# Focus events
 
-		@el.name.input.addEventListener "focus", =>
+		@el.contactForm.name.input.addEventListener "focus", =>
 
-			@setFocus "name"
+			@setFocus "contactForm", "name"
 
-		@el.email.input.addEventListener "focus", =>
+		@el.contactForm.email.input.addEventListener "focus", =>
 
-			@setFocus "email"
+			@setFocus "contactForm", "email"
 
-		@el.message.input.addEventListener "focus", =>
+		@el.contactForm.message.input.addEventListener "focus", =>
 
-			@setFocus "message"
+			@setFocus "contactForm", "message"
+
+		@el.loginForm.email.input.addEventListener "focus", =>
+
+			@setFocus "loginForm", "email"
+
+		@el.loginForm.password.input.addEventListener "focus", =>
+
+			@setFocus "loginForm", "password"
 
 		# Blur events
 
-		@el.name.input.addEventListener "blur", =>
+		@el.contactForm.name.input.addEventListener "blur", =>
 
-			@getInputState "name"
+			@getInputState "contactForm", "name"
 
-		@el.email.input.addEventListener "blur", =>
+		@el.contactForm.email.input.addEventListener "blur", =>
 
-			@getInputState "email"
+			@getInputState "contactForm", "email"
 
-		@el.message.input.addEventListener "blur", =>
+		@el.contactForm.message.input.addEventListener "blur", =>
 
-			@getInputState "message"
+			@getInputState "contactForm", "message"
+
+		@el.loginForm.email.input.addEventListener "blur", =>
+
+			@getInputState "loginForm", "email"
+
+		@el.loginForm.password.input.addEventListener "blur", =>
+
+			@getInputState "loginForm", "password"
 
 		# Keyup events
 
-		@el.name.input.addEventListener "keyup", =>
+		@el.contactForm.name.input.addEventListener "keyup", =>
 
-			@el.name.input.value = @sanitiseInput @el.name.input.value
-			@setInputState "name"
+			@el.contactForm.name.input.value = @sanitiseInput @el.contactForm.name.input.value
+			@setInputState "contactForm", "name"
 
-		@el.email.input.addEventListener "keyup", =>
+		@el.contactForm.email.input.addEventListener "keyup", =>
 
-			@setInputState "email"
+			@setInputState "contactForm", "email"
 
-		@el.message.input.addEventListener "keyup", =>
+		@el.contactForm.message.input.addEventListener "keyup", =>
 
-			@setInputState "message"
+			@setInputState "contactForm", "message"
 
-	disableButton: ->
+		@el.loginForm.email.input.addEventListener "keyup", =>
 
-		@el.button.classList.add "is-disabled"
+			@setInputState "loginForm", "email"
 
-	enableButton: ->
+		@el.loginForm.password.input.addEventListener "keyup", =>
 
-		@el.button.classList.remove "is-disabled"
+			@setInputState "loginForm", "password"
 
-	getInputState: (input) ->
+	disableButton: (form) ->
 
-		@el[input].group.classList.remove "is-in-focus"
+		@el[form].button.classList.add "is-disabled"
+
+	enableButton: (form) ->
+
+		@el[form].button.classList.remove "is-disabled"
+
+	getInputState: (form, input) ->
+
+		@el[form][input].group.classList.remove "is-in-focus"
 
 		if input isnt "message"
 
-			if @validations[input]
-				@setComplete input
+			if @validations[form][input]
+				@setComplete form, input
 			else
-				@el[input].group.classList.remove "is-complete"
-				@showError input
+				@el[form][input].group.classList.remove "is-complete"
+				@showError form, input
 
 		else
 
-			@setComplete input
+			@setComplete form, input
 
 	hideAllNotifications: ->
 
-		for name, node of @el.notifications
+		for name, node of @el.contactForm.notifications
 			node.classList.add "is-hidden"
+
+	login: ->
+
+		if true
+
+			@el.loginForm.form.classList.remove "is-error"
+
+			@hideAllNotifications()
+			@el.loginForm.form.classList.add "is-logging-in"
+			@showNotifcation "logging in"
+
+			# pretend it's sent
+			setTimeout =>
+
+				@hideAllNotifications()
+				@el.loginForm.form.classList.remove "is-logging-in"
+
+				# just show error for now
+				@el.loginForm.form.classList.add "is-error"
+
+			, 3000
+
+		else
+			console.error "invalid input data"
 
 	removeAllErrors: ->
 
@@ -108,65 +180,75 @@ class FormValidation
 		for error in errors
 			error.parentNode.removeChild error
 
-	resetForm: ->
+	resetForm: (form) ->
 
-		@validations =
-			name: false
-			email: false
-			message: true
+		if form is "contactForm"
 
-		@el.name.input.value = ""
-		@el.name.group.classList.remove "is-complete"
-		@el.email.input.value = ""
-		@el.email.group.classList.remove "is-complete"
-		@el.message.input.value = ""
-		@el.message.group.classList.remove "is-complete"
-		@disableButton()
+			@validations["contactForm"] =
+				name: false
+				email: false
+				message: true
+
+			@el.contactForm.name.input.value = ""
+			@el.contactForm.name.group.classList.remove "is-complete"
+			@el.contactForm.email.input.value = ""
+			@el.contactForm.email.group.classList.remove "is-complete"
+			@el.contactForm.message.input.value = ""
+			@el.contactForm.message.group.classList.remove "is-complete"
+
+		else if form is "loginForm"
+
+			@validations["loginForm"] =
+				email: false
+				password: false
+
+		@disableButton form
 
 	sanitiseInput: (input) ->
 
 		input.replace /[\/!@#£\$\%\^&*0-9()\[\]+~?<>.|\"]+/, ""
 
-	setComplete: (input) ->
+	setComplete: (form, input) ->
 
-		if @validateInput @el[input].input.value
-			@el[input].group.classList.add "is-complete"
+		if @validateInput @el[form][input].input.value
+			@el[form][input].group.classList.add "is-complete"
 
-	setFocus: (input) ->
+	setFocus: (form, input) ->
 
-		@el[input].group.classList.add "is-in-focus"
-		@el[input].group.classList.remove "is-complete"
-		@el[input].group.classList.remove "is-error"
+		@el[form][input].group.classList.add "is-in-focus"
+		@el[form][input].group.classList.remove "is-complete"
+		@el[form][input].group.classList.remove "is-error"
 
-	setInputState: (input) ->
+	setInputState: (form, input) ->
 
-		if input isnt "message" then @validations[input] = @validateInput @el[input].input.value
-		@validateForm()
+		if input isnt "message" then @validations[form][input] = @validateInput @el[form][input].input.value
+		@validateForm form
 
-	showError: (input) ->
+	showError: (form, input) ->
 
-		@el[input].group.classList.add "is-error"
+		@el[form][input].group.classList.add "is-error"
 
-		errors = @el[input].group.querySelectorAll ".o-form__error"
+		errors = @el[form][input].group.querySelectorAll ".o-form__error"
 
 		if errors.length is 0
 			error = document.createElement "div"
 			error.classList.add "o-form__error"
-			error.classList.add "c-contact__form__error"
-			error.innerText = @el[input].input.dataset.error
-			@el[input].group.appendChild error
+			if form is "contactForm" then error.classList.add "c-contact__form__error"
+			error.innerText = @el[form][input].input.dataset.error
+			@el[form][input].group.appendChild error
 
 	showNotifcation: (notification) ->
 
 		switch notification
-			when "sending" then @el.notifications.sending.classList.remove "is-hidden"
-			when "sent" then @el.notifications.sent.classList.remove "is-hidden"
+			when "logging in" then @el.loginForm.notifications.loggingIn.classList.remove "is-hidden"
+			when "sending" then @el.contactForm.notifications.sending.classList.remove "is-hidden"
+			when "sent" then @el.contactForm.notifications.sent.classList.remove "is-hidden"
 
 	submitForm: ->
 
-		if @validations.name and @validations.email and @validations.message
+		if @validations.contactForm.name and @validations.contactForm.email and @validations.contactForm.message
 
-			@el.form.classList.add "is-sending"
+			@el.contactForm.form.classList.add "is-sending"
 
 			@showNotifcation "sending"
 
@@ -176,14 +258,14 @@ class FormValidation
 			setTimeout =>
 
 				@hideAllNotifications()
-				@el.form.classList.remove "is-sending"
-				@el.form.classList.add "is-sent"
+				@el.contactForm.form.classList.remove "is-sending"
+				@el.contactForm.form.classList.add "is-sent"
 				@showNotifcation "sent"
 
 				setTimeout =>
 
-					@resetForm()
-					@el.form.classList.remove "is-sent"
+					@resetForm "contactForm"
+					@el.contactForm.form.classList.remove "is-sent"
 					@hideAllNotifications()
 
 				, 10000
@@ -191,15 +273,27 @@ class FormValidation
 			, 3000
 
 		else
-			console.log "wdwdknon"
+			console.error "invalid input data"
 
-	validateForm: ->
+	validateForm: (form) ->
 
-		if @validations.name and @validations.email and @validations.message
-			@enableButton()
-			@removeAllErrors()
-		else
-			@disableButton()
+		if form is "contactForm"
+
+			if @validations.contactForm.name and @validations.contactForm.email and @validations.contactForm.message
+				@enableButton form
+				@removeAllErrors()
+			else
+				@disableButton form
+
+		else if form is "loginForm"
+
+			if @validations.loginForm.email and @validations.loginForm.password
+
+				@enableButton form
+
+			else
+
+				@disableButton form
 
 	validateInput: (input) ->
 

@@ -1,0 +1,163 @@
+.c-client-login
+	fixed()
+	right									0.5rem
+	top										0.5rem
+	z-index									4
+
+	&__button
+		background							transparent
+		border								1px solid rgba($white, 0.5)
+		border-radius						999px
+		color								rgba($white, 0.5)
+		font-size							0.5rem
+		height								100%
+		opacity								1
+		transition							opacity 0.1s 0.5s, color 0.15s ease-in-out, background-color 0.15s ease-in-out
+		width								100%
+
+		+ActiveFocusHover()
+			background						$yellow
+			color							$blue--navy
+			outline							none
+
+	&__dialog
+		fixed()
+		background							$yellow
+		border-radius						999px
+		color								$blue--navy
+		height								35px
+		opacity								0
+		right								0.5rem
+		top									0.5rem
+		transition							opacity 0.1s 0.5s, width 0.5s 0.1s, height 0.5s 0.1s, top 0.5s 0.1s, right 0.5s 0.1s, border-radius 0.5s 0.1s
+		transition-timing-function			cubic-bezier(0.7,0,0.3,1)
+		width								120px
+
+		&__content
+			height							0
+			opacity							0
+			padding							$base-spacing-unit
+			transition						opacity 0.15s
+			visibility						hidden
+
+	&.is-open
+
+		.c-client-login
+
+			&__button
+				background					$yellow
+				opacity						0
+				transition					opacity 0.1s 0.15s
+
+			&__dialog
+				border-radius				0.25rem
+				height						340px
+				opacity						1
+				right						calc(50% - 170px)
+				top							calc(50% - 170px)
+				transition					opacity 0.5s 0.1s, width 0.5s 0.1s, height 0.5s 0.1s, top 0.5s 0.1s, right 0.5s 0.1s, border-radius 0.5s 0.1s
+				transition-timing-function	cubic-bezier(0.7,0,0.3,1)
+				width						340px
+
+				&__content
+					height					100%
+					opacity					1
+					transition				opacity 0.3s 0.5s, visibility 0s, height 0s 0.3s
+					visibility				visible
+
+	&__form
+		pointer-events						auto
+
+		&__label
+			color							$blue--cerulean
+
+		&__input
+			background						transparent
+			border							2px solid rgba($blue--navy, 0.25)
+			color							$blue--navy
+
+			&:focus
+				background					rgba($white, 0.5)
+				border						2px solid rgba($blue--navy, 0.45)
+
+		&__button
+			background						$blue--navy
+			border							none
+			color							$white
+
+			+ActiveFocusHover()
+				background					lighten($blue--navy, 15%)
+
+			&.is-disabled
+
+				+ActiveFocusHover()
+					background				$blue--navy
+
+		.o-form__check
+			absolute()
+			font-size						0.75rem
+			opacity							0
+			right							2rem
+			top								0
+
+		.o-form__error
+			display							none
+
+		&__group
+
+			&.is-complete
+
+				.o-form__check
+					opacity					1
+					right					0
+
+				.c-client-login__form
+
+					&__label
+						color				$silver
+						text-decoration		line-through
+
+					&__input
+						border				none
+						border-bottom		1px solid $blue--navy
+						border-radius		0
+
+	&.is-error
+
+		.c-client-login__dialog
+			animation-duration				0.3s
+			animation-fill-mode				both
+			animation-iteration-count		2
+			animation-name					shake
+
+		.c-client-login__form
+
+			.o-form__check
+				opacity						0
+				right						2rem
+
+			&__label
+				color						$red
+
+			&__input
+				border						2px solid $red
+
+	&.is-logging-in
+
+		.c-client-login__form
+			opacity							0.15
+			pointer-events					none
+
+		.o-form__notification
+			display							block
+
+
+@keyframes shake
+	0%, 50%, 100%
+		transform		translateX(0)
+
+	25%
+		transform		translateX(-10px)
+
+	75%
+		transform		translateX(-10px)

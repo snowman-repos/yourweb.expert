@@ -26,16 +26,14 @@ $module-colour = $blue--navy
 					opacity				0
 					pointer-events		none
 
-				~ .c-contact__form__notification
+				~ .o-form__notification
 					display				block
 
-		&__check
+		.o-form__check
 			absolute()
-			fill						$green
 			opacity						0
 			right						2rem
 			top							0
-			transition					$slow-transition
 
 		&__error
 			absolute()
@@ -46,11 +44,6 @@ $module-colour = $blue--navy
 
 		&__label
 			color						$silver
-			display						block
-			font-weight					600
-			margin-bottom				0.25rem
-			text-align					left
-			text-transform				uppercase
 			transition					$fast-transition
 
 			&__note
@@ -79,21 +72,19 @@ $module-colour = $blue--navy
 			&:focus
 				background				darken($module-colour, 40%)
 				border					1px solid lighten($blue--dark, 30%)
-				outline					none
 
 			&--textarea
 				height					6rem
 
 		&__group
-			relative()
 
 			&.is-complete
 
-				.c-contact__form
+				.o-form__check
+					opacity				1
+					right				0
 
-					&__check
-						opacity			1
-						right			0
+				.c-contact__form
 
 					&__label
 						opacity			0.25
@@ -162,30 +153,11 @@ $module-colour = $blue--navy
 				+ActiveFocusHover
 					background			transparent
 
-		&__notification
-			absolute()
-			bottom						0
-			display						none
-			height						100%
-			left						0
-			opacity						1
-			pointer-events				none
-			right						0
-			top							0
-			transition					$fast-transition
-			width						100%
+		.o-form__notification
 
-			&.is-hidden
-				opacity					0
-
-			&__message
-				vertical-centre()
-				font-size				2rem
-				margin-top				-2.5rem
-
-				.subheading
-					color $blue--sky
-					display				block
+			.subheading
+				color $blue--sky
+				display					block
 
 	&__info
 		col(12)

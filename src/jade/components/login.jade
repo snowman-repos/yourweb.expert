@@ -1,0 +1,31 @@
+.o-morph-button.c-client-login.js-morph-button.is-hidden.js-login-form
+
+	button.o-morph-button__button.o-button.c-client-login__button.js-morph-button-open(type="button") Client login
+
+	.o-morph-button__dialog.c-client-login__dialog.js-morph-dialog
+
+		.o-morph-button__dialog__content.c-client-login__dialog__content
+
+			button.o-morph-button__dialog__close-button.o-button.o-button--icon.js-morph-button-close(type="button") &times;
+
+			form.o-form.c-client-login__form(action="/login", method="post")
+
+				.o-form__group.c-client-login__form__group.js-login-email
+
+					label.o-form__label.c-client-login__form__label(for="login-email") Email:
+					input.o-form__input.c-client-login__form__input.js-login-email-input(id="login-email", name="login-email", placeholder="e.g. gordon.shumway@melmac.com", type="email")
+					+form-check()
+
+				.o-form__group.c-client-login__form__group.js-login-password
+
+					label.o-form__label.c-client-login__form__label(for="login-password") Password:
+					input.o-form__input.c-client-login__form__input.js-login-password-input(id="login-password", name="login-password", type="password")
+					+form-check()
+
+				.o-form__group.c-client-login__form__group
+
+					input.o-form__button.o-button.o-button--block.c-client-login__form__button.is-disabled.js-login-button(type="submit", value="login")
+
+		.o-form__notification.js-logging-in.is-hidden
+
+			.o-spinner.o-spinner--navy

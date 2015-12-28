@@ -20,8 +20,9 @@ height: 30px;
 padding: 5px 55px;
 """
 
-ScrollWatcher = require "./components/scroll-watcher/scroll-watcher.coffee"
 FormValidation = require "./components/form-validation/form-validation.coffee"
 FullHeightSections = require "./components/full-height-section/full-height-section.coffee"
 LocalConditions = require "./components/local-conditions/local-conditions.coffee"
+MorphButton = require "./components/morph-button/morph-button.coffee"
 RateCalculator = require "./components/rate-calculator/rate-calculator.coffee"
+ScrollWatcher = require "./components/scroll-watcher/scroll-watcher.coffee"

@@ -1,4 +1,5 @@
 .o-form__group
+	relative()
 	margin-bottom	$base-spacing-unit
 	overflow		hidden
 
@@ -29,6 +30,9 @@
 		& ~ .o-form__label
 			cursor	not-allowed !important
 
+	&:focus
+		outline		none
+
 	&--block
 		width		100%
 
@@ -41,6 +45,40 @@
 // <label class="o-form__label" for="input">Form field:</label>
 .o-form__label
 	cursor			pointer
+	display			block
+	font-size		0.65rem
+	font-weight		600
+	margin-bottom	0.25rem
+	text-align		left
+	text-transform	uppercase
 
 .o-form__error
 	color			$red
+	
+.o-form__check
+	fill			$green
+	transition		$slow-transition
+	
+	&.o-icon
+		fill		$green
+		
+.o-form__notification
+	absolute()
+	bottom			0
+	display			none
+	height			100%
+	left			0
+	opacity			1
+	pointer-events	none
+	right			0
+	top				0
+	transition		$fast-transition
+	width			100%
+
+	&.is-hidden
+		opacity		0
+
+	&__message
+		vertical-centre()
+		font-size	2rem
+		margin-top	-2.5rem

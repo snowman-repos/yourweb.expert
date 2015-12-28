@@ -29,3 +29,22 @@
 	&.is-disabled
 		cursor					not-allowed
 		opacity					0.5
+
+	&--block
+		display					block
+		width					100%
+
+	&--icon
+		background				none
+		border					none
+		font-size				1.5rem
+		height					1.5rem
+		line-height				1.5rem
+		opacity					0.5
+		padding					0
+		text-align				center
+		transition				$fast-transition
+		width					1.5rem
+		
+		+ActiveFocusHover()
+			opacity				1

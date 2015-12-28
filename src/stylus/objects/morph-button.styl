@@ -1,0 +1,60 @@
+.o-morph-button
+	transition								$slow-transition
+
+	&:before
+		fixed()
+		background							rgba($black, 0.5)
+		content								""
+		height								100%
+		left								0
+		opacity								0
+		pointer-events						none
+		top									0
+		transition							0.15s 0.5s all ease-in-out
+		width								100%
+		z-index								800
+
+	&__button
+		z-index								1000
+
+	&__dialog
+		fixed()
+		overflow							hidden
+		z-index								900
+
+		&__close-button
+			absolute()
+			// display							block
+			right							0
+			top								0
+
+	&.is-hidden
+		opacity								0
+		pointer-events						none
+
+		.o-morph-button
+
+			&:before
+				display						none
+
+			&__button
+				display						none
+
+			&__dialog
+				display						none
+
+	&.is-open
+
+		&:before
+			opacity							1
+			pointer-events					auto
+			transition						opacity 0.1s
+
+		.o-morph-button
+
+			&__button
+				pointer-events				none
+
+			&__dialog
+				pointer-events				auto
+				z-index						1900

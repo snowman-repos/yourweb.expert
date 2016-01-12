@@ -4,7 +4,7 @@ module.exports = (gulp, $, config) ->
 
 	gulp.task "images", ->
 
-		gulp.src config.paths.images.entry + "**/*.{jpg,png,gif,svg}"
+		gulp.src config.paths.images.entry + "**/*.{jpg,png,gif,svg,webp}"
 		.pipe $.plumber()
 		.pipe $.imagemin
 			cache: false

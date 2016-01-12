@@ -1,0 +1,36 @@
+.c-navigation
+	fixed()
+	display						none
+	left						50%
+	transform					translateX(-50%)
+	top							0
+	z-index						3
+
+	+bp($screen-sm-min)
+		display					block
+
+	&__menu
+		unstyled-list()
+
+		&__item
+			display 			inline-block
+			margin-bottom		0.5rem
+			margin-top 			0.5rem
+			opacity 			1
+			overflow 			hidden
+			transition 			$fast-transition
+			width				1rem
+
+			&.is-hidden
+				opacity 		0
+				width			0
+
+			&__link
+				background		rgba($black, 0.3)
+				border-radius	50%
+				display			block
+				height			0.5rem
+				width			0.5rem
+
+				&.is-active
+					background	rgba($black, 0.7)

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+
+		<title>Project Style Guide</title>
+
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible", content="IE=edge">
+		<meta name="description", content="This is the living styleguide for YourWeb.Expert. It is automatically generated from the Stylus source code using DSS (https://github.com/DSSWG/DSS).">
+		<meta name="keywords", content="styleguide">
+		<meta name="author", content="Darryl Snow">
+		<meta name="viewport", content="width=device-width,initial-scale=1">
+
+		<link href="./main.min.css" rel="stylesheet">
+
+	</head>
+
+	<body class="c-styleguide">
+
+		<h1 class="-cstyleguide__header">YourWeb.Expert Styleguide</h1>
+
+		<section class="c-styleguide__section">
+
+	<h2 class="c-styleguide__section__header">Button</h2>
+
+	<p>Standard button.</p>
+
+	<section class="c-styleguide__subsection">
+
+		<h3 class="c-styleguide__subsection__header">States</h3>
+
+		<ul class="c-styleguide__states">
+			
+				<li>
+					<code>:hover</code> - highlights when hovered
+				</li>
+			
+				<li>
+					<code>:disabled</code> - dims the button when disabled.
+				</li>
+			
+		</ul>
+
+	</section>
+
+	<section class="c-styleguide__subsection">
+
+		<h3 class="c-styleguide__subsection__header">Example</h3>
+
+		<div class="c-styleguide__example">
+			<button class="o-button">click me</button>
+		</div>
+
+		<pre class="c-styleguide__markup">
+&lt;button class="o-button"&gt;click me&lt;/button&gt;
+		</pre>
+
+	</section>
+
+</section>
+<section class="c-styleguide__section">
+
+	<h2 class="c-styleguide__section__header">Input</h2>
+
+	<p>Standard text input</p>
+
+	<section class="c-styleguide__subsection">
+
+		<h3 class="c-styleguide__subsection__header">States</h3>
+
+		<ul class="c-styleguide__states">
+			
+				<li>
+					<code>:disabled, --disabled</code> - Dims the input when disabled
+				</li>
+			
+				<li>
+					<code>.input--block</code> - Makes the input full-width
+				</li>
+			
+		</ul>
+
+	</section>
+
+	<section class="c-styleguide__subsection">
+
+		<h3 class="c-styleguide__subsection__header">Example</h3>
+
+		<div class="c-styleguide__example">
+			 <input class="o-form__input" id="input" placeholder="placeholder text" type="text"></input>
+ <input class="o-form__input" disabled id="input" placeholder="placeholder text" type="text"></input>
+ <input class="o-form__input o-form__input--block" id="input" placeholder="placeholder text" type="text"></input>
+		</div>
+
+		<pre class="c-styleguide__markup">
+ &lt;input class="o-form__input" id="input" placeholder="placeholder text" type="text"&gt;&lt;/input&gt;
+ &lt;input class="o-form__input" disabled id="input" placeholder="placeholder text" type="text"&gt;&lt;/input&gt;
+ &lt;input class="o-form__input o-form__input--block" id="input" placeholder="placeholder text" type="text"&gt;&lt;/input&gt;
+		</pre>
+
+	</section>
+
+</section>
+<section class="c-styleguide__section">
+
+	<h2 class="c-styleguide__section__header">Label</h2>
+
+	<p>Standard label for form inputs</p>
+
+	<section class="c-styleguide__subsection">
+
+		<h3 class="c-styleguide__subsection__header">States</h3>
+
+		<ul class="c-styleguide__states">
+			
+		</ul>
+
+	</section>
+
+	<section class="c-styleguide__subsection">
+
+		<h3 class="c-styleguide__subsection__header">Example</h3>
+
+		<div class="c-styleguide__example">
+			<label class="o-form__label" for="input">Form field:</label>
+		</div>
+
+		<pre class="c-styleguide__markup">
+&lt;label class="o-form__label" for="input"&gt;Form field:&lt;/label&gt;
+		</pre>
+
+	</section>
+
+</section>
+<section class="c-styleguide__section">
+
+	<h2 class="c-styleguide__section__header">Icon</h2>
+
+	<p>Standard icon</p>
+
+	<section class="c-styleguide__subsection">
+
+		<h3 class="c-styleguide__subsection__header">States</h3>
+
+		<ul class="c-styleguide__states">
+			
+		</ul>
+
+	</section>
+
+	<section class="c-styleguide__subsection">
+
+		<h3 class="c-styleguide__subsection__header">Example</h3>
+
+		<div class="c-styleguide__example">
+			 <svg class="o-icon" viewBox="0 0 32 32">
+ 	<use xlink:href="#icon--namespace"></use>
+ </svg>
+		</div>
+
+		<pre class="c-styleguide__markup">
+ &lt;svg class="o-icon" viewBox="0 0 32 32"&gt;
+ 	&lt;use xlink:href="#icon--namespace"&gt;&lt;/use&gt;
+ &lt;/svg&gt;
+		</pre>
+
+	</section>
+
+</section>
+<section class="c-styleguide__section">
+
+	<h2 class="c-styleguide__section__header">Image</h2>
+
+	<p>Standard image</p>
+
+	<section class="c-styleguide__subsection">
+
+		<h3 class="c-styleguide__subsection__header">States</h3>
+
+		<ul class="c-styleguide__states">
+			
+				<li>
+					<code>--centred</code> - centres the block-level image
+				</li>
+			
+				<li>
+					<code>--full-width</code> - image becomes full width of the parent container
+				</li>
+			
+		</ul>
+
+	</section>
+
+	<section class="c-styleguide__subsection">
+
+		<h3 class="c-styleguide__subsection__header">Example</h3>
+
+		<div class="c-styleguide__example">
+			 <img class="o-image" src="http://placehold.it/200x200" alt="Alt text"></img>
+ <img class="o-image o-image--centred" src="http://placehold.it/200x200" alt="Alt text"></img>
+ <img class="o-image o-image--full-width" src="http://placehold.it/200x200" alt="Alt text"></img>
+		</div>
+
+		<pre class="c-styleguide__markup">
+ &lt;img class="o-image" src="http://placehold.it/200x200" alt="Alt text"&gt;&lt;/img&gt;
+ &lt;img class="o-image o-image--centred" src="http://placehold.it/200x200" alt="Alt text"&gt;&lt;/img&gt;
+ &lt;img class="o-image o-image--full-width" src="http://placehold.it/200x200" alt="Alt text"&gt;&lt;/img&gt;
+		</pre>
+
+	</section>
+
+</section>
+
+	</body>
+
+</html>

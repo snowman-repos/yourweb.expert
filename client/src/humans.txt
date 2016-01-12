@@ -1,0 +1,11 @@
+/* TEAM */
+
+[Role]: [name]
+Contact: [email]
+[Social Media Network]: [username/link]
+
+/* THANKS */
+
+[Role]: [name]
+Contact: [email]
+[Social Media Network]: [username/link]

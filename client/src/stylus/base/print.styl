@@ -1,0 +1,232 @@
+@media print
+
+	.o-section
+		background					transparent !important
+		color						$body-text-colour !important
+		height 						auto !important
+		margin						0 !important
+		padding						0.5 * $base-spacing-unit 0 0 0 !important
+		text-align 					left !important
+
+		&:fist-of-type
+			padding-top 			0 !important
+
+		&__content
+			display 				block !important
+			height 					auto !important
+			max-width 				100% !important
+			padding					0 !important
+
+			&__container
+				max-height 			auto !important
+				position 			inherit !important
+				top					0 !important
+				transform 			translateY(0) !important
+
+		&__end
+			display 				none !important
+
+	.c-navigation,
+	.c-client-login
+		display 					none !important
+
+	.c-introduction
+		background					transparent !important
+		text-align 					left !important
+
+		.o-inline-link
+			color					$body-text-colour !important
+			font-size 				8pt !important
+
+			&:after
+				display 			none !important
+
+		&__image
+			margin					0 !important
+
+			&__container
+				margin				0 !important
+				padding				0 !important
+				text-align 			left !important
+				width				100% !important
+
+				&:before
+					display 		none !important
+
+		&__content__container
+			margin					0 !important
+			padding					0 !important
+			width					100% !important
+
+		&__header,
+		&__text
+		&__header .subheader
+			color					$body-text-colour !important
+
+		&__text
+			margin-bottom 			0
+
+		&__contact-list
+			list-style 				inherit !important
+			list-style-type 		disc !important
+			margin					1rem 0 !important
+			padding					0 0 0 2rem !important
+
+			&__item
+				color				$body-text-colour !important
+				display 			list-item !important
+				list-style 			inherit !important
+				list-style-type 	disc !important
+				margin				0 !important
+
+				&__link
+					background 		none !important
+					color			$blue !important
+					font-size 		8pt !important
+					line-height 	100% !important
+					margin			0.5rem 0 !important
+					padding			0 !important
+					position 		relative !important
+
+					.o-icon
+						display 	none !important
+
+					&:after
+						display 	none !important
+
+				&__text
+					position 		inherit !important
+					height 			auto !important
+					left			auto !important
+					overflow 		visible !important
+					top				auto !important
+					width			auto !important
+
+	.c-services
+		background					transparent !important
+
+		&__header
+			color					$body-text-colour !important
+			margin					0 !important
+			text-align 				left !important
+
+		&__list
+			list-style 				inherit !important
+			list-style-type 		disc !important
+			margin					1rem 0 !important
+			padding					0 0 0 2rem !important
+			width					100% !important
+
+			&__item
+				color				$body-text-colour !important
+				display 			list-item !important
+				list-style 			inherit !important
+				list-style-type 	disc !important
+
+				.o-icon
+					display 		none !important
+
+		&__button
+			border					none !important
+			color					$blue !important
+			font-size 				8pt !important
+			font-weight 			300 !important
+			text-decoration 		underline !important
+			text-transform 			inherit !important
+
+			&__container
+				margin				0 !important
+				text-align 			left !important
+
+			&:after
+				content 			" (" attr(href) ")"
+
+	.c-clients
+		background 					transparent !important
+
+		&__header
+			color					$body-text-colour !important
+			margin					0 !important
+			text-align 				left !important
+
+		&__list
+			list-style 				inherit !important
+			margin					1rem 0 !important
+			padding					0 0 0 2rem !important
+			width					100% !important
+
+			&__item
+				border 				none !important
+				height				auto !important
+				display 			list-item !important
+				margin				0.5rem 0 !important
+				text-align 			left !important
+				width				100% !important
+
+				&__logo
+					display 		none !important
+
+				&__text
+					display 		inline !important
+
+	.c-cost
+		background					inherit !important
+		color						$body-text-colour !important
+		text-align 					left !important
+
+		&__header
+			color					$body-text-colour !important
+			margin					0 !important
+			text-align 				left !important
+
+		&__text
+			margin					1rem 0 !important
+
+		.o-inline-link
+			color					$body-text-colour !important
+			font-size  				8pt !important
+			position				inherit !important
+
+			&:before
+				display 			none
+
+			&:after
+				content 			" (darryl@yourweb.expert)"
+				position 			inherit !important
+
+		&__calculator
+		&__calculator__slider
+		&__calculator__results
+			margin					0 !important
+			width					100% !important
+
+		&__calculator
+
+			&__slider
+				margin-bottom 		0.5 * $base-spacing-unit !important
+				margin-top 			0.5 * $base-spacing-unit !important
+
+				&__label
+					margin			0 !important
+
+				&__control
+				&__notice
+					display 		none !important
+
+			&__results
+				border				none !important
+				padding				0 !important
+
+				&__heading
+					margin-bottom 	0 !important
+
+				&__currency
+					display 		none !important
+
+				&__value
+					color			$body-text-colour !important
+					line-height 	1 !important
+
+	.c-contact
+	.c-newsletter
+		display 					none !important

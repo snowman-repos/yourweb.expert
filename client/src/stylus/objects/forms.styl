@@ -1,0 +1,84 @@
+.o-form__group
+	relative()
+	margin-bottom	$base-spacing-unit
+	overflow		hidden
+
+// @name Input
+// @description Standard text input
+// @state :disabled, --disabled - Dims the input when disabled
+// @state .input--block - Makes the input full-width
+// @markup
+// <input class="o-form__input" id="input" placeholder="placeholder text" type="text"></input>
+// <input class="o-form__input" disabled id="input" placeholder="placeholder text" type="text"></input>
+// <input class="o-form__input o-form__input--block" id="input" placeholder="placeholder text" type="text"></input>
+.o-form__input
+	background		$white
+	border			1px solid $light-grey-1
+	border-radius	0.25rem
+	box-shadow		none
+	display			block
+	font-size		1rem
+	padding			0.5 * $base-spacing-unit
+
+	&:disabled,
+	&[disabled],
+	&.is-disabled
+		background	$light-grey-1
+		cursor		not-allowed !important
+
+		& ~ label,
+		& ~ .o-form__label
+			cursor	not-allowed !important
+
+	&:focus
+		outline		none
+
+	&--block
+		width		100%
+
+	&--textarea
+		resize		none
+
+// @name Label
+// @description Standard label for form inputs
+// @markup
+// <label class="o-form__label" for="input">Form field:</label>
+.o-form__label
+	cursor			pointer
+	display			block
+	font-size		0.65rem
+	font-weight		600
+	margin-bottom	0.25rem
+	text-align		left
+	text-transform	uppercase
+
+.o-form__error
+	color			$red
+	
+.o-form__check
+	fill			$green
+	transition		$slow-transition
+	
+	&.o-icon
+		fill		$green
+		
+.o-form__notification
+	absolute()
+	bottom			0
+	display			none
+	height			100%
+	left			0
+	opacity			1
+	pointer-events	none
+	right			0
+	top				0
+	transition		$fast-transition
+	width			100%
+
+	&.is-hidden
+		opacity		0
+
+	&__message
+		vertical-centre()
+		font-size	2rem
+		margin-top	-2.5rem

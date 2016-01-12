@@ -1,0 +1,64 @@
+.c-blog
+
+	&__section
+		height								0
+		opacity 							0
+		transform 							translateY(-100%)
+		transition 							0.15s height ease-in-out 0s, 0.15s transform ease-in-out 0.15s, 0.15s z-index ease-in-out 0.3s, 0.3s opacity ease-in-out 0.3s
+		z-index 							-1
+
+		&.is-loaded
+			height							auto
+			opacity 						1
+			transform 						translateY(0)
+			z-index 						1
+
+			.c-blog__list
+				opacity 					1
+
+	&__list
+		unstyled-list()
+		opacity 							0
+		transition 							0.15s opacity ease-in-out 0.45s
+		width								100%
+
+		&__item
+			margin-bottom 					0.25rem
+			overflow 						hidden
+			text-align 						left
+
+			&:first-of-type
+				border-top-left-radius 		0.25em
+				border-top-right-radius 	0.25em
+
+			&:last-of-type
+				border-bottom-left-radius 	0.25em
+				border-bottom-right-radius 	0.25em
+
+			&__link
+				// relative()
+				row()
+				align-items 				center
+				background 					lighten($blue--dark, 10%)
+				color						$silver
+				padding						0.5 * $base-spacing-unit
+				text-decoration 			none
+				transition 					$fast-transition
+
+				+ActiveFocusHover()
+					background 				darken($blue--dark, 10%)
+					color					$yellow
+
+			&__date
+				col(1)
+				font-size 					0.75rem
+
+			&__heading
+				col(11)
+				font-size 					1.25rem
+				margin-bottom 				0
+				margin-top 					0
+
+			&__excerpt
+				font-size 					0.75rem
+				margin						0

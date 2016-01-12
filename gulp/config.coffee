@@ -20,31 +20,31 @@ module.exports =
 			compiled: "main.js"
 			minified: "main.min.js"
 			source: "main.coffee"
-		lib: 
+		lib:
 			compiled: "lib.min.js"
 		project: pkg.name
 	paths:
-		build: "./public"
+		build: "./client/public"
 		css:
-			dest: "./public/styles"
-			entry: "./src/stylus/"
+			dest: "./client/public/styles"
+			entry: "./client/src/stylus/"
 		fonts:
-			dest: "./public/styles/fonts"
-			entry: "./src/styles/fonts"
+			dest: "./client/public/styles/fonts"
+			entry: "./client/src/styles/fonts"
 		html:
-			dest: "./public"
-			entry: "./src/jade/"
+			dest: "./client/public"
+			entry: "./client/src/jade/"
 		images:
-			dest: "./public/images"
-			entry: "./src/images/"
+			dest: "./client/public/images"
+			entry: "./client/src/images/"
 		js:
-			dest: "./public/scripts"
-			entry: "./src/coffeescript/"
+			dest: "./client/public/scripts"
+			entry: "./client/src/coffeescript/"
 		lib:
-			dest: "./public/scripts/lib"
-			entry: "./src/bower_components/"
-		project: "./"
-		source: "./src"
+			dest: "./client/public/scripts/lib"
+			entry: "./client/src/bower_components/"
+		project: "./client/"
+		source: "./client/src"
 	port: 8080
 	url: pkg.homepage
 	version: pkg.version

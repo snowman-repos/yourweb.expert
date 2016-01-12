@@ -11,10 +11,10 @@ exports.index = (req, res) ->
 		if !error and response.statusCode is 200
 			allRates = JSON.parse body
 			rates =
-				USD: Math.ceil allRates.rates.USD
-				CNY: Math.ceil allRates.rates.CNY
-				EUR: Math.ceil allRates.rates.EUR
-				GBP: Math.ceil allRates.rates.GBP
-				JPY: Math.ceil allRates.rates.JPY
+				USD: allRates.rates.USD
+				CNY: allRates.rates.CNY
+				EUR: allRates.rates.EUR
+				GBP: allRates.rates.GBP
+				JPY: allRates.rates.JPY
 			res.jsonp rates
 		else console.log error

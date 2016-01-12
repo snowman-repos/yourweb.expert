@@ -4,10 +4,10 @@ module.exports = (gulp, $, config) ->
 
 	gulp.task "serve", ->
 
-		$.util.log "**********************************"
-		$.util.log "Don't forget to run MongoDB first!"
-		$.util.log "mongod"
-		$.util.log "**********************************"
+		$.util.log $.util.colors.green "**********************************"
+		$.util.log $.util.colors.green "Don't forget to run MongoDB first!"
+		$.util.log $.util.colors.green "mongod"
+		$.util.log $.util.colors.green "**********************************"
 
 		$.nodemon
 			env:

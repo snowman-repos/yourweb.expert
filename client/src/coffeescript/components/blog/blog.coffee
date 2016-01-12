@@ -1,3 +1,5 @@
+api = require "../api/api.coffee"
+
 class Blog
 
 	constructor: ->
@@ -15,7 +17,7 @@ class Blog
 
 			.then (data) =>
 
-				articles = data.response.posts
+				articles = data
 				@populateList articles
 				@el.component.classList.add "is-loaded"
 
@@ -43,7 +45,9 @@ class Blog
 
 	getArticles: ->
 
-		fetch window.config.blogURL
+		url = api.getURL() + "/blog/"
+
+		fetch url
 
 	getListItem: (article) ->
 
@@ -52,7 +56,7 @@ class Blog
 
 		link = document.createElement "a"
 		link.classList.add "c-blog__list__item__link"
-		link.href = article.link
+		link.href = article.post_url
 		link.title = "Read more"
 
 		heading = document.createElement "h2"
@@ -108,7 +112,7 @@ class Blog
 
 	populateList: (articles) ->
 
-		articles = articles.slice 0, 3
+		articles = articles.slice 0, 5
 
 		@el.list.innerHTML = ""
 

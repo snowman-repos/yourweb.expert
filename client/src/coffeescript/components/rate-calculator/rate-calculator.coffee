@@ -1,3 +1,5 @@
+api = require "../api/api.coffee"
+
 class RateCalculator
 
 	constructor: (el) ->
@@ -73,21 +75,21 @@ class RateCalculator
 
 	getRates: ->
 
-		fetch window.config.exchangeRatesURL
+		url = api.getURL() + "/currency/"
+
+		fetch url
 		.then (response) ->
 
 			response.json()
 
 		.then (data) =>
 
-			rates = data.rates
-
 			@config.rates =
 				usd: @config.baseRate
-				gbp: Math.ceil rates.GBP * @config.baseRate
-				eur: Math.ceil rates.EUR * @config.baseRate
-				cny: Math.ceil rates.CNY * @config.baseRate
-				jpy: Math.ceil rates.JPY * @config.baseRate
+				gbp: Math.ceil data.GBP * @config.baseRate
+				eur: Math.ceil data.EUR * @config.baseRate
+				cny: Math.ceil data.CNY * @config.baseRate
+				jpy: Math.ceil data.JPY * @config.baseRate
 
 			@calculateRates @config.currency
 

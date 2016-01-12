@@ -1,3 +1,5 @@
+api = require "../api/api.coffee"
+
 class LocalConditions
 
 	constructor: ->
@@ -19,7 +21,9 @@ class LocalConditions
 
 	getWeather: ->
 
-		fetch window.config.weatherURL
+		url = api.getURL() + "/weather/"
+
+		fetch url
 		.then (response) ->
 
 			response.json()
@@ -27,8 +31,8 @@ class LocalConditions
 		.then (data) =>
 
 			weather =
-				condition: data.data.current_condition[0].weatherCode
-				temperature: data.data.current_condition[0].temp_C
+				condition: data.condition
+				temperature: data.temperature
 
 			if @el.temperature then @el.temperature.innerText = weather.temperature
 

@@ -10,6 +10,10 @@ module.exports = (gulp, $, config) ->
 
 	gulp.task "dev", ["build"], ->
 
+		$.util.log $.util.colors.green "*******************************"
+		$.util.log $.util.colors.green "Don't forget to run the server!"
+		$.util.log $.util.colors.green "*******************************"
+
 		app = express()
 		lr = tinylr()
 		app.use require("connect-livereload")()
@@ -40,7 +44,6 @@ module.exports = (gulp, $, config) ->
 			config.paths.client.html.dest + "/*.html"
 			config.paths.client.images.dest + "/**/*.{jpg,png,gif,svg,webp,xml}"
 			config.paths.client.js.dest + "/**/*.js"
-			config.paths.client.lib.dest + "/*.{js,css}"
 		], notifyLivereload
 
 		$.watch [config.paths.client.js.entry + "**/*.coffee", config.paths.client.js.entry + "*.coffee"], ->
@@ -87,9 +90,6 @@ module.exports = (gulp, $, config) ->
 
 		$.watch config.paths.client.images.entry + "**/*.{jpg,png,gif,svg,webp,xml}", ->
 			gulp.start "images"
-
-		$.watch config.paths.client.lib.entry + "**/*.{js,css}", ->
-			gulp.start "libs"
 
 		$.watch config.paths.client.source + "*.{txt,json}", ->
 			gulp.start "copy-files"

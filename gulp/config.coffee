@@ -20,8 +20,6 @@ module.exports =
 			compiled: "main.js"
 			minified: "main.min.js"
 			source: "main.coffee"
-		lib:
-			compiled: "lib.min.js"
 		project: pkg.name
 	paths:
 		build: "./client/public"
@@ -40,9 +38,6 @@ module.exports =
 		js:
 			dest: "./client/public/scripts"
 			entry: "./client/src/coffeescript/"
-		lib:
-			dest: "./client/public/scripts/lib"
-			entry: "./client/src/bower_components/"
 		project: "./client/"
 		source: "./client/src"
 	port: 8080

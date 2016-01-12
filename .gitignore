@@ -1,5 +1,6 @@
-/public
-/src/lib
+/client/public
+/client/src/lib
+/server/config/local.env.coffee
 .DS_Store
 node_modules
 npm-debug.log

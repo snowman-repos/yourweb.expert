@@ -22,24 +22,27 @@ module.exports =
 			source: "main.coffee"
 		project: pkg.name
 	paths:
-		build: "./client/public"
-		css:
-			dest: "./client/public/styles"
-			entry: "./client/src/stylus/"
-		fonts:
-			dest: "./client/public/styles/fonts"
-			entry: "./client/src/styles/fonts"
-		html:
-			dest: "./client/public"
-			entry: "./client/src/jade/"
-		images:
-			dest: "./client/public/images"
-			entry: "./client/src/images/"
-		js:
-			dest: "./client/public/scripts"
-			entry: "./client/src/coffeescript/"
-		project: "./client/"
-		source: "./client/src"
+		client:
+			build: "./client/public"
+			css:
+				dest: "./client/public/styles"
+				entry: "./client/src/stylus/"
+			fonts:
+				dest: "./client/public/styles/fonts"
+				entry: "./client/src/styles/fonts"
+			html:
+				dest: "./client/public"
+				entry: "./client/src/jade/"
+			images:
+				dest: "./client/public/images"
+				entry: "./client/src/images/"
+			js:
+				dest: "./client/public/scripts"
+				entry: "./client/src/coffeescript/"
+			project: "./client/"
+			source: "./client/src"
+		server:
+			entry: "./server/app.coffee"
 	port: 8080
 	url: pkg.homepage
 	version: pkg.version

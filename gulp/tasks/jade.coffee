@@ -6,7 +6,7 @@ module.exports = (gulp, $, config) ->
 
 	gulp.task "jade", ->
 
-		gulp.src config.paths.html.entry + "*.jade"
+		gulp.src config.paths.client.html.entry + "*.jade"
 		.pipe $.plumber()
 		.pipe $.jade
 			pretty: true
@@ -18,4 +18,4 @@ module.exports = (gulp, $, config) ->
 			notifier.notify
 				message: "Error: " + err.message
 			$.util.log $.util.colors.red err.message
-		.pipe gulp.dest config.paths.html.dest
+		.pipe gulp.dest config.paths.client.html.dest

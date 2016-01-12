@@ -20,12 +20,13 @@ npm install -g gulp
 ## Development instructions
 
 * gulp                  (development build)
-* gulp reset            (rm /public)
-* gulp prod             (production build)
-* gulp dev              (build and run dev server at localhost:8080)
-* gulp test             (run unit tests)
 * gulp accessibility    (check against WCAG2 guidelines)
+* gulp dev              (build and run dev server at localhost:8080)
 * gulp pagespeed        (test against Google pagespeed)
+* gulp prod             (production build)
+* gulp reset            (rm /public)
+* gulp serve			(run the server for the API)
+* gulp test             (run unit tests)
 
 ## TODO
 

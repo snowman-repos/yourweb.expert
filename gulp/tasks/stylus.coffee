@@ -5,7 +5,7 @@ module.exports = (gulp, $, config) ->
 
 	gulp.task "stylus", ->
 
-		gulp.src config.paths.css.entry + config.names.css.source
+		gulp.src config.paths.client.css.entry + config.names.css.source
 		.pipe $.plumber()
 		.pipe $.if config.env is "dev", $.sourcemaps.init()
 		.pipe $.stylus()
@@ -19,11 +19,11 @@ module.exports = (gulp, $, config) ->
 		.pipe $.size
 			showFiles: true
 		.pipe $.if config.env is "dev", $.sourcemaps.write "./"
-		.pipe gulp.dest config.paths.css.dest
+		.pipe gulp.dest config.paths.client.css.dest
 
-		gulp.src config.paths.css.entry + "**/*.styl"
+		gulp.src config.paths.client.css.entry + "**/*.styl"
 		.pipe $.plumber()
 		.pipe $.dss
 			output: "index.html"
-			templatePath: config.paths.css.entry + "styleguide"
-		.pipe gulp.dest config.paths.css.dest
+			templatePath: config.paths.client.css.entry + "styleguide"
+		.pipe gulp.dest config.paths.client.css.dest

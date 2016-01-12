@@ -13,7 +13,7 @@ module.exports = (gulp, $, config) ->
 		app = express()
 		lr = tinylr()
 		app.use require("connect-livereload")()
-		app.use express.static config.paths.build
+		app.use express.static config.paths.client.build
 		app.listen config.port
 		lr.listen config.livereloadPort
 
@@ -26,7 +26,7 @@ module.exports = (gulp, $, config) ->
 		# Update the livereload server
 		notifyLivereload = (event) ->
 
-			fileName = "/" + path.relative config.paths.build, event.path
+			fileName = "/" + path.relative config.paths.client.build, event.path
 
 			$.util.log $.util.colors.yellow fileName + " updated"
 
@@ -35,24 +35,24 @@ module.exports = (gulp, $, config) ->
 					files: [fileName]
 
 		gulp.watch [
-			config.paths.css.dest + "/**/*.css"
-			config.paths.fonts.dest + "/**/*.{woff,ttf,otf,svg}"
-			config.paths.html.dest + "/*.html"
-			config.paths.images.dest + "/**/*.{jpg,png,gif,svg,webp,xml}"
-			config.paths.js.dest + "/**/*.js"
-			config.paths.lib.dest + "/*.{js,css}"
+			config.paths.client.css.dest + "/**/*.css"
+			config.paths.client.fonts.dest + "/**/*.{woff,ttf,otf,svg}"
+			config.paths.client.html.dest + "/*.html"
+			config.paths.client.images.dest + "/**/*.{jpg,png,gif,svg,webp,xml}"
+			config.paths.client.js.dest + "/**/*.js"
+			config.paths.client.lib.dest + "/*.{js,css}"
 		], notifyLivereload
 
-		$.watch [config.paths.js.entry + "**/*.coffee", config.paths.js.entry + "*.coffee"], ->
+		$.watch [config.paths.client.js.entry + "**/*.coffee", config.paths.client.js.entry + "*.coffee"], ->
 			gulp.start "coffeescript"
 
-		$.watch config.paths.css.entry + "**/*.styl", ->
+		$.watch config.paths.client.css.entry + "**/*.styl", ->
 			gulp.start "stylus"
 
-		$.watch config.paths.fonts.entry + "**/*.{woff,ttf,otf,svg}", ->
+		$.watch config.paths.client.fonts.entry + "**/*.{woff,ttf,otf,svg}", ->
 			gulp.start "copy-files"
 
-		$.watch config.paths.html.entry + "**/*.jade", (file) ->
+		$.watch config.paths.client.html.entry + "**/*.jade", (file) ->
 			gulp.start "jade"
 
 			basedir = process.cwd()
@@ -83,13 +83,13 @@ module.exports = (gulp, $, config) ->
 					data:
 						description: config.description
 						keywords: config.keywords
-				.pipe gulp.dest config.paths.html.dest
+				.pipe gulp.dest config.paths.client.html.dest
 
-		$.watch config.paths.images.entry + "**/*.{jpg,png,gif,svg,webp,xml}", ->
+		$.watch config.paths.client.images.entry + "**/*.{jpg,png,gif,svg,webp,xml}", ->
 			gulp.start "images"
 
-		$.watch config.paths.lib.entry + "**/*.{js,css}", ->
+		$.watch config.paths.client.lib.entry + "**/*.{js,css}", ->
 			gulp.start "libs"
 
-		$.watch config.paths.source + "*.{txt,json}", ->
+		$.watch config.paths.client.source + "*.{txt,json}", ->
 			gulp.start "copy-files"

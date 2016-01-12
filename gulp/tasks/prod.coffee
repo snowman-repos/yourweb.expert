@@ -9,12 +9,12 @@ module.exports = (gulp, $, config) ->
 	gulp.task "prod-optimise", (callback) ->
 
 		# usemin to go through html and replace references to all assets with minified and hashed versions
-		gulp.src config.paths.html.dest + "/*.html"
+		gulp.src config.paths.client.html.dest + "/*.html"
 		.pipe $.usemin
 			css: [
 				$.minifyCss
 				$.uncss
-					html: config.paths.html.dest + "/*.html"
+					html: config.paths.client.html.dest + "/*.html"
 				$.rev
 				$.size
 					showFiles: true
@@ -26,9 +26,9 @@ module.exports = (gulp, $, config) ->
 					showFiles: true
 			]
 			html:[$.htmlmin collapseWhitespace: true]
-		.pipe gulp.dest config.paths.build
+		.pipe gulp.dest config.paths.client.build
 		.pipe $.rev.manifest()
-		.pipe gulp.dest config.paths.css.dest
+		.pipe gulp.dest config.paths.client.css.dest
 
 	gulp.task "prod-inline-css", (callback) ->
 
@@ -36,9 +36,9 @@ module.exports = (gulp, $, config) ->
 		cssFile = manifest["styles/main.min.css"]
 
 		critical.generate
-			base: config.paths.build + "/"
-			css: [config.paths.build + "/" + cssFile]
-			dest: config.paths.build + "/" + config.names.html.compiled
+			base: config.paths.client.build + "/"
+			css: [config.paths.client.build + "/" + cssFile]
+			dest: config.paths.client.build + "/" + config.names.html.compiled
 			extract: false
 			height: 900
 			inline: true

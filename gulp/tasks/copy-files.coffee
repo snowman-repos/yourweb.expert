@@ -15,3 +15,6 @@ module.exports = (gulp, $, config) ->
 
 		gulp.src config.paths.client.source + "/*.xml"
 		.pipe gulp.dest config.paths.client.build
+
+		gulp.src config.paths.client.source + "/*.pdf"
+		.pipe gulp.dest config.paths.client.build

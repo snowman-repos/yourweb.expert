@@ -1,0 +1,64 @@
+.o-article
+	background					$light-grey-2
+	color						$dark-blue
+	padding-bottom 				$base-spacing-unit
+
+	&__header
+		background-image		url(../images/twitter-bg.png)
+		background-position 	top center
+		background-repeat 		no-repeat
+		background-size 		cover
+		height 					25vh
+		margin-bottom 			$base-spacing-unit
+		text-align 				center
+
+		+bp($screen-sm-min)
+			height 				50vh
+
+		&__content
+			vertical-centre()
+			color				$white
+			font-size 			3rem
+
+			&__buttons
+				font-size 		0.75rem
+
+			.o-button
+				color			$white
+				margin			1rem 0.5rem
+
+				+ActiveFocusHover()
+					background 	$dark-blue
+					border 		2px solid $dark-blue
+					color		$white
+
+	&__content
+		margin					0 auto
+		width					90%
+
+		+bp($screen-sm-min)
+			width				70%
+
+		li
+		p
+			line-height			1.6
+
+	&__subheader
+		font-weight 			600
+
+	.o-inline-link
+		relative()
+		color						$blue--cerulean
+		font-weight 				600
+		perspective					600px
+		perspective-origin			50% 100%
+		transition					all 0.2s ease-in-out
+
+		&:before
+			background-color		$blue--cerulean
+
+		&:after
+			border-bottom			1px solid $blue--cerulean
+
+		+ActiveFocusHover()
+			color					$white

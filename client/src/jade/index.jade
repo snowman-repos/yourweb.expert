@@ -7,64 +7,22 @@ block styles
 
 block content
 
-	include components/navigation
-
-	section.o-section.o-section--dark-blue.js-scroll-point.js-full-height-section(data-nav-title="About me", id="introduction")
-
-		.o-section__content__container
-
-			include components/introduction
-
-		+section-end
-
-	section.o-section.o-section--padding-top.o-section--sky-blue.js-scroll-point.js-full-height-section(data-nav-title="Find out what I do", data-when-in-view="check-checkmarks", id="services")
-
-		.o-section__content__container
-
-			include components/services
-
-		+section-end
-
-	section.o-section.o-section--padding-top.o-section--blue.js-scroll-point.js-full-height-section(data-nav-title="See who I've worked for", data-when-in-view="show-logos", id="clients")
-
-		.o-section__content__container
-
-			include components/clients
-
-		+section-end
-
-	section.o-section.o-section--padding-top.o-section--cerulean-blue.js-scroll-point.js-full-height-section(data-nav-title="How much I charge", id="cost")
-
-		.o-section__content__container
-
-			include components/cost
-
-		+section-end
-
-	section.o-section.o-section--padding-top.o-section--navy-blue.js-scroll-point.js-full-height-section(data-nav-title="Get in touch with me", data-when-in-view="zoom-in-map", id="contact")
-
-		.o-section__content__container
-
-			include components/contact
-
-		+section-end
-
-	section.o-section.o-section--padding-top.o-section--dark-blue.c-blog__section.js-scroll-point.js-blog(data-nav-title="Read my thoughts", data-wait-for-load="true", id="blog")
-
-		.o-section__content__container
-
-			include components/blog
-
-		+section-end
-
-	section.o-section.o-section--padding-top.o-section--white.js-scroll-point(data-nav-title="Subscribe to the FullWeb newsletter", id="newsletter")
-
-		.o-section__content__container
-
-			include components/newsletter
-
-	include components/login
+	.o-page-transition
 	
-	.js-my-app
+		.o-page-transition__page-container.is-shown(data-page="home")
+		
+			include components/home-page
+			
+		.o-page-transition__page-container(data-page="about")
+		
+			include components/about-page
+			
+		.o-page-transition__page-container(data-page="contract")
+		
+			include components/contract-page
+			
+		.o-page-transition__overlay(data-opening="M 0,0 c 0,0 63.5,-16.5 80,0 16.5,16.5 0,60 0,60 L 0,60 Z")
+			svg.o-page-transition__overlay__svg(height="100%", preserveaspectratio="none", viewbox="0 0 80 60", width="100%", xmlns="http://www.w3.org/2000/svg")
+				path.o-page-transition__overlay__svg__path(d="M 0,0 c 0,0 -16.5,43.5 0,60 16.5,16.5 80,0 80,0 L 0,60 Z")
 
 block scripts

@@ -6,7 +6,7 @@ mixin checkmark
 			g
 				circle.o-icon--checkmark__circle(fill="none", stroke-width="12", stroke-miterlimit="10", cx="49.2", cy="49.2", r="49.2")
 
-mixin client (client)
+mixin client(client)
 
 	li.c-clients__list__item
 		+client-logo(client.toLowerCase().replace(" ", "-"))
@@ -39,3 +39,11 @@ mixin section-end(colour)
 	svg.o-section__end(height="100px", id="Layer_1", preserveAspectRatio="none", role="separator", viewBox="0 0 612 100", version="1.1", width="100%", xmlns="http://www.w3.org/2000/svg", xmlns:xlink="http://www.w3.org/1999/xlink", xml:space="preserve")
 		g
 			path(d="M612,0H0.912C306.459,100,489.777,100,612,0z")
+			
+mixin service-list-item(config)
+
+	li.c-services__list__item
+		h3.c-services__list__item__header
+			+checkmark
+			| #{config.header}
+		p.c-services__list__item__content!=config.content

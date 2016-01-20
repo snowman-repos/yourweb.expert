@@ -22,19 +22,36 @@ $module-colour = $blue--sky
 		color						$blue--medium
 
 	&__list
-		col(8)
+		row()
 		unstyled-list()
-		offset(4)
 		color						$blue--medium
 		font-size					1rem
+		justify-content 			center
 		text-align					left
 
 		&__item
+			col(12)
 			align-items				center
-			display					flex
-			justify-content			flex-start
-			margin					0.5rem 0
-			
+			padding 				0.5 * $base-spacing-unit
+
+			+bp($screen-sm-min)
+				col(6)
+
+			&__header
+				row()
+				align-items			center
+				font-size			0.75rem
+				font-weight 		600
+				justify-content 	center
+				text-transform 		uppercase
+
+				.o-icon
+					font-size 		1.25rem
+
+			&__content
+				font-weight 		300
+				line-height 		1.5
+
 	.o-icon--checkmark
 		margin-right				0.5rem
 		opacity						0.75

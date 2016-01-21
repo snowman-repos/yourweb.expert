@@ -10,6 +10,7 @@
 		background-size 		cover
 		height 					25vh
 		margin-bottom 			$base-spacing-unit
+		padding-top 			2rem
 		text-align 				center
 
 		+bp($screen-sm-min)
@@ -62,3 +63,28 @@
 
 		+ActiveFocusHover()
 			color					$white
+
+	&__image
+		border 						0.5rem solid $white
+		border-radius 				0.25rem
+		box-shadow 					0 0 2px rgba($dark-grey-2, 0.25)
+		display 					inline-block
+		height 						auto
+		margin-bottom 				$base-spacing-unit
+		margin-top 					$base-spacing-unit
+		width 						65%
+
+		&--centred
+			display 				block
+			margin					$base-spacing-unit auto
+
+		&--left
+			fl()
+			margin-right 			$base-spacing-unit
+
+		&--right
+			fr()
+			margin-left 			$base-spacing-unit
+
+		&--small
+			width					40%

@@ -1,3 +1,4 @@
+Page = require "page"
 svgLoader = require "../svg-loader/svg-loader.coffee"
 
 class PageTransition
@@ -19,6 +20,7 @@ class PageTransition
 		@pages = @indexPages()
 
 		@addEventListeners()
+		@setupRouting()
 
 	addEventListeners: ->
 
@@ -55,6 +57,17 @@ class PageTransition
 
 		pages
 
+	setupRouting: ->
+
+		Page "/", ->
+			console.info "Home page"
+
+		Page "/about/me", ->
+			console.info "About page"
+
+		Page "/contract", ->
+			console.info "Contract"
+
 	showOverlay: ->
 
 		@el.wrapper.classList.add "is-loading"
@@ -74,11 +87,17 @@ class PageTransition
 			@hidePage @currentPage
 			@showPage targetPage
 
+			switch targetPage
+				when "home" then Page "/"
+				when "about" then Page "/about/me"
+				when "contract" then Page "/contract"
+
 			@hideOverlay()
+			@currentPage = targetPage
 
 			window.scrollTo 0,0
 
-		, 2000
+		, 1000
 
 
 module.exports = do ->

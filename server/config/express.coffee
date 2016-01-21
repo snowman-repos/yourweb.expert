@@ -24,6 +24,7 @@ module.exports = (app) ->
 	app.use methodOverride()
 	app.use cookieParser()
 	app.use passport.initialize()
+	app.use express.static __dirname + "/../client/public"
 
 	# Persist sessions with mongoStore
 	app.use session

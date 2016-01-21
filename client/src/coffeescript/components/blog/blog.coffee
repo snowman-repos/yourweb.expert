@@ -7,6 +7,7 @@ class Blog
 		@el =
 			component: document.querySelector ".js-blog"
 			list: document.querySelector ".js-blog-list"
+			navigation: document.querySelector ".js-navigation-menu"
 
 		if @el.component and @el.list
 
@@ -29,8 +30,9 @@ class Blog
 				console.error reason
 				@el.component.parentNode.removeChild @el.component
 
-				menuItem = @getMenuItem()
-				if menuItem then menuItem.parentNode.removeChild menuItem
+				if @el.navigation
+					menuItem = @getMenuItem()
+					if menuItem then menuItem.parentNode.removeChild menuItem
 
 				# trigger resize to update the navigation scroll spy functionality
 				window.dispatchEvent new Event "resize"
@@ -76,8 +78,7 @@ class Blog
 
 	getMenuItem: ->
 
-		navigation = document.querySelector ".js-navigation-menu"
-		link = navigation.querySelector "[href='#" + @el.component.id + "']"
+		link = @el.navigation.querySelector "[href='#" + @el.component.id + "']"
 		menuItem = link.parentNode
 
 	getMonth: (month) ->

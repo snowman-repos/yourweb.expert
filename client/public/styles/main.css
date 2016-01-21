@@ -1,4 +1,4 @@
-/* your-web-expert : 2.0.0 : Wed Jan 20 2016 23:50:49 GMT+0800 (CST) */.u-fade-enter {
+/* your-web-expert : 2.0.0 : Fri Jan 22 2016 00:45:11 GMT+0800 (CST) */.u-fade-enter {
   opacity: 0.01;
   transition: opacity 0.5s ease-in;
 }
@@ -659,6 +659,7 @@ h6 {
   background-size: cover;
   height: 25vh;
   margin-bottom: 1.5rem;
+  padding-top: 2rem;
   text-align: center;
 }
 @media (min-width: 54.857142857142854em) {
@@ -726,6 +727,31 @@ h6 {
 .o-article .o-inline-link:focus,
 .o-article .o-inline-link:hover {
   color: #fff;
+}
+.o-article__image {
+  border: 0.5rem solid #fff;
+  border-radius: 0.25rem;
+  box-shadow: 0 0 2px rgba(51,51,51,0.25);
+  display: inline-block;
+  height: auto;
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
+  width: 65%;
+}
+.o-article__image--centred {
+  display: block;
+  margin: 1.5rem auto;
+}
+.o-article__image--left {
+  float: left;
+  margin-right: 1.5rem;
+}
+.o-article__image--right {
+  float: right;
+  margin-left: 1.5rem;
+}
+.o-article__image--small {
+  width: 40%;
 }
 .o-button {
   position: relative;
@@ -2267,7 +2293,12 @@ svg {
   color: #95a5a6;
 }
 .c-navbar {
+  position: fixed;
   background: #243342;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 2;
 }
 .c-navbar__link {
   display: -webkit-flex;

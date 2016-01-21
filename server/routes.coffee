@@ -1,5 +1,8 @@
 "use strict"
 
+express = require
+path = require "path"
+
 module.exports = (app) ->
 
 	apiPath = "/api"
@@ -11,11 +14,18 @@ module.exports = (app) ->
 		res.header "Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS"
 		next()
 
-	app.use apiPath + version + "/currency", require ("./api/currency")
-	app.use apiPath + version + "/blog", require ("./api/blog")
-	app.use apiPath + version + "/weather", require ("./api/weather")
+	app.use apiPath + version + "/currency", require "./api/currency"
+	app.use apiPath + version + "/blog", require "./api/blog"
+	app.use apiPath + version + "/weather", require "./api/weather"
 
-	app.use "/auth", require ("./auth")
+	app.use "/auth", require "./auth"
+
+	app.use "/", (req, res) ->
+		res.sendFile path.join __dirname + "/../client/public/index.html"
+
+	# app.use "/images", express.static path.join __dirname + "/../client/public/images"
+	# app.use "/scripts", express.static path.join __dirname + "/../client/public/scripts"
+	# app.use "/styles", express.static path.join __dirname + "/../client/public/styles"
 
 	# All undefined asset or API routes should return a 404
 

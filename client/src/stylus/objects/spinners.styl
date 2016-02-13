@@ -1,8 +1,22 @@
+// @name Spinners
+// @description Animation to display while something is being loaded. Note the container element must be position: relative;.
+// @state .o-spinner--white - white spinner
+// @state .o-spinner--navy - navy blue spinner
+// @markup
+// <div style="background:#004056;height:15rem;position:relative;">
+//   <div class="o-spinner o-spinner--white"></div>
+// </div>
+// <div style="background:#ffffff;height:15rem;position:relative;">
+//   <div class="o-spinner o-spinner--navy"></div>
+// </div>
+
 .o-spinner
-	relative()
+	absolute()
 	animation				rotatePlane 1.2s infinite ease-in-out
 	height					4rem
-	margin					100px auto
+	left					50%
+	margin					-2rem 0 0 -2rem
+	top						50%
 	transform-origin		50% 50%
 	width					4rem
 
@@ -13,9 +27,9 @@
 		background-color	$blue--navy
 
 @keyframes rotatePlane
-	0% 
+	0%
 		transform			perspective(8rem) rotateX(0deg) rotateY(0deg)
-	50% 
+	50%
 		transform			perspective(8rem) rotateX(-180.1deg) rotateY(0deg)
-	100% 
+	100%
 		transform			perspective(8rem) rotateX(-180deg) rotateY(-179.9deg)

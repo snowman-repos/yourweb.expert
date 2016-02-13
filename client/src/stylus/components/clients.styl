@@ -7,18 +7,10 @@ $module-colour = $blue
 		color						$white
 
 	&__list
-		unstyled-list()
-		width						100%
 
 		&__item
-			relative()
 			border-bottom			1px dotted $blue--cerulean
 			border-right			1px dotted $blue--cerulean
-			display					inline-block
-			height					8rem
-			margin-left				-5px
-			margin-top				-4px
-			width					50%
 
 			&:nth-of-type(n+5)
 				border-bottom		none
@@ -27,7 +19,6 @@ $module-colour = $blue
 				border-right		none
 
 			+bp($screen-sm-min)
-				width				33.3%
 
 				&:nth-of-type(n+5)
 					border-bottom	1px dotted $blue--cerulean
@@ -42,18 +33,7 @@ $module-colour = $blue
 					border-right	none
 
 			&__logo
-				vertical-centre()
-				display				block
 				fill				$white
-				height				auto
-				margin				0 auto
-				max-width			80%
-				opacity				0.75
-				transition			$slow-transition
-				width				0
 
 				&.is-shown
 					width			8rem
-
-			&__text
-				display 			none

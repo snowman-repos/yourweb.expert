@@ -6,11 +6,7 @@
 		text-align					left
 
 	.o-inline-link
-		relative()
 		color						$silver
-		perspective					600px
-		perspective-origin			50% 100%
-		transition					all 0.2s ease-in-out
 
 		&:before
 			background-color		$yellow
@@ -23,8 +19,6 @@
 
 	&__image
 		relative()
-		border-radius				50%
-		filter						contrast(200%) saturate(30%)
 		height						7rem
 		margin-right				0.5rem
 		margin-top					1.25rem
@@ -72,53 +66,16 @@
 		&__item
 
 			&__link
-				relative()
 				background			rgba($blue--medium, 0.4)
-				border-radius		50%
-				display				block
-				line-height			50%
-				margin				0.5em
-				padding				0.5em
-				text-decoration 	none
-				transition			0.2s all ease-in-out
-
-				.o-icon
-					fill			$silver
-					margin-top		3px
 
 				&:after
-					border-radius	50%
 					box-shadow		0 0 0 2px $yellow
-					content			""
-					height			100%
-					left			-7px
-					opacity			0
-					padding			7px
-					pointer-events	none
-					position		absolute
-					top				-7px
-					transform		scale(.8)
-					transition		transform 0.2s, opacity 0.2s
-					width			100%
 
 				+ActiveFocusHover()
 					background		$yellow
-					outline			none
 
 					.o-icon
 						fill		$blue--dark
-
-					&:after
-						opacity		1
-						transform	scale(1)
-
-			&__text
-				absolute()
-				height				1px
-				left				-999px
-				overflow			hidden
-				top					-999px
-				width				1px
 
 	&__header
 		color						$yellow

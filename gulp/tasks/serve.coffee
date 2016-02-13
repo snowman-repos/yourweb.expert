@@ -6,7 +6,7 @@ module.exports = (gulp, $, config) ->
 
 		$.util.log $.util.colors.green "**********************************"
 		$.util.log $.util.colors.green "Don't forget to run MongoDB first!"
-		$.util.log $.util.colors.green "mongod"
+		$.util.log $.util.colors.green "> mongod"
 		$.util.log $.util.colors.green "**********************************"
 
 		$.nodemon

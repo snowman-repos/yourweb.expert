@@ -6,6 +6,7 @@ class PageTransition
 	constructor: (el) ->
 
 		@el =
+			initialPageOverlay: el.querySelector ".o-page-transition__initial-overlay"
 			pages: el.querySelectorAll ".o-page-transition__page-container"
 			overlay: el.querySelector ".o-page-transition__overlay"
 			triggers: el.querySelectorAll ".js-trigger-page-transition"
@@ -57,16 +58,43 @@ class PageTransition
 
 		pages
 
+	noTransition: (targetPage) ->
+
+		if @currentPage isnt targetPage
+
+			@hidePage @currentPage
+			@showPage targetPage
+
+			@currentPage = targetPage
+
+	removeInitialPageOverlay: ->
+
+		@el.initialPageOverlay.classList.add "is-hidden"
+
+		@hideOverlay()
+
+		setTimeout =>
+
+			@el.initialPageOverlay.parentNode.removeChild @el.initialPageOverlay
+
+		, 1500
+
 	setupRouting: ->
 
-		Page "/", ->
+		Page "/", =>
 			console.info "Home page"
+			@noTransition "home"
 
-		Page "/about/me", ->
+		Page "/about/me", =>
 			console.info "About page"
+			@noTransition "about"
 
-		Page "/contract", ->
-			console.info "Contract"
+		Page "/contract", =>
+			console.info "Contract page"
+			@noTransition "contract"
+
+		Page()
+		@removeInitialPageOverlay()
 
 	showOverlay: ->
 
@@ -80,24 +108,26 @@ class PageTransition
 
 	transition: (targetPage) ->
 
-		@showOverlay()
+		if @currentPage isnt targetPage
 
-		setTimeout =>
+			@showOverlay()
 
-			@hidePage @currentPage
-			@showPage targetPage
+			setTimeout =>
 
-			switch targetPage
-				when "home" then Page "/"
-				when "about" then Page "/about/me"
-				when "contract" then Page "/contract"
+				@hidePage @currentPage
+				@showPage targetPage
 
-			@hideOverlay()
-			@currentPage = targetPage
+				switch targetPage
+					when "home" then Page "/"
+					when "about" then Page "/about/me"
+					when "contract" then Page "/contract"
 
-			window.scrollTo 0,0
+				@hideOverlay()
+				@currentPage = targetPage
 
-		, 1000
+				window.scrollTo 0,0
+
+			, 1000
 
 
 module.exports = do ->

@@ -55,18 +55,22 @@ class Blog
 
 		item = document.createElement "li"
 		item.classList.add "c-blog__list__item"
+		item.classList.add "o-blog-post-list__item"
 
 		link = document.createElement "a"
 		link.classList.add "c-blog__list__item__link"
+		link.classList.add "o-blog-post-list__item__link"
 		link.href = article.post_url
 		link.title = "Read more"
 
 		heading = document.createElement "h2"
 		heading.classList.add "c-blog__list__item__heading"
+		heading.classList.add "o-blog-post-list__item__heading"
 		heading.innerText = article.title
 
 		date = document.createElement "div"
 		date.classList.add "c-blog__list__item__date"
+		date.classList.add "o-blog-post-list__item__date"
 		date.innerHTML = @formateDate article.date
 
 		link.appendChild heading

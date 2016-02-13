@@ -17,48 +17,4 @@
 				opacity 					1
 
 	&__list
-		unstyled-list()
 		opacity 							0
-		transition 							0.15s opacity ease-in-out 0.45s
-		width								100%
-
-		&__item
-			margin-bottom 					0.25rem
-			overflow 						hidden
-			text-align 						left
-
-			&:first-of-type
-				border-top-left-radius 		0.25em
-				border-top-right-radius 	0.25em
-
-			&:last-of-type
-				border-bottom-left-radius 	0.25em
-				border-bottom-right-radius 	0.25em
-
-			&__link
-				// relative()
-				row()
-				align-items 				center
-				background 					lighten($blue--dark, 10%)
-				color						$silver
-				padding						0.5 * $base-spacing-unit
-				text-decoration 			none
-				transition 					$fast-transition
-
-				+ActiveFocusHover()
-					background 				darken($blue--dark, 10%)
-					color					$yellow
-
-			&__date
-				col(1)
-				font-size 					0.75rem
-
-			&__heading
-				col(11)
-				font-size 					1.25rem
-				margin-bottom 				0
-				margin-top 					0
-
-			&__excerpt
-				font-size 					0.75rem
-				margin						0

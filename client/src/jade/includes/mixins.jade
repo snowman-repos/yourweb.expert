@@ -8,20 +8,20 @@ mixin checkmark
 
 mixin client(client)
 
-	li.c-clients__list__item
+	li.o-logo-grid__item.c-clients__list__item
 		+client-logo(client.toLowerCase().replace(" ", "-"))
-		span.c-clients__list__item__text= client
+		span.o-logo-grid__item__text.c-clients__list__item__text= client
 
 mixin client-logo(client)
 
-	svg.c-clients__list__item__logo.js-client-logo(viewBox="0 0 32 32")
+	svg.o-logo-grid__item__logo.c-clients__list__item__logo.js-client-logo(viewBox="0 0 32 32")
 		use(xlink:href="#icon--#{client}-logo")
 
 mixin contact-list-item(item)
 
-	li.c-introduction__contact-list__item
-		a.c-introduction__contact-list__item__link(href="#{item.href}", title="#{item.title}")
-			span.c-introduction__contact-list__item__text!= item.text
+	li.o-circular-icon-button.c-introduction__contact-list__item
+		a.o-circular-icon-button__link.c-introduction__contact-list__item__link(href="#{item.href}", title="#{item.title}")
+			span.o-circular-icon-button__text.c-introduction__contact-list__item__text!= item.text
 			+icon(item.icon)
 
 mixin form-check
@@ -36,14 +36,14 @@ mixin icon(name)
 
 mixin section-end(colour)
 
-	svg.o-section__end(height="100px", id="Layer_1", preserveAspectRatio="none", role="separator", viewBox="0 0 612 100", version="1.1", width="100%", xmlns="http://www.w3.org/2000/svg", xmlns:xlink="http://www.w3.org/1999/xlink", xml:space="preserve")
+	svg.o-section__end(preserveAspectRatio="none", role="separator", viewBox="0 0 612 100", version="1.1", width="100%", xmlns="http://www.w3.org/2000/svg", xmlns:xlink="http://www.w3.org/1999/xlink", xml:space="preserve")
 		g
 			path(d="M612,0H0.912C306.459,100,489.777,100,612,0z")
 			
 mixin service-list-item(config)
 
 	li.c-services__list__item
-		h3.c-services__list__item__header
+		h3.o-list-item-header.c-services__list__item__header
 			+checkmark
 			| #{config.header}
 		p.c-services__list__item__content!=config.content

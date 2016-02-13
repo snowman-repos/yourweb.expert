@@ -4,20 +4,23 @@
 	row()
 	content-align(center)
 	background				$light-grey-3
+	color					$dark-grey-1
 	padding					$base-spacing-unit
 
 	&__header
 		color				$dark-grey-2
+		margin-bottom 		1rem
 
-	// &__example
+	&__example
+		relative()
 
 	&__markup
-		background			$dark-blue
-		color				$medium-grey
+		background			$dark-grey-1
+		color				$silver
 		padding				0.5 * $base-spacing-unit
 
 	&__section
-		col(10)	
+		col(10)
 		background			$white
 		border				1px solid $light-grey-1
 		margin-bottom		$base-spacing-unit
@@ -32,3 +35,56 @@
 
 		&__header
 			border-bottom	1px solid $light-grey-1
+			margin-bottom 	1rem
+
+	&__colour-block
+		border 				1px solid $dark-grey-2
+		display				inline-block
+		height 				3rem
+		margin				0.5 * $base-spacing-unit
+		width				3rem
+
+		&--blue
+			background 		$blue
+
+		&--blue--cerulean
+			background 		$blue--cerulean
+
+		&--blue--dark
+			background 		$blue--dark
+
+		&--blue--medium
+			background 		$blue--medium
+
+		&--blue--sky
+			background		$blue--sky
+
+		&--blue--navy
+			background		$blue--navy
+
+		&--silver
+			background 		$silver
+
+		&--yellow
+			background 		$yellow
+
+		&--red
+			background 		$red
+
+		&--white
+			background 		$white
+
+	&__icon-container
+		align-content 		center
+		display 			flex
+		flex-wrap 			wrap
+
+		svg
+			border 			1px solid $light-grey-1
+			height			3rem
+			margin			0.5rem
+			padding			0.5rem
+			width			3rem
+
+	.o-form__input
+		margin-bottom 		$base-spacing-unit

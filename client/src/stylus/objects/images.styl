@@ -3,12 +3,19 @@ svg
 
 // @name Image
 // @description Standard image
-// @state --centred - centres the block-level image
-// @state --full-width - image becomes full width of the parent container
+// @state .o-image--centred - centres the block-level image
+// @state .o-image--left - left-aligns the image
+// @state .o-image--right - right-aligns the image
+// @state .o-image--full-width - image becomes full width of the parent container
+// @state .o-image--avatar - circular image with contrast and saturation filters applied
 // @markup
 // <img class="o-image" src="http://placehold.it/200x200" alt="Alt text"></img>
 // <img class="o-image o-image--centred" src="http://placehold.it/200x200" alt="Alt text"></img>
+// <img class="o-image o-image--left" src="http://placehold.it/200x200" alt="Alt text"></img>
+// <img class="o-image o-image--right" src="http://placehold.it/200x200" alt="Alt text"></img>
 // <img class="o-image o-image--full-width" src="http://placehold.it/200x200" alt="Alt text"></img>
+// <img class="o-image o-image--avatar" src="/images/darryl-snow.jpg"></img>
+
 .o-image
 	max-width 				100%
 	vertical-align			middle
@@ -20,3 +27,19 @@ svg
 	&--full-width
 		height				auto
 		width				100%
+
+	&--left
+		fl()
+		margin-bottom 		$base-spacing-unit
+		margin-right 		$base-spacing-unit
+		margin-top 			$base-spacing-unit
+
+	&--avatar
+		border-radius		50%
+		filter				contrast(200%) saturate(30%)
+
+	&--right
+		fr()
+		margin-bottom 		$base-spacing-unit
+		margin-left 		$base-spacing-unit
+		margin-top 			$base-spacing-unit

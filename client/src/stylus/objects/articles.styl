@@ -1,3 +1,22 @@
+// @name Articles
+// @description A component comprising a header plus text and images
+// @markup
+// <div class="o-article">
+//   <div class="o-article__header">
+//     <h1 class="o-article__header__content">Article Header
+//       <div class="o-article__header__content__buttons">
+//         <a class="o-button" href="">Button</a>
+//       </div>
+//     </h1>
+//   </div>
+//   <div class="o-article__content">
+//     <p>Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's nest nipperkin grog yardarm hempen halter furl. Swab barque interloper chantey doubloon starboard grog black jack gangway rutters.</p>
+//     <p>Jolly boat interloper scallywag piracy pressgang lad jack wherry sloop hogshead. Square-rigged lass knave rum yard squiffy heave to furl swing the lead reef. Bilge reef sails holystone keelhaul lee tender nipper run a shot across the bow marooned port.</p>
+//     <img alt="Article Image" class="o-image o-image--right o-article__image o-article__image--small" src="http://placehold.it/400x400">
+//     <p>Pirate avast belaying pin snow fore jolly boat ballast hearties hands clap of thunder. Salmagundi red ensign heave to cackle fruit fire ship lookout yard reef wench killick. Crimp main sheet sloop wench broadside yard driver mutiny Brethren of the Coast Pieces of Eight.</p>
+//   </div>
+// </div>
+
 .o-article
 	background					$light-grey-2
 	color						$dark-blue
@@ -10,6 +29,7 @@
 		background-size 		cover
 		height 					25vh
 		margin-bottom 			$base-spacing-unit
+		min-height 				15rem
 		padding-top 			2rem
 		text-align 				center
 
@@ -73,18 +93,6 @@
 		margin-bottom 				$base-spacing-unit
 		margin-top 					$base-spacing-unit
 		width 						65%
-
-		&--centred
-			display 				block
-			margin					$base-spacing-unit auto
-
-		&--left
-			fl()
-			margin-right 			$base-spacing-unit
-
-		&--right
-			fr()
-			margin-left 			$base-spacing-unit
 
 		&--small
 			width					40%

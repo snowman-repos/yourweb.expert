@@ -1,19 +1,20 @@
 .c-client-login
 	fixed()
-	right									0.5rem
-	top										0.5rem
-	z-index									4
+
+	&:before
+		fixed()
 
 	&__button
+		fixed()
 		background							transparent
 		border								1px solid rgba($white, 0.5)
-		border-radius						999px
+		// border-radius						999px
 		color								rgba($white, 0.5)
 		font-size							0.5rem
-		height								100%
-		opacity								1
-		transition							opacity 0.1s 0.5s, color 0.15s ease-in-out, background-color 0.15s ease-in-out
-		width								100%
+		// height								100%
+		// opacity								1
+		// transition							opacity 0.1s 0.5s, color 0.15s ease-in-out, background-color 0.15s ease-in-out
+		// width								100%
 
 		+ActiveFocusHover()
 			background						$yellow
@@ -23,22 +24,7 @@
 	&__dialog
 		fixed()
 		background							$yellow
-		border-radius						999px
 		color								$blue--navy
-		height								35px
-		opacity								0
-		right								0.5rem
-		top									0.5rem
-		transition							opacity 0.1s 0.5s, width 0.5s 0.1s, height 0.5s 0.1s, top 0.5s 0.1s, right 0.5s 0.1s, border-radius 0.5s 0.1s
-		transition-timing-function			cubic-bezier(0.7,0,0.3,1)
-		width								120px
-
-		&__content
-			height							0
-			opacity							0
-			padding							$base-spacing-unit
-			transition						opacity 0.15s
-			visibility						hidden
 
 	&.is-open
 
@@ -46,24 +32,6 @@
 
 			&__button
 				background					$yellow
-				opacity						0
-				transition					opacity 0.1s 0.15s
-
-			&__dialog
-				border-radius				0.25rem
-				height						340px
-				opacity						1
-				right						calc(50% - 170px)
-				top							calc(50% - 170px)
-				transition					opacity 0.5s 0.1s, width 0.5s 0.1s, height 0.5s 0.1s, top 0.5s 0.1s, right 0.5s 0.1s, border-radius 0.5s 0.1s
-				transition-timing-function	cubic-bezier(0.7,0,0.3,1)
-				width						340px
-
-				&__content
-					height					100%
-					opacity					1
-					transition				opacity 0.3s 0.5s, visibility 0s, height 0s 0.3s
-					visibility				visible
 
 	&__form
 		pointer-events						auto

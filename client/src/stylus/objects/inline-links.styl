@@ -1,0 +1,42 @@
+// @name Inline links
+// @description Inline links.
+// @markup
+// Here is an <a class="o-inline-link" href="" title="Hover me">inline link</a> to play with
+
+.o-inline-link
+	relative()
+	color					$blue--cerulean
+	font-weight				500
+	perspective				600px
+	perspective-origin		50% 100%
+	text-decoration			none
+	transition				all 0.2s ease-in-out
+	white-space				nowrap
+
+	&:before,
+	&:after
+		box-sizing					content-box
+		content						""
+		height						100%
+		left						-4px
+		padding						0 4px
+		position					absolute
+		top							0
+		width						100%
+		z-index						-1
+
+	&:before
+		background-color			$blue--cerulean
+		transform					rotateX(90deg)
+		transform-origin			50% 100%
+		transition					transform 0.2s
+		transition-timing-function	cubic-bezier(0.7,0,0.3,1)
+
+	&:after
+		border-bottom				1px solid $blue--cerulean
+
+	+ActiveFocusHover()
+		color						$yellow
+
+		&:before
+			transform				rotateX(0deg)

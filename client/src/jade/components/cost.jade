@@ -20,7 +20,7 @@
 				| &nbsp;
 				span.c-cost__calculator__slider__label__text.js-time-slider-text week
 			
-			input.c-cost__calculator__slider__control.js-time-slider(id="time-slider", max="12", min="1", step="1", type="range", value="1")
+			input.o-slider.c-cost__calculator__slider__control.js-time-slider(id="time-slider", max="12", min="1", step="1", type="range", value="1")
 
 			p.c-cost__calculator__slider__notice.js-slider-notice (my minimum weekly rate is about 
 				span.c-cost__calculator__slider__notice__currency.js-currency-symbol $
@@ -33,7 +33,7 @@
 
 				p.c-cost__calculator__results__heading weekly rate:
 
-				select.c-cost__calculator__results__currency.js-currency
+				select.o-dropdown-list.c-cost__calculator__results__currency.js-currency
 					option(value="usd", selected) $ USD
 					option(value="gbp") £ GBP
 					option(value="eur") € EUR
@@ -52,4 +52,4 @@
 					
 	aside.c-cost__footer
 	
-		a.o-button.c-cost__footer__button.js-trigger-page-transition(data-page="contract", href="/contract", title="") Read my contract
+		a.o-button.o-button--ghost.c-cost__footer__button.js-trigger-page-transition(data-page="contract", href="/contract", title="") Read my contract

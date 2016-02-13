@@ -58,94 +58,6 @@ $module-colour = $blue--cerulean
 				&__value
 					font-size			1.5rem
 
-			&__control
-				background				none
-				-webkit-appearance		none
-				width					100%
-
-				&::-webkit-slider-thumb
-					-webkit-appearance	none
-
-				&:focus
-					outline				none
-
-				&::-ms-track
-					background			transparent
-					border-color		transparent
-					color				transparent
-					cursor				pointer
-					width				100%
-
-				&::-webkit-slider-thumb
-					background			$blue--sky
-					border				none
-					border-radius		50%
-					cursor				pointer
-					height				1rem
-					margin-top			-0.25rem
-					-webkit-appearance	none
-					width				1rem
-
-				&::-moz-range-thumb
-					background			$blue--sky
-					border				none
-					border-radius		50%
-					cursor				pointer
-					height				1rem
-					width				1rem
-
-				&::-ms-thumb
-					background			$blue--sky
-					border				none
-					border-radius		50%
-					cursor				pointer
-					height				1rem
-					width				1rem
-
-				&::-webkit-slider-runnable-track
-					background			$blue--navy
-					border-radius		999px
-					cursor				pointer
-					height				0.5rem
-					width				100%
-
-				&:focus::-webkit-slider-runnable-track
-					background			lighten($blue--navy, 5%)
-
-				&::-moz-range-track
-					background			$blue--navy
-					border-radius		999px
-					cursor				pointer
-					height				0.5rem
-					width				100%
-
-				&::-ms-track
-					background			$blue--navy
-					border-radius		999px
-					cursor				pointer
-					height				0.5rem
-					width				100%
-
-				&::-ms-fill-lower
-					background			$blue--navy
-					border-radius		999px
-					cursor				pointer
-					height				0.5rem
-					width				100%
-
-				&:focus::-ms-fill-lower
-					background			$blue--navy
-
-				&::-ms-fill-upper
-					background			$blue--navy
-					border-radius		999px
-					cursor				pointer
-					height				0.5rem
-					width				100%
-
-				&:focus::-ms-fill-upper
-					background			$blue--navy
-
 			&__notice
 				color					$blue--dark
 				font-size				0.75rem
@@ -178,14 +90,8 @@ $module-colour = $blue--cerulean
 				background				rgba($blue--sky, 0.1)
 				border					2px solid rgba($blue--navy, 0.5)
 				color					$blue--sky
-				cursor					pointer
-				font-size				0.75rem
-				-moz-appearance			none
-				padding					0.2rem
-				-webkit-appearance		none
 
 				&:focus
-					outline				none
 					background			rgba($blue--sky, 0.2)
 
 			&__value
@@ -211,9 +117,12 @@ $module-colour = $blue--cerulean
 		width							100%
 
 		&__button
+			border-color 				$white
 			color						$white
 			opacity 					0.5
 			transition 					$fast-transition
 
 			+ActiveFocusHover()
+				background				$white
+				color					$module-colour
 				opacity 				1

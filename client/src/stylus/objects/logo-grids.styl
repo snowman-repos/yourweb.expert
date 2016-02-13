@@ -1,0 +1,66 @@
+// @name Logo Grids
+// @description A 3x2 grid for displaying a list of logos
+// @markup
+// <ul class="o-logo-grid">
+// 	 <li class="o-logo-grid__item">
+// 	 	<svg fill="#252525" viewBox="0 0 32 32" class="o-logo-grid__item__logo">
+// 	 		<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--apple-logo"></use>
+// 	 	</svg><span class="o-logo-grid__item__text">Apple</span>
+// 	 </li>
+// 	 <li class="o-logo-grid__item">
+// 	 	<svg fill="#252525" viewBox="0 0 32 32" class="o-logo-grid__item__logo">
+// 	 		<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--diageo-logo"></use>
+// 	 	</svg>
+// 	 	<span class="o-logo-grid__item__text">Diageo</span>
+// 	 </li>
+// 	 <li class="o-logo-grid__item">
+// 	 	<svg fill="#252525" viewBox="0 0 32 32" class="o-logo-grid__item__logo">
+// 	 		<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--lufthansa-logo"></use>
+// 	 	</svg><span class="o-logo-grid__item__text">Lufthansa</span>
+// 	 </li>
+// 	 <li class="o-logo-grid__item">
+// 	 	<svg fill="#252525" viewBox="0 0 32 32" class="o-logo-grid__item__logo">
+// 	 		<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--western-union-logo"></use>
+// 	 	</svg><span class="o-logo-grid__item__text">Western Union</span>
+// 	 </li>
+// 	 <li class="o-logo-grid__item">
+// 	 	<svg fill="#252525" viewBox="0 0 32 32" class="o-logo-grid__item__logo">
+// 	 		<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--village-roadshow-logo"></use>
+// 	 	</svg>
+// 	 	<span class="o-logo-grid__item__text">Village Roadshow</span>
+// 	 </li>
+// 	 <li class="o-logo-grid__item">
+// 	 	<svg fill="#252525" viewBox="0 0 32 32" class="o-logo-grid__item__logo">
+// 	 		<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--lowe-profero-logo"></use>
+// 	 	</svg>
+// 	 	<span class="o-logo-grid__item__text">Lowe Profero</span>
+// 	 </li>
+// </ul>
+
+.o-logo-grid
+	unstyled-list()
+	width						100%
+
+	&__item
+		relative()
+		display					inline-block
+		height					8rem
+		margin-left				-5px
+		margin-top				-4px
+		width					50%
+
+		+bp($screen-sm-min)
+			width				33.3%
+
+		&__logo
+			vertical-centre()
+			display				block
+			height				auto
+			margin				0 auto
+			max-width			80%
+			opacity				0.75
+			transition			$slow-transition
+			width				8rem
+
+		&__text
+			display 			none

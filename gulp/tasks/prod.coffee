@@ -9,7 +9,7 @@ module.exports = (gulp, $, config) ->
 	gulp.task "prod-optimise", (callback) ->
 
 		# usemin to go through html and replace references to all assets with minified and hashed versions
-		gulp.src config.paths.client.html.dest + "/*.html"
+		gulp.src config.paths.client.html.dest + "**/*.html"
 		.pipe $.usemin
 			css: [
 				$.minifyCss
@@ -26,6 +26,20 @@ module.exports = (gulp, $, config) ->
 					showFiles: true
 			]
 			html:[$.htmlmin collapseWhitespace: true]
+			styleguideCSS: [
+				$.minifyCss
+				$.uncss
+					html: config.paths.client.html.dest + "/*.html"
+				$.rev
+				$.size
+					showFiles: true
+			]
+			styleguideJS: [
+				$.uglify()
+				$.rev()
+				$.size
+					showFiles: true
+			]
 		.pipe gulp.dest config.paths.client.build
 		.pipe $.rev.manifest()
 		.pipe gulp.dest config.paths.client.css.dest

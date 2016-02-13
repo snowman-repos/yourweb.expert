@@ -10,9 +10,10 @@ class LocalConditions
 			time: document.querySelector ".js-current-time"
 			weather: document.querySelector ".js-weather"
 
-		@getTime()
-		@runClock()
-		@getWeather()
+		if @el.weather
+			@getTime()
+			@runClock()
+			@getWeather()
 
 	getTime: ->
 

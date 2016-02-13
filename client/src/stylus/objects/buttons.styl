@@ -1,9 +1,15 @@
-// @name Button
-// @description Standard button.
-// @state :hover - highlights when hovered
-// @state :disabled - dims the button when disabled.
+// @name Buttons
+// @description All kinds of buttons found on the site.
+// @state .is-disabled - dims the button when disabled
+// @state .o-button--block - makes the button block-level (full-width)
+// @state .o-button--icon - turns an icon into a button
+// @state .o-button--ghost - borders but no background
 // @markup
-// <button class="o-button">click me</button>
+// <button class="o-button">button</button>
+// <button class="o-button o-button--block">Block button</button>
+// <button class="o-button o-button--icon">&times;</button>
+// <button class="o-button o-button--ghost">Ghost button</button>
+
 .o-button
 	relative()
 	border						2px solid $white
@@ -47,3 +53,76 @@
 
 		+ActiveFocusHover()
 			opacity				1
+
+	&--ghost
+		background 				transparent
+		border-color			$blue--medium
+		color					$blue--medium
+
+		+ActiveFocusHover()
+			background			$blue--medium
+			color				$white
+
+// @name Circular Icon Buttons
+// @description Circular buttons containing only an icon
+// @markup
+// <div class="o-circular-icon-button">
+//   <a class="o-circular-icon-button__link" href="" title="Button action">
+//     <span class="o-circular-icon-button__text">Button action</span>
+//     <svg class="o-icon o-icon--mail" viewBox="0 0 32 32">
+//       <use xlink:href="#icon--mail"></use>
+//     </svg>
+//   </a>
+// </div>
+
+.o-circular-icon-button
+	display 					inline-block
+
+	&__link
+		relative()
+		background				$blue--medium
+		border-radius			50%
+		display					block
+		line-height				50%
+		margin					0.5em
+		padding					0.5em
+		text-decoration 		none
+		transition				0.2s all ease-in-out
+
+		.o-icon
+			fill				$silver
+			margin-top			3px
+
+		&:after
+			border-radius		50%
+			box-shadow			0 0 0 2px $blue
+			content				""
+			height				100%
+			left				-7px
+			opacity				0
+			padding				7px
+			pointer-events		none
+			position			absolute
+			top					-7px
+			transform			scale(.8)
+			transition			transform 0.2s, opacity 0.2s
+			width				100%
+
+		+ActiveFocusHover()
+			background			$blue
+			outline				none
+
+			.o-icon
+				fill			$blue--dark
+
+			&:after
+				opacity			1
+				transform		scale(1)
+
+	&__text
+		absolute()
+		height					1px
+		left					-999px
+		overflow				hidden
+		top						-999px
+		width					1px

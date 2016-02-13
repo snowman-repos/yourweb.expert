@@ -1,3 +1,81 @@
+// @name Sections
+// @description Sections of a page
+// @state .o-section--full-height - Make the section the full height of the viewport
+// @state .o-section--padding-top - A section with top-padding (i.e. one that proceeds other sections)
+// @state .o-section--blue - Blue background
+// @state .o-section--cerulean-blue - Cerulean blue background
+// @state .o-section--dark-blue - Dark blue background
+// @state .o-section--navy-blue - Navy blue background
+// @state .o-section--sky-blue - Sky blue section
+// @state .o-section--white - White section
+// @markup
+// <div style="padding-bottom:100px">
+//
+//   <section class="o-section o-section--white">
+//     <div class="o-section__content">White section</div>
+//     <svg class="o-section__end" preserveAspectRatio="none" role="separator" viewBox="0 0 612 100" version="1.1" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
+//       <g>
+//         <path d="M612,0H0.912C306.459,100,489.777,100,612,0z"></path>
+//       </g>
+//     </svg>
+//   </section>
+//
+//   <section class="o-section o-section--blue o-section--padding-top">
+//     <div class="o-section__content">Blue section with top padding</div>
+//     <svg class="o-section__end" preserveAspectRatio="none" role="separator" viewBox="0 0 612 100" version="1.1" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
+//       <g>
+//         <path d="M612,0H0.912C306.459,100,489.777,100,612,0z"></path>
+//       </g>
+//     </svg>
+//   </section>
+//
+//   <section class="o-section o-section--cerulean-blue o-section--padding-top">
+//     <div class="o-section__content">Cerulean blue section with top padding</div>
+//     <svg class="o-section__end" preserveAspectRatio="none" role="separator" viewBox="0 0 612 100" version="1.1" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
+//       <g>
+//         <path d="M612,0H0.912C306.459,100,489.777,100,612,0z"></path>
+//       </g>
+//     </svg>
+//   </section>
+//
+//   <section class="o-section o-section--dark-blue o-section--padding-top">
+//     <div class="o-section__content">Dark blue section with top padding</div>
+//     <svg class="o-section__end" preserveAspectRatio="none" role="separator" viewBox="0 0 612 100" version="1.1" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
+//       <g>
+//         <path d="M612,0H0.912C306.459,100,489.777,100,612,0z"></path>
+//       </g>
+//     </svg>
+//   </section>
+//
+//   <section class="o-section o-section--navy-blue o-section--padding-top">
+//     <div class="o-section__content">Navy blue section with top padding</div>
+//     <svg class="o-section__end" preserveAspectRatio="none" role="separator" viewBox="0 0 612 100" version="1.1" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
+//       <g>
+//         <path d="M612,0H0.912C306.459,100,489.777,100,612,0z"></path>
+//       </g>
+//     </svg>
+//   </section>
+//
+//   <section class="o-section o-section--sky-blue o-section--padding-top">
+//     <div class="o-section__content">Sky blue section with top padding</div>
+//     <svg class="o-section__end" preserveAspectRatio="none" role="separator" viewBox="0 0 612 100" version="1.1" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
+//       <g>
+//         <path d="M612,0H0.912C306.459,100,489.777,100,612,0z"></path>
+//       </g>
+//     </svg>
+//   </section>
+//
+//   <section class="o-section o-section--blue o-section--padding-top o-section--full-height">
+//     <div class="o-section__content">Full-height blue section with top padding</div>
+//     <svg class="o-section__end" preserveAspectRatio="none" role="separator" viewBox="0 0 612 100" version="1.1" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
+//       <g>
+//         <path d="M612,0H0.912C306.459,100,489.777,100,612,0z"></path>
+//       </g>
+//     </svg>
+//   </section>
+//
+// </div>
+
 .o-section
 	relative()
 
@@ -29,6 +107,8 @@
 	&__end
 		absolute()
 		bottom				-100px
+		fill				transparent
+		height				100px
 		left				0
 		pointer-events		none
 		width				100%

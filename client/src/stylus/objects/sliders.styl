@@ -1,0 +1,92 @@
+// @name Sliders
+// @description A draggable scale input control
+// @markup
+// <input max="12" min="1" step="1" type="range" value="1" class="o-slider">
+
+.o-slider
+	background				none
+	-webkit-appearance		none
+	width					100%
+
+	&::-webkit-slider-thumb
+		-webkit-appearance	none
+
+	&:focus
+		outline				none
+
+	&::-ms-track
+		background			transparent
+		border-color		transparent
+		color				transparent
+		cursor				pointer
+		width				100%
+
+	&::-webkit-slider-thumb
+		background			$blue--sky
+		border				none
+		border-radius		50%
+		cursor				pointer
+		height				1rem
+		margin-top			-0.25rem
+		-webkit-appearance	none
+		width				1rem
+
+	&::-moz-range-thumb
+		background			$blue--sky
+		border				none
+		border-radius		50%
+		cursor				pointer
+		height				1rem
+		width				1rem
+
+	&::-ms-thumb
+		background			$blue--sky
+		border				none
+		border-radius		50%
+		cursor				pointer
+		height				1rem
+		width				1rem
+
+	&::-webkit-slider-runnable-track
+		background			$blue--navy
+		border-radius		999px
+		cursor				pointer
+		height				0.5rem
+		width				100%
+
+	&:focus::-webkit-slider-runnable-track
+		background			lighten($blue--navy, 5%)
+
+	&::-moz-range-track
+		background			$blue--navy
+		border-radius		999px
+		cursor				pointer
+		height				0.5rem
+		width				100%
+
+	&::-ms-track
+		background			$blue--navy
+		border-radius		999px
+		cursor				pointer
+		height				0.5rem
+		width				100%
+
+	&::-ms-fill-lower
+		background			$blue--navy
+		border-radius		999px
+		cursor				pointer
+		height				0.5rem
+		width				100%
+
+	&:focus::-ms-fill-lower
+		background			$blue--navy
+
+	&::-ms-fill-upper
+		background			$blue--navy
+		border-radius		999px
+		cursor				pointer
+		height				0.5rem
+		width				100%
+
+	&:focus::-ms-fill-upper
+		background			$blue--navy

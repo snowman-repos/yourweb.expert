@@ -1,0 +1,24 @@
+// @name Dropdown Lists
+// @description Select inputs
+// @markup
+// <select class="o-dropdown-list">
+//   <option value="usd" selected="">$ USD</option>
+//   <option value="gbp">£ GBP</option>
+//   <option value="eur">€ EUR</option>
+//   <option value="cny">¥ CNY</option>
+//   <option value="jpy">¥ JPY</option>
+// </select>
+
+.o-dropdown-list
+	background				rgba($blue--sky, 0.1)
+	border					2px solid rgba($blue--navy, 0.5)
+	color					$blue--navy
+	cursor					pointer
+	font-size				0.75rem
+	-moz-appearance			none
+	padding					0.2rem
+	-webkit-appearance		none
+
+	&:focus
+		outline				none
+		background			rgba($blue--sky, 0.2)

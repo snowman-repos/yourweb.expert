@@ -41,7 +41,7 @@ module.exports = (gulp, $, config) ->
 		gulp.watch [
 			config.paths.client.css.dest + "/**/*.css"
 			config.paths.client.fonts.dest + "/**/*.{woff,ttf,otf,svg}"
-			config.paths.client.html.dest + "/*.html"
+			config.paths.client.html.dest + "/**/*.html"
 			config.paths.client.images.dest + "/**/*.{jpg,png,gif,svg,webp,xml}"
 			config.paths.client.js.dest + "/**/*.js"
 		], notifyLivereload
@@ -49,7 +49,7 @@ module.exports = (gulp, $, config) ->
 		$.watch [config.paths.client.js.entry + "**/*.coffee", config.paths.client.js.entry + "*.coffee"], ->
 			gulp.start "coffeescript"
 
-		$.watch config.paths.client.css.entry + "**/*.styl", ->
+		$.watch [config.paths.client.css.entry + "**/*.styl", config.paths.client.css.entry + "**/*.html"], ->
 			gulp.start "stylus"
 
 		$.watch config.paths.client.fonts.entry + "**/*.{woff,ttf,otf,svg}", ->

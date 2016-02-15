@@ -8,7 +8,7 @@
 
 			.o-form__group.c-contact__form__group.js-name
 				label.o-form__label.c-contact__form__label(for="name") Your name:
-				input.o-form__input.o-form__input--block.c-contact__form__input.js-name-input(data-error="Don't forget your name!", id="name", maxlength="50", pattern="/^[^/!£@#\$%\^&*()\[\]+~?<>.0-9|\"]+$/", placeholder="e.g. Gordon Shumway", tabindex="1", title="Your name", type="text")
+				input.o-form__input.o-form__input--block.c-contact__form__input.js-name-input(data-error="Don't forget your name!", id="name", maxlength="50", pattern="/^[^/!£@#\$%\^&*()\[\]+~?<>.0-9|\"]+$/", placeholder="e.g. Gordon Shumway", title="Your name", type="text")
 				+form-check()
 
 			.o-form__group.c-contact__form__group.js-email
@@ -19,11 +19,11 @@
 			.o-form__group.c-contact__form__group.js-message
 				label.o-form__label.c-contact__form__label(for="message") Tell me about your project:
 					span.c-contact__form__label__note (optional)
-				textarea.o-form__input.o-form__input--block.o-form__input--textarea.c-contact__form__input.c-contact__form__input--textarea.js-message-input(data-error="What will we be working on?", id="message", placeholder="e.g. My project entails...\nMy budget is...\nMy deadline is...", tabindex="2")
+				textarea.o-form__input.o-form__input--block.o-form__input--textarea.c-contact__form__input.c-contact__form__input--textarea.js-message-input(data-error="What will we be working on?", id="message", placeholder="e.g. My project entails...\nMy budget is...\nMy deadline is...")
 				+form-check()
 
 			.o_form__group
-				input.o_form__button.o-button.c-contact__form__button.is-disabled.js-form-submit(tabindex="3", type="submit", value="Email me")
+				input.o_form__button.o-button.c-contact__form__button.is-disabled.js-form-submit(type="submit", value="Email me")
 
 		.o-form__notification.c-contact__form__notification.js-sending-form.is-hidden
 

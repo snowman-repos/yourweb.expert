@@ -33,6 +33,9 @@ all =
 		callbackURL:  "http://localhost:9000/auth/tumblr/callback"
 	currency:
 		clientID:     process.env.OPENEXCHANGE_ID || "id"
+	mailgun:
+		domain:       process.env.MAILGUN_DOMAIN || "domain"
+		key:          process.env.MAILGUN_KEY || "key"
 	weatheronline:
 		clientID:     process.env.WEATHERONLINE_ID || "id"
 

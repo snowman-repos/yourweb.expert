@@ -1,3 +1,5 @@
+api = require "../api/api.coffee"
+
 class FormValidation
 
 	constructor: ->
@@ -258,23 +260,37 @@ class FormValidation
 
 			# send form
 
-			# pretend it's sent
-			setTimeout =>
+			url = api.getURL() + "/email"
 
-				@hideAllNotifications()
-				@el.contactForm.form.classList.remove "is-sending"
-				@el.contactForm.form.classList.add "is-sent"
-				@showNotifcation "sent"
+			dataToSend =
+				message: @el.contactForm.message.input.value
+				senderName: @el.contactForm.name.input.value
+				senderEmail: @el.contactForm.email.input.value
 
-				setTimeout =>
+			fetch url,
+				body: JSON.stringify dataToSend
+				headers:
+					"Accept": "application/json"
+					"Content-Type": "application/json"
+				method: "post"
+			.then (response) ->
+				response.json()
+			.then (data) =>
 
-					@resetForm "contactForm"
-					@el.contactForm.form.classList.remove "is-sent"
+				if data is "sent"
+
 					@hideAllNotifications()
+					@el.contactForm.form.classList.remove "is-sending"
+					@el.contactForm.form.classList.add "is-sent"
+					@showNotifcation "sent"
 
-				, 10000
+					setTimeout =>
 
-			, 3000
+						@resetForm "contactForm"
+						@el.contactForm.form.classList.remove "is-sent"
+						@hideAllNotifications()
+
+					, 10000
 
 		else
 			console.error "invalid input data"

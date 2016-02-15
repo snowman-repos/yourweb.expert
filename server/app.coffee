@@ -4,6 +4,8 @@ process.env.NODE_ENV = process.env.NODE_ENV || "development"
 
 if process.env.NODE_ENV is "development"
 	localenv = require "./config/local.env"
+	process.env.MAILGUN_DOMAIN = localenv.MAILGUN_DOMAIN
+	process.env.MAILGUN_KEY = localenv.MAILGUN_KEY
 	process.env.MEDIUM_ID = localenv.MEDIUM_ID
 	process.env.MEDIUM_SECRET = localenv.MEDIUM_SECRET
 	process.env.OPENEXCHANGE_ID = localenv.OPENEXCHANGE_ID

@@ -128,7 +128,7 @@ class LocalConditions
 				hours = time.substr 0, 2
 				minutes = time.substr -2, 2
 
-				@el.time.innerHTML = hours + "<span class='c-contact__info__city__time__colon'>:</span>" + minutes
+				@el.time.innerHTML = hours + "<span class='o-local-conditions__time__colon'>:</span>" + minutes
 
 			, 1000
 

@@ -1,66 +1,158 @@
 // @name Logo Grids
 // @description A 3x2 grid for displaying a list of logos
+// @state .o-logo-grid--white White grid
+// @state .o-logo-grid--blue--cerulean Cerulean blue grid
 // @markup
 // <ul class="o-logo-grid">
 // 	 <li class="o-logo-grid__item">
-// 	 	<svg fill="#252525" viewBox="0 0 32 32" class="o-logo-grid__item__logo">
-// 	 		<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--apple-logo"></use>
-// 	 	</svg><span class="o-logo-grid__item__text">Apple</span>
 // 	 </li>
 // 	 <li class="o-logo-grid__item">
-// 	 	<svg fill="#252525" viewBox="0 0 32 32" class="o-logo-grid__item__logo">
-// 	 		<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--diageo-logo"></use>
-// 	 	</svg>
-// 	 	<span class="o-logo-grid__item__text">Diageo</span>
 // 	 </li>
 // 	 <li class="o-logo-grid__item">
-// 	 	<svg fill="#252525" viewBox="0 0 32 32" class="o-logo-grid__item__logo">
-// 	 		<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--lufthansa-logo"></use>
-// 	 	</svg><span class="o-logo-grid__item__text">Lufthansa</span>
 // 	 </li>
 // 	 <li class="o-logo-grid__item">
-// 	 	<svg fill="#252525" viewBox="0 0 32 32" class="o-logo-grid__item__logo">
-// 	 		<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--western-union-logo"></use>
-// 	 	</svg><span class="o-logo-grid__item__text">Western Union</span>
 // 	 </li>
 // 	 <li class="o-logo-grid__item">
-// 	 	<svg fill="#252525" viewBox="0 0 32 32" class="o-logo-grid__item__logo">
-// 	 		<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--village-roadshow-logo"></use>
-// 	 	</svg>
-// 	 	<span class="o-logo-grid__item__text">Village Roadshow</span>
 // 	 </li>
 // 	 <li class="o-logo-grid__item">
-// 	 	<svg fill="#252525" viewBox="0 0 32 32" class="o-logo-grid__item__logo">
-// 	 		<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--lowe-profero-logo"></use>
-// 	 	</svg>
-// 	 	<span class="o-logo-grid__item__text">Lowe Profero</span>
+// 	 </li>
+// </ul>
+// <ul class="o-logo-grid o-logo-grid--blue--cerulean">
+// 	 <li class="o-logo-grid__item">
+// 	 </li>
+// 	 <li class="o-logo-grid__item">
+// 	 </li>
+// 	 <li class="o-logo-grid__item">
+// 	 </li>
+// 	 <li class="o-logo-grid__item">
+// 	 </li>
+// 	 <li class="o-logo-grid__item">
+// 	 </li>
+// 	 <li class="o-logo-grid__item">
+// 	 </li>
+// </ul>
+// <ul class="o-logo-grid o-logo-grid--white">
+// 	 <li class="o-logo-grid__item">
+// 	 </li>
+// 	 <li class="o-logo-grid__item">
+// 	 </li>
+// 	 <li class="o-logo-grid__item">
+// 	 </li>
+// 	 <li class="o-logo-grid__item">
+// 	 </li>
+// 	 <li class="o-logo-grid__item">
+// 	 </li>
+// 	 <li class="o-logo-grid__item">
 // 	 </li>
 // </ul>
 
 .o-logo-grid
 	unstyled-list()
-	width						100%
+	width							100%
 
 	&__item
 		relative()
-		display					inline-block
-		height					8rem
-		margin-left				-5px
-		margin-top				-4px
-		width					50%
+		border-bottom				1px dotted $grey--dark-1
+		border-right				1px dotted $grey--dark-1
+		display						inline-block
+		height						8rem
+		margin-left					-5px
+		margin-top					-4px
+		width						50%
+
+		&:nth-of-type(n+5)
+			border-bottom			none
+
+		&:nth-of-type(2n)
+			border-right			none
+
 
 		+bp($screen-sm-min)
-			width				33.3%
+			width					33.3%
+
+			&:nth-of-type(n+5)
+				border-bottom		1px dotted $grey--dark-1
+
+			&:nth-of-type(2n)
+				border-right		1px dotted $grey--dark-1
+
+			&:nth-of-type(n+4)
+				border-bottom		none
+
+			&:nth-of-type(3n)
+				border-right		none
 
 		&__logo
 			vertical-centre()
-			display				block
-			height				auto
-			margin				0 auto
-			max-width			80%
-			opacity				0.75
-			transition			$slow-transition
-			width				8rem
+			display					block
+			fill					$grey--dark-1
+			height					auto
+			margin					0 auto
+			max-width				80%
+			opacity					0.75
+			transition				$slow-transition
+			width					8rem
+
+			&.is-shown
+				width				8rem
 
 		&__text
-			display 			none
+			display 				none
+
+	&--blue--cerulean
+
+		.o-logo-grid__item
+			border-bottom			1px dotted $blue--cerulean
+			border-right			1px dotted $blue--cerulean
+
+			&:nth-of-type(n+5)
+				border-bottom		none
+
+			&:nth-of-type(2n)
+				border-right		none
+
+			+bp($screen-sm-min)
+
+				&:nth-of-type(n+5)
+					border-bottom	1px dotted $blue--cerulean
+
+				&:nth-of-type(2n)
+					border-right	1px dotted $blue--cerulean
+
+				&:nth-of-type(n+4)
+					border-bottom	none
+
+				&:nth-of-type(3n)
+					border-right	none
+
+		.o-logo-grid__item__logo
+			fill					$blue--cerulean
+
+	&--white
+
+		.o-logo-grid__item
+			border-bottom			1px dotted $white
+			border-right			1px dotted $white
+
+			&:nth-of-type(n+5)
+				border-bottom		none
+
+			&:nth-of-type(2n)
+				border-right		none
+
+			+bp($screen-sm-min)
+
+				&:nth-of-type(n+5)
+					border-bottom	1px dotted $white
+
+				&:nth-of-type(2n)
+					border-right	1px dotted $white
+
+				&:nth-of-type(n+4)
+					border-bottom	none
+
+				&:nth-of-type(3n)
+					border-right	none
+
+		.o-logo-grid__item__logo
+			fill					$white

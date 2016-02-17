@@ -1,0 +1,35 @@
+// @name Media Objects
+// @description An image with a text section alongside
+// @markup
+// <div class="o-media">
+//   <div class="o-media__image">
+//   	<img src="http://placehold.it/200x200" alt="image placeholder">
+//   </div>
+//   <div class="o-media__text">
+//   	<h3>Text Section</h3>
+//   	<p>Lorem ipsum dolor sit amet.</p>
+//   </div>
+// </div>
+
+.o-media
+
+	+bp($screen-sm-min)
+		text-align				left
+
+	&__image
+		col(12)
+		relative()
+		margin-bottom			$base-spacing-unit
+		text-align				center
+
+		+bp($screen-sm-min)
+			col(4)
+			margin-bottom		0
+			padding-right		1rem
+			text-align			right
+
+	&__text
+		col(12)
+
+		+bp($screen-sm-min)
+			col(8)

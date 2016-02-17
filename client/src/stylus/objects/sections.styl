@@ -93,16 +93,32 @@
 		row()
 		height				100%
 		padding				$base-spacing-unit 10%
-		text-align			center
 
 		&__container
 			overflow		hidden
 
+	// @name Section Headers
+	// @description The titles for each section
+	// @state .o-section__header--blue--medium Medium blue colour
+	// @markup
+	// <h2 class="o-section__header">Section Header</h2>
+	// <h2 class="o-section__header o-section__header--blue--medium">Medium Blue Section Header</h2>
+	// <h2 class="o-section__header o-section__header--white">White Section Header</h2>
+
 	&__header
 		col(12)
-		font-size					2rem
-		margin-bottom				$base-spacing-unit
-		text-align					center
+		font-size			2rem
+		margin-bottom		$base-spacing-unit
+		text-align			center
+
+		&--blue--medium
+			color			$blue--medium
+
+		&--grey--dark
+			color			$grey--dark-1
+
+		&--white
+			color			$white
 
 	&__end
 		absolute()
@@ -112,7 +128,7 @@
 		left				0
 		pointer-events		none
 		width				100%
-		z-index				2
+		z-index				getZIndex("sectionEnd")
 
 	&--blue
 		background-color	$blue

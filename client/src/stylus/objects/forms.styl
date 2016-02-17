@@ -1,84 +1,54 @@
-.o-form__group
-	relative()
-	margin-bottom	$base-spacing-unit
-	overflow		hidden
-
-// @name Input
-// @description Standard text input
-// @state :disabled, --disabled - Dims the input when disabled
-// @state .input--block - Makes the input full-width
+// @name Form
+// @description Forms containing inputs for submitting data
+// @state .is-sending - when the form data is the process of being sent
+// @state .is-sent - when the form data has been sent
 // @markup
-// <input class="o-form__input" id="input" placeholder="placeholder text" type="text"></input>
-// <input class="o-form__input" disabled id="input" placeholder="placeholder text" type="text"></input>
-// <input class="o-form__input o-form__input--block" id="input" placeholder="placeholder text" type="text"></input>
-.o-form__input
-	background		$white
-	border			1px solid $light-grey-1
-	border-radius	0.25rem
-	box-shadow		none
-	display			block
-	font-size		1rem
-	padding			0.5 * $base-spacing-unit
+// <form action="" method="post" class="o-form js-form">
+//   <div class="o-form__input-group">
+//   	<label class="o-form__label" for="forminput">Input:</label>
+//   	<input class="o-form__input" id="forminput" placeholder="Input" type="text">
+//   </div>
+//   <div class="o-form__input-group">
+//   	<input class="o-button o-form__submit-button" type="submit" value="submit">
+//   </div>
+// </form>
+// <form action="" method="post" class="o-form js-form is-sending">
+//   <div class="o-form__input-group">
+//   	<label class="o-form__label" for="forminput">Input:</label>
+//   	<input class="o-form__input" id="forminput" placeholder="Input" type="text">
+//   </div>
+//   <div class="o-form__input-group">
+//   	<input class="o-button o-form__submit-button" type="submit" value="submit">
+//   </div>
+//   <div class="o-form__notification js-sending-form">
+//     <div class="o-spinner o-spinner--white"></div>
+//   </div>
+// </form>
+// <form action="" method="post" class="o-form js-form is-sent">
+//   <div class="o-form__input-group">
+//   	<label class="o-form__label" for="forminput">Input:</label>
+//   	<input class="o-form__input" id="forminput" placeholder="Input" type="text">
+//   </div>
+//   <div class="o-form__input-group">
+//   	<input class="o-button o-form__submit-button" type="submit" value="submit">
+//   </div>
+//   <div class="o-form__notification js-sent-form">
+//     <p class="o-form__notification__message">Thanks!
+//       <div class="u-subheader">I'll reply with 24 hours</div>
+//     </p>
+//   </div>
+// </form>
 
-	&:disabled,
-	&[disabled],
-	&.is-disabled
-		background	$light-grey-1
-		cursor		not-allowed !important
+.o-form
+	pointer-events				auto
 
-		& ~ label,
-		& ~ .o-form__label
-			cursor	not-allowed !important
+	&.is-sending,
+	&.is-sent
+		opacity					0.25
 
-	&:focus
-		outline		none
+		.o-form__submit-button
+			opacity				0
+			pointer-events		none
 
-	&--block
-		width		100%
-
-	&--textarea
-		resize		none
-
-// @name Label
-// @description Standard label for form inputs
-// @markup
-// <label class="o-form__label" for="input">Form field:</label>
-.o-form__label
-	cursor			pointer
-	display			block
-	font-size		0.65rem
-	font-weight		600
-	margin-bottom	0.25rem
-	text-align		left
-	text-transform	uppercase
-
-.o-form__error
-	color			$red
-	
-.o-form__check
-	fill			$green
-	transition		$slow-transition
-	
-	&.o-icon
-		fill		$green
-		
-.o-form__notification
-	absolute()
-	bottom			0
-	display			none
-	height			100%
-	left			0
-	opacity			1
-	pointer-events	none
-	right			0
-	top				0
-	transition		$fast-transition
-	width			100%
-
-	&.is-hidden
-		opacity		0
-
-	&__message
-		vertical-centre()
-		font-size	2rem
-		margin-top	-2.5rem
+		~ .o-form__notification
+			display				block

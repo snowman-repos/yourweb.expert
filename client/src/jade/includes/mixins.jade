@@ -1,6 +1,6 @@
 mixin checkmark
 
-	svg.o-icon.o-icon--checkmark.js-checkmark(version="1.1", xmlns="http://www.w3.org/2000/svg", xmlns:xlink="http://www.w3.org/1999/xlink", x="0px", y="0px", viewbox="0 0 98.5 98.5", enable-background="new 0 0 98.5 98.5", xml:space="preserve")
+	svg.o-list-item__header__icon.o-icon.o-icon--checkmark.o-icon--checkmark--blue--medium.js-checkmark(version="1.1", xmlns="http://www.w3.org/2000/svg", xmlns:xlink="http://www.w3.org/1999/xlink", x="0px", y="0px", viewbox="0 0 98.5 98.5", enable-background="new 0 0 98.5 98.5", xml:space="preserve")
 		g
 			polyline.o-icon--checkmark__check(fill="none", points="26.7,54.4 40,67.7 71.8,34.8 ", stroke-width="8", stroke-miterlimit="2")
 			g
@@ -17,12 +17,13 @@ mixin client-logo(client)
 	svg.o-logo-grid__item__logo.c-clients__list__item__logo.js-client-logo(viewBox="0 0 32 32")
 		use(xlink:href="#icon--#{client}-logo")
 
-mixin contact-list-item(item)
+mixin contact-method(item)
 
-	li.o-circular-icon-button.c-introduction__contact-list__item
-		a.o-circular-icon-button__link.c-introduction__contact-list__item__link(href="#{item.href}", title="#{item.title}")
-			span.o-circular-icon-button__text.c-introduction__contact-list__item__text!= item.text
-			+icon(item.icon)
+	li.o-circular-icon-button
+		a.o-circular-icon-button__link(href="#{item.href}", title="#{item.title}")
+			span.o-circular-icon-button__text!= item.text
+			svg.o-circular-icon-button__link__icon.o-icon(class="o-icon--#{item.icon}", viewBox="0 0 32 32")
+				use(xlink:href="#icon--#{item.icon}")
 
 mixin form-check
 
@@ -34,6 +35,21 @@ mixin icon(name)
 	svg.o-icon(class="o-icon--#{name}", viewBox="0 0 32 32")
 		use(xlink:href="#icon--#{name}")
 
+mixin navbar(config)
+
+	.o-navbar.o-navbar--blue--dark
+
+		a.o-navbar__link.js-trigger-page-transition(data-page="#{config.page}", href="#{config.href}")
+			svg.o-icon.o-icon--angle-left(viewBox="0 0 32 32")
+				use(xlink:href="#icon--angle-left")
+			| #{config.text}
+
+mixin navigation
+
+	nav.o-navigation(role="navigation")
+
+		ul.o-navigation__menu.js-navigation-menu
+
 mixin section-end(colour)
 
 	svg.o-section__end(preserveAspectRatio="none", role="separator", viewBox="0 0 612 100", version="1.1", width="100%", xmlns="http://www.w3.org/2000/svg", xmlns:xlink="http://www.w3.org/1999/xlink", xml:space="preserve")
@@ -42,8 +58,8 @@ mixin section-end(colour)
 			
 mixin service-list-item(config)
 
-	li.c-services__list__item
-		h3.o-list-item-header.c-services__list__item__header
+	li.o-list-item.o-list-item--blue--medium
+		h3.o-list-item__header
 			+checkmark
 			| #{config.header}
-		p.c-services__list__item__content!=config.content
+		p.o-list-item__content!=config.content

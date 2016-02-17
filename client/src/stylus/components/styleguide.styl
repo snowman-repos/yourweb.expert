@@ -3,42 +3,48 @@
 .c-styleguide
 	row()
 	content-align(center)
-	background				$light-grey-3
-	color					$dark-grey-1
+	background				$blue--dark
+	color					$grey--dark-1
 	padding					$base-spacing-unit
 
 	&__header
-		color				$dark-grey-2
+		color				$white
 		margin-bottom 		1rem
 
 	&__example
+		clearfix()
 		relative()
+		background 			lighten($blue--medium, 90%)
+		border 				1px dotted $grey--dark-2
+		min-height 			15rem
+		overflow 			hidden
+		padding				$base-spacing-unit
 
 	&__markup
-		background			$dark-grey-1
+		background			$grey--dark-1
 		color				$silver
 		padding				0.5 * $base-spacing-unit
 
 	&__section
 		col(10)
 		background			$white
-		border				1px solid $light-grey-1
+		border				1px solid $grey--light-1
 		margin-bottom		$base-spacing-unit
 		padding				$base-spacing-unit
 
 		&__header
-			color			$dark-grey-2
+			color			$grey--dark-2
 
 	// &__states
 
 	&__subsection
 
 		&__header
-			border-bottom	1px solid $light-grey-1
+			border-bottom	1px solid $grey--light-1
 			margin-bottom 	1rem
 
 	&__colour-block
-		border 				1px solid $dark-grey-2
+		border 				1px solid $grey--dark-2
 		display				inline-block
 		height 				3rem
 		margin				0.5 * $base-spacing-unit
@@ -79,12 +85,15 @@
 		display 			flex
 		flex-wrap 			wrap
 
-		svg
-			border 			1px solid $light-grey-1
+		.o-icon //OK to have this 'in-situ' selector because it's only the style guide
+			background		$white
+			border 			1px solid $grey--light-1
 			height			3rem
-			margin			0.5rem
 			padding			0.5rem
 			width			3rem
+
+		.o-icon:not(.o-icon--margin--left, .o-icon--margin--right)
+			margin			0.5rem
 
 	.o-form__input
 		margin-bottom 		$base-spacing-unit

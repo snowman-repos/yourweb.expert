@@ -1,30 +1,32 @@
+include ../includes/mixins
+
 .o-morph-button.c-client-login.js-morph-button.is-hidden.js-login-form
 
-	button.o-morph-button__button.o-button.o-button--ghost.c-client-login__button.js-morph-button-open(type="button") Client login
+	button.o-morph-button__button.o-button.o-button--ghost.o-button--ghost--white-and-yellow.o-button--small.c-client-login__button.js-morph-button-open(type="button") Client login
 
-	.o-morph-button__dialog.c-client-login__dialog.js-morph-dialog
+	.o-dialog.o-dialog--yellow.o-morph-button__dialog.c-client-login__dialog.js-morph-dialog
 
-		.o-morph-button__dialog__content.c-client-login__dialog__content
+		.o-dialog__content.o-morph-button__dialog__content
 
-			button.o-morph-button__dialog__close-button.o-button.o-button--icon.js-morph-button-close(type="button") &times;
+			button.o-dialog__close-button.o-button.o-button--icon.js-morph-button-close(type="button") &times;
 
 			form.o-form.c-client-login__form(action="/login", method="post")
 
-				.o-form__group.c-client-login__form__group.js-login-email
+				.o-form__group.js-login-email
 
-					label.o-form__label.c-client-login__form__label(for="login-email") Email:
-					input.o-form__input.c-client-login__form__input.js-login-email-input(id="login-email", name="login-email", placeholder="e.g. gordon.shumway@melmac.com", tabindex="1", type="email")
+					label.o-form__label.o-form__label--blue--cerulean(for="login-email") Email:
+					input.o-form__input.o-form__input--blue--navy.js-login-email-input(id="login-email", name="login-email", placeholder="e.g. gordon.shumway@melmac.com", tabindex="1", type="email")
 					+form-check()
 
-				.o-form__group.c-client-login__form__group.js-login-password
+				.o-form__group.js-login-password
 
-					label.o-form__label.c-client-login__form__label(for="login-password") Password:
-					input.o-form__input.c-client-login__form__input.js-login-password-input(id="login-password", name="login-password", tabindex="2", type="password")
+					label.o-form__label.o-form__label--blue--cerulean(for="login-password") Password:
+					input.o-form__input.o-form__input--blue--navy.js-login-password-input(id="login-password", name="login-password", tabindex="2", type="password")
 					+form-check()
 
-				.o-form__group.c-client-login__form__group
+				.o-form__group
 
-					input.o-form__button.o-button.o-button--block.c-client-login__form__button.is-disabled.js-login-button(tabindex="3", type="submit", value="login")
+					input.o-form__submit-button.o-button.o-button--block.o-button--blue--navy.is-disabled.js-login-button(tabindex="3", type="submit", value="login")
 
 		.o-form__notification.js-logging-in.is-hidden
 

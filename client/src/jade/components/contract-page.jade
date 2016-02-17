@@ -1,9 +1,4 @@
-.c-navbar
-
-	a.c-navbar__link.js-trigger-page-transition(data-page="home", href="/")
-		svg.o-icon.o-icon--angle-left(viewBox="0 0 32 32")
-			use(xlink:href="#icon--angle-left")
-		| Back to the main page
++navbar({href:"/", page: "home", text: "Back to the main page"})
 
 .o-article
 
@@ -11,8 +6,8 @@
 
 		h1.o-article__header__content My Contract
 			.o-article__header__content__buttons
-				a.o-article__header__content__button.o-button(href="/contract.pdf", download="contract.pdf") Download PDF version
-				a.o-article__header__content__button.o-button(href="javascript:if(window.print)window.print();") Print this page
+				a.o-button.o-button--ghost.o-button--ghost--white-and-blue.o-button--with-margin(href="/contract.pdf", download="contract.pdf") Download PDF version
+				a.o-button.o-button--ghost.o-button--ghost--white-and-blue.o-button--with-margin(href="javascript:if(window.print)window.print();") Print this page
 
 	.o-article__content
 

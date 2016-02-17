@@ -20,13 +20,13 @@ class Navigation
 	addItem: (item) ->
 
 		listItem = document.createElement "li"
-		listItem.classList.add "c-navigation__menu__item"
+		listItem.classList.add "o-navigation__menu__item"
 		if item.dataset.waitForLoad then listItem.classList.add "is-hidden"
 
 		link = document.createElement "a"
 		link.href = "#" + item.id
 		link.title = item.dataset.navTitle || ""
-		link.classList.add "c-navigation__menu__item__link"
+		link.classList.add "o-navigation__menu__item__link"
 
 		listItem.appendChild link
 		@el.menu.appendChild listItem

@@ -1,39 +1,52 @@
+// @name Clients Component
+// @description Section displaying the logos of some of the companies I've worked for.
+// @markup
+// <section data-nav-title="See who I've worked for" data-when-in-view="show-logos" id="clients" class="o-section o-section--padding-top o-section--blue js-scroll-point js-full-height-section">
+//   <div class="o-section__content__container">
+//     <div aria-labelledby="clients__header" class="c-clients o-section__content">
+//       <h2 id="clients__header" class="o-section__header o-section__header--white">Some of the companies I've worked for</h2>
+//       <ul class="o-logo-grid o-logo-grid--white">
+//         <li class="o-logo-grid__item c-clients__list__item">
+//           <svg viewBox="0 0 32 32" class="o-logo-grid__item__logo c-clients__list__item__logo js-client-logo">
+//             <use xlink:href="#icon--apple-logo"></use>
+//           </svg><span class="o-logo-grid__item__text c-clients__list__item__text">Apple</span>
+//         </li>
+//         <li class="o-logo-grid__item c-clients__list__item">
+//           <svg viewBox="0 0 32 32" class="o-logo-grid__item__logo c-clients__list__item__logo js-client-logo">
+//             <use xlink:href="#icon--diageo-logo"></use>
+//           </svg><span class="o-logo-grid__item__text c-clients__list__item__text">Diageo</span>
+//         </li>
+//         <li class="o-logo-grid__item c-clients__list__item">
+//           <svg viewBox="0 0 32 32" class="o-logo-grid__item__logo c-clients__list__item__logo js-client-logo">
+//             <use xlink:href="#icon--lufthansa-logo"></use>
+//           </svg><span class="o-logo-grid__item__text c-clients__list__item__text">Lufthansa</span>
+//         </li>
+//         <li class="o-logo-grid__item c-clients__list__item">
+//           <svg viewBox="0 0 32 32" class="o-logo-grid__item__logo c-clients__list__item__logo js-client-logo">
+//             <use xlink:href="#icon--western-union-logo"></use>
+//           </svg><span class="o-logo-grid__item__text c-clients__list__item__text">Western Union</span>
+//         </li>
+//         <li class="o-logo-grid__item c-clients__list__item">
+//           <svg viewBox="0 0 32 32" class="o-logo-grid__item__logo c-clients__list__item__logo js-client-logo">
+//             <use xlink:href="#icon--village-roadshow-logo"></use>
+//           </svg><span class="o-logo-grid__item__text c-clients__list__item__text">Village Roadshow</span>
+//         </li>
+//         <li class="o-logo-grid__item c-clients__list__item">
+//           <svg viewBox="0 0 32 32" class="o-logo-grid__item__logo c-clients__list__item__logo js-client-logo">
+//             <use xlink:href="#icon--lowe-profero-logo"></use>
+//           </svg><span class="o-logo-grid__item__text c-clients__list__item__text">Lowe Profero</span>
+//         </li>
+//       </ul>
+//     </div>
+//   </div>
+//   <svg preserveAspectRatio="none" role="separator" viewBox="0 0 612 100" version="1.1" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" class="o-section__end">
+//     <g>
+//       <path d="M612,0H0.912C306.459,100,489.777,100,612,0z"></path>
+//     </g>
+//   </svg>
+// </section>
+
 $module-colour = $blue
 
 .c-clients
 	background						$module-colour
-
-	&__header
-		color						$white
-
-	&__list
-
-		&__item
-			border-bottom			1px dotted $blue--cerulean
-			border-right			1px dotted $blue--cerulean
-
-			&:nth-of-type(n+5)
-				border-bottom		none
-
-			&:nth-of-type(2n)
-				border-right		none
-
-			+bp($screen-sm-min)
-
-				&:nth-of-type(n+5)
-					border-bottom	1px dotted $blue--cerulean
-
-				&:nth-of-type(2n)
-					border-right	1px dotted $blue--cerulean
-
-				&:nth-of-type(n+4)
-					border-bottom	none
-
-				&:nth-of-type(3n)
-					border-right	none
-
-			&__logo
-				fill				$white
-
-				&.is-shown
-					width			8rem

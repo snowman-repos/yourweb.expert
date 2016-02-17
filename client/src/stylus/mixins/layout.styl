@@ -53,7 +53,7 @@ media($direction, $type, $a, $b = false)
 
 		@media $mq
 			{block}
-      
+
 no-media($direction, $type, $a, $b)
 	if ($direction == "width")
 		if ($type == "min")
@@ -77,3 +77,6 @@ width-max($width)
 width-range($min-width, $max-width)
 	+media("width", "range", $min-width, $max-width)
 		{block}
+
+getZIndex(index)
+	$zindex[index]

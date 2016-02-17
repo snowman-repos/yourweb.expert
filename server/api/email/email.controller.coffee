@@ -20,7 +20,7 @@ exports.index = (req, res) ->
 		from: req.body.senderEmail
 		html: template
 		subject: "YourWeb.Expert Contact Form"
-		to: "dazsnow@gmail.com" # "contact@yourweb.expert"
+		to: "contact@yourweb.expert"
 
 	mailgun.messages().send data, (err, body) ->
 

@@ -2,16 +2,16 @@ include ../includes/mixins
 
 .c-services.o-section__content(aria-labelledby="services__header")
 
-	h2.o-section__header.c-services__header#services__header What I do
+	h2.o-section__header.o-section__header--blue--medium#services__header What I do
 
 	ul.c-services__list
 
-		+service-list-item({header: "Full-stack development", content: "I can support your design team by writing the code for the website or app's user interface (the front-end) as well as the server-side code (the back-end) that runs in the background and connects to a database or Content Management System. Doing this kind of front and back-end work means I can fit in anywhere to support your development team too."})
-		+service-list-item({header: "JavaScript Apps", content: "My main focus is on JavaScript, which I use for both front-end and back-end code. Together we can build apps that are fast, responsive, modular, and run anywhere. I always stay up to date with the latest frameworks like Angular and React so that I can provide the best user experience in the shortest time possible. These frameworks also translate really easily to your native mobile and desktop apps."})
-		+service-list-item({header: "Design / UX", content: "I design simple and clean user interfaces not using static photo-editing tools but directly in the web browser. That means your design can be easily testable, modular, scalable, reusable, more realistic, and can be done quicker. I always build living style guides that allow you to gauge not just the look and feel of your site or app but also how it works. The style guide is real tested code that can be used directly in the final product."})
-		+service-list-item({header: "Project Management", content: "Web projects, big or small, are hard. Why? Because there are many different roles that have to be carried out in coordination with eachother in order to bring in your project on time and on budget. This is best done by someone who has experience in each of these roles. I follow my own pseudo-agile methodology, breaking the project down into the smallest workable chunks, then tracking and reporting on progress on a daily basis."})
-		+service-list-item({header: "Consultancy", content: "I love to teach and to fix things, and that's basically what consultancy is. If you or your team are finding problems with how you work together, how to scale your codebase, how to optimise your design process, how to write more modular UIs then I can help. With a focus on scalability, maintainability, performance, and more, I can tailor my advice to you, your product, and your team, to increase the value of your organisation."})
+		+service-list-item({header: "Full-stack development", content: "I can support your design and development teams with front and back-end development, Content Management System (CMS) setup, database setup, as well as testing, deployment, and workflow setup."})
+		+service-list-item({header: "JavaScript Apps", content: "I &heart; JavaScript and always keep up to date with the latest frameworks like Angular and React. That means fast, responsive, and modular apps that can run on any device."})
+		+service-list-item({header: "Design / UX", content: "I design clean and simple user interfaces directly in the web browser, without the need for static comps. That makes my designs testable, modular, scalable, reusable, more realistic, and quicker to produce."})
+		+service-list-item({header: "Project Management", content: "Producing a web project on time and on budget requires the coordination of many different roles. I have experience in all of these roles and follow an agile methodology that involves breaking the project into small workable chunks, then tracking and reporting on a daily basis."})
+		+service-list-item({header: "Consultancy", content: "I enjoy teaching and fixing things. If you or your team are finding problems with how you work together, how to scale your codebase, how to optimise your design process, how to write more modular UIs then I can help increase the value of your product or organisation."})
 
-	.c-services__button__container
+	.c-services__footer
 
-		a.o-button.o-button--ghost.c-services__button.js-trigger-page-transition(data-page="about", href="/about/me", title="") want to know more?
+		a.o-button.o-button--ghost.o-button--ghost--blue--medium.js-trigger-page-transition(data-page="about", href="/about/me", title="") want to know more?

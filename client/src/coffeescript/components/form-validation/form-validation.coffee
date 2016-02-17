@@ -52,7 +52,7 @@ class FormValidation
 		@el.contactForm.button.addEventListener "click", (e) =>
 
 			e.preventDefault()
-			@submitForm()
+			@submitContactForm()
 
 		@el.loginForm.button.addEventListener "click", (e) =>
 
@@ -181,7 +181,7 @@ class FormValidation
 
 	removeAllErrors: ->
 
-		errors = document.querySelectorAll ".o-form__error"
+		errors = document.querySelectorAll ".o-form__error-message"
 
 		for error in errors
 			error.parentNode.removeChild error
@@ -234,11 +234,11 @@ class FormValidation
 
 		@el[form][input].group.classList.add "is-error"
 
-		errors = @el[form][input].group.querySelectorAll ".o-form__error"
+		errors = @el[form][input].group.querySelectorAll ".o-form__error-message"
 
 		if errors.length is 0
 			error = document.createElement "div"
-			error.classList.add "o-form__error"
+			error.classList.add "o-form__error-message"
 			if form is "contactForm" then error.classList.add "c-contact__form__error"
 			error.innerText = @el[form][input].input.dataset.error
 			@el[form][input].group.appendChild error
@@ -250,7 +250,7 @@ class FormValidation
 			when "sending" then @el.contactForm.notifications.sending.classList.remove "is-hidden"
 			when "sent" then @el.contactForm.notifications.sent.classList.remove "is-hidden"
 
-	submitForm: ->
+	submitContactForm: ->
 
 		if @validations.contactForm.name and @validations.contactForm.email and @validations.contactForm.message
 

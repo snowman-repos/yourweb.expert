@@ -2,13 +2,28 @@
 // @description All kinds of buttons found on the site.
 // @state .is-disabled - dims the button when disabled
 // @state .o-button--block - makes the button block-level (full-width)
+// @state .o-button--blue--navy - navy blue button
+// @state .o-button--blue--sky - sky blue button
 // @state .o-button--icon - turns an icon into a button
 // @state .o-button--ghost - borders but no background
+// @state .o-button--ghost--blue--medium - medium blue ghost button
+// @state .o-button--ghost--white - white ghost button
+// @state .o-button--ghost--white-and-blue - white and blue ghost button
+// @state .o-button--ghost--white-and-yellow - white and yellow ghost button
+// @state .o-button--with-margin - top, bottom, and side margins
 // @markup
 // <button class="o-button">button</button>
 // <button class="o-button o-button--block">Block button</button>
+// <button class="o-button o-button--blue--navy">Navy blue button button</button>
+// <button class="o-button o-button--blue--sky">Sky blue button button</button>
 // <button class="o-button o-button--icon">&times;</button>
 // <button class="o-button o-button--ghost">Ghost button</button>
+// <button class="o-button o-button--ghost o-button--ghost--blue--medium">Medium Blue Ghost button</button>
+// <button class="o-button o-button--ghost o-button--ghost--white">White Ghost button</button>
+// <button class="o-button o-button--ghost o-button--ghost--white-and-blue">White and Blue Ghost button</button>
+// <button class="o-button o-button--ghost o-button--ghost--white-and-yellow">White and Yellow Ghost button</button>
+// <button class="o-button o-button--rounded">Rounded button</button>
+// <button class="o-button o-button--with-margin">Button with margin</button>
 
 .o-button
 	relative()
@@ -39,6 +54,29 @@
 		display					block
 		width					100%
 
+	&--blue
+
+		&--navy
+			background			$blue--navy
+			border				none
+			color				$white
+
+			+ActiveFocusHover()
+				background		lighten($blue--navy, 15%)
+
+			&.is-disabled
+
+				+ActiveFocusHover()
+					background	$blue--navy
+
+		&--sky
+			background			rgba($blue--sky, 0.1)
+			border				2px solid rgba($blue--navy, 0.5)
+			color				$blue--sky
+
+			&:focus
+				background		rgba($blue--sky, 0.2)
+
 	&--icon
 		background				none
 		border					none
@@ -63,66 +101,46 @@
 			background			$blue--medium
 			color				$white
 
-// @name Circular Icon Buttons
-// @description Circular buttons containing only an icon
-// @markup
-// <div class="o-circular-icon-button">
-//   <a class="o-circular-icon-button__link" href="" title="Button action">
-//     <span class="o-circular-icon-button__text">Button action</span>
-//     <svg class="o-icon o-icon--mail" viewBox="0 0 32 32">
-//       <use xlink:href="#icon--mail"></use>
-//     </svg>
-//   </a>
-// </div>
+		&--blue
 
-.o-circular-icon-button
-	display 					inline-block
+			&--medium
+				border-color	$blue--medium
+				color			$blue--medium
 
-	&__link
-		relative()
-		background				$blue--medium
-		border-radius			50%
-		display					block
-		line-height				50%
-		margin					0.5em
-		padding					0.5em
-		text-decoration 		none
-		transition				0.2s all ease-in-out
+				+ActiveFocusHover()
+					background	$blue--medium
+					color		$blue--sky
 
-		.o-icon
-			fill				$silver
-			margin-top			3px
+		&--white
+			border-color 		$white
+			color				$white
 
-		&:after
-			border-radius		50%
-			box-shadow			0 0 0 2px $blue
-			content				""
-			height				100%
-			left				-7px
-			opacity				0
-			padding				7px
-			pointer-events		none
-			position			absolute
-			top					-7px
-			transform			scale(.8)
-			transition			transform 0.2s, opacity 0.2s
-			width				100%
+			+ActiveFocusHover()
+				background 		$white
+				color			$blue--cerulean
 
-		+ActiveFocusHover()
-			background			$blue
-			outline				none
+		&--white-and-blue
+			border-color 		$white
+			color				$white
 
-			.o-icon
-				fill			$blue--dark
+			+ActiveFocusHover()
+				background 		$dark-blue
+				border 			2px solid $dark-blue
+				color			$white
 
-			&:after
-				opacity			1
-				transform		scale(1)
+		&--white-and-yellow
+			border				1px solid rgba($white, 0.5)
+			color				rgba($white, 0.5)
 
-	&__text
-		absolute()
-		height					1px
-		left					-999px
-		overflow				hidden
-		top						-999px
-		width					1px
+			+ActiveFocusHover()
+				background		$yellow
+				color			$blue--navy
+
+	&--rounded
+		border-radius			999px
+
+	&--small
+		font-size				0.5rem
+
+	&--with-margin
+		margin					1rem 0.5rem

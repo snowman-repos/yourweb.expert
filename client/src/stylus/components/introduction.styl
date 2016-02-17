@@ -1,81 +1,63 @@
+// @name Introduction Component
+// @description Section introducing who I am, what I do, and how to contact me.
+// @markup
+// <section data-nav-title="About me" id="introduction" class="o-section o-section--dark-blue js-scroll-point js-full-height-section">
+//   <div class="o-section__content__container">
+//     <div aria-labelledby="introduction__header" itemscope="" itemtype="http://data-vocabulary.org/Person" class="c-introduction o-section__content o-media">
+//       <meta itemprop="url" content="https://yourweb.expert">
+//       <div class="o-media__image"><img src="/images/darryl-snow.webp" alt="Darryl Snow" itemprop="photo" class="o-image--avatar c-introduction__image"></div>
+//       <div class="o-media__text">
+//         <h1 id="introduction__header" itemprop="name" class="c-introduction__header">Darryl Snow
+//           <div itemprop="title" class="u-subheader">web expert</div>
+//         </h1>
+//         <p class="c-introduction__text">I'm a freelancer, based in <a href="https://www.google.com/maps/place/Kunming,+Yunnan,+China/@25.021747,102.4608384,10z/data=!3m1!4b1!4m2!3m1!1s0x36d083c31227d3cb:0xccb1f3a4984f0a36" title="View Kunming (UTC-8:00) on a map" itemprop="address" itemscope="" itemtype="http://data-vocabulary.org/Address" class="js-map-link o-inline-link o-inline-link--silver"><span itemprop="locality">Kunming,&nbsp;</span><span itemprop="country">China</span></a>, with over&nbsp;<span class="js-years-of-experience">17</span>&nbsp;years of experience working on the web.</p>
+//         <ul class="c-introduction__contact-list">
+//           <li class="o-circular-icon-button"><a href="mailto:darryl@yourweb.expert" title="Contact me via email: darryl@yourweb.expert" class="o-circular-icon-button__link"><span class="o-circular-icon-button__text">Email: darryl@yourweb.expert</span>
+//             <svg viewBox="0 0 32 32" class="o-circular-icon-button__link__icon o-icon o-icon--mail">
+//               <use xlink:href="#icon--mail"></use>
+//             </svg></a></li>
+//           <li class="o-circular-icon-button"><a href="skype:darryl.snow?add" title="Add me on Skype: darryl.snow" class="o-circular-icon-button__link"><span class="o-circular-icon-button__text">Skype: darryl.snow</span>
+//             <svg viewBox="0 0 32 32" class="o-circular-icon-button__link__icon o-icon o-icon--skype">
+//               <use xlink:href="#icon--skype"></use>
+//             </svg></a></li>
+//           <li class="o-circular-icon-button"><a href="tel:008618669117013" title="Phone me: (+86) 186-6911-7013" class="o-circular-icon-button__link"><span class="o-circular-icon-button__text">Telephone: (+86) 186-6911-7013</span>
+//             <svg viewBox="0 0 32 32" class="o-circular-icon-button__link__icon o-icon o-icon--phone">
+//               <use xlink:href="#icon--phone"></use>
+//             </svg></a></li>
+//           <li class="o-circular-icon-button"><a href="https://github.com/darryl-snow" title="Follow me on Github: darryl-snow" class="o-circular-icon-button__link"><span class="o-circular-icon-button__text">Github: https://github.com/darryl-snow</span>
+//             <svg viewBox="0 0 32 32" class="o-circular-icon-button__link__icon o-icon o-icon--github-alt">
+//               <use xlink:href="#icon--github-alt"></use>
+//             </svg></a></li>
+//           <li class="o-circular-icon-button"><a href="https://www.linkedin.com/profile/view?id=AAMAAApURbQB8js72nhiwqJ5zNxxxUjjU_viclI" title="Read my Linkedin profile" class="o-circular-icon-button__link"><span class="o-circular-icon-button__text">Linkedin: https://www.linkedin.com/profile/view?id=AAMAAApURbQB8js72nhiwqJ5zNxxxUjjU_viclI</span>
+//             <svg viewBox="0 0 32 32" class="o-circular-icon-button__link__icon o-icon o-icon--linkedin">
+//               <use xlink:href="#icon--linkedin"></use>
+//             </svg></a></li>
+//         </ul>
+//       </div>
+//     </div>
+//   </div>
+//   <svg preserveAspectRatio="none" role="separator" viewBox="0 0 612 100" version="1.1" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" class="o-section__end">
+//     <g>
+//       <path d="M612,0H0.912C306.459,100,489.777,100,612,0z"></path>
+//     </g>
+//   </svg>
+// </section>
+
 .c-introduction
 	background						$blue--dark
 	color							$silver
 
-	+bp($screen-sm-min)
-		text-align					left
-
-	.o-inline-link
-		color						$silver
-
-		&:before
-			background-color		$yellow
-
-		&:after
-			border-bottom			1px solid $yellow
-
-		+ActiveFocusHover()
-			color					$blue--dark
-
 	&__image
 		relative()
-		height						7rem
+		border 						0.75rem solid rgba($blue--medium, 0.2)
+		height						8rem
 		margin-right				0.5rem
-		margin-top					1.25rem
-		width						7rem
-
-		&__container
-			col(12)
-			relative()
-			margin-bottom			$base-spacing-unit
-			text-align				center
-
-			&:before
-				absolute()
-				background			rgba($blue--medium, 0.4)
-				border-radius		50%
-				content				""
-				display				block
-				height				8rem
-				left				50%
-				margin-left			-4.25rem
-				top					0.75rem
-				width				8rem
-
-			+bp($screen-sm-min)
-				col(4)
-				margin-bottom		0
-				padding-right		1rem
-				text-align			right
-
-				&:before
-					left			auto
-					margin-left		0
-					right			1rem
-
-	&__content__container
-		col(12)
-
-		+bp($screen-sm-min)
-			col(8)
+		margin-top					0.75rem
+		width						8rem
 
 	&__contact-list
 		inline-list()
 		unstyled-list()
-
-		&__item
-
-			&__link
-				background			rgba($blue--medium, 0.4)
-
-				&:after
-					box-shadow		0 0 0 2px $yellow
-
-				+ActiveFocusHover()
-					background		$yellow
-
-					.o-icon
-						fill		$blue--dark
 
 	&__header
 		color						$yellow

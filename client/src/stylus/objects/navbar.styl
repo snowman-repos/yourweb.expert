@@ -1,0 +1,45 @@
+// @name Navbar
+// @description A fixed position bar that sits at the top of the page offering a single link back to the previous, or another, page.
+// @state .o-navbar--blue--dark - Dark blue navbar
+// @markup
+// <div style="position:relative;height:6rem;">
+//   <div class="o-navbar" style="position:absolute !important;">
+//     <a data-page="home" href="/" class="o-navbar__link js-trigger-page-transition">
+//       <svg viewBox="0 0 32 32" class="o-icon o-icon--angle-left">
+//         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--angle-left"></use>
+//       </svg>Back to the main page
+//     </a>
+//   </div>
+// </div>
+// <div style="position:relative;height:6rem;">
+//   <div class="o-navbar o-navbar--blue--dark" style="position:absolute !important;">
+//     <a data-page="home" href="/" class="o-navbar__link js-trigger-page-transition">
+//       <svg viewBox="0 0 32 32" class="o-icon o-icon--angle-left">
+//         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--angle-left"></use>
+//       </svg>Back to the main page
+//     </a>
+//   </div>
+// </div>
+
+.o-navbar
+	fixed()
+	background 				$grey--dark-1
+	left					0
+	top						0
+	width					100%
+	z-index 				getZIndex("navbar")
+
+	&__link
+		row()
+		align-items 		center
+		color 				$white
+		font-size 			0.75rem
+		padding				0.5rem
+		text-decoration 	none
+		transition 			$fast-transition
+
+		+ActiveFocusHover()
+			color			$yellow
+
+	&--blue--dark
+		background 			$blue--dark

@@ -1,0 +1,115 @@
+// @name Input Group
+// @description A container for form labels, inputs, messages, and notifications.
+// @state .is-complete - indicates that the form input is complete and valid
+// @state .is-error - indicates that the form input is invalid or empty
+// @state .is-in-focus - indicates that the form input is in focus
+// @state .is-sending - indicates that the form input is in the process of being submitted
+// @markup
+// <div class="o-form__input-group">
+//   <label class="o-form__label" for="inputgroup"></label>
+//   <input class="o-form__input" id="inputgroup" placeholder="placeholder text" type="text">
+// </div>
+// <div class="o-form__input-group is-complete">
+//   <label class="o-form__label" for="completeinputgroup"></label>
+//   <input class="o-form__input" id="completeinputgroup" placeholder="placeholder text" type="text">
+//   <svg viewBox="0 0 32 32" class="o-icon o-icon--check o-form__input-group__checkmark">
+//     <use xlink:href="#icon--check"></use>
+//   </svg>
+// </div>
+// <div class="o-form__input-group is-error">
+//   <label class="o-form__label" for="errorinputgroup"></label>
+//   <div class="o-form__error-message">Data is invalid</div>
+//   <input class="o-form__input" id="errorinputgroup" placeholder="placeholder text" type="text">
+// </div>
+// <div class="o-form__input-group is-in-focus">
+//   <label class="o-form__label" for="focusedinputgroup"></label>
+//   <input class="o-form__input" id="focusedinputgroup" placeholder="placeholder text" type="text">
+// </div>
+
+.o-form__input-group
+	relative()
+	margin-bottom						$base-spacing-unit
+	overflow							hidden
+
+	// @name Input Group Checkmark
+	// @description Displayed when the the data for an input inside an input group is deemed valid.
+	// @markup
+	// <div style="height: 4rem; position: relative; width: 100%">
+	//   <div class="o-form__input-group">
+	//   	<svg viewBox="0 0 32 32" class="o-icon o-icon--check o-form__input-group__checkmark">
+	//        <use xlink:href="#icon--check"></use>
+	//      </svg>
+	//   </div>
+	// </div>
+
+	&__checkmark
+		absolute()
+		fill							$green
+		opacity							0
+		right							2rem
+		top								0
+		transition						$slow-transition
+
+	&.is-complete
+
+		.o-form
+
+			&__input-group__checkmark
+				opacity					1
+				right					0
+
+			&__label
+				opacity					0.25
+				text-decoration			line-through
+
+				&--blue--cerulean
+					color				$silver
+
+			&__input
+				border					none
+				border-radius 			0
+
+				&--blue
+					background			transparent
+					// border			1px solid $blue--navy
+					border-bottom		1px solid lighten($blue--dark, 30%)
+
+					&--navy
+						border-bottom 	1px solid $blue--navy
+
+				&--textarea
+					border				1px solid lighten($blue--dark, 30%)
+
+	&.is-error
+
+		.o-form
+
+			&__label
+				color					$red
+
+			&__input
+				border					1px solid $red
+
+			&__error-message
+				opacity					1
+
+	&.is-in-focus
+
+		.o-form
+
+			&__label
+				color					$white
+
+			&__input--blue
+				background				darken($blue--navy, 40%)
+				border					1px solid lighten($blue--dark, 30%)
+				outline					none
+
+	&.is-sending
+
+		.o-form
+
+			&__label
+			&__input
+				opacity					0.15
+				pointer-events 			none

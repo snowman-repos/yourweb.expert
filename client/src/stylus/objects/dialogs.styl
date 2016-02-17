@@ -1,0 +1,43 @@
+// @name Dialogs
+// @description A container in which the user is prompted to perform an action.
+// @state .o-dialog--yellow - a dialog box with a yellow background
+// @markup
+// <div style="position: relative; height:15rem;">
+//   <div class="o-dialog">
+//     <div class="o-dialog__content">
+//       <button type="button" class="o-button o-button--icon o-dialog__close-button">&times;</button>
+//       <p>Dialog content</p>
+//     </div>
+//   </div>
+// </div>
+// <div style="position: relative; height:15rem;">
+//   <div class="o-dialog o-dialog--yellow">
+//     <div class="o-dialog__content">
+//       <button type="button" class="o-button o-button--icon o-dialog__close-button">&times;</button>
+//       <p>Dialog content</p>
+//     </div>
+//   </div>
+// </div>
+
+.o-dialog
+	absolute()
+	background							$white
+	color								$blue--navy
+	height								50vh
+	left								50%
+	margin								-25vh 0 0 -18%
+	overflow 							hidden
+	top									50%
+	width								36%
+	z-index 							getZIndex("dialog")
+
+	&__content
+		padding							$base-spacing-unit
+
+	&__close-button
+		absolute()
+		right							0
+		top								0
+
+	&--yellow
+		background						$yellow

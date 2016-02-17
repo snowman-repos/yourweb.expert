@@ -1,0 +1,39 @@
+// @name Form Notification
+// @description A notification displayed above a form to indicate the status of the form submission.
+// @state .is-hidden - the notification is hidden
+// @markup
+// <form action="" method="post" class="o-form js-form is-sent">
+//   <div class="o-form__notification js-sent-form">
+//     <p class="o-form__notification__message">Thanks!
+//       <div class="u-subheader">I'll reply with 24 hours</div>
+//     </p>
+//   </div>
+// </form>
+// <form action="" method="post" class="o-form js-form is-sent">
+//   <div class="o-form__notification js-sent-form is-hidden">
+//     <p class="o-form__notification__message">Thanks!
+//       <div class="u-subheader">I'll reply with 24 hours</div>
+//     </p>
+//   </div>
+// </form>
+
+.o-form__notification
+	absolute()
+	bottom						0
+	display						none
+	height						100%
+	left						0
+	opacity						1
+	pointer-events				none
+	right						0
+	top							0
+	transition					$fast-transition
+	width						100%
+
+	&.is-hidden
+		opacity					0
+
+	&__message
+		vertical-centre()
+		font-size				2rem
+		margin-top				-2.5rem

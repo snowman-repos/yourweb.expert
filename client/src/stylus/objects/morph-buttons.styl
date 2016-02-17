@@ -1,12 +1,36 @@
 // @name Morph Buttons
 // @description A button that can morph into a modal overlay.
+// @state .is-hidden - the morph button is not displayed
+// @state .is-open - the morph button dialog is opened via a transition from the button to the dialog
 // @markup
-// <div style="height:20rem; position:relative; width:100%;">
+// <div style="height: 20rem; position: relative;">
 //   <div class="o-morph-button js-morph-button">
-//     <button type="button" class="o-morph-button__button o-button js-morph-button-open">Morph button</button>
-//     <div class="o-morph-button__dialog js-morph-dialog">
-//       <div class="o-morph-button__dialog__content">
-//         <button type="button" class="o-morph-button__dialog__close-button o-button o-button--icon js-morph-button-close">×</button>
+//     <button type="button" class="o-button o-button--rounded o-morph-button__button js-morph-button-open">Morph button</button>
+//     <div class="o-dialog o-morph-button__dialog js-morph-dialog">
+//       <div class="o-dialog__content">
+//         <button type="button" class="o-dialog__close-button o-button o-button--icon js-morph-button-close">×</button>
+//         Modal content
+//       </div>
+//     </div>
+//   </div>
+// </div>
+// <div style="height: 20rem; position: relative;">
+//   <div class="o-morph-button js-morph-button is-hidden">
+//     <button type="button" class="o-button o-button--rounded o-morph-button__button js-morph-button-open">Morph button</button>
+//     <div class="o-dialog o-morph-button__dialog js-morph-dialog">
+//       <div class="o-dialog__content">
+//         <button type="button" class="o-dialog__close-button o-button o-button--icon js-morph-button-close">×</button>
+//         Modal content
+//       </div>
+//     </div>
+//   </div>
+// </div>
+// <div style="height: 20rem; position: relative;">
+//   <div class="o-morph-button js-morph-button is-open">
+//     <button type="button" class="o-button o-button--rounded o-morph-button__button js-morph-button-open">Morph button</button>
+//     <div class="o-dialog o-morph-button__dialog js-morph-dialog">
+//       <div class="o-dialog__content">
+//         <button type="button" class="o-dialog__close-button o-button o-button--icon js-morph-button-close">×</button>
 //         Modal content
 //       </div>
 //     </div>
@@ -15,12 +39,10 @@
 
 .o-morph-button
 	absolute()
-	// right									0.5rem
-	// top										0.5rem
 	height 									100%
 	transition								$slow-transition
 	width									100%
-	z-index									4
+	z-index									getZIndex("morphButton")
 
 	&:before
 		absolute()
@@ -33,50 +55,38 @@
 		top									0
 		transition							0.15s 0.5s all ease-in-out
 		width								100%
-		z-index								800
+		z-index								getZIndex("morphButtonOverlay")
 
 	&__button
 		absolute()
-		background-color 					$light-grey-1
 		border 								none
-		border-radius						999px
-		color								$dark-grey-1
 		opacity								1
 		right 								0.5rem
 		top									0.5rem
 		transition							opacity 0.1s 0.5s, color 0.15s ease-in-out, background-color 0.15s ease-in-out
-		z-index								1000
+		z-index								getZIndex("morphButtonButton")
 
 		+ActiveFocusHover()
 			outline 						none
 
 	&__dialog
 		absolute()
-		background							$white
 		border-radius						999px
-		color								$blue--navy
 		height								35px
+		left								auto
+		margin								0
 		opacity								0
-		overflow 							hidden
 		right								0.5rem
 		top									0.5rem
 		transition							opacity 0.1s 0.5s, width 0.5s 0.1s, height 0.5s 0.1s, top 0.5s 0.1s, right 0.5s 0.1s, border-radius 0.5s 0.1s
 		transition-timing-function			cubic-bezier(0.7,0,0.3,1)
 		width								120px
-		z-index 							900
 
 		&__content
 			height							0
 			opacity							0
-			padding							$base-spacing-unit
 			transition						opacity 0.15s
 			visibility						hidden
-
-		&__close-button
-			absolute()
-			// display							block
-			right							0
-			top								0
 
 	&.is-hidden
 		opacity								0
@@ -103,8 +113,7 @@
 		.o-morph-button
 
 			&__button
-				background-color			$white
-				color						$dark-grey-1
+				background-color			$white //Should be the same as the dialog background
 				opacity						0
 				pointer-events				none
 				transition					opacity 0.1s 0.15s
@@ -114,12 +123,12 @@
 				height						340px
 				opacity						1
 				pointer-events				auto
-				right						calc(50% - 170px)
+				right						calc(50% - 160px)
 				top							calc(50% - 170px)
 				transition					opacity 0.5s 0.1s, width 0.5s 0.1s, height 0.5s 0.1s, top 0.5s 0.1s, right 0.5s 0.1s, border-radius 0.5s 0.1s
 				transition-timing-function	cubic-bezier(0.7,0,0.3,1)
-				width						340px
-				z-index						1900
+				width						320px
+				z-index						getZIndex("morphButtonDialog")
 
 				&__content
 					height					100%

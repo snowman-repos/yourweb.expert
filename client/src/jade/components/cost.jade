@@ -1,11 +1,11 @@
 .c-cost.o-section__content(aria-labelledby="cost__header")
 
-	h2.o-section__header.c-cost__header#cost__header How much?
+	h2.o-section__header.o-section__header--white#cost__header How much?
 
 	p.c-cost__text My fees are based on the&nbsp; 
 		strong project timeline and requirements
 		| &nbsp;, roughly calculated on a weekly rate. If you 
-		a.o-inline-link(href="mailto:darryl@yourweb.expert", title="Email me about your project") let me know
+		a.o-inline-link.o-inline-link--blue--sky(href="mailto:darryl@yourweb.expert", title="Email me about your project") let me know
 		| &nbsp;your budget and requirements then we can discuss what can be achieved within your timeframe. I invoice weekly, and my rate becomes cheaper for longer projects. I require a&nbsp;
 		strong 33%
 		| &nbsp;up-front deposit for new clients. To give you a rough idea of how much I might charge for your project&hellip;
@@ -33,7 +33,7 @@
 
 				p.c-cost__calculator__results__heading weekly rate:
 
-				select.o-dropdown-list.c-cost__calculator__results__currency.js-currency
+				select.o-dropdown-list.o-button.o-button--blue--sky.js-currency
 					option(value="usd", selected) $ USD
 					option(value="gbp") £ GBP
 					option(value="eur") € EUR
@@ -52,4 +52,4 @@
 					
 	aside.c-cost__footer
 	
-		a.o-button.o-button--ghost.c-cost__footer__button.js-trigger-page-transition(data-page="contract", href="/contract", title="") Read my contract
+		a.o-button.o-button--ghost.o-button--ghost--white.js-trigger-page-transition(data-page="contract", href="/contract", title="") Read my contract

@@ -5,20 +5,20 @@
 //   <div class="o-article__header">
 //     <h1 class="o-article__header__content">Article Header
 //       <div class="o-article__header__content__buttons">
-//         <a class="o-button" href="">Button</a>
+//         <a class="o-button o-button--ghost o-button--ghost--white-and-blue o-button--with-margin" href="">Button</a>
 //       </div>
 //     </h1>
 //   </div>
 //   <div class="o-article__content">
 //     <p>Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's nest nipperkin grog yardarm hempen halter furl. Swab barque interloper chantey doubloon starboard grog black jack gangway rutters.</p>
 //     <p>Jolly boat interloper scallywag piracy pressgang lad jack wherry sloop hogshead. Square-rigged lass knave rum yard squiffy heave to furl swing the lead reef. Bilge reef sails holystone keelhaul lee tender nipper run a shot across the bow marooned port.</p>
-//     <img alt="Article Image" class="o-image o-image--right o-article__image o-article__image--small" src="http://placehold.it/400x400">
+//     <img alt="Article Image" class="o-image o-image--right o-image--bordered o-image--small" src="http://placehold.it/400x400">
 //     <p>Pirate avast belaying pin snow fore jolly boat ballast hearties hands clap of thunder. Salmagundi red ensign heave to cackle fruit fire ship lookout yard reef wench killick. Crimp main sheet sloop wench broadside yard driver mutiny Brethren of the Coast Pieces of Eight.</p>
 //   </div>
 // </div>
 
 .o-article
-	background					$light-grey-2
+	background					$grey--light-2
 	color						$dark-blue
 	padding-bottom 				$base-spacing-unit
 
@@ -44,15 +44,6 @@
 			&__buttons
 				font-size 		0.75rem
 
-			.o-button
-				color			$white
-				margin			1rem 0.5rem
-
-				+ActiveFocusHover()
-					background 	$dark-blue
-					border 		2px solid $dark-blue
-					color		$white
-
 	&__content
 		margin					0 auto
 		width					90%
@@ -66,33 +57,3 @@
 
 	&__subheader
 		font-weight 			600
-
-	.o-inline-link
-		relative()
-		color						$blue--cerulean
-		font-weight 				600
-		perspective					600px
-		perspective-origin			50% 100%
-		transition					all 0.2s ease-in-out
-
-		&:before
-			background-color		$blue--cerulean
-
-		&:after
-			border-bottom			1px solid $blue--cerulean
-
-		+ActiveFocusHover()
-			color					$white
-
-	&__image
-		border 						0.5rem solid $white
-		border-radius 				0.25rem
-		box-shadow 					0 0 2px rgba($dark-grey-2, 0.25)
-		display 					inline-block
-		height 						auto
-		margin-bottom 				$base-spacing-unit
-		margin-top 					$base-spacing-unit
-		width 						65%
-
-		&--small
-			width					40%

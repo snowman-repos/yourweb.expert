@@ -3,22 +3,40 @@ svg
 
 // @name Image
 // @description Standard image
+// @state .o-image--avatar - circular image with contrast and saturation filters applied
+// @state .o-image--bordered - image with a border
 // @state .o-image--centred - centres the block-level image
+// @state .o-image--full-width - image becomes full width of the parent container
 // @state .o-image--left - left-aligns the image
 // @state .o-image--right - right-aligns the image
-// @state .o-image--full-width - image becomes full width of the parent container
-// @state .o-image--avatar - circular image with contrast and saturation filters applied
+// @state .o-image--small - image is no larger than 40% of container width
 // @markup
 // <img class="o-image" src="http://placehold.it/200x200" alt="Alt text"></img>
+// <img class="o-image o-image--avatar" src="/images/darryl-snow.jpg"></img>
+// <img class="o-image o-image--bordered" src="http://placehold.it/200x200"></img>
 // <img class="o-image o-image--centred" src="http://placehold.it/200x200" alt="Alt text"></img>
+// <img class="o-image o-image--full-width" src="http://placehold.it/200x200" alt="Alt text"></img>
 // <img class="o-image o-image--left" src="http://placehold.it/200x200" alt="Alt text"></img>
 // <img class="o-image o-image--right" src="http://placehold.it/200x200" alt="Alt text"></img>
-// <img class="o-image o-image--full-width" src="http://placehold.it/200x200" alt="Alt text"></img>
-// <img class="o-image o-image--avatar" src="/images/darryl-snow.jpg"></img>
+// <img class="o-image o-image--small" src="http://placehold.it/200x200" alt="Alt text"></img>
 
 .o-image
 	max-width 				100%
 	vertical-align			middle
+
+	&--avatar
+		border-radius		50%
+		filter				contrast(200%) saturate(30%)
+
+	&--bordered
+		border 				0.5rem solid $white
+		border-radius 		0.25rem
+		box-shadow 			0 0 2px rgba($grey--dark-2, 0.25)
+		display 			inline-block
+		height 				auto
+		margin-bottom 		$base-spacing-unit
+		margin-top 			$base-spacing-unit
+		width 				65%
 
 	&--centred
 		display				block
@@ -34,12 +52,11 @@ svg
 		margin-right 		$base-spacing-unit
 		margin-top 			$base-spacing-unit
 
-	&--avatar
-		border-radius		50%
-		filter				contrast(200%) saturate(30%)
-
 	&--right
 		fr()
 		margin-bottom 		$base-spacing-unit
 		margin-left 		$base-spacing-unit
 		margin-top 			$base-spacing-unit
+
+	&--small
+		max-width			40%

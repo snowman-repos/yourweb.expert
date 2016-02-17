@@ -2,6 +2,9 @@
 // @description Standard icons
 // @state .o-icon--large - Larger icon
 // @state .o-icon--checkmark.is-checked - Animate the checkmark icon
+// @state .o-icon--checkmark--blue--medium - Medium blue checkmark
+// @state .o-icon--margin--left - Icon with left margin
+// @state .o-icon--margin--right - Icon with right margin
 // @markup
 // <div class="c-styleguide__icon-container">
 // <svg class="o-icon o-icon--cool" viewBox="0 0 32 32">
@@ -104,6 +107,12 @@
 //     </g>
 //   </g>
 // </svg>
+// <svg class="o-icon o-icon--cool o-icon--margin--left" viewBox="0 0 32 32">
+// 	<use xlink:href="#icon--cool"></use>
+// </svg>
+// <svg class="o-icon o-icon--cool o-icon--margin--right" viewBox="0 0 32 32">
+// 	<use xlink:href="#icon--cool"></use>
+// </svg>
 // </div>
 
 .o-icon
@@ -115,20 +124,42 @@
 	vertical-align					middle
 	width							1.25em
 
+	&--margin
+
+		&--left
+			margin-left				0.3rem
+
+		&--right
+			margin-right 			0.3rem
+
 	&--checkmark
+		opacity						0.75
 		overflow					visible !important
+		vertical-align				middle
 
 		&.is-checked
 
 			.o-icon--checkmark__check
 				animation			dash 10s ease-out forwards normal
+				stroke				$grey--dark-1
 				stroke-dasharray	745.74853515625
 				stroke-dashoffset	745.74853515625
 
 			.o-icon--checkmark__circle
 				animation			dash 1s ease-out forwards normal
+				stroke				$grey--dark-1
 				stroke-dasharray	745.74853515625
 				stroke-dashoffset	745.74853515625
+
+		&--blue--medium
+
+			&.is-checked
+
+				.o-icon--checkmark__check
+					stroke			$blue--medium
+
+				.o-icon--checkmark__circle
+					stroke			$blue--medium
 
 	&--large
 		height						3rem

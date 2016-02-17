@@ -1,30 +1,51 @@
+// @name Cost Component
+// @description Section describing my rates and how I charge. Exchange rates are pulled from the openexchange API.
+// @markup
+// <section data-nav-title="How much I charge" id="cost" class="o-section o-section--padding-top o-section--cerulean-blue js-scroll-point js-full-height-section">
+//   <div class="o-section__content__container">
+//     <div aria-labelledby="cost__header" class="c-cost o-section__content">
+//       <h2 id="cost__header" class="o-section__header o-section__header--white">How much?</h2>
+//       <p class="c-cost__text">My fees are based on the&nbsp; <strong>project timeline and requirements</strong>&nbsp;, roughly calculated on a weekly rate. If you <a href="mailto:darryl@yourweb.expert" title="Email me about your project" class="o-inline-link o-inline-link--blue--sky">let me know</a>&nbsp;your budget and requirements then we can discuss what can be achieved within your timeframe. I invoice weekly, and my rate becomes cheaper for longer projects. I require a&nbsp;<strong>33%</strong>&nbsp;up-front deposit for new clients. To give you a rough idea of how much I might charge for your project&hellip;</p>
+//       <div class="c-cost__calculator js-calculator">
+//         <div class="c-cost__calculator__slider">
+//           <label for="time-slider" class="c-cost__calculator__slider__label"><small class="c-cost__calculator__slider__label__heading">project length:</small><span class="c-cost__calculator__slider__label__value js-time-slider-value js-time">1</span>&nbsp;<span class="c-cost__calculator__slider__label__text js-time-slider-text">week</span></label>
+//           <input id="time-slider" max="12" min="1" step="1" type="range" value="1" class="o-slider c-cost__calculator__slider__control js-time-slider">
+//           <p class="c-cost__calculator__slider__notice js-slider-notice">(my minimum weekly rate is about <span class="c-cost__calculator__slider__notice__currency js-currency-symbol">$</span><span class="c-cost__calculator__slider__notice__value js-min-rate">2,000</span>)</p>
+//         </div>
+//         <div class="c-cost__calculator__results">
+//           <div class="c-cost__calculator__results__content">
+//             <p class="c-cost__calculator__results__heading">weekly rate:</p>
+//             <select class="o-dropdown-list o-button o-button--blue--sky js-currency">
+//               <option value="usd" selected>$ USD</option>
+//               <option value="gbp">£ GBP</option>
+//               <option value="eur">€ EUR</option>
+//               <option value="cny">¥ CNY</option>
+//               <option value="jpy">¥ JPY</option>
+//             </select>
+//             <p class="c-cost__calculator__results__value"><span class="c-cost__calculator__results__value__symbol js-currency-symbol">$</span><span class="c-cost__calculator__results__value__number js-rate">3,000</span></p>
+//             <p class="c-cost__calculator__results__hourly-rate">(<span class="c-cost__calculator__results__hourly-rate__symbol js-currency-symbol">$</span><span class="c-cost__calculator__results__hourly-rate__number js-hourly-rate">75</span>&nbsp;/ hour)</p>
+//           </div>
+//         </div>
+//       </div>
+//       <aside class="c-cost__footer"><a data-page="contract" href="/contract" title="" class="o-button o-button--ghost o-button--ghost--white js-trigger-page-transition">Read my contract</a></aside>
+//     </div>
+//   </div>
+//   <svg preserveAspectRatio="none" role="separator" viewBox="0 0 612 100" version="1.1" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" class="o-section__end">
+//     <g>
+//       <path d="M612,0H0.912C306.459,100,489.777,100,612,0z"></path>
+//     </g>
+//   </svg>
+// </section>
+
 $module-colour = $blue--cerulean
 
 .c-cost
 	background							$module-colour
 	color								$blue--sky
-
-	&__header
-		color							$white
+	text-align 							center
 
 	&__text
 		margin-top						0
-
-	.o-inline-link
-		relative()
-		color							$blue--sky
-		perspective						600px
-		perspective-origin				50% 100%
-		transition						all 0.2s ease-in-out
-
-		&:before
-			background-color			$white
-
-		&:after
-			border-bottom				1px solid $white
-
-		+ActiveFocusHover()
-			color						$blue--navy
 
 	&__calculator
 		row()
@@ -86,14 +107,6 @@ $module-colour = $blue--cerulean
 				font-weight				500
 				text-transform			uppercase
 
-			&__currency
-				background				rgba($blue--sky, 0.1)
-				border					2px solid rgba($blue--navy, 0.5)
-				color					$blue--sky
-
-				&:focus
-					background			rgba($blue--sky, 0.2)
-
 			&__value
 				color					$white
 				font-weight				500
@@ -115,14 +128,3 @@ $module-colour = $blue--cerulean
 		margin							2 * $base-spacing-unit 0 0 0
 		text-align 						center
 		width							100%
-
-		&__button
-			border-color 				$white
-			color						$white
-			opacity 					0.5
-			transition 					$fast-transition
-
-			+ActiveFocusHover()
-				background				$white
-				color					$module-colour
-				opacity 				1

@@ -1,61 +1,101 @@
+// @name Services component
+// @description Section describing what services I provide.
+// @markup
+// <section data-nav-title="Find out what I do" data-when-in-view="check-checkmarks" id="services" class="o-section o-section--padding-top o-section--sky-blue js-scroll-point">
+//   <div class="o-section__content__container">
+//     <div aria-labelledby="services__header" class="c-services o-section__content">
+// 	     <h2 id="services__header" class="o-section__header o-section__header--blue--medium">What I do</h2>
+// 	     <ul class="c-services__list">
+// 	       <li class="o-list-item o-list-item--blue--medium">
+// 	         <h3 class="o-list-item__header">
+// 	           <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 98.5 98.5" enable-background="new 0 0 98.5 98.5" xml:space="preserve" class="o-list-item__header__icon o-icon o-icon--checkmark o-icon--checkmark--blue--medium js-checkmark">
+// 	             <g>
+// 	           	   <polyline fill="none" points="26.7,54.4 40,67.7 71.8,34.8 " stroke-width="8" stroke-miterlimit="2" class="o-icon--checkmark__check"></polyline>
+// 	           	   <g>
+// 	           	     <circle fill="none" stroke-width="12" stroke-miterlimit="10" cx="49.2" cy="49.2" r="49.2" class="o-icon--checkmark__circle"></circle>
+// 	           	   </g>
+// 	             </g>
+// 	           </svg>Full-stack development
+// 	         </h3>
+// 	         <p class="o-list-item__content">I can support your design and development teams with front and back-end development, Content Management System (CMS) setup, database setup, as well as testing, deployment, and workflow setup.</p>
+// 	       </li>
+// 	       <li class="o-list-item o-list-item--blue--medium">
+// 	         <h3 class="o-list-item__header">
+// 	           <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 98.5 98.5" enable-background="new 0 0 98.5 98.5" xml:space="preserve" class="o-list-item__header__icon o-icon o-icon--checkmark o-icon--checkmark--blue--medium js-checkmark">
+// 	             <g>
+// 	           	   <polyline fill="none" points="26.7,54.4 40,67.7 71.8,34.8 " stroke-width="8" stroke-miterlimit="2" class="o-icon--checkmark__check"></polyline>
+// 	           	   <g>
+// 	           	     <circle fill="none" stroke-width="12" stroke-miterlimit="10" cx="49.2" cy="49.2" r="49.2" class="o-icon--checkmark__circle"></circle>
+// 	           	   </g>
+// 	             </g>
+// 	           </svg>JavaScript Apps
+// 	         </h3>
+// 	         <p class="o-list-item__content">I &heart; JavaScript and always keep up to date with the latest frameworks like Angular and React. That means fast, responsive, and modular apps that can run on any device.</p>
+// 	       </li>
+// 	       <li class="o-list-item o-list-item--blue--medium">
+// 	         <h3 class="o-list-item__header">
+// 	       	   <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 98.5 98.5" enable-background="new 0 0 98.5 98.5" xml:space="preserve" class="o-list-item__header__icon o-icon o-icon--checkmark o-icon--checkmark--blue--medium js-checkmark">
+// 	             <g>
+// 	           	   <polyline fill="none" points="26.7,54.4 40,67.7 71.8,34.8 " stroke-width="8" stroke-miterlimit="2" class="o-icon--checkmark__check"></polyline>
+// 	           	   <g>
+// 	           	     <circle fill="none" stroke-width="12" stroke-miterlimit="10" cx="49.2" cy="49.2" r="49.2" class="o-icon--checkmark__circle"></circle>
+// 	           	   </g>
+// 	             </g>
+// 	           </svg>Design / UX
+// 	         </h3>
+// 	         <p class="o-list-item__content">I design clean and simple user interfaces directly in the web browser, without the need for static comps. That makes my designs testable, modular, scalable, reusable, more realistic, and quicker to produce.</p>
+// 	       </li>
+// 	       <li class="o-list-item o-list-item--blue--medium">
+// 	         <h3 class="o-list-item__header">
+// 	       	   <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 98.5 98.5" enable-background="new 0 0 98.5 98.5" xml:space="preserve" class="o-list-item__header__icon o-icon o-icon--checkmark o-icon--checkmark--blue--medium js-checkmark">
+// 	             <g>
+// 	           	   <polyline fill="none" points="26.7,54.4 40,67.7 71.8,34.8 " stroke-width="8" stroke-miterlimit="2" class="o-icon--checkmark__check"></polyline>
+// 	           	   <g>
+// 	           	     <circle fill="none" stroke-width="12" stroke-miterlimit="10" cx="49.2" cy="49.2" r="49.2" class="o-icon--checkmark__circle"></circle>
+// 	           	   </g>
+// 	             </g>
+// 	           </svg>Project Management
+// 	         </h3>
+// 	         <p class="o-list-item__content">Producing a web project on time and on budget requires the coordination of many different roles. I have experience in all of these roles and follow an agile methodology that involves breaking the project into small workable chunks, then tracking and reporting on a daily basis.</p>
+// 	       </li>
+// 	       <li class="o-list-item o-list-item--blue--medium">
+// 	         <h3 class="o-list-item__header">
+// 	       	   <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 98.5 98.5" enable-background="new 0 0 98.5 98.5" xml:space="preserve" class="o-list-item__header__icon o-icon o-icon--checkmark o-icon--checkmark--blue--medium js-checkmark">
+// 	             <g>
+// 	           	   <polyline fill="none" points="26.7,54.4 40,67.7 71.8,34.8 " stroke-width="8" stroke-miterlimit="2" class="o-icon--checkmark__check"></polyline>
+// 	           	   <g>
+// 	           	     <circle fill="none" stroke-width="12" stroke-miterlimit="10" cx="49.2" cy="49.2" r="49.2" class="o-icon--checkmark__circle"></circle>
+// 	           	   </g>
+// 	             </g>
+// 	           </svg>Consultancy
+// 	         </h3>
+// 	         <p class="o-list-item__content">I enjoy teaching and fixing things. If you or your team are finding problems with how you work together, how to scale your codebase, how to optimise your design process, how to write more modular UIs then I can help increase the value of your product or organisation.</p>
+// 	       </li>
+//       </ul>
+// 	   <div class="c-services__footer">
+// 	     <a data-page="about" href="/about/me" title="" class="o-button o-button--ghost o-button--ghost--blue--medium js-trigger-page-transition">want to know more?</a></div>
+// 	   </div>
+//   </div>
+//   <svg preserveAspectRatio="none" role="separator" viewBox="0 0 612 100" version="1.1" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" class="o-section__end">
+//     <g>
+//       <path d="M612,0H0.912C306.459,100,489.777,100,612,0z"></path>
+//     </g>
+//   </svg>
+// </section>
+
 $module-colour = $blue--sky
 
 .c-services
 	row()
 	background						$module-colour
 	color							$blue--medium
-	text-align						center
 
-	&__button
-		border-color				$blue--medium
-		color						$blue--medium
-
-		+ActiveFocusHover()
-			background				$blue--medium
-			color					$module-colour
-
-		&__container
-			col(12)
-			margin-top				$base-spacing-unit
-
-	&__header
-		color						$blue--medium
+	&__footer
+		col(12)
+		margin-top 					0.5 * $base-spacing-unit
+		text-align 					center
 
 	&__list
 		row()
 		unstyled-list()
-		color						$blue--medium
-		font-size					1rem
 		justify-content 			center
-		text-align					left
-
-		&__item
-			col(12)
-			align-items				center
-			padding 				0.5 * $base-spacing-unit
-
-			+bp($screen-sm-min)
-				col(6)
-
-			&__header
-				align-items			center
-				justify-content 	center
-
-				.o-icon
-					font-size 		1.25rem
-
-			&__content
-				font-weight 		300
-				line-height 		1.5
-
-	.o-icon--checkmark
-		opacity						0.75
-		vertical-align				middle
-
-		&.is-checked
-
-			.o-icon--checkmark__check
-				stroke				$blue--medium
-
-			.o-icon--checkmark__circle
-				stroke				$blue--medium

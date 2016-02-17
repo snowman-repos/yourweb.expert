@@ -1,0 +1,36 @@
+// @name Form Labels
+// @description Standard label for form inputs.
+// @state .o-form__label--blue--cerulean - cerulean blue label
+// @state .o-form__label--silver - silver label
+// @markup
+// <label class="o-form__label" for="input">Form field:</label>
+// <label class="o-form__label o-form__label--blue--cerulean" for="input">Form field:</label>
+// <label class="o-form__label o-form__label--silver" for="input">Form field:</label>
+.o-form__label
+	cursor						pointer
+	display						block
+	font-size					0.65rem
+	font-weight					600
+	margin-bottom				0.25rem
+	text-align					left
+	text-transform				uppercase
+	transition					$fast-transition
+
+	&--blue--cerulean
+		color					$blue--cerulean
+
+	&--silver
+		color					$silver
+
+	// @name Form Label
+	// @description Additional information shown inside a form label.
+	// @markup
+	// <label class="o-form__label" for="input">
+	//   Form field:
+	//   <span class="o-form__label__note">(optional)</span>
+	// </label>
+	&__note
+		display					inline-block
+		font-size				0.75em
+		margin-left				0.5rem
+		opacity					0.5

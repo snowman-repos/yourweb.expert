@@ -1,7 +1,11 @@
 // @name Inline links
 // @description Inline links.
+// @state .o-inline-link--blue--sky - Sky blue inline links
+// @state .o-inline-link--silver - Silver inline links
 // @markup
 // Here is an <a class="o-inline-link" href="" title="Hover me">inline link</a> to play with
+// Here is an <a class="o-inline-link o-inline-link--blue--sky" href="" title="Hover me">sky blue inline link</a> to play with
+// Here is an <a class="o-inline-link o-inline-link--silver" href="" title="Hover me">silver inline link</a> to play with
 
 .o-inline-link
 	relative()
@@ -23,7 +27,7 @@
 		position					absolute
 		top							0
 		width						100%
-		z-index						-1
+		z-index						getZIndex("inlineLinkBackground")
 
 	&:before
 		background-color			$blue--cerulean
@@ -40,3 +44,39 @@
 
 		&:before
 			transform				rotateX(0deg)
+
+	&--blue--cerulean
+		color						$blue--cerulean
+
+		&:before
+			background-color		$blue--cerulean
+
+		&:after
+			border-bottom			1px solid $blue--cerulean
+
+		+ActiveFocusHover()
+			color					$white
+
+	&--blue--sky
+		color							$blue--sky
+
+		&:before
+			background-color			$white
+
+		&:after
+			border-bottom				1px solid $white
+
+		+ActiveFocusHover()
+			color						$blue--navy
+
+	&--silver
+		color						$silver
+
+		&:before
+			background-color		$yellow
+
+		&:after
+			border-bottom			1px solid $yellow
+
+		+ActiveFocusHover()
+			color					$blue--dark

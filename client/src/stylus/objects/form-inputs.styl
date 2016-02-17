@@ -1,0 +1,74 @@
+// @name Form Input
+// @description Standard text input
+// @state :disabled, --disabled - Dims the input when disabled
+// @state .is-disabled, --disabled - Dims the input when disabled
+// @state [disabled], --disabled - Dims the input when disabled
+// @state .input--block - Makes the input full-width
+// @state .input--blue - Blue input
+// @state .input--blue--navy - navy blue input
+// @state .input--textarea - Textarea input
+// @markup
+// <input class="o-form__input" id="input" placeholder="placeholder text" type="text"></input>
+// <input class="o-form__input" disabled placeholder="placeholder text" type="text"></input>
+// <input class="o-form__input o-form__input--block" placeholder="placeholder text" type="text"></input>
+// <input class="o-form__input o-form__input--blue" placeholder="placeholder text" type="text"></input>
+// <input class="o-form__input o-form__input--blue--navy" placeholder="placeholder text" type="text"></input>
+// <textarea class="o-form__input o-form__input--textarea" placeholder="placeholder text"></textarea>
+
+.o-form__input
+	background					$white
+	border						1px solid $grey--light-1
+	border-radius				0.25rem
+	box-shadow					none
+	display						block
+	font-size					1rem
+	padding						0.5 * $base-spacing-unit
+	transition 					$fast-transition
+
+	&:disabled,
+	&[disabled],
+	&.is-disabled
+		background				$grey--light-1
+		cursor					not-allowed !important
+
+		& ~ label,
+		& ~ .o-form__label
+			cursor				not-allowed !important
+
+	&:focus
+		outline					none
+
+	&--block
+		width					100%
+
+	&--blue
+		background				darken($blue--navy, 20%)
+		border					1px solid lighten($blue--dark, 20%)
+		color					$white
+		font-size				0.75rem
+
+		&::-moz-placeholder
+			color				rgba($silver, 0.5)
+
+		&::-ms-input-placeholder
+			color				rgba($silver, 0.5)
+
+		&::-webkit-input-placeholder
+			color				rgba($silver, 0.5)
+
+		&:focus
+			background			darken($blue--navy, 40%)
+			border				1px solid lighten($blue--dark, 30%)
+
+		&--navy
+			background			transparent
+			border				2px solid rgba($blue--navy, 0.25)
+			color				$blue--navy
+
+			&:focus
+				background		rgba($white, 0.5)
+				border			2px solid rgba($blue--navy, 0.45)
+
+	&--textarea
+		height					6rem
+		resize					none

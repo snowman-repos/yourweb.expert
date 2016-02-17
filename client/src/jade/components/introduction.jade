@@ -5,7 +5,7 @@ include ../includes/mixins
 	meta(itemprop="url", content="https://yourweb.expert")
 
 	.o-media__image
-		img.o-image--avatar.c-introduction__image(src="/images/darryl-snow.webp", alt="Darryl Snow", itemprop="photo")
+		img.o-image--avatar.c-introduction__image(alt="Darryl Snow", itemprop="photo", src="/images/darryl-snow.webp")
 
 	.o-media__text
 
@@ -13,7 +13,7 @@ include ../includes/mixins
 			.u-subheader(itemprop="title") web expert
 
 		p.c-introduction__text I'm a freelancer, based in 
-			a.js-map-link.o-inline-link.o-inline-link--silver(href="https://www.google.com/maps/place/Kunming,+Yunnan,+China/@25.021747,102.4608384,10z/data=!3m1!4b1!4m2!3m1!1s0x36d083c31227d3cb:0xccb1f3a4984f0a36", title="View Kunming (UTC-8:00) on a map", itemprop="address" itemscope="", itemtype="http://data-vocabulary.org/Address")
+			a.js-map-link.o-inline-link.o-inline-link--silver(href="https://www.google.com/maps/place/Kunming,+Yunnan,+China/@25.021747,102.4608384,10z/data=!3m1!4b1!4m2!3m1!1s0x36d083c31227d3cb:0xccb1f3a4984f0a36", itemprop="address" itemscope="", itemtype="http://data-vocabulary.org/Address", title="View Kunming (UTC-8:00) on a map")
 				span(itemprop="locality") Kunming,&nbsp;
 				span(itemprop="country") China
 			| , with over&nbsp;
@@ -22,8 +22,8 @@ include ../includes/mixins
 
 		ul.c-introduction__contact-list
 
-			+contact-method({href: "mailto:darryl@yourweb.expert", title: "Contact me via email: darryl@yourweb.expert", text: "Email: darryl@yourweb.expert", icon: "mail"})
-			+contact-method({href: "skype:darryl.snow?add", title: "Add me on Skype: darryl.snow", text: "Skype: darryl.snow", icon: "skype"})
-			+contact-method({href: "tel:008618669117013", title: "Phone me: (+86) 186-6911-7013", text: "Telephone: (+86) 186-6911-7013", icon: "phone"})
-			+contact-method({href: "https://github.com/darryl-snow", title: "Follow me on Github: darryl-snow", text: "Github: https://github.com/darryl-snow", icon: "github-alt"})
-			+contact-method({href: "https://www.linkedin.com/profile/view?id=AAMAAApURbQB8js72nhiwqJ5zNxxxUjjU_viclI", title: "Read my Linkedin profile", text: "Linkedin: https://www.linkedin.com/profile/view?id=AAMAAApURbQB8js72nhiwqJ5zNxxxUjjU_viclI", icon: "linkedin"})
+			+contact-method({href: "mailto:darryl@yourweb.expert", icon: "mail", text: "Email: darryl@yourweb.expert", title: "Contact me via email: darryl@yourweb.expert"})
+			+contact-method({href: "skype:darryl.snow?add", icon: "skype", text: "Skype: darryl.snow", title: "Add me on Skype: darryl.snow"})
+			+contact-method({href: "tel:008618669117013", icon: "phone", text: "Telephone: (+86) 186-6911-7013", title: "Phone me: (+86) 186-6911-7013"})
+			+contact-method({href: "https://github.com/darryl-snow", icon: "github-alt", text: "Github: https://github.com/darryl-snow", title: "Follow me on Github: darryl-snow"})
+			+contact-method({href: "https://www.linkedin.com/profile/view?id=AAMAAApURbQB8js72nhiwqJ5zNxxxUjjU_viclI", icon: "linkedin", text: "Linkedin: https://www.linkedin.com/profile/view?id=AAMAAApURbQB8js72nhiwqJ5zNxxxUjjU_viclI", title: "Read my Linkedin profile"})

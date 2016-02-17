@@ -20,7 +20,7 @@ head
 	meta(name="twitter:image", property="og:image", content="#{url}/images/darryl-snow.png")
 
 	link(rel="canonical", href="#{url}")
-	//- link(rel="alternate amphtml", type="text/html", href="#{url}/amp")
+	//- link(rel="alternate amphtml", href="#{url}/amp", type="text/html")
 	link(rel="me", href="mailto:darryl@yourweb.expert")
 	link(rel="me", href="sms:+8618669117013")
 	link(rel="webmention", href="#{url}/webmention")
@@ -32,9 +32,9 @@ head
 	link(rel="openid.server", href="https://indieauth.com/openid")
 	link(rel="openid.delegate", href="#{url}/")
 	link(rel="author", href="/about/me", title="About Darryl Snow")
-	link(rel="shortcut icon", type="image/ico", href="/images/icons/favicon.ico")
-	link(rel="shortcut icon", type="image/png", href="/images/icons/favicon-96x96.png")
-	link(rel="apple-touch-icon", type="image/png", href="/images/icons/favicon-96x96.png")
+	link(rel="shortcut icon", href="/images/icons/favicon.ico", type="image/ico")
+	link(rel="shortcut icon", href="/images/icons/favicon-96x96.png", type="image/png")
+	link(rel="apple-touch-icon", href="/images/icons/favicon-96x96.png", type="image/png")
 	link(rel="manifest", href="/manifest.json")
 
 	block meta
@@ -63,5 +63,5 @@ head
 			}
 		})();
 	
-	script(src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js", async)
-	link(rel="preconnect", href="https://fonts.googleapis.com/css?family=Raleway:100,300,600", crossorigin)
+	script(async, src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js")
+	link(rel="preconnect", crossorigin, href="https://fonts.googleapis.com/css?family=Raleway:100,300,600")

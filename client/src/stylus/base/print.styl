@@ -1,5 +1,130 @@
 @media print
 
+	body:before
+		border 						1px dashed green
+		color						green
+		content 					"Do you really need to print this? Please consider the environment."
+		display 					block
+		margin-bottom 				$base-spacing-unit
+		padding						0.5 * $base-spacing-unit
+		text-align 					center
+
+	// OBJECTS
+
+	.o-dropdown-list
+	.o-list-item__header__icon
+	.o-navbar
+	.o-navigation
+	.c-client-login
+		display 					none !important
+
+	.o-article
+		background					none !important
+
+		&__header
+			background 				none !important
+			height 					auto !important
+			margin					0 auto !important
+			min-height 				0 !important
+			padding					0 !important
+			text-align 				left !important
+			width					100% !important
+
+			&__content
+				color				$body-text-colour !important
+				text-align 			left !important
+				top					auto !important
+				transform 			translateY(0) !important
+
+				&__buttons
+					display 		none !important
+
+		&__content
+			color					$body-text-colour !important
+			font-size 				12pt !important
+			margin					0 !important
+			padding 				0 !important
+			width					100% !important
+
+	.o-circular-icon-button
+		color						$body-text-colour !important
+		display 					list-item !important
+		list-style 					inherit !important
+		list-style-type 			disc !important
+		margin						0 !important
+		padding 					0 !important
+		text-align 					left !important
+
+		&__link
+			background 				none !important
+			color					$blue !important
+			font-size 				10pt !important
+			line-height 			1 !important
+			margin					0 !important
+			padding					0 !important
+			position 				relative !important
+
+			&__icon
+				display 			none !important
+
+			&:after
+				display 			none !important
+
+		&__text
+			font-size 				10pt !important
+			height 					auto !important
+			left					auto !important
+			line-height 			1 !important
+			overflow 				visible !important
+			position 				inherit !important
+			top						auto !important
+			width					auto !important
+
+	.o-inline-link
+		font-size 					inherit !important
+
+	.o-logo-grid
+		list-style 					inherit !important
+		margin						1rem 0 !important
+		padding						0 0 0 2rem !important
+		width						100% !important
+
+		&__item
+			border 					none !important
+			height					auto !important
+			display 				list-item !important
+			margin					0.5rem 0 !important
+			text-align 				left !important
+			width					100% !important
+
+			&__logo
+				display 			none !important
+
+			&__text
+				display 			inline !important
+
+	.o-list-item
+		margin						0 0 $base-spacing-unit 0 !important
+		padding						0 !important
+		text-align 					left !important
+		width						100% !important
+
+		&--blue--medium
+			color					$body-text-colour !important
+
+		&__content
+		&__header
+			font-size  				12pt !important
+			justify-content			flex-start !important
+			text-align 				left !important
+
+	.o-media__image
+	.o-media__text
+		col(12)
+		margin						0 !important
+		text-align 					left !important
+		width 						100% !important
+
 	.o-section
 		background					transparent !important
 		color						$body-text-colour !important
@@ -8,7 +133,7 @@
 		padding						0.5 * $base-spacing-unit 0 0 0 !important
 		text-align 					left !important
 
-		&:fist-of-type
+		&:first-of-type
 			padding-top 			0 !important
 
 		&__content
@@ -23,11 +148,21 @@
 				top					0 !important
 				transform 			translateY(0) !important
 
+		&__header
+			color					$body-text-colour !important
+			font-size 				22pt !important
+			margin					0 0 $base-spacing-unit 0 !important
+			text-align 				left !important
+
 		&__end
 			display 				none !important
 
-	.c-navigation,
-	.c-client-login
+	// COMPONENTS
+
+	.c-blog
+	.c-contact
+	.c-newsletter
+	.c-navbar
 		display 					none !important
 
 	.c-introduction
@@ -36,27 +171,13 @@
 
 		.o-inline-link
 			color					$body-text-colour !important
-			font-size 				8pt !important
 
 			&:after
 				display 			none !important
 
 		&__image
+			border 					none !important
 			margin					0 !important
-
-			&__container
-				margin				0 !important
-				padding				0 !important
-				text-align 			left !important
-				width				100% !important
-
-				&:before
-					display 		none !important
-
-		&__content__container
-			margin					0 !important
-			padding					0 !important
-			width					100% !important
 
 		&__header,
 		&__text
@@ -64,6 +185,7 @@
 			color					$body-text-colour !important
 
 		&__text
+			font-size 				14pt !important
 			margin-bottom 			0
 
 		&__contact-list
@@ -72,74 +194,14 @@
 			margin					1rem 0 !important
 			padding					0 0 0 2rem !important
 
-			&__item
-				color				$body-text-colour !important
-				display 			list-item !important
-				list-style 			inherit !important
-				list-style-type 	disc !important
-				margin				0 !important
-
-				&__link
-					background 		none !important
-					color			$blue !important
-					font-size 		8pt !important
-					line-height 	100% !important
-					margin			0.5rem 0 !important
-					padding			0 !important
-					position 		relative !important
-
-					.o-icon
-						display 	none !important
-
-					&:after
-						display 	none !important
-
-				&__text
-					position 		inherit !important
-					height 			auto !important
-					left			auto !important
-					overflow 		visible !important
-					top				auto !important
-					width			auto !important
-
 	.c-services
 		background					transparent !important
 
-		&__header
-			color					$body-text-colour !important
-			margin					0 !important
-			text-align 				left !important
-
 		&__list
-			list-style 				inherit !important
-			list-style-type 		disc !important
-			margin					1rem 0 !important
-			padding					0 0 0 2rem !important
 			width					100% !important
 
-			&__item
-				color				$body-text-colour !important
-				display 			list-item !important
-				list-style 			inherit !important
-				list-style-type 	disc !important
-
-				.o-icon
-					display 		none !important
-
-		&__button
-			border					none !important
-			color					$blue !important
-			font-size 				8pt !important
-			font-weight 			300 !important
-			text-decoration 		underline !important
-			text-transform 			inherit !important
-
-			&__container
-				margin				0 !important
-				text-align 			left !important
-
-			&:after
-				content 			" (" attr(href) ")"
+		&__footer
+			display 				none !important
 
 	.c-clients
 		background 					transparent !important
@@ -149,42 +211,18 @@
 			margin					0 !important
 			text-align 				left !important
 
-		&__list
-			list-style 				inherit !important
-			margin					1rem 0 !important
-			padding					0 0 0 2rem !important
-			width					100% !important
-
-			&__item
-				border 				none !important
-				height				auto !important
-				display 			list-item !important
-				margin				0.5rem 0 !important
-				text-align 			left !important
-				width				100% !important
-
-				&__logo
-					display 		none !important
-
-				&__text
-					display 		inline !important
-
 	.c-cost
 		background					inherit !important
 		color						$body-text-colour !important
 		text-align 					left !important
 
-		&__header
-			color					$body-text-colour !important
-			margin					0 !important
-			text-align 				left !important
-
 		&__text
+			font-size  				12pt !important
 			margin					1rem 0 !important
 
 		.o-inline-link
 			color					$body-text-colour !important
-			font-size  				8pt !important
+			font-size  				12pt !important
 			position				inherit !important
 
 			&:before
@@ -227,24 +265,5 @@
 					color			$body-text-colour !important
 					line-height 	1 !important
 
-	.o-article
-
-		&__header
-			height 					auto !important
-			margin					0 auto !important
-			text-align 				left !important
-			width					90% !important
-
-			&__content
-				color				$black !important
-				padding 			1cm 0 !important
-				top					auto !important
-				transform 			translateY(0) !important
-
-				&__buttons
-					display 		none
-
-	.c-contact
-	.c-newsletter
-	.c-navbar
-		display 					none !important
+		&__footer
+			display 				none !important

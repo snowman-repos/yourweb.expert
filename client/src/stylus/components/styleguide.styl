@@ -7,42 +7,6 @@
 	color					$grey--dark-1
 	padding					$base-spacing-unit
 
-	&__header
-		color				$white
-		margin-bottom 		1rem
-
-	&__example
-		clearfix()
-		relative()
-		background 			lighten($blue--medium, 90%)
-		border 				1px dotted $grey--dark-2
-		min-height 			15rem
-		overflow 			hidden
-		padding				$base-spacing-unit
-
-	&__markup
-		background			$grey--dark-1
-		color				$silver
-		padding				0.5 * $base-spacing-unit
-
-	&__section
-		col(10)
-		background			$white
-		border				1px solid $grey--light-1
-		margin-bottom		$base-spacing-unit
-		padding				$base-spacing-unit
-
-		&__header
-			color			$grey--dark-2
-
-	// &__states
-
-	&__subsection
-
-		&__header
-			border-bottom	1px solid $grey--light-1
-			margin-bottom 	1rem
-
 	&__colour-block
 		border 				1px solid $grey--dark-2
 		display				inline-block
@@ -80,6 +44,19 @@
 		&--white
 			background 		$white
 
+	&__example
+		clearfix()
+		relative()
+		background 			lighten($blue--medium, 90%)
+		border 				1px dotted $grey--dark-2
+		min-height 			15rem
+		overflow 			hidden
+		padding				$base-spacing-unit
+
+	&__header
+		color				$white
+		margin-bottom 		1rem
+
 	&__icon-container
 		align-content 		center
 		display 			flex
@@ -95,5 +72,33 @@
 		.o-icon:not(.o-icon--margin--left, .o-icon--margin--right)
 			margin			0.5rem
 
-	.o-form__input
+	&__markup
+		background			$grey--dark-1
+		color				$silver
+		padding				0.5 * $base-spacing-unit
+
+	&__note
+		font-size 			0.65rem
 		margin-bottom 		$base-spacing-unit
+
+	&__section
+		col(10)
+		background			$white
+		border				1px solid $grey--light-1
+		margin-bottom		$base-spacing-unit
+		padding				$base-spacing-unit
+
+		&__header
+			color			$grey--dark-2
+
+	&__spacer-element
+		height				100px
+
+	&__states
+		font-size 			0.85rem
+
+	&__subsection
+
+		&__header
+			border-bottom	1px solid $grey--light-1
+			margin-bottom 	1rem

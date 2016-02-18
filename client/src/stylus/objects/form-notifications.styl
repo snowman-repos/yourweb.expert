@@ -1,26 +1,27 @@
-// @name Form Notification
+// @name Form Notifications
 // @description A notification displayed above a form to indicate the status of the form submission.
 // @state .is-hidden - the notification is hidden
 // @markup
-// <form action="" method="post" class="o-form js-form is-sent">
+// <div style="height: 15rem; position: relative;">
+//   <form action="" method="post" class="o-form js-form is-sent">
+//     <div class="o-form__input-group is-complete">
+//       <label class="o-form__label" for="completeinputgroup">Complete Input Group:</label>
+//       <input class="o-form__input o-form__input--block" id="completeinputgroup" placeholder="placeholder text" type="text">
+//       <svg viewBox="0 0 32 32" class="o-icon o-icon--check o-form__input-group__checkmark">
+//         <use xlink:href="#icon--check"></use>
+//       </svg>
+//     </div>
+//   </form>
 //   <div class="o-form__notification js-sent-form">
 //     <p class="o-form__notification__message">Thanks!
-//       <div class="u-subheader">I'll reply with 24 hours</div>
+//       <span class="u-subheader">I'll reply with 24 hours</span>
 //     </p>
 //   </div>
-// </form>
-// <form action="" method="post" class="o-form js-form is-sent">
-//   <div class="o-form__notification js-sent-form is-hidden">
-//     <p class="o-form__notification__message">Thanks!
-//       <div class="u-subheader">I'll reply with 24 hours</div>
-//     </p>
-//   </div>
-// </form>
+// </div>
 
 .o-form__notification
 	absolute()
 	bottom						0
-	display						none
 	height						100%
 	left						0
 	opacity						1
@@ -37,3 +38,4 @@
 		vertical-centre()
 		font-size				2rem
 		margin-top				-2.5rem
+		text-align 				center

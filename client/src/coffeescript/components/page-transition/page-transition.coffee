@@ -14,14 +14,15 @@ class PageTransition
 
 		@currentPage = "home"
 
-		@loader = loader = new SVGLoader @el.overlay,
-			easingIn: mina.easeinout
-			speedIn: 400
+		if @el.overlay and @el.pages.length
+			@loader = loader = new SVGLoader @el.overlay,
+				easingIn: mina.easeinout
+				speedIn: 400
 
-		@pages = @indexPages()
+			@pages = @indexPages()
 
-		@addEventListeners()
-		@setupRouting()
+			@addEventListeners()
+			@setupRouting()
 
 	addEventListeners: ->
 

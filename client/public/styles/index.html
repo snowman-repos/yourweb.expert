@@ -300,19 +300,31 @@
 		<h3 class="c-styleguide__subsection__header">Example</h3>
 
 		<div class="c-styleguide__example">
-			 <section data-nav-title="Read my thoughts" data-wait-for-load="true" id="blog" class="o-section o-section--padding-top o-section--dark-blue c-blog__section js-scroll-point js-blog">
+			 <div class="c-styleguide__note">
+   <strong>NOTE: </strong> You meed to add the 'js-blog' class to the .c-blog__section component in order to have articles dynamically loaded.
+ </div>
+ <section data-nav-title="Read my thoughts" id="blog" class="o-section o-section--dark-blue c-blog__section is-loaded">
    <div class="o-section__content__container">
      <div class="c-blog o-section__content">
        <ul class="o-blog-post-list c-blog__list js-blog-list">
-         <li class="o-blog-post-list__item c-blog__list__item"><a href="" title="Read more" class="o-blog-post-list__item__link c-blog__list__item__link">
-           <h2 class="c-blog-post-list__item__heading c-blog__list__item__heading">Bleh</h2>
-           <div class="o-blog-post-list__item__date c-blog__list__item__date">25<sup>th</sup>&nbsp;Dec</div></a></li>
-         <li class="o-blog-post-list__item c-blog__list__item"><a href="" title="Read more" class="o-blog-post-list__item__link c-blog__list__item__link">
-           <h2 class="c-blog-post-list__item__heading c-blog__list__item__heading">Bleh</h2>
-           <div class="o-blog-post-list__item__date c-blog__list__item__date">25<sup>th</sup>&nbsp;Dec</div></a></li>
-         <li class="o-blog-post-list__item c-blog__list__item"><a href="" title="Read more" class="o-blog-post-list__item__link c-blog__list__item__link">
-           <h2 class="c-blog-post-list__item__heading c-blog__list__item__heading">Bleh</h2>
-           <div class="o-blog-post-list__item__date c-blog__list__item__date">25<sup>th</sup>&nbsp;Dec</div></a></li>
+         <li class="o-blog-post-list__item">
+           <a href="" title="Read more" class="o-blog-post-list__item__link">
+             <h2 class="o-blog-post-list__item__heading">Article Title</h2>
+             <div class="o-blog-post-list__item__date">25<sup>th</sup>&nbsp;Dec</div>
+           </a>
+         </li>
+         <li class="o-blog-post-list__item">
+           <a href="" title="Read more" class="o-blog-post-list__item__link">
+             <h2 class="o-blog-post-list__item__heading">Article Title</h2>
+             <div class="o-blog-post-list__item__date">25<sup>th</sup>&nbsp;Dec</div>
+           </a>
+         </li>
+         <li class="o-blog-post-list__item">
+           <a href="" title="Read more" class="o-blog-post-list__item__link">
+             <h2 class="o-blog-post-list__item__heading">Article Title</h2>
+             <div class="o-blog-post-list__item__date">25<sup>th</sup>&nbsp;Dec</div>
+           </a>
+         </li>
        </ul>
      </div>
    </div>
@@ -322,22 +334,35 @@
      </g>
    </svg>
  </section>
+ <div class="c-styleguide__spacer-element"></div>
 		</div>
 
 		<pre class="c-styleguide__markup">
- &lt;section data-nav-title="Read my thoughts" data-wait-for-load="true" id="blog" class="o-section o-section--padding-top o-section--dark-blue c-blog__section js-scroll-point js-blog"&gt;
+ &lt;div class="c-styleguide__note"&gt;
+   &lt;strong&gt;NOTE: &lt;/strong&gt; You meed to add the 'js-blog' class to the .c-blog__section component in order to have articles dynamically loaded.
+ &lt;/div&gt;
+ &lt;section data-nav-title="Read my thoughts" id="blog" class="o-section o-section--dark-blue c-blog__section is-loaded"&gt;
    &lt;div class="o-section__content__container"&gt;
      &lt;div class="c-blog o-section__content"&gt;
        &lt;ul class="o-blog-post-list c-blog__list js-blog-list"&gt;
-         &lt;li class="o-blog-post-list__item c-blog__list__item"&gt;&lt;a href="" title="Read more" class="o-blog-post-list__item__link c-blog__list__item__link"&gt;
-           &lt;h2 class="c-blog-post-list__item__heading c-blog__list__item__heading"&gt;Bleh&lt;/h2&gt;
-           &lt;div class="o-blog-post-list__item__date c-blog__list__item__date"&gt;25&lt;sup&gt;th&lt;/sup&gt;&nbsp;Dec&lt;/div&gt;&lt;/a&gt;&lt;/li&gt;
-         &lt;li class="o-blog-post-list__item c-blog__list__item"&gt;&lt;a href="" title="Read more" class="o-blog-post-list__item__link c-blog__list__item__link"&gt;
-           &lt;h2 class="c-blog-post-list__item__heading c-blog__list__item__heading"&gt;Bleh&lt;/h2&gt;
-           &lt;div class="o-blog-post-list__item__date c-blog__list__item__date"&gt;25&lt;sup&gt;th&lt;/sup&gt;&nbsp;Dec&lt;/div&gt;&lt;/a&gt;&lt;/li&gt;
-         &lt;li class="o-blog-post-list__item c-blog__list__item"&gt;&lt;a href="" title="Read more" class="o-blog-post-list__item__link c-blog__list__item__link"&gt;
-           &lt;h2 class="c-blog-post-list__item__heading c-blog__list__item__heading"&gt;Bleh&lt;/h2&gt;
-           &lt;div class="o-blog-post-list__item__date c-blog__list__item__date"&gt;25&lt;sup&gt;th&lt;/sup&gt;&nbsp;Dec&lt;/div&gt;&lt;/a&gt;&lt;/li&gt;
+         &lt;li class="o-blog-post-list__item"&gt;
+           &lt;a href="" title="Read more" class="o-blog-post-list__item__link"&gt;
+             &lt;h2 class="o-blog-post-list__item__heading"&gt;Article Title&lt;/h2&gt;
+             &lt;div class="o-blog-post-list__item__date"&gt;25&lt;sup&gt;th&lt;/sup&gt;&nbsp;Dec&lt;/div&gt;
+           &lt;/a&gt;
+         &lt;/li&gt;
+         &lt;li class="o-blog-post-list__item"&gt;
+           &lt;a href="" title="Read more" class="o-blog-post-list__item__link"&gt;
+             &lt;h2 class="o-blog-post-list__item__heading"&gt;Article Title&lt;/h2&gt;
+             &lt;div class="o-blog-post-list__item__date"&gt;25&lt;sup&gt;th&lt;/sup&gt;&nbsp;Dec&lt;/div&gt;
+           &lt;/a&gt;
+         &lt;/li&gt;
+         &lt;li class="o-blog-post-list__item"&gt;
+           &lt;a href="" title="Read more" class="o-blog-post-list__item__link"&gt;
+             &lt;h2 class="o-blog-post-list__item__heading"&gt;Article Title&lt;/h2&gt;
+             &lt;div class="o-blog-post-list__item__date"&gt;25&lt;sup&gt;th&lt;/sup&gt;&nbsp;Dec&lt;/div&gt;
+           &lt;/a&gt;
+         &lt;/li&gt;
        &lt;/ul&gt;
      &lt;/div&gt;
    &lt;/div&gt;
@@ -347,6 +372,7 @@
      &lt;/g&gt;
    &lt;/svg&gt;
  &lt;/section&gt;
+ &lt;div class="c-styleguide__spacer-element"&gt;&lt;/div&gt;
 		</pre>
 
 	</section>
@@ -373,28 +399,31 @@
 		<h3 class="c-styleguide__subsection__header">Example</h3>
 
 		<div class="c-styleguide__example">
-			 <div style="height: 20rem; position: relative;">
-   <div class="o-morph-button c-client-login js-morph-button is-hidden js-login-form">
-     <button type="button" class="o-morph-button__button o-button o-button--ghost o-button--ghost--white-and-yellow o-button--small c-client-login__button js-morph-button-open">Client login</button>
-     <div class="o-dialog o-dialog--yellow o-morph-button__dialog c-client-login__dialog js-morph-dialog">
+			 <div class="c-styleguide__note">
+   <strong>NOTE: </strong> For the purposes of this demo the component, the button, and the dialog have been given an inline-style of 'position: absolute'.
+ </div>
+ <div style="background: #243342; height: 20rem; overflow: hidden; position: relative;">
+   <div class="o-morph-button c-client-login js-morph-button is-hidden js-login-form" style="position: absolute;">
+     <button type="button" class="o-morph-button__button o-button o-button--ghost o-button--ghost--white-and-yellow o-button--small o-button--rounded c-client-login__button js-morph-button-open" style="position: absolute;">Client login</button>
+     <div class="o-dialog o-dialog--yellow o-morph-button__dialog c-client-login__dialog js-morph-dialog" style="position: absolute;">
        <div class="o-dialog__content o-morph-button__dialog__content">
          <button type="button" class="o-dialog__close-button o-button o-button--icon js-morph-button-close">&times;</button>
          <form action="/login" method="post" class="o-form c-client-login__form">
-           <div class="o-form__group js-login-email">
+           <div class="o-form__input-group js-login-email">
              <label for="login-email" class="o-form__label o-form__label--blue--cerulean">Email:</label>
-             <input id="login-email" name="login-email" placeholder="e.g. gordon.shumway@melmac.com" tabindex="1" type="email" class="o-form__input o-form__input--blue--navy js-login-email-input">
-             <svg viewBox="0 0 32 32" class="o-icon o-icon--check o-form__check">
+             <input id="login-email" name="login-email" placeholder="e.g. gordon.shumway@melmac.com" tabindex="1" type="email" class="o-form__input o-form__input--block o-form__input--blue--navy js-login-email-input">
+             <svg viewBox="0 0 32 32" class="o-icon o-icon--check o-form__input-group__checkmark">
                <use xlink:href="#icon--check"></use>
              </svg>
            </div>
-           <div class="o-form__group js-login-password">
+           <div class="o-form__input-group js-login-password">
              <label for="login-password" class="o-form__label o-form__label--blue--cerulean">Password:</label>
-             <input id="login-password" name="login-password" tabindex="2" type="password" class="o-form__input o-form__input--blue--navy js-login-password-input">
-             <svg viewBox="0 0 32 32" class="o-icon o-icon--check o-form__check">
+             <input id="login-password" name="login-password" tabindex="2" type="password" class="o-form__input o-form__input--block o-form__input--blue--navy js-login-password-input">
+             <svg viewBox="0 0 32 32" class="o-icon o-icon--check o-form__input-group__checkmark">
                <use xlink:href="#icon--check"></use>
              </svg>
            </div>
-           <div class="o-form__group">
+           <div class="o-form__input-group">
              <input tabindex="3" type="submit" value="login" class="o-form__submit-button o-button o-button--block o-button--blue--navy is-disabled js-login-button">
            </div>
          </form>
@@ -408,28 +437,31 @@
 		</div>
 
 		<pre class="c-styleguide__markup">
- &lt;div style="height: 20rem; position: relative;"&gt;
-   &lt;div class="o-morph-button c-client-login js-morph-button is-hidden js-login-form"&gt;
-     &lt;button type="button" class="o-morph-button__button o-button o-button--ghost o-button--ghost--white-and-yellow o-button--small c-client-login__button js-morph-button-open"&gt;Client login&lt;/button&gt;
-     &lt;div class="o-dialog o-dialog--yellow o-morph-button__dialog c-client-login__dialog js-morph-dialog"&gt;
+ &lt;div class="c-styleguide__note"&gt;
+   &lt;strong&gt;NOTE: &lt;/strong&gt; For the purposes of this demo the component, the button, and the dialog have been given an inline-style of 'position: absolute'.
+ &lt;/div&gt;
+ &lt;div style="background: #243342; height: 20rem; overflow: hidden; position: relative;"&gt;
+   &lt;div class="o-morph-button c-client-login js-morph-button is-hidden js-login-form" style="position: absolute;"&gt;
+     &lt;button type="button" class="o-morph-button__button o-button o-button--ghost o-button--ghost--white-and-yellow o-button--small o-button--rounded c-client-login__button js-morph-button-open" style="position: absolute;"&gt;Client login&lt;/button&gt;
+     &lt;div class="o-dialog o-dialog--yellow o-morph-button__dialog c-client-login__dialog js-morph-dialog" style="position: absolute;"&gt;
        &lt;div class="o-dialog__content o-morph-button__dialog__content"&gt;
          &lt;button type="button" class="o-dialog__close-button o-button o-button--icon js-morph-button-close"&gt;&times;&lt;/button&gt;
          &lt;form action="/login" method="post" class="o-form c-client-login__form"&gt;
-           &lt;div class="o-form__group js-login-email"&gt;
+           &lt;div class="o-form__input-group js-login-email"&gt;
              &lt;label for="login-email" class="o-form__label o-form__label--blue--cerulean"&gt;Email:&lt;/label&gt;
-             &lt;input id="login-email" name="login-email" placeholder="e.g. gordon.shumway@melmac.com" tabindex="1" type="email" class="o-form__input o-form__input--blue--navy js-login-email-input"&gt;
-             &lt;svg viewBox="0 0 32 32" class="o-icon o-icon--check o-form__check"&gt;
+             &lt;input id="login-email" name="login-email" placeholder="e.g. gordon.shumway@melmac.com" tabindex="1" type="email" class="o-form__input o-form__input--block o-form__input--blue--navy js-login-email-input"&gt;
+             &lt;svg viewBox="0 0 32 32" class="o-icon o-icon--check o-form__input-group__checkmark"&gt;
                &lt;use xlink:href="#icon--check"&gt;&lt;/use&gt;
              &lt;/svg&gt;
            &lt;/div&gt;
-           &lt;div class="o-form__group js-login-password"&gt;
+           &lt;div class="o-form__input-group js-login-password"&gt;
              &lt;label for="login-password" class="o-form__label o-form__label--blue--cerulean"&gt;Password:&lt;/label&gt;
-             &lt;input id="login-password" name="login-password" tabindex="2" type="password" class="o-form__input o-form__input--blue--navy js-login-password-input"&gt;
-             &lt;svg viewBox="0 0 32 32" class="o-icon o-icon--check o-form__check"&gt;
+             &lt;input id="login-password" name="login-password" tabindex="2" type="password" class="o-form__input o-form__input--block o-form__input--blue--navy js-login-password-input"&gt;
+             &lt;svg viewBox="0 0 32 32" class="o-icon o-icon--check o-form__input-group__checkmark"&gt;
                &lt;use xlink:href="#icon--check"&gt;&lt;/use&gt;
              &lt;/svg&gt;
            &lt;/div&gt;
-           &lt;div class="o-form__group"&gt;
+           &lt;div class="o-form__input-group"&gt;
              &lt;input tabindex="3" type="submit" value="login" class="o-form__submit-button o-button o-button--block o-button--blue--navy is-disabled js-login-button"&gt;
            &lt;/div&gt;
          &lt;/form&gt;
@@ -466,7 +498,7 @@
 		<h3 class="c-styleguide__subsection__header">Example</h3>
 
 		<div class="c-styleguide__example">
-			 <section data-nav-title="See who I've worked for" data-when-in-view="show-logos" id="clients" class="o-section o-section--padding-top o-section--blue js-scroll-point js-full-height-section">
+			 <section data-nav-title="See who I've worked for" data-when-in-view="show-logos" id="clients" class="o-section o-section--blue js-full-height-section">
    <div class="o-section__content__container">
      <div aria-labelledby="clients__header" class="c-clients o-section__content">
        <h2 id="clients__header" class="o-section__header o-section__header--white">Some of the companies I've worked for</h2>
@@ -510,10 +542,11 @@
      </g>
    </svg>
  </section>
+ <div class="c-styleguide__spacer-element"></div>
 		</div>
 
 		<pre class="c-styleguide__markup">
- &lt;section data-nav-title="See who I've worked for" data-when-in-view="show-logos" id="clients" class="o-section o-section--padding-top o-section--blue js-scroll-point js-full-height-section"&gt;
+ &lt;section data-nav-title="See who I've worked for" data-when-in-view="show-logos" id="clients" class="o-section o-section--blue js-full-height-section"&gt;
    &lt;div class="o-section__content__container"&gt;
      &lt;div aria-labelledby="clients__header" class="c-clients o-section__content"&gt;
        &lt;h2 id="clients__header" class="o-section__header o-section__header--white"&gt;Some of the companies I've worked for&lt;/h2&gt;
@@ -557,6 +590,7 @@
      &lt;/g&gt;
    &lt;/svg&gt;
  &lt;/section&gt;
+ &lt;div class="c-styleguide__spacer-element"&gt;&lt;/div&gt;
 		</pre>
 
 	</section>
@@ -583,7 +617,7 @@
 		<h3 class="c-styleguide__subsection__header">Example</h3>
 
 		<div class="c-styleguide__example">
-			 <section data-nav-title="Get in touch with me" data-when-in-view="zoom-in-map" id="contact" class="o-section o-section--padding-top o-section--navy-blue js-scroll-point js-full-height-section">
+			 <section data-nav-title="Get in touch with me" data-when-in-view="zoom-in-map" id="contact" class="o-section o-section--navy-blue js-full-height-section">
    <div class="o-section__content__container">
      <div aria-labelledby="contact__header" class="c-contact o-section__content">
        <h2 id="contact__header" class="o-section__header o-section__header--white">Get in touch</h2>
@@ -592,14 +626,14 @@
            <div class="o-form__input-group js-name">
              <label for="name" class="o-form__label o-form__label--silver">Your name:</label>
              <input data-error="Don't forget your name!" id="name" maxlength="50" pattern="/^[^/!£@#$%^&amp;*()[]+~?&lt;&gt;.0-9|&quot;]+$/" placeholder="e.g. Gordon Shumway" title="Your name" type="text" class="o-form__input o-form__input--block o-form__input--blue js-name-input">
-             <svg viewBox="0 0 32 32" class="o-icon o-icon--check o-form__check">
+             <svg viewBox="0 0 32 32" class="o-icon o-icon--check o-form__input-group__checkmark">
                <use xlink:href="#icon--check"></use>
              </svg>
            </div>
            <div class="o-form__input-group js-email">
              <label for="email" class="o-form__label o-form__label--silver">Your email address:</label>
              <input data-error="I need your email address :)" id="email" maxlength="50" placeholder="e.g. gordon.shumway@melmac.com" type="email" class="o-form__input o-form__input--block o-form__input--blue js-email-input">
-             <svg viewBox="0 0 32 32" class="o-icon o-icon--check o-form__check">
+             <svg viewBox="0 0 32 32" class="o-icon o-icon--check o-form__input-group__checkmark">
                <use xlink:href="#icon--check"></use>
              </svg>
            </div>
@@ -608,12 +642,12 @@
              <textarea data-error="What will we be working on?" id="message" placeholder="e.g. My project entails...
  My budget is...
  My deadline is..." class="o-form__input o-form__input--block o-form__input--textarea o-form__input--blue js-message-input"></textarea>
-             <svg viewBox="0 0 32 32" class="o-icon o-icon--check o-form__check">
+             <svg viewBox="0 0 32 32" class="o-icon o-icon--check o-form__input-group__checkmark">
                <use xlink:href="#icon--check"></use>
              </svg>
            </div>
            <div class="o-form__group">
-             <input type="submit" value="Email me" class="o-form__submit-button o-button is-disabled js-form-submit">
+             <input type="submit" value="Email me" class="o-form__submit-button o-button o-button--blue--cerulean is-disabled js-form-submit">
            </div>
          </form>
          <div class="o-form__notification js-sending-form is-hidden">
@@ -657,10 +691,11 @@
      </g>
    </svg>
  </section>
+ <div class="c-styleguide__spacer-element"></div>
 		</div>
 
 		<pre class="c-styleguide__markup">
- &lt;section data-nav-title="Get in touch with me" data-when-in-view="zoom-in-map" id="contact" class="o-section o-section--padding-top o-section--navy-blue js-scroll-point js-full-height-section"&gt;
+ &lt;section data-nav-title="Get in touch with me" data-when-in-view="zoom-in-map" id="contact" class="o-section o-section--navy-blue js-full-height-section"&gt;
    &lt;div class="o-section__content__container"&gt;
      &lt;div aria-labelledby="contact__header" class="c-contact o-section__content"&gt;
        &lt;h2 id="contact__header" class="o-section__header o-section__header--white"&gt;Get in touch&lt;/h2&gt;
@@ -669,14 +704,14 @@
            &lt;div class="o-form__input-group js-name"&gt;
              &lt;label for="name" class="o-form__label o-form__label--silver"&gt;Your name:&lt;/label&gt;
              &lt;input data-error="Don't forget your name!" id="name" maxlength="50" pattern="/^[^/!£@#$%^&amp;*()[]+~?&lt;&gt;.0-9|&quot;]+$/" placeholder="e.g. Gordon Shumway" title="Your name" type="text" class="o-form__input o-form__input--block o-form__input--blue js-name-input"&gt;
-             &lt;svg viewBox="0 0 32 32" class="o-icon o-icon--check o-form__check"&gt;
+             &lt;svg viewBox="0 0 32 32" class="o-icon o-icon--check o-form__input-group__checkmark"&gt;
                &lt;use xlink:href="#icon--check"&gt;&lt;/use&gt;
              &lt;/svg&gt;
            &lt;/div&gt;
            &lt;div class="o-form__input-group js-email"&gt;
              &lt;label for="email" class="o-form__label o-form__label--silver"&gt;Your email address:&lt;/label&gt;
              &lt;input data-error="I need your email address :)" id="email" maxlength="50" placeholder="e.g. gordon.shumway@melmac.com" type="email" class="o-form__input o-form__input--block o-form__input--blue js-email-input"&gt;
-             &lt;svg viewBox="0 0 32 32" class="o-icon o-icon--check o-form__check"&gt;
+             &lt;svg viewBox="0 0 32 32" class="o-icon o-icon--check o-form__input-group__checkmark"&gt;
                &lt;use xlink:href="#icon--check"&gt;&lt;/use&gt;
              &lt;/svg&gt;
            &lt;/div&gt;
@@ -685,12 +720,12 @@
              &lt;textarea data-error="What will we be working on?" id="message" placeholder="e.g. My project entails...
  My budget is...
  My deadline is..." class="o-form__input o-form__input--block o-form__input--textarea o-form__input--blue js-message-input"&gt;&lt;/textarea&gt;
-             &lt;svg viewBox="0 0 32 32" class="o-icon o-icon--check o-form__check"&gt;
+             &lt;svg viewBox="0 0 32 32" class="o-icon o-icon--check o-form__input-group__checkmark"&gt;
                &lt;use xlink:href="#icon--check"&gt;&lt;/use&gt;
              &lt;/svg&gt;
            &lt;/div&gt;
            &lt;div class="o-form__group"&gt;
-             &lt;input type="submit" value="Email me" class="o-form__submit-button o-button is-disabled js-form-submit"&gt;
+             &lt;input type="submit" value="Email me" class="o-form__submit-button o-button o-button--blue--cerulean is-disabled js-form-submit"&gt;
            &lt;/div&gt;
          &lt;/form&gt;
          &lt;div class="o-form__notification js-sending-form is-hidden"&gt;
@@ -734,6 +769,7 @@
      &lt;/g&gt;
    &lt;/svg&gt;
  &lt;/section&gt;
+ &lt;div class="c-styleguide__spacer-element"&gt;&lt;/div&gt;
 		</pre>
 
 	</section>
@@ -760,7 +796,7 @@
 		<h3 class="c-styleguide__subsection__header">Example</h3>
 
 		<div class="c-styleguide__example">
-			 <section data-nav-title="How much I charge" id="cost" class="o-section o-section--padding-top o-section--cerulean-blue js-scroll-point js-full-height-section">
+			 <section data-nav-title="How much I charge" id="cost" class="o-section o-section--cerulean-blue js-full-height-section">
    <div class="o-section__content__container">
      <div aria-labelledby="cost__header" class="c-cost o-section__content">
        <h2 id="cost__header" class="o-section__header o-section__header--white">How much?</h2>
@@ -795,10 +831,11 @@
      </g>
    </svg>
  </section>
+ <div class="c-styleguide__spacer-element"></div>
 		</div>
 
 		<pre class="c-styleguide__markup">
- &lt;section data-nav-title="How much I charge" id="cost" class="o-section o-section--padding-top o-section--cerulean-blue js-scroll-point js-full-height-section"&gt;
+ &lt;section data-nav-title="How much I charge" id="cost" class="o-section o-section--cerulean-blue js-full-height-section"&gt;
    &lt;div class="o-section__content__container"&gt;
      &lt;div aria-labelledby="cost__header" class="c-cost o-section__content"&gt;
        &lt;h2 id="cost__header" class="o-section__header o-section__header--white"&gt;How much?&lt;/h2&gt;
@@ -833,6 +870,7 @@
      &lt;/g&gt;
    &lt;/svg&gt;
  &lt;/section&gt;
+ &lt;div class="c-styleguide__spacer-element"&gt;&lt;/div&gt;
 		</pre>
 
 	</section>
@@ -859,7 +897,7 @@
 		<h3 class="c-styleguide__subsection__header">Example</h3>
 
 		<div class="c-styleguide__example">
-			 <section data-nav-title="About me" id="introduction" class="o-section o-section--dark-blue js-scroll-point js-full-height-section">
+			 <section data-nav-title="About me" id="introduction" class="o-section o-section--dark-blue js-full-height-section">
    <div class="o-section__content__container">
      <div aria-labelledby="introduction__header" itemscope="" itemtype="http://data-vocabulary.org/Person" class="c-introduction o-section__content o-media">
        <meta itemprop="url" content="https://yourweb.expert">
@@ -900,10 +938,11 @@
      </g>
    </svg>
  </section>
+ <div class="c-styleguide__spacer-element"></div>
 		</div>
 
 		<pre class="c-styleguide__markup">
- &lt;section data-nav-title="About me" id="introduction" class="o-section o-section--dark-blue js-scroll-point js-full-height-section"&gt;
+ &lt;section data-nav-title="About me" id="introduction" class="o-section o-section--dark-blue js-full-height-section"&gt;
    &lt;div class="o-section__content__container"&gt;
      &lt;div aria-labelledby="introduction__header" itemscope="" itemtype="http://data-vocabulary.org/Person" class="c-introduction o-section__content o-media"&gt;
        &lt;meta itemprop="url" content="https://yourweb.expert"&gt;
@@ -944,6 +983,7 @@
      &lt;/g&gt;
    &lt;/svg&gt;
  &lt;/section&gt;
+ &lt;div class="c-styleguide__spacer-element"&gt;&lt;/div&gt;
 		</pre>
 
 	</section>
@@ -970,7 +1010,7 @@
 		<h3 class="c-styleguide__subsection__header">Example</h3>
 
 		<div class="c-styleguide__example">
-			 <section data-nav-title="Subscribe to the FullWeb newsletter" id="newsletter" class="o-section o-section--padding-top o-section--white js-scroll-point">
+			 <section data-nav-title="Subscribe to the FullWeb newsletter" id="newsletter" class="o-section o-section--white">
    <div class="o-section__content__container">
      <div aria-labelledby="newsletter__header" class="c-newsletter">
        <h2 id="newsletter__header">I subscribe and contribute to the</h2>
@@ -984,7 +1024,7 @@
 		</div>
 
 		<pre class="c-styleguide__markup">
- &lt;section data-nav-title="Subscribe to the FullWeb newsletter" id="newsletter" class="o-section o-section--padding-top o-section--white js-scroll-point"&gt;
+ &lt;section data-nav-title="Subscribe to the FullWeb newsletter" id="newsletter" class="o-section o-section--white"&gt;
    &lt;div class="o-section__content__container"&gt;
      &lt;div aria-labelledby="newsletter__header" class="c-newsletter"&gt;
        &lt;h2 id="newsletter__header"&gt;I subscribe and contribute to the&lt;/h2&gt;
@@ -1021,7 +1061,7 @@
 		<h3 class="c-styleguide__subsection__header">Example</h3>
 
 		<div class="c-styleguide__example">
-			 <section data-nav-title="Find out what I do" data-when-in-view="check-checkmarks" id="services" class="o-section o-section--padding-top o-section--sky-blue js-scroll-point">
+			 <section data-nav-title="Find out what I do" data-when-in-view="check-checkmarks" id="services" class="o-section o-section--sky-blue">
    <div class="o-section__content__container">
      <div aria-labelledby="services__header" class="c-services o-section__content">
  	     <h2 id="services__header" class="o-section__header o-section__header--blue--medium">What I do</h2>
@@ -1102,10 +1142,11 @@
      </g>
    </svg>
  </section>
+ <div class="c-styleguide__spacer-element"></div>
 		</div>
 
 		<pre class="c-styleguide__markup">
- &lt;section data-nav-title="Find out what I do" data-when-in-view="check-checkmarks" id="services" class="o-section o-section--padding-top o-section--sky-blue js-scroll-point"&gt;
+ &lt;section data-nav-title="Find out what I do" data-when-in-view="check-checkmarks" id="services" class="o-section o-section--sky-blue"&gt;
    &lt;div class="o-section__content__container"&gt;
      &lt;div aria-labelledby="services__header" class="c-services o-section__content"&gt;
  	     &lt;h2 id="services__header" class="o-section__header o-section__header--blue--medium"&gt;What I do&lt;/h2&gt;
@@ -1186,6 +1227,7 @@
      &lt;/g&gt;
    &lt;/svg&gt;
  &lt;/section&gt;
+ &lt;div class="c-styleguide__spacer-element"&gt;&lt;/div&gt;
 		</pre>
 
 	</section>
@@ -1328,6 +1370,10 @@
 				</li>
 			
 				<li>
+					<code>.o-button--blue--cerulean</code> - cerulean blue button
+				</li>
+			
+				<li>
 					<code>.o-button--blue--navy</code> - navy blue button
 				</li>
 			
@@ -1375,6 +1421,7 @@
 			 <button class="o-button">button</button>
  <button class="o-button o-button--block">Block button</button>
  <button class="o-button o-button--blue--navy">Navy blue button button</button>
+ <button class="o-button o-button--blue--cerulean">Cerulean blue button button</button>
  <button class="o-button o-button--blue--sky">Sky blue button button</button>
  <button class="o-button o-button--icon">&times;</button>
  <button class="o-button o-button--ghost">Ghost button</button>
@@ -1390,6 +1437,7 @@
  &lt;button class="o-button"&gt;button&lt;/button&gt;
  &lt;button class="o-button o-button--block"&gt;Block button&lt;/button&gt;
  &lt;button class="o-button o-button--blue--navy"&gt;Navy blue button button&lt;/button&gt;
+ &lt;button class="o-button o-button--blue--cerulean"&gt;Cerulean blue button button&lt;/button&gt;
  &lt;button class="o-button o-button--blue--sky"&gt;Sky blue button button&lt;/button&gt;
  &lt;button class="o-button o-button--icon"&gt;&times;&lt;/button&gt;
  &lt;button class="o-button o-button--ghost"&gt;Ghost button&lt;/button&gt;
@@ -1555,7 +1603,7 @@
 </section>
 <section class="c-styleguide__section">
 
-	<h2 class="c-styleguide__section__header">Form Error Message</h2>
+	<h2 class="c-styleguide__section__header">Form Error Messages</h2>
 
 	<p>A message displayed above form inputs when the input value is deemed invalid.</p>
 
@@ -1575,17 +1623,17 @@
 
 		<div class="c-styleguide__example">
 			 <div class="o-form__input-group is-error">
-   <label class="o-form__label" for="errorinput"></label>
+   <label class="o-form__label" for="errorinput">Input:</label>
    <div class="o-form__error-message">Data is invalid</div>
-   <input class="o-form__input" id="errorinput" placeholder="invalid data" type="text">
+   <input class="o-form__input o-form__input--block" id="errorinput" placeholder="invalid data" type="text">
  </div>
 		</div>
 
 		<pre class="c-styleguide__markup">
  &lt;div class="o-form__input-group is-error"&gt;
-   &lt;label class="o-form__label" for="errorinput"&gt;&lt;/label&gt;
+   &lt;label class="o-form__label" for="errorinput"&gt;Input:&lt;/label&gt;
    &lt;div class="o-form__error-message"&gt;Data is invalid&lt;/div&gt;
-   &lt;input class="o-form__input" id="errorinput" placeholder="invalid data" type="text"&gt;
+   &lt;input class="o-form__input o-form__input--block" id="errorinput" placeholder="invalid data" type="text"&gt;
  &lt;/div&gt;
 		</pre>
 
@@ -1594,7 +1642,7 @@
 </section>
 <section class="c-styleguide__section">
 
-	<h2 class="c-styleguide__section__header">Input Group</h2>
+	<h2 class="c-styleguide__section__header">Input Groups</h2>
 
 	<p>A container for form labels, inputs, messages, and notifications.</p>
 
@@ -1630,47 +1678,47 @@
 
 		<div class="c-styleguide__example">
 			 <div class="o-form__input-group">
-   <label class="o-form__label" for="inputgroup"></label>
-   <input class="o-form__input" id="inputgroup" placeholder="placeholder text" type="text">
+   <label class="o-form__label" for="inputgroup">Input group:</label>
+   <input class="o-form__input o-form__input--block" id="inputgroup" placeholder="placeholder text" type="text">
  </div>
  <div class="o-form__input-group is-complete">
-   <label class="o-form__label" for="completeinputgroup"></label>
-   <input class="o-form__input" id="completeinputgroup" placeholder="placeholder text" type="text">
+   <label class="o-form__label" for="completeinputgroup">Complete Input Group:</label>
+   <input class="o-form__input o-form__input--block" id="completeinputgroup" placeholder="placeholder text" type="text">
    <svg viewBox="0 0 32 32" class="o-icon o-icon--check o-form__input-group__checkmark">
      <use xlink:href="#icon--check"></use>
    </svg>
  </div>
  <div class="o-form__input-group is-error">
-   <label class="o-form__label" for="errorinputgroup"></label>
+   <label class="o-form__label" for="errorinputgroup">Error Input Group:</label>
    <div class="o-form__error-message">Data is invalid</div>
-   <input class="o-form__input" id="errorinputgroup" placeholder="placeholder text" type="text">
+   <input class="o-form__input o-form__input--block" id="errorinputgroup" placeholder="placeholder text" type="text">
  </div>
  <div class="o-form__input-group is-in-focus">
-   <label class="o-form__label" for="focusedinputgroup"></label>
-   <input class="o-form__input" id="focusedinputgroup" placeholder="placeholder text" type="text">
+   <label class="o-form__label" for="focusedinputgroup">Focused Input Group:</label>
+   <input class="o-form__input o-form__input--block" id="focusedinputgroup" placeholder="placeholder text" type="text">
  </div>
 		</div>
 
 		<pre class="c-styleguide__markup">
  &lt;div class="o-form__input-group"&gt;
-   &lt;label class="o-form__label" for="inputgroup"&gt;&lt;/label&gt;
-   &lt;input class="o-form__input" id="inputgroup" placeholder="placeholder text" type="text"&gt;
+   &lt;label class="o-form__label" for="inputgroup"&gt;Input group:&lt;/label&gt;
+   &lt;input class="o-form__input o-form__input--block" id="inputgroup" placeholder="placeholder text" type="text"&gt;
  &lt;/div&gt;
  &lt;div class="o-form__input-group is-complete"&gt;
-   &lt;label class="o-form__label" for="completeinputgroup"&gt;&lt;/label&gt;
-   &lt;input class="o-form__input" id="completeinputgroup" placeholder="placeholder text" type="text"&gt;
+   &lt;label class="o-form__label" for="completeinputgroup"&gt;Complete Input Group:&lt;/label&gt;
+   &lt;input class="o-form__input o-form__input--block" id="completeinputgroup" placeholder="placeholder text" type="text"&gt;
    &lt;svg viewBox="0 0 32 32" class="o-icon o-icon--check o-form__input-group__checkmark"&gt;
      &lt;use xlink:href="#icon--check"&gt;&lt;/use&gt;
    &lt;/svg&gt;
  &lt;/div&gt;
  &lt;div class="o-form__input-group is-error"&gt;
-   &lt;label class="o-form__label" for="errorinputgroup"&gt;&lt;/label&gt;
+   &lt;label class="o-form__label" for="errorinputgroup"&gt;Error Input Group:&lt;/label&gt;
    &lt;div class="o-form__error-message"&gt;Data is invalid&lt;/div&gt;
-   &lt;input class="o-form__input" id="errorinputgroup" placeholder="placeholder text" type="text"&gt;
+   &lt;input class="o-form__input o-form__input--block" id="errorinputgroup" placeholder="placeholder text" type="text"&gt;
  &lt;/div&gt;
  &lt;div class="o-form__input-group is-in-focus"&gt;
-   &lt;label class="o-form__label" for="focusedinputgroup"&gt;&lt;/label&gt;
-   &lt;input class="o-form__input" id="focusedinputgroup" placeholder="placeholder text" type="text"&gt;
+   &lt;label class="o-form__label" for="focusedinputgroup"&gt;Focused Input Group:&lt;/label&gt;
+   &lt;input class="o-form__input o-form__input--block" id="focusedinputgroup" placeholder="placeholder text" type="text"&gt;
  &lt;/div&gt;
 		</pre>
 
@@ -1699,7 +1747,7 @@
 
 		<div class="c-styleguide__example">
 			 <div style="height: 4rem; position: relative; width: 100%">
-   <div class="o-form__input-group">
+   <div class="o-form__input-group is-complete" style="height:25px;">
    	<svg viewBox="0 0 32 32" class="o-icon o-icon--check o-form__input-group__checkmark">
         <use xlink:href="#icon--check"></use>
       </svg>
@@ -1709,7 +1757,7 @@
 
 		<pre class="c-styleguide__markup">
  &lt;div style="height: 4rem; position: relative; width: 100%"&gt;
-   &lt;div class="o-form__input-group"&gt;
+   &lt;div class="o-form__input-group is-complete" style="height:25px;"&gt;
    	&lt;svg viewBox="0 0 32 32" class="o-icon o-icon--check o-form__input-group__checkmark"&gt;
         &lt;use xlink:href="#icon--check"&gt;&lt;/use&gt;
       &lt;/svg&gt;
@@ -1722,7 +1770,7 @@
 </section>
 <section class="c-styleguide__section">
 
-	<h2 class="c-styleguide__section__header">Form Input</h2>
+	<h2 class="c-styleguide__section__header">Form Inputs</h2>
 
 	<p>All text inputs.</p>
 
@@ -1733,23 +1781,23 @@
 		<ul class="c-styleguide__states">
 			
 				<li>
-					<code>:disabled, --disabled</code> - Dims the input when disabled
+					<code>:disabled, --disabled</code> - dims the input when disabled
 				</li>
 			
 				<li>
-					<code>.is-disabled, --disabled</code> - Dims the input when disabled
+					<code>.is-disabled, --disabled</code> - dims the input when disabled
 				</li>
 			
 				<li>
-					<code>[disabled], --disabled</code> - Dims the input when disabled
+					<code>[disabled], --disabled</code> - dims the input when disabled
 				</li>
 			
 				<li>
-					<code>.input--block</code> - Makes the input full-width
+					<code>.input--block</code> - makes the input full-width
 				</li>
 			
 				<li>
-					<code>.input--blue</code> - Blue input
+					<code>.input--blue</code> - blue input
 				</li>
 			
 				<li>
@@ -1757,7 +1805,7 @@
 				</li>
 			
 				<li>
-					<code>.input--textarea</code> - Textarea input
+					<code>.input--textarea</code> - textarea input
 				</li>
 			
 		</ul>
@@ -1769,21 +1817,27 @@
 		<h3 class="c-styleguide__subsection__header">Example</h3>
 
 		<div class="c-styleguide__example">
-			 <input class="o-form__input" id="input" placeholder="placeholder text" type="text"></input>
- <input class="o-form__input" disabled placeholder="placeholder text" type="text"></input>
- <input class="o-form__input o-form__input--block" placeholder="placeholder text" type="text"></input>
- <input class="o-form__input o-form__input--blue" placeholder="placeholder text" type="text"></input>
- <input class="o-form__input o-form__input--blue--navy" placeholder="placeholder text" type="text"></input>
- <textarea class="o-form__input o-form__input--textarea" placeholder="placeholder text"></textarea>
+			 <div class="c-styleguide__note">
+   <strong>NOTE: </strong> For the purpose of this demo, all inputs have been given a bottom margin.
+ </div>
+ <input class="o-form__input" id="input" placeholder="placeholder text" style="margin-bottom: 1rem;" type="text"></input>
+ <input class="o-form__input" disabled placeholder="placeholder text" style="margin-bottom: 1rem;" type="text"></input>
+ <input class="o-form__input o-form__input--block" placeholder="placeholder text" style="margin-bottom: 1rem;" type="text"></input>
+ <input class="o-form__input o-form__input--blue" placeholder="placeholder text" style="margin-bottom: 1rem;" type="text"></input>
+ <input class="o-form__input o-form__input--blue--navy" placeholder="placeholder text" style="margin-bottom: 1rem;" type="text"></input>
+ <textarea class="o-form__input o-form__input--textarea" placeholder="placeholder text" style="margin-bottom: 1rem;"></textarea>
 		</div>
 
 		<pre class="c-styleguide__markup">
- &lt;input class="o-form__input" id="input" placeholder="placeholder text" type="text"&gt;&lt;/input&gt;
- &lt;input class="o-form__input" disabled placeholder="placeholder text" type="text"&gt;&lt;/input&gt;
- &lt;input class="o-form__input o-form__input--block" placeholder="placeholder text" type="text"&gt;&lt;/input&gt;
- &lt;input class="o-form__input o-form__input--blue" placeholder="placeholder text" type="text"&gt;&lt;/input&gt;
- &lt;input class="o-form__input o-form__input--blue--navy" placeholder="placeholder text" type="text"&gt;&lt;/input&gt;
- &lt;textarea class="o-form__input o-form__input--textarea" placeholder="placeholder text"&gt;&lt;/textarea&gt;
+ &lt;div class="c-styleguide__note"&gt;
+   &lt;strong&gt;NOTE: &lt;/strong&gt; For the purpose of this demo, all inputs have been given a bottom margin.
+ &lt;/div&gt;
+ &lt;input class="o-form__input" id="input" placeholder="placeholder text" style="margin-bottom: 1rem;" type="text"&gt;&lt;/input&gt;
+ &lt;input class="o-form__input" disabled placeholder="placeholder text" style="margin-bottom: 1rem;" type="text"&gt;&lt;/input&gt;
+ &lt;input class="o-form__input o-form__input--block" placeholder="placeholder text" style="margin-bottom: 1rem;" type="text"&gt;&lt;/input&gt;
+ &lt;input class="o-form__input o-form__input--blue" placeholder="placeholder text" style="margin-bottom: 1rem;" type="text"&gt;&lt;/input&gt;
+ &lt;input class="o-form__input o-form__input--blue--navy" placeholder="placeholder text" style="margin-bottom: 1rem;" type="text"&gt;&lt;/input&gt;
+ &lt;textarea class="o-form__input o-form__input--textarea" placeholder="placeholder text" style="margin-bottom: 1rem;"&gt;&lt;/textarea&gt;
 		</pre>
 
 	</section>
@@ -1834,7 +1888,7 @@
 </section>
 <section class="c-styleguide__section">
 
-	<h2 class="c-styleguide__section__header">Form Label</h2>
+	<h2 class="c-styleguide__section__header">Form Label Notes</h2>
 
 	<p>Additional information shown inside a form label.</p>
 
@@ -1871,7 +1925,7 @@
 </section>
 <section class="c-styleguide__section">
 
-	<h2 class="c-styleguide__section__header">Form Notification</h2>
+	<h2 class="c-styleguide__section__header">Form Notifications</h2>
 
 	<p>A notification displayed above a form to indicate the status of the form submission.</p>
 
@@ -1890,37 +1944,41 @@
 		<h3 class="c-styleguide__subsection__header">Example</h3>
 
 		<div class="c-styleguide__example">
-			 <form action="" method="post" class="o-form js-form is-sent">
+			 <div style="height: 15rem; position: relative;">
+   <form action="" method="post" class="o-form js-form is-sent">
+     <div class="o-form__input-group is-complete">
+       <label class="o-form__label" for="completeinputgroup">Complete Input Group:</label>
+       <input class="o-form__input o-form__input--block" id="completeinputgroup" placeholder="placeholder text" type="text">
+       <svg viewBox="0 0 32 32" class="o-icon o-icon--check o-form__input-group__checkmark">
+         <use xlink:href="#icon--check"></use>
+       </svg>
+     </div>
+   </form>
    <div class="o-form__notification js-sent-form">
      <p class="o-form__notification__message">Thanks!
-       <div class="u-subheader">I'll reply with 24 hours</div>
+       <span class="u-subheader">I'll reply with 24 hours</span>
      </p>
    </div>
- </form>
- <form action="" method="post" class="o-form js-form is-sent">
-   <div class="o-form__notification js-sent-form is-hidden">
-     <p class="o-form__notification__message">Thanks!
-       <div class="u-subheader">I'll reply with 24 hours</div>
-     </p>
-   </div>
- </form>
+ </div>
 		</div>
 
 		<pre class="c-styleguide__markup">
- &lt;form action="" method="post" class="o-form js-form is-sent"&gt;
+ &lt;div style="height: 15rem; position: relative;"&gt;
+   &lt;form action="" method="post" class="o-form js-form is-sent"&gt;
+     &lt;div class="o-form__input-group is-complete"&gt;
+       &lt;label class="o-form__label" for="completeinputgroup"&gt;Complete Input Group:&lt;/label&gt;
+       &lt;input class="o-form__input o-form__input--block" id="completeinputgroup" placeholder="placeholder text" type="text"&gt;
+       &lt;svg viewBox="0 0 32 32" class="o-icon o-icon--check o-form__input-group__checkmark"&gt;
+         &lt;use xlink:href="#icon--check"&gt;&lt;/use&gt;
+       &lt;/svg&gt;
+     &lt;/div&gt;
+   &lt;/form&gt;
    &lt;div class="o-form__notification js-sent-form"&gt;
      &lt;p class="o-form__notification__message"&gt;Thanks!
-       &lt;div class="u-subheader"&gt;I'll reply with 24 hours&lt;/div&gt;
+       &lt;span class="u-subheader"&gt;I'll reply with 24 hours&lt;/span&gt;
      &lt;/p&gt;
    &lt;/div&gt;
- &lt;/form&gt;
- &lt;form action="" method="post" class="o-form js-form is-sent"&gt;
-   &lt;div class="o-form__notification js-sent-form is-hidden"&gt;
-     &lt;p class="o-form__notification__message"&gt;Thanks!
-       &lt;div class="u-subheader"&gt;I'll reply with 24 hours&lt;/div&gt;
-     &lt;/p&gt;
-   &lt;/div&gt;
- &lt;/form&gt;
+ &lt;/div&gt;
 		</pre>
 
 	</section>
@@ -1928,7 +1986,7 @@
 </section>
 <section class="c-styleguide__section">
 
-	<h2 class="c-styleguide__section__header">Form Submit Button</h2>
+	<h2 class="c-styleguide__section__header">Form Submit Buttons</h2>
 
 	<p>Buttons used to submit forms.</p>
 
@@ -1994,79 +2052,97 @@
 		<h3 class="c-styleguide__subsection__header">Example</h3>
 
 		<div class="c-styleguide__example">
-			 <form action="" method="post" class="o-form js-form">
-   <div class="o-form__input-group">
-   	<label class="o-form__label" for="forminput">Input:</label>
-   	<input class="o-form__input" id="forminput" placeholder="Input" type="text">
-   </div>
-   <div class="o-form__input-group">
-   	<input class="o-button o-form__submit-button" type="submit" value="submit">
-   </div>
- </form>
- <form action="" method="post" class="o-form js-form is-sending">
-   <div class="o-form__input-group">
-   	<label class="o-form__label" for="forminput">Input:</label>
-   	<input class="o-form__input" id="forminput" placeholder="Input" type="text">
-   </div>
-   <div class="o-form__input-group">
-   	<input class="o-button o-form__submit-button" type="submit" value="submit">
-   </div>
+			 <div class="c-styleguide__note">Standard form:</div>
+ <div style="height: 15rem; position: relative;">
+   <form action="" method="post" class="o-form js-form">
+     <div class="o-form__input-group">
+       <label class="o-form__label" for="standardform">Input Field:</label>
+       <input class="o-form__input o-form__input--block" id="standardform" placeholder="placeholder text" type="text">
+       <svg viewBox="0 0 32 32" class="o-icon o-icon--check o-form__input-group__checkmark">
+         <use xlink:href="#icon--check"></use>
+       </svg>
+     </div>
+   </form>
+ </div>
+ <div class="c-styleguide__note">Sending Form:</div>
+ <div style="height: 15rem; position: relative;">
+   <form action="" method="post" class="o-form js-form is-sending">
+     <div class="o-form__input-group is-complete">
+       <label class="o-form__label" for="sendingform">Input Field:</label>
+       <input class="o-form__input o-form__input--block" id="sendingform" placeholder="placeholder text" type="text">
+       <svg viewBox="0 0 32 32" class="o-icon o-icon--check o-form__input-group__checkmark">
+         <use xlink:href="#icon--check"></use>
+       </svg>
+     </div>
+   </form>
    <div class="o-form__notification js-sending-form">
      <div class="o-spinner o-spinner--white"></div>
    </div>
- </form>
- <form action="" method="post" class="o-form js-form is-sent">
-   <div class="o-form__input-group">
-   	<label class="o-form__label" for="forminput">Input:</label>
-   	<input class="o-form__input" id="forminput" placeholder="Input" type="text">
-   </div>
-   <div class="o-form__input-group">
-   	<input class="o-button o-form__submit-button" type="submit" value="submit">
-   </div>
+ </div>
+ <div class="c-styleguide__note">Sent form:</div>
+ <div style="height: 15rem; position: relative;">
+   <form action="" method="post" class="o-form js-form is-sent">
+     <div class="o-form__input-group is-complete">
+       <label class="o-form__label" for="sentform">Input Field:</label>
+       <input class="o-form__input o-form__input--block" id="sentform" placeholder="placeholder text" type="text">
+       <svg viewBox="0 0 32 32" class="o-icon o-icon--check o-form__input-group__checkmark">
+         <use xlink:href="#icon--check"></use>
+       </svg>
+     </div>
+   </form>
    <div class="o-form__notification js-sent-form">
      <p class="o-form__notification__message">Thanks!
-       <div class="u-subheader">I'll reply with 24 hours</div>
+       <span class="u-subheader">I'll reply with 24 hours</span>
      </p>
    </div>
- </form>
+ </div>
 		</div>
 
 		<pre class="c-styleguide__markup">
- &lt;form action="" method="post" class="o-form js-form"&gt;
-   &lt;div class="o-form__input-group"&gt;
-   	&lt;label class="o-form__label" for="forminput"&gt;Input:&lt;/label&gt;
-   	&lt;input class="o-form__input" id="forminput" placeholder="Input" type="text"&gt;
-   &lt;/div&gt;
-   &lt;div class="o-form__input-group"&gt;
-   	&lt;input class="o-button o-form__submit-button" type="submit" value="submit"&gt;
-   &lt;/div&gt;
- &lt;/form&gt;
- &lt;form action="" method="post" class="o-form js-form is-sending"&gt;
-   &lt;div class="o-form__input-group"&gt;
-   	&lt;label class="o-form__label" for="forminput"&gt;Input:&lt;/label&gt;
-   	&lt;input class="o-form__input" id="forminput" placeholder="Input" type="text"&gt;
-   &lt;/div&gt;
-   &lt;div class="o-form__input-group"&gt;
-   	&lt;input class="o-button o-form__submit-button" type="submit" value="submit"&gt;
-   &lt;/div&gt;
+ &lt;div class="c-styleguide__note"&gt;Standard form:&lt;/div&gt;
+ &lt;div style="height: 15rem; position: relative;"&gt;
+   &lt;form action="" method="post" class="o-form js-form"&gt;
+     &lt;div class="o-form__input-group"&gt;
+       &lt;label class="o-form__label" for="standardform"&gt;Input Field:&lt;/label&gt;
+       &lt;input class="o-form__input o-form__input--block" id="standardform" placeholder="placeholder text" type="text"&gt;
+       &lt;svg viewBox="0 0 32 32" class="o-icon o-icon--check o-form__input-group__checkmark"&gt;
+         &lt;use xlink:href="#icon--check"&gt;&lt;/use&gt;
+       &lt;/svg&gt;
+     &lt;/div&gt;
+   &lt;/form&gt;
+ &lt;/div&gt;
+ &lt;div class="c-styleguide__note"&gt;Sending Form:&lt;/div&gt;
+ &lt;div style="height: 15rem; position: relative;"&gt;
+   &lt;form action="" method="post" class="o-form js-form is-sending"&gt;
+     &lt;div class="o-form__input-group is-complete"&gt;
+       &lt;label class="o-form__label" for="sendingform"&gt;Input Field:&lt;/label&gt;
+       &lt;input class="o-form__input o-form__input--block" id="sendingform" placeholder="placeholder text" type="text"&gt;
+       &lt;svg viewBox="0 0 32 32" class="o-icon o-icon--check o-form__input-group__checkmark"&gt;
+         &lt;use xlink:href="#icon--check"&gt;&lt;/use&gt;
+       &lt;/svg&gt;
+     &lt;/div&gt;
+   &lt;/form&gt;
    &lt;div class="o-form__notification js-sending-form"&gt;
      &lt;div class="o-spinner o-spinner--white"&gt;&lt;/div&gt;
    &lt;/div&gt;
- &lt;/form&gt;
- &lt;form action="" method="post" class="o-form js-form is-sent"&gt;
-   &lt;div class="o-form__input-group"&gt;
-   	&lt;label class="o-form__label" for="forminput"&gt;Input:&lt;/label&gt;
-   	&lt;input class="o-form__input" id="forminput" placeholder="Input" type="text"&gt;
-   &lt;/div&gt;
-   &lt;div class="o-form__input-group"&gt;
-   	&lt;input class="o-button o-form__submit-button" type="submit" value="submit"&gt;
-   &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="c-styleguide__note"&gt;Sent form:&lt;/div&gt;
+ &lt;div style="height: 15rem; position: relative;"&gt;
+   &lt;form action="" method="post" class="o-form js-form is-sent"&gt;
+     &lt;div class="o-form__input-group is-complete"&gt;
+       &lt;label class="o-form__label" for="sentform"&gt;Input Field:&lt;/label&gt;
+       &lt;input class="o-form__input o-form__input--block" id="sentform" placeholder="placeholder text" type="text"&gt;
+       &lt;svg viewBox="0 0 32 32" class="o-icon o-icon--check o-form__input-group__checkmark"&gt;
+         &lt;use xlink:href="#icon--check"&gt;&lt;/use&gt;
+       &lt;/svg&gt;
+     &lt;/div&gt;
+   &lt;/form&gt;
    &lt;div class="o-form__notification js-sent-form"&gt;
      &lt;p class="o-form__notification__message"&gt;Thanks!
-       &lt;div class="u-subheader"&gt;I'll reply with 24 hours&lt;/div&gt;
+       &lt;span class="u-subheader"&gt;I'll reply with 24 hours&lt;/span&gt;
      &lt;/p&gt;
    &lt;/div&gt;
- &lt;/form&gt;
+ &lt;/div&gt;
 		</pre>
 
 	</section>
@@ -2074,7 +2150,7 @@
 </section>
 <section class="c-styleguide__section">
 
-	<h2 class="c-styleguide__section__header">Icon</h2>
+	<h2 class="c-styleguide__section__header">Icons</h2>
 
 	<p>Standard icons.</p>
 
@@ -2085,23 +2161,23 @@
 		<ul class="c-styleguide__states">
 			
 				<li>
-					<code>.o-icon--large</code> - Larger icon
+					<code>.o-icon--large</code> - larger icon
 				</li>
 			
 				<li>
-					<code>.o-icon--checkmark.is-checked</code> - Animate the checkmark icon
+					<code>.o-icon--checkmark.is-checked</code> - animate the checkmark icon
 				</li>
 			
 				<li>
-					<code>.o-icon--checkmark--blue--medium</code> - Medium blue checkmark
+					<code>.o-icon--checkmark--blue--medium</code> - medium blue checkmark
 				</li>
 			
 				<li>
-					<code>.o-icon--margin--left</code> - Icon with left margin
+					<code>.o-icon--margin--left</code> - icon with left margin
 				</li>
 			
 				<li>
-					<code>.o-icon--margin--right</code> - Icon with right margin
+					<code>.o-icon--margin--right</code> - icon with right margin
 				</li>
 			
 		</ul>
@@ -2536,6 +2612,123 @@
 </section>
 <section class="c-styleguide__section">
 
+	<h2 class="c-styleguide__section__header">Local Conditions</h2>
+
+	<p>A collection of information about the time, location, and weather, of a certain place.</p>
+
+	<section class="c-styleguide__subsection">
+
+		<h3 class="c-styleguide__subsection__header">States</h3>
+
+		<ul class="c-styleguide__states">
+			
+		</ul>
+
+	</section>
+
+	<section class="c-styleguide__subsection">
+
+		<h3 class="c-styleguide__subsection__header">Example</h3>
+
+		<div class="c-styleguide__example">
+			 <div class="o-local-conditions">
+   <h3 class="o-local-conditions__location">Kunming
+	   <div class="u-subheader">Yunnan, China</div>
+   </h3>
+   <p class="o-local-conditions__time js-current-time">00:00</p>
+   <div class="o-local-conditions__map js-map">
+	   <svg viewBox="0 0 100 85.7" class="o-local-conditions__map__image">
+	     <g>
+  	   <path d="M85.7,37.6c0,0,0.3-1.4,0.5-1.4s-1.5,0.4-1.5,0.4l-2-0.6l-1.7,1.8c0,0-1.3,1.1-1.6-1.2l-1.8-0.4c0,0-2.5-2.2,0.3-2.3 l1.1-0.8l0.2-1.1l1.7-1.5l1.4-1.5l1.3,0.2c0,0-1.2,5.4,0.1,3.8c1.4-1.6,2.5-2.5,3-2.5c0.5,0,4.3-5.6,4.3-5.6l0.4,0.5 c0,0,2.2,0.1,1.4-1c-0.8-1.2-0.1-0.7,0.3-0.7c0.3,0,2.6-2,2.1-3c-0.5-1,0.9,0.5,0.9,0.5l0.8-0.8c0,0-1.3-3.7-1.2-4.1 c0.1-0.4,0.9-1,0.9-1.1c0-0.1,1.9,1.7,1.8-1.3c0-3,0.9-6.6,0.5-7c-0.5-0.4-1.9,1.2-1.9,1.2l-0.8,0.1l-0.4,0.8l-1.9,0.9L93,9.3 l-0.7-1.6l-2.1-0.5c0,0-1.1,0-1.1-0.1s-0.8,0.4-0.8,0.4l-0.9-1.2c0,0-3.9-5.7-4.3-5.7c-0.5,0-1.9,0.1-2.6-0.4 c-0.6-0.6-2.1,0.4-2.3,0.6c-0.2,0.2-1.5,0.9-1.9,0.8c-0.4-0.1-1.8,2.3-0.2,1.8c1.6-0.5,0.2,1.8-0.2,2.1S75,8,75.1,8.2 c0.1,0.2,0.5,0.8-0.5,1.6c-1.1,0.8-2.3,0.8-2.9,0.5c-0.6-0.3-1.4,3.9-1.2,4.1c0.2,0.3,0.5,0.6,0.5,0.6s0.5-0.5,0.9-0.3 c0.3,0.2,1.1-0.2,1.3,0.1c0.2,0.4,0.1-2,2.4-0.4c2.3,1.6,2.3,2,0.3,2.1c-2,0-0.1,0.2-2.1,0.8l-0.4,0.8l-0.3-0.4 c0,0-0.7,0.9-0.9,0.9s0,0.9,0, 0.9s-1.2,1.1-2.4,1c-1.2-0.1-0.5,2.3-3.7,1.2l-0.7,0.6c0,0-0.5,1.9,0.1,2.1s0.1,1.1-0.5,1.1 c-0.5,0-1,2.3-1.9,2.2c-0.8,0-3.9,0.8-3.9,0.8l-4.4,1.9c0,0-0.6,0-0.7-0.4s-2.9-0.4-3.2-0.4c-0.3,0-1.5-2-5.1-1.1 c-3.6,0.9-5.1-0.8-5.1-0.8c-0.1,0-1.5-3.2-1.5-3.2l-3.1-2.1c0,0-4.4-0.1-4.1-1.4l0.6-1.1c0,0-0.1-0.9,0-1c0.1-0.2,0.3-0.7,0.3-0.7 s-2.4-2-4.1-5.8L28,11.9c0,0-0.8,0.2-1.1,0.1c-0.3-0.1,0.1,0.7-2,1.2c-2.1,0.5-0.6,2.7-0.6,2.7s1,2.5-4-1c0,0-0.9,2.8-1.8,3.2 c-0.9,0.4,0.3,1,0.3,1L15,19c0,0,0.9,0.8-0.1,1.3l0.1,0v1.2l0.2,0.7c0,0-0.2,1.6-1.3,2.3v0.9L13,25.7l-0.2,0.4l-1-0.2 c0,0-2.1,1-2.1,1.1c0,0.1-2-0.1-2-0.2c0-0.2-1,0.9-1,0.9l-1.2-0.1L5.3,27c0,0-1,0.1-1.2-0.2c-0.2-0.2-0.3,0.6-1.5,0.6l0.1,0L2.1,28 v0.5l-0.8,0.9l0.1,1.5l0.7-0.2L3,31.6c0,0,0.5,3-1.6,2.5c-2.1-0.5,2.2,2.2,2.2,2.2s0.4,0.6-0.5,1.2c-0.8,0.6,2,1.7,2,1.7 s1.1,0.5,2.1,0.1c1-0.4,4.3,0.6,2.2,2.9l-1.1,1.1H7.2l0.1,0.6L7,44.1l0.5,0.8l0.4,0.3l0,1.2H7.3l-0.4,0.5L6,46.1 c0,0-0.4,0.9,0.1,1.1c0.5,0.3,0,1.5-0.2,1.7c-0.2,0.3,3.8,4,3.8,4l0.8-0.4c0,0,2.1,1.5,2.1,1.7c0,0.2,1.4,1.6,1.4,1.6l0.8-0.2 c0,0,0.7,0,0.2,0.9c-0.5,1,1.1,1,1.1,1l2.2,1.9h1.2c0,0,1.9,1.3,3.2,0.5c1.3-0.7,1.6,0.2,0.9,1c-0.7,0.9,1.5-0.6,1.6-1 c0-0.4,1.4-0.8,2.1,0.2c0.7,1,0.9,0.4,1.2,0.4c0.2,0,0.9,0,1.1,0.5c0.3,0.5,2.1-0.1,1.9-0.6c-0.1-0.5,1.3-1,1.3-1l1.1,0 c0,0,1.2-1.5,2.9-0.7l1.5-0.7l0.6,0.5l-0.4,0.4l0.8,0.6c0,0-2.5,1.5,1.5,1.3c4-0.2,1.6,5.4,1.1,6.7c-0.5,1.4-1.1,1.7-1.1,1.7 l0.1,1.3l2.3-0.2l-0.1,0.6c0,0,0.2,1.7,1.1,1.7c0.9,0,0.5,1.3-0.1,2.2c0,0,1.4,0.3,1.5,0.7c0.1,0.4,1.3,1.3,2,0.6 c0.6-0.6,0.8,0.2,0.8,0.9c0,0.7,1,0,1,0l-0.2-1.8c0,0-0.5-0.9,0.8-0.7c1.3,0.1,1.5-0.7,1.5-0.7l0.7,0.4l0.7-0.4l0.3,0.1l0.4-0.2 l0.5,0.4l0.3-0.4l0.7,0.2l0.7-0.3l0.2-0.8c0,0,1-0.9,1.4,0.2c0.5,1.1,2.5,0.5,2.5,0.5l-0.4,0.7l1.7,1.9c0,0,0.6-0.7,1.6,0.1 c1,0.7,1.2-0.1,1.2-0.1v-0.6l1.6,0.9l1.2,0c0,0-0.8,2.2,0.7,2.4c1.5,0.2,0.7-0.7,0.7-0.7s-1.3-1,0.1-1.6c1.4-0.6,4.9-2.1,4.9-2.1 l1.2-1l-0.3-1.2l1,0.7c0,0,4.8-0.1,6.1-3.2l1-1l0.9-1.1l-0.3-0.4l2.3-2.7c0,0,4-9.3,3.6-9.8c-0.4-0.5,1.2-1.7-3.2-1.5 c-4.5,0.2,2.1-2.1,2.5-2.1c0.4,0-0.4-2-0.4-2l-2.6-2L83,44.3c0,0-2.5-1.1-1.6-2.3S84.1,37.6,85.7,37.6"></path>
+         <path d="M64.7,83.9v0.3c0,0,0.7,0.3,0.8,0.6c0.1,0.3,0.7-0.3,1.1,0.1s0.3-0.6,0.8-0.6c0.4,0,0.4-0.7,0.8-0.7c0.4,0,0.3-2.1,1.2-2.6 c0.9-0.5-1.3-1.2-1.1-0.7l-1,0.2h-1.1L65.9,81h-0.4v0.5C65.5,81.5,63.9,82.9,64.7,83.9L64.7,83.9z"></path>
+	     </g>
+	   </svg>
+   </div>
+   <div class="o-local-conditions__weather js-weather">
+	   <div class="o-local-conditions__weather__condition">
+	     <svg viewBox="0 0 32 32" class="o-icon o-icon--large o-icon--weather js-weather-icon">
+		   <use xlink:href="#icon--clear--day"></use>
+	     </svg>
+	   </div>
+     <div class="o-local-conditions__weather__temperature"><span class="js-temperature">20</span><span class="o-local-conditions__weather__temperature__symbol">&deg;C</span></div>
+   </div>
+ </div>
+ <div class="o-local-conditions o-local-conditions--light">
+   <h3 class="o-local-conditions__location">Kunming
+	   <div class="u-subheader">Yunnan, China</div>
+   </h3>
+   <p class="o-local-conditions__time js-current-time">00:00</p>
+   <div class="o-local-conditions__map js-map">
+	   <svg viewBox="0 0 100 85.7" class="o-local-conditions__map__image">
+	     <g>
+  	   <path d="M85.7,37.6c0,0,0.3-1.4,0.5-1.4s-1.5,0.4-1.5,0.4l-2-0.6l-1.7,1.8c0,0-1.3,1.1-1.6-1.2l-1.8-0.4c0,0-2.5-2.2,0.3-2.3 l1.1-0.8l0.2-1.1l1.7-1.5l1.4-1.5l1.3,0.2c0,0-1.2,5.4,0.1,3.8c1.4-1.6,2.5-2.5,3-2.5c0.5,0,4.3-5.6,4.3-5.6l0.4,0.5 c0,0,2.2,0.1,1.4-1c-0.8-1.2-0.1-0.7,0.3-0.7c0.3,0,2.6-2,2.1-3c-0.5-1,0.9,0.5,0.9,0.5l0.8-0.8c0,0-1.3-3.7-1.2-4.1 c0.1-0.4,0.9-1,0.9-1.1c0-0.1,1.9,1.7,1.8-1.3c0-3,0.9-6.6,0.5-7c-0.5-0.4-1.9,1.2-1.9,1.2l-0.8,0.1l-0.4,0.8l-1.9,0.9L93,9.3 l-0.7-1.6l-2.1-0.5c0,0-1.1,0-1.1-0.1s-0.8,0.4-0.8,0.4l-0.9-1.2c0,0-3.9-5.7-4.3-5.7c-0.5,0-1.9,0.1-2.6-0.4 c-0.6-0.6-2.1,0.4-2.3,0.6c-0.2,0.2-1.5,0.9-1.9,0.8c-0.4-0.1-1.8,2.3-0.2,1.8c1.6-0.5,0.2,1.8-0.2,2.1S75,8,75.1,8.2 c0.1,0.2,0.5,0.8-0.5,1.6c-1.1,0.8-2.3,0.8-2.9,0.5c-0.6-0.3-1.4,3.9-1.2,4.1c0.2,0.3,0.5,0.6,0.5,0.6s0.5-0.5,0.9-0.3 c0.3,0.2,1.1-0.2,1.3,0.1c0.2,0.4,0.1-2,2.4-0.4c2.3,1.6,2.3,2,0.3,2.1c-2,0-0.1,0.2-2.1,0.8l-0.4,0.8l-0.3-0.4 c0,0-0.7,0.9-0.9,0.9s0,0.9,0, 0.9s-1.2,1.1-2.4,1c-1.2-0.1-0.5,2.3-3.7,1.2l-0.7,0.6c0,0-0.5,1.9,0.1,2.1s0.1,1.1-0.5,1.1 c-0.5,0-1,2.3-1.9,2.2c-0.8,0-3.9,0.8-3.9,0.8l-4.4,1.9c0,0-0.6,0-0.7-0.4s-2.9-0.4-3.2-0.4c-0.3,0-1.5-2-5.1-1.1 c-3.6,0.9-5.1-0.8-5.1-0.8c-0.1,0-1.5-3.2-1.5-3.2l-3.1-2.1c0,0-4.4-0.1-4.1-1.4l0.6-1.1c0,0-0.1-0.9,0-1c0.1-0.2,0.3-0.7,0.3-0.7 s-2.4-2-4.1-5.8L28,11.9c0,0-0.8,0.2-1.1,0.1c-0.3-0.1,0.1,0.7-2,1.2c-2.1,0.5-0.6,2.7-0.6,2.7s1,2.5-4-1c0,0-0.9,2.8-1.8,3.2 c-0.9,0.4,0.3,1,0.3,1L15,19c0,0,0.9,0.8-0.1,1.3l0.1,0v1.2l0.2,0.7c0,0-0.2,1.6-1.3,2.3v0.9L13,25.7l-0.2,0.4l-1-0.2 c0,0-2.1,1-2.1,1.1c0,0.1-2-0.1-2-0.2c0-0.2-1,0.9-1,0.9l-1.2-0.1L5.3,27c0,0-1,0.1-1.2-0.2c-0.2-0.2-0.3,0.6-1.5,0.6l0.1,0L2.1,28 v0.5l-0.8,0.9l0.1,1.5l0.7-0.2L3,31.6c0,0,0.5,3-1.6,2.5c-2.1-0.5,2.2,2.2,2.2,2.2s0.4,0.6-0.5,1.2c-0.8,0.6,2,1.7,2,1.7 s1.1,0.5,2.1,0.1c1-0.4,4.3,0.6,2.2,2.9l-1.1,1.1H7.2l0.1,0.6L7,44.1l0.5,0.8l0.4,0.3l0,1.2H7.3l-0.4,0.5L6,46.1 c0,0-0.4,0.9,0.1,1.1c0.5,0.3,0,1.5-0.2,1.7c-0.2,0.3,3.8,4,3.8,4l0.8-0.4c0,0,2.1,1.5,2.1,1.7c0,0.2,1.4,1.6,1.4,1.6l0.8-0.2 c0,0,0.7,0,0.2,0.9c-0.5,1,1.1,1,1.1,1l2.2,1.9h1.2c0,0,1.9,1.3,3.2,0.5c1.3-0.7,1.6,0.2,0.9,1c-0.7,0.9,1.5-0.6,1.6-1 c0-0.4,1.4-0.8,2.1,0.2c0.7,1,0.9,0.4,1.2,0.4c0.2,0,0.9,0,1.1,0.5c0.3,0.5,2.1-0.1,1.9-0.6c-0.1-0.5,1.3-1,1.3-1l1.1,0 c0,0,1.2-1.5,2.9-0.7l1.5-0.7l0.6,0.5l-0.4,0.4l0.8,0.6c0,0-2.5,1.5,1.5,1.3c4-0.2,1.6,5.4,1.1,6.7c-0.5,1.4-1.1,1.7-1.1,1.7 l0.1,1.3l2.3-0.2l-0.1,0.6c0,0,0.2,1.7,1.1,1.7c0.9,0,0.5,1.3-0.1,2.2c0,0,1.4,0.3,1.5,0.7c0.1,0.4,1.3,1.3,2,0.6 c0.6-0.6,0.8,0.2,0.8,0.9c0,0.7,1,0,1,0l-0.2-1.8c0,0-0.5-0.9,0.8-0.7c1.3,0.1,1.5-0.7,1.5-0.7l0.7,0.4l0.7-0.4l0.3,0.1l0.4-0.2 l0.5,0.4l0.3-0.4l0.7,0.2l0.7-0.3l0.2-0.8c0,0,1-0.9,1.4,0.2c0.5,1.1,2.5,0.5,2.5,0.5l-0.4,0.7l1.7,1.9c0,0,0.6-0.7,1.6,0.1 c1,0.7,1.2-0.1,1.2-0.1v-0.6l1.6,0.9l1.2,0c0,0-0.8,2.2,0.7,2.4c1.5,0.2,0.7-0.7,0.7-0.7s-1.3-1,0.1-1.6c1.4-0.6,4.9-2.1,4.9-2.1 l1.2-1l-0.3-1.2l1,0.7c0,0,4.8-0.1,6.1-3.2l1-1l0.9-1.1l-0.3-0.4l2.3-2.7c0,0,4-9.3,3.6-9.8c-0.4-0.5,1.2-1.7-3.2-1.5 c-4.5,0.2,2.1-2.1,2.5-2.1c0.4,0-0.4-2-0.4-2l-2.6-2L83,44.3c0,0-2.5-1.1-1.6-2.3S84.1,37.6,85.7,37.6"></path>
+         <path d="M64.7,83.9v0.3c0,0,0.7,0.3,0.8,0.6c0.1,0.3,0.7-0.3,1.1,0.1s0.3-0.6,0.8-0.6c0.4,0,0.4-0.7,0.8-0.7c0.4,0,0.3-2.1,1.2-2.6 c0.9-0.5-1.3-1.2-1.1-0.7l-1,0.2h-1.1L65.9,81h-0.4v0.5C65.5,81.5,63.9,82.9,64.7,83.9L64.7,83.9z"></path>
+	     </g>
+	   </svg>
+   </div>
+   <div class="o-local-conditions__weather js-weather">
+	   <div class="o-local-conditions__weather__condition">
+	     <svg viewBox="0 0 32 32" class="o-icon o-icon--large o-icon--weather js-weather-icon">
+		   <use xlink:href="#icon--clear--day"></use>
+	     </svg>
+	   </div>
+     <div class="o-local-conditions__weather__temperature"><span class="js-temperature">20</span><span class="o-local-conditions__weather__temperature__symbol">&deg;C</span></div>
+   </div>
+ </div>
+		</div>
+
+		<pre class="c-styleguide__markup">
+ &lt;div class="o-local-conditions"&gt;
+   &lt;h3 class="o-local-conditions__location"&gt;Kunming
+	   &lt;div class="u-subheader"&gt;Yunnan, China&lt;/div&gt;
+   &lt;/h3&gt;
+   &lt;p class="o-local-conditions__time js-current-time"&gt;00:00&lt;/p&gt;
+   &lt;div class="o-local-conditions__map js-map"&gt;
+	   &lt;svg viewBox="0 0 100 85.7" class="o-local-conditions__map__image"&gt;
+	     &lt;g&gt;
+  	   &lt;path d="M85.7,37.6c0,0,0.3-1.4,0.5-1.4s-1.5,0.4-1.5,0.4l-2-0.6l-1.7,1.8c0,0-1.3,1.1-1.6-1.2l-1.8-0.4c0,0-2.5-2.2,0.3-2.3 l1.1-0.8l0.2-1.1l1.7-1.5l1.4-1.5l1.3,0.2c0,0-1.2,5.4,0.1,3.8c1.4-1.6,2.5-2.5,3-2.5c0.5,0,4.3-5.6,4.3-5.6l0.4,0.5 c0,0,2.2,0.1,1.4-1c-0.8-1.2-0.1-0.7,0.3-0.7c0.3,0,2.6-2,2.1-3c-0.5-1,0.9,0.5,0.9,0.5l0.8-0.8c0,0-1.3-3.7-1.2-4.1 c0.1-0.4,0.9-1,0.9-1.1c0-0.1,1.9,1.7,1.8-1.3c0-3,0.9-6.6,0.5-7c-0.5-0.4-1.9,1.2-1.9,1.2l-0.8,0.1l-0.4,0.8l-1.9,0.9L93,9.3 l-0.7-1.6l-2.1-0.5c0,0-1.1,0-1.1-0.1s-0.8,0.4-0.8,0.4l-0.9-1.2c0,0-3.9-5.7-4.3-5.7c-0.5,0-1.9,0.1-2.6-0.4 c-0.6-0.6-2.1,0.4-2.3,0.6c-0.2,0.2-1.5,0.9-1.9,0.8c-0.4-0.1-1.8,2.3-0.2,1.8c1.6-0.5,0.2,1.8-0.2,2.1S75,8,75.1,8.2 c0.1,0.2,0.5,0.8-0.5,1.6c-1.1,0.8-2.3,0.8-2.9,0.5c-0.6-0.3-1.4,3.9-1.2,4.1c0.2,0.3,0.5,0.6,0.5,0.6s0.5-0.5,0.9-0.3 c0.3,0.2,1.1-0.2,1.3,0.1c0.2,0.4,0.1-2,2.4-0.4c2.3,1.6,2.3,2,0.3,2.1c-2,0-0.1,0.2-2.1,0.8l-0.4,0.8l-0.3-0.4 c0,0-0.7,0.9-0.9,0.9s0,0.9,0, 0.9s-1.2,1.1-2.4,1c-1.2-0.1-0.5,2.3-3.7,1.2l-0.7,0.6c0,0-0.5,1.9,0.1,2.1s0.1,1.1-0.5,1.1 c-0.5,0-1,2.3-1.9,2.2c-0.8,0-3.9,0.8-3.9,0.8l-4.4,1.9c0,0-0.6,0-0.7-0.4s-2.9-0.4-3.2-0.4c-0.3,0-1.5-2-5.1-1.1 c-3.6,0.9-5.1-0.8-5.1-0.8c-0.1,0-1.5-3.2-1.5-3.2l-3.1-2.1c0,0-4.4-0.1-4.1-1.4l0.6-1.1c0,0-0.1-0.9,0-1c0.1-0.2,0.3-0.7,0.3-0.7 s-2.4-2-4.1-5.8L28,11.9c0,0-0.8,0.2-1.1,0.1c-0.3-0.1,0.1,0.7-2,1.2c-2.1,0.5-0.6,2.7-0.6,2.7s1,2.5-4-1c0,0-0.9,2.8-1.8,3.2 c-0.9,0.4,0.3,1,0.3,1L15,19c0,0,0.9,0.8-0.1,1.3l0.1,0v1.2l0.2,0.7c0,0-0.2,1.6-1.3,2.3v0.9L13,25.7l-0.2,0.4l-1-0.2 c0,0-2.1,1-2.1,1.1c0,0.1-2-0.1-2-0.2c0-0.2-1,0.9-1,0.9l-1.2-0.1L5.3,27c0,0-1,0.1-1.2-0.2c-0.2-0.2-0.3,0.6-1.5,0.6l0.1,0L2.1,28 v0.5l-0.8,0.9l0.1,1.5l0.7-0.2L3,31.6c0,0,0.5,3-1.6,2.5c-2.1-0.5,2.2,2.2,2.2,2.2s0.4,0.6-0.5,1.2c-0.8,0.6,2,1.7,2,1.7 s1.1,0.5,2.1,0.1c1-0.4,4.3,0.6,2.2,2.9l-1.1,1.1H7.2l0.1,0.6L7,44.1l0.5,0.8l0.4,0.3l0,1.2H7.3l-0.4,0.5L6,46.1 c0,0-0.4,0.9,0.1,1.1c0.5,0.3,0,1.5-0.2,1.7c-0.2,0.3,3.8,4,3.8,4l0.8-0.4c0,0,2.1,1.5,2.1,1.7c0,0.2,1.4,1.6,1.4,1.6l0.8-0.2 c0,0,0.7,0,0.2,0.9c-0.5,1,1.1,1,1.1,1l2.2,1.9h1.2c0,0,1.9,1.3,3.2,0.5c1.3-0.7,1.6,0.2,0.9,1c-0.7,0.9,1.5-0.6,1.6-1 c0-0.4,1.4-0.8,2.1,0.2c0.7,1,0.9,0.4,1.2,0.4c0.2,0,0.9,0,1.1,0.5c0.3,0.5,2.1-0.1,1.9-0.6c-0.1-0.5,1.3-1,1.3-1l1.1,0 c0,0,1.2-1.5,2.9-0.7l1.5-0.7l0.6,0.5l-0.4,0.4l0.8,0.6c0,0-2.5,1.5,1.5,1.3c4-0.2,1.6,5.4,1.1,6.7c-0.5,1.4-1.1,1.7-1.1,1.7 l0.1,1.3l2.3-0.2l-0.1,0.6c0,0,0.2,1.7,1.1,1.7c0.9,0,0.5,1.3-0.1,2.2c0,0,1.4,0.3,1.5,0.7c0.1,0.4,1.3,1.3,2,0.6 c0.6-0.6,0.8,0.2,0.8,0.9c0,0.7,1,0,1,0l-0.2-1.8c0,0-0.5-0.9,0.8-0.7c1.3,0.1,1.5-0.7,1.5-0.7l0.7,0.4l0.7-0.4l0.3,0.1l0.4-0.2 l0.5,0.4l0.3-0.4l0.7,0.2l0.7-0.3l0.2-0.8c0,0,1-0.9,1.4,0.2c0.5,1.1,2.5,0.5,2.5,0.5l-0.4,0.7l1.7,1.9c0,0,0.6-0.7,1.6,0.1 c1,0.7,1.2-0.1,1.2-0.1v-0.6l1.6,0.9l1.2,0c0,0-0.8,2.2,0.7,2.4c1.5,0.2,0.7-0.7,0.7-0.7s-1.3-1,0.1-1.6c1.4-0.6,4.9-2.1,4.9-2.1 l1.2-1l-0.3-1.2l1,0.7c0,0,4.8-0.1,6.1-3.2l1-1l0.9-1.1l-0.3-0.4l2.3-2.7c0,0,4-9.3,3.6-9.8c-0.4-0.5,1.2-1.7-3.2-1.5 c-4.5,0.2,2.1-2.1,2.5-2.1c0.4,0-0.4-2-0.4-2l-2.6-2L83,44.3c0,0-2.5-1.1-1.6-2.3S84.1,37.6,85.7,37.6"&gt;&lt;/path&gt;
+         &lt;path d="M64.7,83.9v0.3c0,0,0.7,0.3,0.8,0.6c0.1,0.3,0.7-0.3,1.1,0.1s0.3-0.6,0.8-0.6c0.4,0,0.4-0.7,0.8-0.7c0.4,0,0.3-2.1,1.2-2.6 c0.9-0.5-1.3-1.2-1.1-0.7l-1,0.2h-1.1L65.9,81h-0.4v0.5C65.5,81.5,63.9,82.9,64.7,83.9L64.7,83.9z"&gt;&lt;/path&gt;
+	     &lt;/g&gt;
+	   &lt;/svg&gt;
+   &lt;/div&gt;
+   &lt;div class="o-local-conditions__weather js-weather"&gt;
+	   &lt;div class="o-local-conditions__weather__condition"&gt;
+	     &lt;svg viewBox="0 0 32 32" class="o-icon o-icon--large o-icon--weather js-weather-icon"&gt;
+		   &lt;use xlink:href="#icon--clear--day"&gt;&lt;/use&gt;
+	     &lt;/svg&gt;
+	   &lt;/div&gt;
+     &lt;div class="o-local-conditions__weather__temperature"&gt;&lt;span class="js-temperature"&gt;20&lt;/span&gt;&lt;span class="o-local-conditions__weather__temperature__symbol"&gt;&deg;C&lt;/span&gt;&lt;/div&gt;
+   &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="o-local-conditions o-local-conditions--light"&gt;
+   &lt;h3 class="o-local-conditions__location"&gt;Kunming
+	   &lt;div class="u-subheader"&gt;Yunnan, China&lt;/div&gt;
+   &lt;/h3&gt;
+   &lt;p class="o-local-conditions__time js-current-time"&gt;00:00&lt;/p&gt;
+   &lt;div class="o-local-conditions__map js-map"&gt;
+	   &lt;svg viewBox="0 0 100 85.7" class="o-local-conditions__map__image"&gt;
+	     &lt;g&gt;
+  	   &lt;path d="M85.7,37.6c0,0,0.3-1.4,0.5-1.4s-1.5,0.4-1.5,0.4l-2-0.6l-1.7,1.8c0,0-1.3,1.1-1.6-1.2l-1.8-0.4c0,0-2.5-2.2,0.3-2.3 l1.1-0.8l0.2-1.1l1.7-1.5l1.4-1.5l1.3,0.2c0,0-1.2,5.4,0.1,3.8c1.4-1.6,2.5-2.5,3-2.5c0.5,0,4.3-5.6,4.3-5.6l0.4,0.5 c0,0,2.2,0.1,1.4-1c-0.8-1.2-0.1-0.7,0.3-0.7c0.3,0,2.6-2,2.1-3c-0.5-1,0.9,0.5,0.9,0.5l0.8-0.8c0,0-1.3-3.7-1.2-4.1 c0.1-0.4,0.9-1,0.9-1.1c0-0.1,1.9,1.7,1.8-1.3c0-3,0.9-6.6,0.5-7c-0.5-0.4-1.9,1.2-1.9,1.2l-0.8,0.1l-0.4,0.8l-1.9,0.9L93,9.3 l-0.7-1.6l-2.1-0.5c0,0-1.1,0-1.1-0.1s-0.8,0.4-0.8,0.4l-0.9-1.2c0,0-3.9-5.7-4.3-5.7c-0.5,0-1.9,0.1-2.6-0.4 c-0.6-0.6-2.1,0.4-2.3,0.6c-0.2,0.2-1.5,0.9-1.9,0.8c-0.4-0.1-1.8,2.3-0.2,1.8c1.6-0.5,0.2,1.8-0.2,2.1S75,8,75.1,8.2 c0.1,0.2,0.5,0.8-0.5,1.6c-1.1,0.8-2.3,0.8-2.9,0.5c-0.6-0.3-1.4,3.9-1.2,4.1c0.2,0.3,0.5,0.6,0.5,0.6s0.5-0.5,0.9-0.3 c0.3,0.2,1.1-0.2,1.3,0.1c0.2,0.4,0.1-2,2.4-0.4c2.3,1.6,2.3,2,0.3,2.1c-2,0-0.1,0.2-2.1,0.8l-0.4,0.8l-0.3-0.4 c0,0-0.7,0.9-0.9,0.9s0,0.9,0, 0.9s-1.2,1.1-2.4,1c-1.2-0.1-0.5,2.3-3.7,1.2l-0.7,0.6c0,0-0.5,1.9,0.1,2.1s0.1,1.1-0.5,1.1 c-0.5,0-1,2.3-1.9,2.2c-0.8,0-3.9,0.8-3.9,0.8l-4.4,1.9c0,0-0.6,0-0.7-0.4s-2.9-0.4-3.2-0.4c-0.3,0-1.5-2-5.1-1.1 c-3.6,0.9-5.1-0.8-5.1-0.8c-0.1,0-1.5-3.2-1.5-3.2l-3.1-2.1c0,0-4.4-0.1-4.1-1.4l0.6-1.1c0,0-0.1-0.9,0-1c0.1-0.2,0.3-0.7,0.3-0.7 s-2.4-2-4.1-5.8L28,11.9c0,0-0.8,0.2-1.1,0.1c-0.3-0.1,0.1,0.7-2,1.2c-2.1,0.5-0.6,2.7-0.6,2.7s1,2.5-4-1c0,0-0.9,2.8-1.8,3.2 c-0.9,0.4,0.3,1,0.3,1L15,19c0,0,0.9,0.8-0.1,1.3l0.1,0v1.2l0.2,0.7c0,0-0.2,1.6-1.3,2.3v0.9L13,25.7l-0.2,0.4l-1-0.2 c0,0-2.1,1-2.1,1.1c0,0.1-2-0.1-2-0.2c0-0.2-1,0.9-1,0.9l-1.2-0.1L5.3,27c0,0-1,0.1-1.2-0.2c-0.2-0.2-0.3,0.6-1.5,0.6l0.1,0L2.1,28 v0.5l-0.8,0.9l0.1,1.5l0.7-0.2L3,31.6c0,0,0.5,3-1.6,2.5c-2.1-0.5,2.2,2.2,2.2,2.2s0.4,0.6-0.5,1.2c-0.8,0.6,2,1.7,2,1.7 s1.1,0.5,2.1,0.1c1-0.4,4.3,0.6,2.2,2.9l-1.1,1.1H7.2l0.1,0.6L7,44.1l0.5,0.8l0.4,0.3l0,1.2H7.3l-0.4,0.5L6,46.1 c0,0-0.4,0.9,0.1,1.1c0.5,0.3,0,1.5-0.2,1.7c-0.2,0.3,3.8,4,3.8,4l0.8-0.4c0,0,2.1,1.5,2.1,1.7c0,0.2,1.4,1.6,1.4,1.6l0.8-0.2 c0,0,0.7,0,0.2,0.9c-0.5,1,1.1,1,1.1,1l2.2,1.9h1.2c0,0,1.9,1.3,3.2,0.5c1.3-0.7,1.6,0.2,0.9,1c-0.7,0.9,1.5-0.6,1.6-1 c0-0.4,1.4-0.8,2.1,0.2c0.7,1,0.9,0.4,1.2,0.4c0.2,0,0.9,0,1.1,0.5c0.3,0.5,2.1-0.1,1.9-0.6c-0.1-0.5,1.3-1,1.3-1l1.1,0 c0,0,1.2-1.5,2.9-0.7l1.5-0.7l0.6,0.5l-0.4,0.4l0.8,0.6c0,0-2.5,1.5,1.5,1.3c4-0.2,1.6,5.4,1.1,6.7c-0.5,1.4-1.1,1.7-1.1,1.7 l0.1,1.3l2.3-0.2l-0.1,0.6c0,0,0.2,1.7,1.1,1.7c0.9,0,0.5,1.3-0.1,2.2c0,0,1.4,0.3,1.5,0.7c0.1,0.4,1.3,1.3,2,0.6 c0.6-0.6,0.8,0.2,0.8,0.9c0,0.7,1,0,1,0l-0.2-1.8c0,0-0.5-0.9,0.8-0.7c1.3,0.1,1.5-0.7,1.5-0.7l0.7,0.4l0.7-0.4l0.3,0.1l0.4-0.2 l0.5,0.4l0.3-0.4l0.7,0.2l0.7-0.3l0.2-0.8c0,0,1-0.9,1.4,0.2c0.5,1.1,2.5,0.5,2.5,0.5l-0.4,0.7l1.7,1.9c0,0,0.6-0.7,1.6,0.1 c1,0.7,1.2-0.1,1.2-0.1v-0.6l1.6,0.9l1.2,0c0,0-0.8,2.2,0.7,2.4c1.5,0.2,0.7-0.7,0.7-0.7s-1.3-1,0.1-1.6c1.4-0.6,4.9-2.1,4.9-2.1 l1.2-1l-0.3-1.2l1,0.7c0,0,4.8-0.1,6.1-3.2l1-1l0.9-1.1l-0.3-0.4l2.3-2.7c0,0,4-9.3,3.6-9.8c-0.4-0.5,1.2-1.7-3.2-1.5 c-4.5,0.2,2.1-2.1,2.5-2.1c0.4,0-0.4-2-0.4-2l-2.6-2L83,44.3c0,0-2.5-1.1-1.6-2.3S84.1,37.6,85.7,37.6"&gt;&lt;/path&gt;
+         &lt;path d="M64.7,83.9v0.3c0,0,0.7,0.3,0.8,0.6c0.1,0.3,0.7-0.3,1.1,0.1s0.3-0.6,0.8-0.6c0.4,0,0.4-0.7,0.8-0.7c0.4,0,0.3-2.1,1.2-2.6 c0.9-0.5-1.3-1.2-1.1-0.7l-1,0.2h-1.1L65.9,81h-0.4v0.5C65.5,81.5,63.9,82.9,64.7,83.9L64.7,83.9z"&gt;&lt;/path&gt;
+	     &lt;/g&gt;
+	   &lt;/svg&gt;
+   &lt;/div&gt;
+   &lt;div class="o-local-conditions__weather js-weather"&gt;
+	   &lt;div class="o-local-conditions__weather__condition"&gt;
+	     &lt;svg viewBox="0 0 32 32" class="o-icon o-icon--large o-icon--weather js-weather-icon"&gt;
+		   &lt;use xlink:href="#icon--clear--day"&gt;&lt;/use&gt;
+	     &lt;/svg&gt;
+	   &lt;/div&gt;
+     &lt;div class="o-local-conditions__weather__temperature"&gt;&lt;span class="js-temperature"&gt;20&lt;/span&gt;&lt;span class="o-local-conditions__weather__temperature__symbol"&gt;&deg;C&lt;/span&gt;&lt;/div&gt;
+   &lt;/div&gt;
+ &lt;/div&gt;
+		</pre>
+
+	</section>
+
+</section>
+<section class="c-styleguide__section">
+
 	<h2 class="c-styleguide__section__header">Logo Grids</h2>
 
 	<p>A 3x2 grid for displaying a list of logos.</p>
@@ -2735,18 +2928,7 @@
    <div class="o-morph-button js-morph-button">
      <button type="button" class="o-button o-button--rounded o-morph-button__button js-morph-button-open">Morph button</button>
      <div class="o-dialog o-morph-button__dialog js-morph-dialog">
-       <div class="o-dialog__content">
-         <button type="button" class="o-dialog__close-button o-button o-button--icon js-morph-button-close">×</button>
-         Modal content
-       </div>
-     </div>
-   </div>
- </div>
- <div style="height: 20rem; position: relative;">
-   <div class="o-morph-button js-morph-button is-hidden">
-     <button type="button" class="o-button o-button--rounded o-morph-button__button js-morph-button-open">Morph button</button>
-     <div class="o-dialog o-morph-button__dialog js-morph-dialog">
-       <div class="o-dialog__content">
+       <div class="o-morph-button__dialog__content o-dialog__content">
          <button type="button" class="o-dialog__close-button o-button o-button--icon js-morph-button-close">×</button>
          Modal content
        </div>
@@ -2757,7 +2939,7 @@
    <div class="o-morph-button js-morph-button is-open">
      <button type="button" class="o-button o-button--rounded o-morph-button__button js-morph-button-open">Morph button</button>
      <div class="o-dialog o-morph-button__dialog js-morph-dialog">
-       <div class="o-dialog__content">
+       <div class="o-morph-button__dialog__content o-dialog__content">
          <button type="button" class="o-dialog__close-button o-button o-button--icon js-morph-button-close">×</button>
          Modal content
        </div>
@@ -2771,18 +2953,7 @@
    &lt;div class="o-morph-button js-morph-button"&gt;
      &lt;button type="button" class="o-button o-button--rounded o-morph-button__button js-morph-button-open"&gt;Morph button&lt;/button&gt;
      &lt;div class="o-dialog o-morph-button__dialog js-morph-dialog"&gt;
-       &lt;div class="o-dialog__content"&gt;
-         &lt;button type="button" class="o-dialog__close-button o-button o-button--icon js-morph-button-close"&gt;×&lt;/button&gt;
-         Modal content
-       &lt;/div&gt;
-     &lt;/div&gt;
-   &lt;/div&gt;
- &lt;/div&gt;
- &lt;div style="height: 20rem; position: relative;"&gt;
-   &lt;div class="o-morph-button js-morph-button is-hidden"&gt;
-     &lt;button type="button" class="o-button o-button--rounded o-morph-button__button js-morph-button-open"&gt;Morph button&lt;/button&gt;
-     &lt;div class="o-dialog o-morph-button__dialog js-morph-dialog"&gt;
-       &lt;div class="o-dialog__content"&gt;
+       &lt;div class="o-morph-button__dialog__content o-dialog__content"&gt;
          &lt;button type="button" class="o-dialog__close-button o-button o-button--icon js-morph-button-close"&gt;×&lt;/button&gt;
          Modal content
        &lt;/div&gt;
@@ -2793,7 +2964,7 @@
    &lt;div class="o-morph-button js-morph-button is-open"&gt;
      &lt;button type="button" class="o-button o-button--rounded o-morph-button__button js-morph-button-open"&gt;Morph button&lt;/button&gt;
      &lt;div class="o-dialog o-morph-button__dialog js-morph-dialog"&gt;
-       &lt;div class="o-dialog__content"&gt;
+       &lt;div class="o-morph-button__dialog__content o-dialog__content"&gt;
          &lt;button type="button" class="o-dialog__close-button o-button o-button--icon js-morph-button-close"&gt;×&lt;/button&gt;
          Modal content
        &lt;/div&gt;
@@ -2874,7 +3045,7 @@
 
 	<h2 class="c-styleguide__section__header">Navigation</h2>
 
-	<p>A fixed-position navigation component with scroll-spy implemented to highlight the appropriate menu item based on scroll position. Clicking on navigation menu items scrolls to the target. The navigation is automatically generated based on target elements with the class 'js-scroll-point'.</p>
+	<p>A fixed-position navigation component with scroll-spy implemented to highlight the appropriate menu item based on scroll position. Clicking on navigation menu items scrolls to the target. The navigation is automatically generated based on target elements with the class 'js-scroll-point' (i.e. page sections).</p>
 
 	<section class="c-styleguide__subsection">
 
@@ -2893,17 +3064,7 @@
 		<div class="c-styleguide__example">
 			 <div style="position:relative;height:7rem;">
    <nav role="navigation" class="o-navigation" style="position:absolute !important;">
-     <ul class="o-navigation__menu js-navigation-menu">
-       <li class="o-navigation__menu__item">
-         <a href="#section1" title="Title1" class="o-navigation__menu__item__link is-active"></a>
-       </li>
-       <li class="o-navigation__menu__item">
-         <a href="#section2" title="Title2" class="o-navigation__menu__item__link"></a>
-       </li>
-       <li class="o-navigation__menu__item">
-         <a href="#section3" title="Title3" class="o-navigation__menu__item__link"></a>
-       </li>
-     </ul
+     <ul class="o-navigation__menu js-navigation-menu"></ul>
    </nav>
  </div>
  <section class="js-scroll-point" id="section1" data-nav-title="Title1">Section 1</section>
@@ -2914,139 +3075,12 @@
 		<pre class="c-styleguide__markup">
  &lt;div style="position:relative;height:7rem;"&gt;
    &lt;nav role="navigation" class="o-navigation" style="position:absolute !important;"&gt;
-     &lt;ul class="o-navigation__menu js-navigation-menu"&gt;
-       &lt;li class="o-navigation__menu__item"&gt;
-         &lt;a href="#section1" title="Title1" class="o-navigation__menu__item__link is-active"&gt;&lt;/a&gt;
-       &lt;/li&gt;
-       &lt;li class="o-navigation__menu__item"&gt;
-         &lt;a href="#section2" title="Title2" class="o-navigation__menu__item__link"&gt;&lt;/a&gt;
-       &lt;/li&gt;
-       &lt;li class="o-navigation__menu__item"&gt;
-         &lt;a href="#section3" title="Title3" class="o-navigation__menu__item__link"&gt;&lt;/a&gt;
-       &lt;/li&gt;
-     &lt;/ul
+     &lt;ul class="o-navigation__menu js-navigation-menu"&gt;&lt;/ul&gt;
    &lt;/nav&gt;
  &lt;/div&gt;
  &lt;section class="js-scroll-point" id="section1" data-nav-title="Title1"&gt;Section 1&lt;/section&gt;
  &lt;section class="js-scroll-point" id="section2" data-nav-title="Title2"&gt;Section 2&lt;/section&gt;
  &lt;section class="js-scroll-point" id="section3" data-nav-title="Title3"&gt;Section 3&lt;/section&gt;
-		</pre>
-
-	</section>
-
-</section>
-<section class="c-styleguide__section">
-
-	<h2 class="c-styleguide__section__header">Local Conditions</h2>
-
-	<p>A collection of information about the time, location, and weather, of a certain place.</p>
-
-	<section class="c-styleguide__subsection">
-
-		<h3 class="c-styleguide__subsection__header">States</h3>
-
-		<ul class="c-styleguide__states">
-			
-		</ul>
-
-	</section>
-
-	<section class="c-styleguide__subsection">
-
-		<h3 class="c-styleguide__subsection__header">Example</h3>
-
-		<div class="c-styleguide__example">
-			 <div class="o-local-conditions">
-   <h3 class="o-local-conditions__location">Kunming
-	   <div class="u-subheader">Yunnan, China</div>
-   </h3>
-   <p class="o-local-conditions__time js-current-time">00:00</p>
-   <div class="o-local-conditions__map js-map">
-	   <svg viewBox="0 0 100 85.7" class="o-local-conditions__map__image">
-	     <g>
-  	   <path d="M85.7,37.6c0,0,0.3-1.4,0.5-1.4s-1.5,0.4-1.5,0.4l-2-0.6l-1.7,1.8c0,0-1.3,1.1-1.6-1.2l-1.8-0.4c0,0-2.5-2.2,0.3-2.3 l1.1-0.8l0.2-1.1l1.7-1.5l1.4-1.5l1.3,0.2c0,0-1.2,5.4,0.1,3.8c1.4-1.6,2.5-2.5,3-2.5c0.5,0,4.3-5.6,4.3-5.6l0.4,0.5 c0,0,2.2,0.1,1.4-1c-0.8-1.2-0.1-0.7,0.3-0.7c0.3,0,2.6-2,2.1-3c-0.5-1,0.9,0.5,0.9,0.5l0.8-0.8c0,0-1.3-3.7-1.2-4.1 c0.1-0.4,0.9-1,0.9-1.1c0-0.1,1.9,1.7,1.8-1.3c0-3,0.9-6.6,0.5-7c-0.5-0.4-1.9,1.2-1.9,1.2l-0.8,0.1l-0.4,0.8l-1.9,0.9L93,9.3 l-0.7-1.6l-2.1-0.5c0,0-1.1,0-1.1-0.1s-0.8,0.4-0.8,0.4l-0.9-1.2c0,0-3.9-5.7-4.3-5.7c-0.5,0-1.9,0.1-2.6-0.4 c-0.6-0.6-2.1,0.4-2.3,0.6c-0.2,0.2-1.5,0.9-1.9,0.8c-0.4-0.1-1.8,2.3-0.2,1.8c1.6-0.5,0.2,1.8-0.2,2.1S75,8,75.1,8.2 c0.1,0.2,0.5,0.8-0.5,1.6c-1.1,0.8-2.3,0.8-2.9,0.5c-0.6-0.3-1.4,3.9-1.2,4.1c0.2,0.3,0.5,0.6,0.5,0.6s0.5-0.5,0.9-0.3 c0.3,0.2,1.1-0.2,1.3,0.1c0.2,0.4,0.1-2,2.4-0.4c2.3,1.6,2.3,2,0.3,2.1c-2,0-0.1,0.2-2.1,0.8l-0.4,0.8l-0.3-0.4 c0,0-0.7,0.9-0.9,0.9s0,0.9,0, 0.9s-1.2,1.1-2.4,1c-1.2-0.1-0.5,2.3-3.7,1.2l-0.7,0.6c0,0-0.5,1.9,0.1,2.1s0.1,1.1-0.5,1.1 c-0.5,0-1,2.3-1.9,2.2c-0.8,0-3.9,0.8-3.9,0.8l-4.4,1.9c0,0-0.6,0-0.7-0.4s-2.9-0.4-3.2-0.4c-0.3,0-1.5-2-5.1-1.1 c-3.6,0.9-5.1-0.8-5.1-0.8c-0.1,0-1.5-3.2-1.5-3.2l-3.1-2.1c0,0-4.4-0.1-4.1-1.4l0.6-1.1c0,0-0.1-0.9,0-1c0.1-0.2,0.3-0.7,0.3-0.7 s-2.4-2-4.1-5.8L28,11.9c0,0-0.8,0.2-1.1,0.1c-0.3-0.1,0.1,0.7-2,1.2c-2.1,0.5-0.6,2.7-0.6,2.7s1,2.5-4-1c0,0-0.9,2.8-1.8,3.2 c-0.9,0.4,0.3,1,0.3,1L15,19c0,0,0.9,0.8-0.1,1.3l0.1,0v1.2l0.2,0.7c0,0-0.2,1.6-1.3,2.3v0.9L13,25.7l-0.2,0.4l-1-0.2 c0,0-2.1,1-2.1,1.1c0,0.1-2-0.1-2-0.2c0-0.2-1,0.9-1,0.9l-1.2-0.1L5.3,27c0,0-1,0.1-1.2-0.2c-0.2-0.2-0.3,0.6-1.5,0.6l0.1,0L2.1,28 v0.5l-0.8,0.9l0.1,1.5l0.7-0.2L3,31.6c0,0,0.5,3-1.6,2.5c-2.1-0.5,2.2,2.2,2.2,2.2s0.4,0.6-0.5,1.2c-0.8,0.6,2,1.7,2,1.7 s1.1,0.5,2.1,0.1c1-0.4,4.3,0.6,2.2,2.9l-1.1,1.1H7.2l0.1,0.6L7,44.1l0.5,0.8l0.4,0.3l0,1.2H7.3l-0.4,0.5L6,46.1 c0,0-0.4,0.9,0.1,1.1c0.5,0.3,0,1.5-0.2,1.7c-0.2,0.3,3.8,4,3.8,4l0.8-0.4c0,0,2.1,1.5,2.1,1.7c0,0.2,1.4,1.6,1.4,1.6l0.8-0.2 c0,0,0.7,0,0.2,0.9c-0.5,1,1.1,1,1.1,1l2.2,1.9h1.2c0,0,1.9,1.3,3.2,0.5c1.3-0.7,1.6,0.2,0.9,1c-0.7,0.9,1.5-0.6,1.6-1 c0-0.4,1.4-0.8,2.1,0.2c0.7,1,0.9,0.4,1.2,0.4c0.2,0,0.9,0,1.1,0.5c0.3,0.5,2.1-0.1,1.9-0.6c-0.1-0.5,1.3-1,1.3-1l1.1,0 c0,0,1.2-1.5,2.9-0.7l1.5-0.7l0.6,0.5l-0.4,0.4l0.8,0.6c0,0-2.5,1.5,1.5,1.3c4-0.2,1.6,5.4,1.1,6.7c-0.5,1.4-1.1,1.7-1.1,1.7 l0.1,1.3l2.3-0.2l-0.1,0.6c0,0,0.2,1.7,1.1,1.7c0.9,0,0.5,1.3-0.1,2.2c0,0,1.4,0.3,1.5,0.7c0.1,0.4,1.3,1.3,2,0.6 c0.6-0.6,0.8,0.2,0.8,0.9c0,0.7,1,0,1,0l-0.2-1.8c0,0-0.5-0.9,0.8-0.7c1.3,0.1,1.5-0.7,1.5-0.7l0.7,0.4l0.7-0.4l0.3,0.1l0.4-0.2 l0.5,0.4l0.3-0.4l0.7,0.2l0.7-0.3l0.2-0.8c0,0,1-0.9,1.4,0.2c0.5,1.1,2.5,0.5,2.5,0.5l-0.4,0.7l1.7,1.9c0,0,0.6-0.7,1.6,0.1 c1,0.7,1.2-0.1,1.2-0.1v-0.6l1.6,0.9l1.2,0c0,0-0.8,2.2,0.7,2.4c1.5,0.2,0.7-0.7,0.7-0.7s-1.3-1,0.1-1.6c1.4-0.6,4.9-2.1,4.9-2.1 l1.2-1l-0.3-1.2l1,0.7c0,0,4.8-0.1,6.1-3.2l1-1l0.9-1.1l-0.3-0.4l2.3-2.7c0,0,4-9.3,3.6-9.8c-0.4-0.5,1.2-1.7-3.2-1.5 c-4.5,0.2,2.1-2.1,2.5-2.1c0.4,0-0.4-2-0.4-2l-2.6-2L83,44.3c0,0-2.5-1.1-1.6-2.3S84.1,37.6,85.7,37.6"></path>
-         <path d="M64.7,83.9v0.3c0,0,0.7,0.3,0.8,0.6c0.1,0.3,0.7-0.3,1.1,0.1s0.3-0.6,0.8-0.6c0.4,0,0.4-0.7,0.8-0.7c0.4,0,0.3-2.1,1.2-2.6 c0.9-0.5-1.3-1.2-1.1-0.7l-1,0.2h-1.1L65.9,81h-0.4v0.5C65.5,81.5,63.9,82.9,64.7,83.9L64.7,83.9z"></path>
-	     </g>
-	   </svg>
-   </div>
-   <div class="o-local-conditions__weather is-hidden js-weather">
-	   <div class="o-local-conditions__weather__condition">
-	     <svg viewBox="0 0 32 32" class="o-icon o-icon--large o-icon--weather js-weather-icon">
-		   <use xlink:href="#icon--clear--day"></use>
-	     </svg>
-	   </div>
-     <div class="o-local-conditions__weather__temperature"><span class="js-temperature">20</span><span class="o-local-conditions__weather__temperature__symbol">&deg;C</span></div>
-   </div>
- </div>
- <div class="o-local-conditions o-local-conditions--light">
-   <h3 class="o-local-conditions__location">Kunming
-	   <div class="u-subheader">Yunnan, China</div>
-   </h3>
-   <p class="o-local-conditions__time js-current-time">00:00</p>
-   <div class="o-local-conditions__map js-map">
-	   <svg viewBox="0 0 100 85.7" class="o-local-conditions__map__image">
-	     <g>
-  	   <path d="M85.7,37.6c0,0,0.3-1.4,0.5-1.4s-1.5,0.4-1.5,0.4l-2-0.6l-1.7,1.8c0,0-1.3,1.1-1.6-1.2l-1.8-0.4c0,0-2.5-2.2,0.3-2.3 l1.1-0.8l0.2-1.1l1.7-1.5l1.4-1.5l1.3,0.2c0,0-1.2,5.4,0.1,3.8c1.4-1.6,2.5-2.5,3-2.5c0.5,0,4.3-5.6,4.3-5.6l0.4,0.5 c0,0,2.2,0.1,1.4-1c-0.8-1.2-0.1-0.7,0.3-0.7c0.3,0,2.6-2,2.1-3c-0.5-1,0.9,0.5,0.9,0.5l0.8-0.8c0,0-1.3-3.7-1.2-4.1 c0.1-0.4,0.9-1,0.9-1.1c0-0.1,1.9,1.7,1.8-1.3c0-3,0.9-6.6,0.5-7c-0.5-0.4-1.9,1.2-1.9,1.2l-0.8,0.1l-0.4,0.8l-1.9,0.9L93,9.3 l-0.7-1.6l-2.1-0.5c0,0-1.1,0-1.1-0.1s-0.8,0.4-0.8,0.4l-0.9-1.2c0,0-3.9-5.7-4.3-5.7c-0.5,0-1.9,0.1-2.6-0.4 c-0.6-0.6-2.1,0.4-2.3,0.6c-0.2,0.2-1.5,0.9-1.9,0.8c-0.4-0.1-1.8,2.3-0.2,1.8c1.6-0.5,0.2,1.8-0.2,2.1S75,8,75.1,8.2 c0.1,0.2,0.5,0.8-0.5,1.6c-1.1,0.8-2.3,0.8-2.9,0.5c-0.6-0.3-1.4,3.9-1.2,4.1c0.2,0.3,0.5,0.6,0.5,0.6s0.5-0.5,0.9-0.3 c0.3,0.2,1.1-0.2,1.3,0.1c0.2,0.4,0.1-2,2.4-0.4c2.3,1.6,2.3,2,0.3,2.1c-2,0-0.1,0.2-2.1,0.8l-0.4,0.8l-0.3-0.4 c0,0-0.7,0.9-0.9,0.9s0,0.9,0, 0.9s-1.2,1.1-2.4,1c-1.2-0.1-0.5,2.3-3.7,1.2l-0.7,0.6c0,0-0.5,1.9,0.1,2.1s0.1,1.1-0.5,1.1 c-0.5,0-1,2.3-1.9,2.2c-0.8,0-3.9,0.8-3.9,0.8l-4.4,1.9c0,0-0.6,0-0.7-0.4s-2.9-0.4-3.2-0.4c-0.3,0-1.5-2-5.1-1.1 c-3.6,0.9-5.1-0.8-5.1-0.8c-0.1,0-1.5-3.2-1.5-3.2l-3.1-2.1c0,0-4.4-0.1-4.1-1.4l0.6-1.1c0,0-0.1-0.9,0-1c0.1-0.2,0.3-0.7,0.3-0.7 s-2.4-2-4.1-5.8L28,11.9c0,0-0.8,0.2-1.1,0.1c-0.3-0.1,0.1,0.7-2,1.2c-2.1,0.5-0.6,2.7-0.6,2.7s1,2.5-4-1c0,0-0.9,2.8-1.8,3.2 c-0.9,0.4,0.3,1,0.3,1L15,19c0,0,0.9,0.8-0.1,1.3l0.1,0v1.2l0.2,0.7c0,0-0.2,1.6-1.3,2.3v0.9L13,25.7l-0.2,0.4l-1-0.2 c0,0-2.1,1-2.1,1.1c0,0.1-2-0.1-2-0.2c0-0.2-1,0.9-1,0.9l-1.2-0.1L5.3,27c0,0-1,0.1-1.2-0.2c-0.2-0.2-0.3,0.6-1.5,0.6l0.1,0L2.1,28 v0.5l-0.8,0.9l0.1,1.5l0.7-0.2L3,31.6c0,0,0.5,3-1.6,2.5c-2.1-0.5,2.2,2.2,2.2,2.2s0.4,0.6-0.5,1.2c-0.8,0.6,2,1.7,2,1.7 s1.1,0.5,2.1,0.1c1-0.4,4.3,0.6,2.2,2.9l-1.1,1.1H7.2l0.1,0.6L7,44.1l0.5,0.8l0.4,0.3l0,1.2H7.3l-0.4,0.5L6,46.1 c0,0-0.4,0.9,0.1,1.1c0.5,0.3,0,1.5-0.2,1.7c-0.2,0.3,3.8,4,3.8,4l0.8-0.4c0,0,2.1,1.5,2.1,1.7c0,0.2,1.4,1.6,1.4,1.6l0.8-0.2 c0,0,0.7,0,0.2,0.9c-0.5,1,1.1,1,1.1,1l2.2,1.9h1.2c0,0,1.9,1.3,3.2,0.5c1.3-0.7,1.6,0.2,0.9,1c-0.7,0.9,1.5-0.6,1.6-1 c0-0.4,1.4-0.8,2.1,0.2c0.7,1,0.9,0.4,1.2,0.4c0.2,0,0.9,0,1.1,0.5c0.3,0.5,2.1-0.1,1.9-0.6c-0.1-0.5,1.3-1,1.3-1l1.1,0 c0,0,1.2-1.5,2.9-0.7l1.5-0.7l0.6,0.5l-0.4,0.4l0.8,0.6c0,0-2.5,1.5,1.5,1.3c4-0.2,1.6,5.4,1.1,6.7c-0.5,1.4-1.1,1.7-1.1,1.7 l0.1,1.3l2.3-0.2l-0.1,0.6c0,0,0.2,1.7,1.1,1.7c0.9,0,0.5,1.3-0.1,2.2c0,0,1.4,0.3,1.5,0.7c0.1,0.4,1.3,1.3,2,0.6 c0.6-0.6,0.8,0.2,0.8,0.9c0,0.7,1,0,1,0l-0.2-1.8c0,0-0.5-0.9,0.8-0.7c1.3,0.1,1.5-0.7,1.5-0.7l0.7,0.4l0.7-0.4l0.3,0.1l0.4-0.2 l0.5,0.4l0.3-0.4l0.7,0.2l0.7-0.3l0.2-0.8c0,0,1-0.9,1.4,0.2c0.5,1.1,2.5,0.5,2.5,0.5l-0.4,0.7l1.7,1.9c0,0,0.6-0.7,1.6,0.1 c1,0.7,1.2-0.1,1.2-0.1v-0.6l1.6,0.9l1.2,0c0,0-0.8,2.2,0.7,2.4c1.5,0.2,0.7-0.7,0.7-0.7s-1.3-1,0.1-1.6c1.4-0.6,4.9-2.1,4.9-2.1 l1.2-1l-0.3-1.2l1,0.7c0,0,4.8-0.1,6.1-3.2l1-1l0.9-1.1l-0.3-0.4l2.3-2.7c0,0,4-9.3,3.6-9.8c-0.4-0.5,1.2-1.7-3.2-1.5 c-4.5,0.2,2.1-2.1,2.5-2.1c0.4,0-0.4-2-0.4-2l-2.6-2L83,44.3c0,0-2.5-1.1-1.6-2.3S84.1,37.6,85.7,37.6"></path>
-         <path d="M64.7,83.9v0.3c0,0,0.7,0.3,0.8,0.6c0.1,0.3,0.7-0.3,1.1,0.1s0.3-0.6,0.8-0.6c0.4,0,0.4-0.7,0.8-0.7c0.4,0,0.3-2.1,1.2-2.6 c0.9-0.5-1.3-1.2-1.1-0.7l-1,0.2h-1.1L65.9,81h-0.4v0.5C65.5,81.5,63.9,82.9,64.7,83.9L64.7,83.9z"></path>
-	     </g>
-	   </svg>
-   </div>
-   <div class="o-local-conditions__weather is-hidden js-weather">
-	   <div class="o-local-conditions__weather__condition">
-	     <svg viewBox="0 0 32 32" class="o-icon o-icon--large o-icon--weather js-weather-icon">
-		   <use xlink:href="#icon--clear--day"></use>
-	     </svg>
-	   </div>
-     <div class="o-local-conditions__weather__temperature"><span class="js-temperature">20</span><span class="o-local-conditions__weather__temperature__symbol">&deg;C</span></div>
-   </div>
- </div>
-		</div>
-
-		<pre class="c-styleguide__markup">
- &lt;div class="o-local-conditions"&gt;
-   &lt;h3 class="o-local-conditions__location"&gt;Kunming
-	   &lt;div class="u-subheader"&gt;Yunnan, China&lt;/div&gt;
-   &lt;/h3&gt;
-   &lt;p class="o-local-conditions__time js-current-time"&gt;00:00&lt;/p&gt;
-   &lt;div class="o-local-conditions__map js-map"&gt;
-	   &lt;svg viewBox="0 0 100 85.7" class="o-local-conditions__map__image"&gt;
-	     &lt;g&gt;
-  	   &lt;path d="M85.7,37.6c0,0,0.3-1.4,0.5-1.4s-1.5,0.4-1.5,0.4l-2-0.6l-1.7,1.8c0,0-1.3,1.1-1.6-1.2l-1.8-0.4c0,0-2.5-2.2,0.3-2.3 l1.1-0.8l0.2-1.1l1.7-1.5l1.4-1.5l1.3,0.2c0,0-1.2,5.4,0.1,3.8c1.4-1.6,2.5-2.5,3-2.5c0.5,0,4.3-5.6,4.3-5.6l0.4,0.5 c0,0,2.2,0.1,1.4-1c-0.8-1.2-0.1-0.7,0.3-0.7c0.3,0,2.6-2,2.1-3c-0.5-1,0.9,0.5,0.9,0.5l0.8-0.8c0,0-1.3-3.7-1.2-4.1 c0.1-0.4,0.9-1,0.9-1.1c0-0.1,1.9,1.7,1.8-1.3c0-3,0.9-6.6,0.5-7c-0.5-0.4-1.9,1.2-1.9,1.2l-0.8,0.1l-0.4,0.8l-1.9,0.9L93,9.3 l-0.7-1.6l-2.1-0.5c0,0-1.1,0-1.1-0.1s-0.8,0.4-0.8,0.4l-0.9-1.2c0,0-3.9-5.7-4.3-5.7c-0.5,0-1.9,0.1-2.6-0.4 c-0.6-0.6-2.1,0.4-2.3,0.6c-0.2,0.2-1.5,0.9-1.9,0.8c-0.4-0.1-1.8,2.3-0.2,1.8c1.6-0.5,0.2,1.8-0.2,2.1S75,8,75.1,8.2 c0.1,0.2,0.5,0.8-0.5,1.6c-1.1,0.8-2.3,0.8-2.9,0.5c-0.6-0.3-1.4,3.9-1.2,4.1c0.2,0.3,0.5,0.6,0.5,0.6s0.5-0.5,0.9-0.3 c0.3,0.2,1.1-0.2,1.3,0.1c0.2,0.4,0.1-2,2.4-0.4c2.3,1.6,2.3,2,0.3,2.1c-2,0-0.1,0.2-2.1,0.8l-0.4,0.8l-0.3-0.4 c0,0-0.7,0.9-0.9,0.9s0,0.9,0, 0.9s-1.2,1.1-2.4,1c-1.2-0.1-0.5,2.3-3.7,1.2l-0.7,0.6c0,0-0.5,1.9,0.1,2.1s0.1,1.1-0.5,1.1 c-0.5,0-1,2.3-1.9,2.2c-0.8,0-3.9,0.8-3.9,0.8l-4.4,1.9c0,0-0.6,0-0.7-0.4s-2.9-0.4-3.2-0.4c-0.3,0-1.5-2-5.1-1.1 c-3.6,0.9-5.1-0.8-5.1-0.8c-0.1,0-1.5-3.2-1.5-3.2l-3.1-2.1c0,0-4.4-0.1-4.1-1.4l0.6-1.1c0,0-0.1-0.9,0-1c0.1-0.2,0.3-0.7,0.3-0.7 s-2.4-2-4.1-5.8L28,11.9c0,0-0.8,0.2-1.1,0.1c-0.3-0.1,0.1,0.7-2,1.2c-2.1,0.5-0.6,2.7-0.6,2.7s1,2.5-4-1c0,0-0.9,2.8-1.8,3.2 c-0.9,0.4,0.3,1,0.3,1L15,19c0,0,0.9,0.8-0.1,1.3l0.1,0v1.2l0.2,0.7c0,0-0.2,1.6-1.3,2.3v0.9L13,25.7l-0.2,0.4l-1-0.2 c0,0-2.1,1-2.1,1.1c0,0.1-2-0.1-2-0.2c0-0.2-1,0.9-1,0.9l-1.2-0.1L5.3,27c0,0-1,0.1-1.2-0.2c-0.2-0.2-0.3,0.6-1.5,0.6l0.1,0L2.1,28 v0.5l-0.8,0.9l0.1,1.5l0.7-0.2L3,31.6c0,0,0.5,3-1.6,2.5c-2.1-0.5,2.2,2.2,2.2,2.2s0.4,0.6-0.5,1.2c-0.8,0.6,2,1.7,2,1.7 s1.1,0.5,2.1,0.1c1-0.4,4.3,0.6,2.2,2.9l-1.1,1.1H7.2l0.1,0.6L7,44.1l0.5,0.8l0.4,0.3l0,1.2H7.3l-0.4,0.5L6,46.1 c0,0-0.4,0.9,0.1,1.1c0.5,0.3,0,1.5-0.2,1.7c-0.2,0.3,3.8,4,3.8,4l0.8-0.4c0,0,2.1,1.5,2.1,1.7c0,0.2,1.4,1.6,1.4,1.6l0.8-0.2 c0,0,0.7,0,0.2,0.9c-0.5,1,1.1,1,1.1,1l2.2,1.9h1.2c0,0,1.9,1.3,3.2,0.5c1.3-0.7,1.6,0.2,0.9,1c-0.7,0.9,1.5-0.6,1.6-1 c0-0.4,1.4-0.8,2.1,0.2c0.7,1,0.9,0.4,1.2,0.4c0.2,0,0.9,0,1.1,0.5c0.3,0.5,2.1-0.1,1.9-0.6c-0.1-0.5,1.3-1,1.3-1l1.1,0 c0,0,1.2-1.5,2.9-0.7l1.5-0.7l0.6,0.5l-0.4,0.4l0.8,0.6c0,0-2.5,1.5,1.5,1.3c4-0.2,1.6,5.4,1.1,6.7c-0.5,1.4-1.1,1.7-1.1,1.7 l0.1,1.3l2.3-0.2l-0.1,0.6c0,0,0.2,1.7,1.1,1.7c0.9,0,0.5,1.3-0.1,2.2c0,0,1.4,0.3,1.5,0.7c0.1,0.4,1.3,1.3,2,0.6 c0.6-0.6,0.8,0.2,0.8,0.9c0,0.7,1,0,1,0l-0.2-1.8c0,0-0.5-0.9,0.8-0.7c1.3,0.1,1.5-0.7,1.5-0.7l0.7,0.4l0.7-0.4l0.3,0.1l0.4-0.2 l0.5,0.4l0.3-0.4l0.7,0.2l0.7-0.3l0.2-0.8c0,0,1-0.9,1.4,0.2c0.5,1.1,2.5,0.5,2.5,0.5l-0.4,0.7l1.7,1.9c0,0,0.6-0.7,1.6,0.1 c1,0.7,1.2-0.1,1.2-0.1v-0.6l1.6,0.9l1.2,0c0,0-0.8,2.2,0.7,2.4c1.5,0.2,0.7-0.7,0.7-0.7s-1.3-1,0.1-1.6c1.4-0.6,4.9-2.1,4.9-2.1 l1.2-1l-0.3-1.2l1,0.7c0,0,4.8-0.1,6.1-3.2l1-1l0.9-1.1l-0.3-0.4l2.3-2.7c0,0,4-9.3,3.6-9.8c-0.4-0.5,1.2-1.7-3.2-1.5 c-4.5,0.2,2.1-2.1,2.5-2.1c0.4,0-0.4-2-0.4-2l-2.6-2L83,44.3c0,0-2.5-1.1-1.6-2.3S84.1,37.6,85.7,37.6"&gt;&lt;/path&gt;
-         &lt;path d="M64.7,83.9v0.3c0,0,0.7,0.3,0.8,0.6c0.1,0.3,0.7-0.3,1.1,0.1s0.3-0.6,0.8-0.6c0.4,0,0.4-0.7,0.8-0.7c0.4,0,0.3-2.1,1.2-2.6 c0.9-0.5-1.3-1.2-1.1-0.7l-1,0.2h-1.1L65.9,81h-0.4v0.5C65.5,81.5,63.9,82.9,64.7,83.9L64.7,83.9z"&gt;&lt;/path&gt;
-	     &lt;/g&gt;
-	   &lt;/svg&gt;
-   &lt;/div&gt;
-   &lt;div class="o-local-conditions__weather is-hidden js-weather"&gt;
-	   &lt;div class="o-local-conditions__weather__condition"&gt;
-	     &lt;svg viewBox="0 0 32 32" class="o-icon o-icon--large o-icon--weather js-weather-icon"&gt;
-		   &lt;use xlink:href="#icon--clear--day"&gt;&lt;/use&gt;
-	     &lt;/svg&gt;
-	   &lt;/div&gt;
-     &lt;div class="o-local-conditions__weather__temperature"&gt;&lt;span class="js-temperature"&gt;20&lt;/span&gt;&lt;span class="o-local-conditions__weather__temperature__symbol"&gt;&deg;C&lt;/span&gt;&lt;/div&gt;
-   &lt;/div&gt;
- &lt;/div&gt;
- &lt;div class="o-local-conditions o-local-conditions--light"&gt;
-   &lt;h3 class="o-local-conditions__location"&gt;Kunming
-	   &lt;div class="u-subheader"&gt;Yunnan, China&lt;/div&gt;
-   &lt;/h3&gt;
-   &lt;p class="o-local-conditions__time js-current-time"&gt;00:00&lt;/p&gt;
-   &lt;div class="o-local-conditions__map js-map"&gt;
-	   &lt;svg viewBox="0 0 100 85.7" class="o-local-conditions__map__image"&gt;
-	     &lt;g&gt;
-  	   &lt;path d="M85.7,37.6c0,0,0.3-1.4,0.5-1.4s-1.5,0.4-1.5,0.4l-2-0.6l-1.7,1.8c0,0-1.3,1.1-1.6-1.2l-1.8-0.4c0,0-2.5-2.2,0.3-2.3 l1.1-0.8l0.2-1.1l1.7-1.5l1.4-1.5l1.3,0.2c0,0-1.2,5.4,0.1,3.8c1.4-1.6,2.5-2.5,3-2.5c0.5,0,4.3-5.6,4.3-5.6l0.4,0.5 c0,0,2.2,0.1,1.4-1c-0.8-1.2-0.1-0.7,0.3-0.7c0.3,0,2.6-2,2.1-3c-0.5-1,0.9,0.5,0.9,0.5l0.8-0.8c0,0-1.3-3.7-1.2-4.1 c0.1-0.4,0.9-1,0.9-1.1c0-0.1,1.9,1.7,1.8-1.3c0-3,0.9-6.6,0.5-7c-0.5-0.4-1.9,1.2-1.9,1.2l-0.8,0.1l-0.4,0.8l-1.9,0.9L93,9.3 l-0.7-1.6l-2.1-0.5c0,0-1.1,0-1.1-0.1s-0.8,0.4-0.8,0.4l-0.9-1.2c0,0-3.9-5.7-4.3-5.7c-0.5,0-1.9,0.1-2.6-0.4 c-0.6-0.6-2.1,0.4-2.3,0.6c-0.2,0.2-1.5,0.9-1.9,0.8c-0.4-0.1-1.8,2.3-0.2,1.8c1.6-0.5,0.2,1.8-0.2,2.1S75,8,75.1,8.2 c0.1,0.2,0.5,0.8-0.5,1.6c-1.1,0.8-2.3,0.8-2.9,0.5c-0.6-0.3-1.4,3.9-1.2,4.1c0.2,0.3,0.5,0.6,0.5,0.6s0.5-0.5,0.9-0.3 c0.3,0.2,1.1-0.2,1.3,0.1c0.2,0.4,0.1-2,2.4-0.4c2.3,1.6,2.3,2,0.3,2.1c-2,0-0.1,0.2-2.1,0.8l-0.4,0.8l-0.3-0.4 c0,0-0.7,0.9-0.9,0.9s0,0.9,0, 0.9s-1.2,1.1-2.4,1c-1.2-0.1-0.5,2.3-3.7,1.2l-0.7,0.6c0,0-0.5,1.9,0.1,2.1s0.1,1.1-0.5,1.1 c-0.5,0-1,2.3-1.9,2.2c-0.8,0-3.9,0.8-3.9,0.8l-4.4,1.9c0,0-0.6,0-0.7-0.4s-2.9-0.4-3.2-0.4c-0.3,0-1.5-2-5.1-1.1 c-3.6,0.9-5.1-0.8-5.1-0.8c-0.1,0-1.5-3.2-1.5-3.2l-3.1-2.1c0,0-4.4-0.1-4.1-1.4l0.6-1.1c0,0-0.1-0.9,0-1c0.1-0.2,0.3-0.7,0.3-0.7 s-2.4-2-4.1-5.8L28,11.9c0,0-0.8,0.2-1.1,0.1c-0.3-0.1,0.1,0.7-2,1.2c-2.1,0.5-0.6,2.7-0.6,2.7s1,2.5-4-1c0,0-0.9,2.8-1.8,3.2 c-0.9,0.4,0.3,1,0.3,1L15,19c0,0,0.9,0.8-0.1,1.3l0.1,0v1.2l0.2,0.7c0,0-0.2,1.6-1.3,2.3v0.9L13,25.7l-0.2,0.4l-1-0.2 c0,0-2.1,1-2.1,1.1c0,0.1-2-0.1-2-0.2c0-0.2-1,0.9-1,0.9l-1.2-0.1L5.3,27c0,0-1,0.1-1.2-0.2c-0.2-0.2-0.3,0.6-1.5,0.6l0.1,0L2.1,28 v0.5l-0.8,0.9l0.1,1.5l0.7-0.2L3,31.6c0,0,0.5,3-1.6,2.5c-2.1-0.5,2.2,2.2,2.2,2.2s0.4,0.6-0.5,1.2c-0.8,0.6,2,1.7,2,1.7 s1.1,0.5,2.1,0.1c1-0.4,4.3,0.6,2.2,2.9l-1.1,1.1H7.2l0.1,0.6L7,44.1l0.5,0.8l0.4,0.3l0,1.2H7.3l-0.4,0.5L6,46.1 c0,0-0.4,0.9,0.1,1.1c0.5,0.3,0,1.5-0.2,1.7c-0.2,0.3,3.8,4,3.8,4l0.8-0.4c0,0,2.1,1.5,2.1,1.7c0,0.2,1.4,1.6,1.4,1.6l0.8-0.2 c0,0,0.7,0,0.2,0.9c-0.5,1,1.1,1,1.1,1l2.2,1.9h1.2c0,0,1.9,1.3,3.2,0.5c1.3-0.7,1.6,0.2,0.9,1c-0.7,0.9,1.5-0.6,1.6-1 c0-0.4,1.4-0.8,2.1,0.2c0.7,1,0.9,0.4,1.2,0.4c0.2,0,0.9,0,1.1,0.5c0.3,0.5,2.1-0.1,1.9-0.6c-0.1-0.5,1.3-1,1.3-1l1.1,0 c0,0,1.2-1.5,2.9-0.7l1.5-0.7l0.6,0.5l-0.4,0.4l0.8,0.6c0,0-2.5,1.5,1.5,1.3c4-0.2,1.6,5.4,1.1,6.7c-0.5,1.4-1.1,1.7-1.1,1.7 l0.1,1.3l2.3-0.2l-0.1,0.6c0,0,0.2,1.7,1.1,1.7c0.9,0,0.5,1.3-0.1,2.2c0,0,1.4,0.3,1.5,0.7c0.1,0.4,1.3,1.3,2,0.6 c0.6-0.6,0.8,0.2,0.8,0.9c0,0.7,1,0,1,0l-0.2-1.8c0,0-0.5-0.9,0.8-0.7c1.3,0.1,1.5-0.7,1.5-0.7l0.7,0.4l0.7-0.4l0.3,0.1l0.4-0.2 l0.5,0.4l0.3-0.4l0.7,0.2l0.7-0.3l0.2-0.8c0,0,1-0.9,1.4,0.2c0.5,1.1,2.5,0.5,2.5,0.5l-0.4,0.7l1.7,1.9c0,0,0.6-0.7,1.6,0.1 c1,0.7,1.2-0.1,1.2-0.1v-0.6l1.6,0.9l1.2,0c0,0-0.8,2.2,0.7,2.4c1.5,0.2,0.7-0.7,0.7-0.7s-1.3-1,0.1-1.6c1.4-0.6,4.9-2.1,4.9-2.1 l1.2-1l-0.3-1.2l1,0.7c0,0,4.8-0.1,6.1-3.2l1-1l0.9-1.1l-0.3-0.4l2.3-2.7c0,0,4-9.3,3.6-9.8c-0.4-0.5,1.2-1.7-3.2-1.5 c-4.5,0.2,2.1-2.1,2.5-2.1c0.4,0-0.4-2-0.4-2l-2.6-2L83,44.3c0,0-2.5-1.1-1.6-2.3S84.1,37.6,85.7,37.6"&gt;&lt;/path&gt;
-         &lt;path d="M64.7,83.9v0.3c0,0,0.7,0.3,0.8,0.6c0.1,0.3,0.7-0.3,1.1,0.1s0.3-0.6,0.8-0.6c0.4,0,0.4-0.7,0.8-0.7c0.4,0,0.3-2.1,1.2-2.6 c0.9-0.5-1.3-1.2-1.1-0.7l-1,0.2h-1.1L65.9,81h-0.4v0.5C65.5,81.5,63.9,82.9,64.7,83.9L64.7,83.9z"&gt;&lt;/path&gt;
-	     &lt;/g&gt;
-	   &lt;/svg&gt;
-   &lt;/div&gt;
-   &lt;div class="o-local-conditions__weather is-hidden js-weather"&gt;
-	   &lt;div class="o-local-conditions__weather__condition"&gt;
-	     &lt;svg viewBox="0 0 32 32" class="o-icon o-icon--large o-icon--weather js-weather-icon"&gt;
-		   &lt;use xlink:href="#icon--clear--day"&gt;&lt;/use&gt;
-	     &lt;/svg&gt;
-	   &lt;/div&gt;
-     &lt;div class="o-local-conditions__weather__temperature"&gt;&lt;span class="js-temperature"&gt;20&lt;/span&gt;&lt;span class="o-local-conditions__weather__temperature__symbol"&gt;&deg;C&lt;/span&gt;&lt;/div&gt;
-   &lt;/div&gt;
- &lt;/div&gt;
 		</pre>
 
 	</section>
@@ -3270,13 +3304,21 @@
 
 	<h2 class="c-styleguide__section__header">Section Headers</h2>
 
-	<p>The titles for each section</p>
+	<p>The titles for each section.</p>
 
 	<section class="c-styleguide__subsection">
 
 		<h3 class="c-styleguide__subsection__header">States</h3>
 
 		<ul class="c-styleguide__states">
+			
+				<li>
+					<code>.o-section__header--blue--medium</code> - medium blue colour
+				</li>
+			
+				<li>
+					<code>.o-section__header--white</code> - white colour
+				</li>
 			
 		</ul>
 
@@ -3519,7 +3561,7 @@
 				</li>
 			
 				<li>
-					<code>green</code> - #1ff042
+					<code>green</code> - #1ABC9C
 				</li>
 			
 				<li>

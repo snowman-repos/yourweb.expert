@@ -1,7 +1,7 @@
 // @name Contact Component
 // @description Section containing a contact form, as well as some information about where I am. Local weather conditions are pulled from the weatheronline API.
 // @markup
-// <section data-nav-title="Get in touch with me" data-when-in-view="zoom-in-map" id="contact" class="o-section o-section--padding-top o-section--navy-blue js-scroll-point js-full-height-section">
+// <section data-nav-title="Get in touch with me" data-when-in-view="zoom-in-map" id="contact" class="o-section o-section--navy-blue js-full-height-section">
 //   <div class="o-section__content__container">
 //     <div aria-labelledby="contact__header" class="c-contact o-section__content">
 //       <h2 id="contact__header" class="o-section__header o-section__header--white">Get in touch</h2>
@@ -10,14 +10,14 @@
 //           <div class="o-form__input-group js-name">
 //             <label for="name" class="o-form__label o-form__label--silver">Your name:</label>
 //             <input data-error="Don't forget your name!" id="name" maxlength="50" pattern="/^[^/!£@#$%^&amp;*()[]+~?&lt;&gt;.0-9|&quot;]+$/" placeholder="e.g. Gordon Shumway" title="Your name" type="text" class="o-form__input o-form__input--block o-form__input--blue js-name-input">
-//             <svg viewBox="0 0 32 32" class="o-icon o-icon--check o-form__check">
+//             <svg viewBox="0 0 32 32" class="o-icon o-icon--check o-form__input-group__checkmark">
 //               <use xlink:href="#icon--check"></use>
 //             </svg>
 //           </div>
 //           <div class="o-form__input-group js-email">
 //             <label for="email" class="o-form__label o-form__label--silver">Your email address:</label>
 //             <input data-error="I need your email address :)" id="email" maxlength="50" placeholder="e.g. gordon.shumway@melmac.com" type="email" class="o-form__input o-form__input--block o-form__input--blue js-email-input">
-//             <svg viewBox="0 0 32 32" class="o-icon o-icon--check o-form__check">
+//             <svg viewBox="0 0 32 32" class="o-icon o-icon--check o-form__input-group__checkmark">
 //               <use xlink:href="#icon--check"></use>
 //             </svg>
 //           </div>
@@ -26,12 +26,12 @@
 //             <textarea data-error="What will we be working on?" id="message" placeholder="e.g. My project entails...
 // My budget is...
 // My deadline is..." class="o-form__input o-form__input--block o-form__input--textarea o-form__input--blue js-message-input"></textarea>
-//             <svg viewBox="0 0 32 32" class="o-icon o-icon--check o-form__check">
+//             <svg viewBox="0 0 32 32" class="o-icon o-icon--check o-form__input-group__checkmark">
 //               <use xlink:href="#icon--check"></use>
 //             </svg>
 //           </div>
 //           <div class="o-form__group">
-//             <input type="submit" value="Email me" class="o-form__submit-button o-button is-disabled js-form-submit">
+//             <input type="submit" value="Email me" class="o-form__submit-button o-button o-button--blue--cerulean is-disabled js-form-submit">
 //           </div>
 //         </form>
 //         <div class="o-form__notification js-sending-form is-hidden">
@@ -75,6 +75,7 @@
 //     </g>
 //   </svg>
 // </section>
+// <div class="c-styleguide__spacer-element"></div>
 
 $module-colour = $blue--navy
 

@@ -1,4 +1,4 @@
-// @name Input Group
+// @name Input Groups
 // @description A container for form labels, inputs, messages, and notifications.
 // @state .is-complete - indicates that the form input is complete and valid
 // @state .is-error - indicates that the form input is invalid or empty
@@ -6,24 +6,24 @@
 // @state .is-sending - indicates that the form input is in the process of being submitted
 // @markup
 // <div class="o-form__input-group">
-//   <label class="o-form__label" for="inputgroup"></label>
-//   <input class="o-form__input" id="inputgroup" placeholder="placeholder text" type="text">
+//   <label class="o-form__label" for="inputgroup">Input group:</label>
+//   <input class="o-form__input o-form__input--block" id="inputgroup" placeholder="placeholder text" type="text">
 // </div>
 // <div class="o-form__input-group is-complete">
-//   <label class="o-form__label" for="completeinputgroup"></label>
-//   <input class="o-form__input" id="completeinputgroup" placeholder="placeholder text" type="text">
+//   <label class="o-form__label" for="completeinputgroup">Complete Input Group:</label>
+//   <input class="o-form__input o-form__input--block" id="completeinputgroup" placeholder="placeholder text" type="text">
 //   <svg viewBox="0 0 32 32" class="o-icon o-icon--check o-form__input-group__checkmark">
 //     <use xlink:href="#icon--check"></use>
 //   </svg>
 // </div>
 // <div class="o-form__input-group is-error">
-//   <label class="o-form__label" for="errorinputgroup"></label>
+//   <label class="o-form__label" for="errorinputgroup">Error Input Group:</label>
 //   <div class="o-form__error-message">Data is invalid</div>
-//   <input class="o-form__input" id="errorinputgroup" placeholder="placeholder text" type="text">
+//   <input class="o-form__input o-form__input--block" id="errorinputgroup" placeholder="placeholder text" type="text">
 // </div>
 // <div class="o-form__input-group is-in-focus">
-//   <label class="o-form__label" for="focusedinputgroup"></label>
-//   <input class="o-form__input" id="focusedinputgroup" placeholder="placeholder text" type="text">
+//   <label class="o-form__label" for="focusedinputgroup">Focused Input Group:</label>
+//   <input class="o-form__input o-form__input--block" id="focusedinputgroup" placeholder="placeholder text" type="text">
 // </div>
 
 .o-form__input-group
@@ -35,7 +35,7 @@
 	// @description Displayed when the the data for an input inside an input group is deemed valid.
 	// @markup
 	// <div style="height: 4rem; position: relative; width: 100%">
-	//   <div class="o-form__input-group">
+	//   <div class="o-form__input-group is-complete" style="height:25px;">
 	//   	<svg viewBox="0 0 32 32" class="o-icon o-icon--check o-form__input-group__checkmark">
 	//        <use xlink:href="#icon--check"></use>
 	//      </svg>
@@ -44,7 +44,8 @@
 
 	&__checkmark
 		absolute()
-		fill							$green
+		fill							$green !important
+		font-size 						0.8em
 		opacity							0
 		right							2rem
 		top								0
@@ -66,12 +67,12 @@
 					color				$silver
 
 			&__input
+				background				transparent
 				border					none
+				border-bottom			1px solid $grey--light-1
 				border-radius 			0
 
 				&--blue
-					background			transparent
-					// border			1px solid $blue--navy
 					border-bottom		1px solid lighten($blue--dark, 30%)
 
 					&--navy
@@ -97,13 +98,19 @@
 
 		.o-form
 
-			&__label
+			&__label--silver
 				color					$white
 
-			&__input--blue
-				background				darken($blue--navy, 40%)
-				border					1px solid lighten($blue--dark, 30%)
-				outline					none
+			&__input
+				background				$white
+
+				&--blue
+					background			darken($blue--navy, 40%)
+					border				1px solid lighten($blue--dark, 30%)
+					outline				none
+
+					&--navy
+						background		transparent
 
 	&.is-sending
 

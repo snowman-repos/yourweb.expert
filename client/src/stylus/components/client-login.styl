@@ -1,28 +1,31 @@
 // @name Client Login Component
 // @description A morph button that opens a dialog containing a login form when clicked.
 // @markup
-// <div style="height: 20rem; position: relative;">
-//   <div class="o-morph-button c-client-login js-morph-button is-hidden js-login-form">
-//     <button type="button" class="o-morph-button__button o-button o-button--ghost o-button--ghost--white-and-yellow o-button--small c-client-login__button js-morph-button-open">Client login</button>
-//     <div class="o-dialog o-dialog--yellow o-morph-button__dialog c-client-login__dialog js-morph-dialog">
+// <div class="c-styleguide__note">
+//   <strong>NOTE: </strong> For the purposes of this demo the component, the button, and the dialog have been given an inline-style of 'position: absolute'.
+// </div>
+// <div style="background: #243342; height: 20rem; overflow: hidden; position: relative;">
+//   <div class="o-morph-button c-client-login js-morph-button is-hidden js-login-form" style="position: absolute;">
+//     <button type="button" class="o-morph-button__button o-button o-button--ghost o-button--ghost--white-and-yellow o-button--small o-button--rounded c-client-login__button js-morph-button-open" style="position: absolute;">Client login</button>
+//     <div class="o-dialog o-dialog--yellow o-morph-button__dialog c-client-login__dialog js-morph-dialog" style="position: absolute;">
 //       <div class="o-dialog__content o-morph-button__dialog__content">
 //         <button type="button" class="o-dialog__close-button o-button o-button--icon js-morph-button-close">&times;</button>
 //         <form action="/login" method="post" class="o-form c-client-login__form">
-//           <div class="o-form__group js-login-email">
+//           <div class="o-form__input-group js-login-email">
 //             <label for="login-email" class="o-form__label o-form__label--blue--cerulean">Email:</label>
-//             <input id="login-email" name="login-email" placeholder="e.g. gordon.shumway@melmac.com" tabindex="1" type="email" class="o-form__input o-form__input--blue--navy js-login-email-input">
-//             <svg viewBox="0 0 32 32" class="o-icon o-icon--check o-form__check">
+//             <input id="login-email" name="login-email" placeholder="e.g. gordon.shumway@melmac.com" tabindex="1" type="email" class="o-form__input o-form__input--block o-form__input--blue--navy js-login-email-input">
+//             <svg viewBox="0 0 32 32" class="o-icon o-icon--check o-form__input-group__checkmark">
 //               <use xlink:href="#icon--check"></use>
 //             </svg>
 //           </div>
-//           <div class="o-form__group js-login-password">
+//           <div class="o-form__input-group js-login-password">
 //             <label for="login-password" class="o-form__label o-form__label--blue--cerulean">Password:</label>
-//             <input id="login-password" name="login-password" tabindex="2" type="password" class="o-form__input o-form__input--blue--navy js-login-password-input">
-//             <svg viewBox="0 0 32 32" class="o-icon o-icon--check o-form__check">
+//             <input id="login-password" name="login-password" tabindex="2" type="password" class="o-form__input o-form__input--block o-form__input--blue--navy js-login-password-input">
+//             <svg viewBox="0 0 32 32" class="o-icon o-icon--check o-form__input-group__checkmark">
 //               <use xlink:href="#icon--check"></use>
 //             </svg>
 //           </div>
-//           <div class="o-form__group">
+//           <div class="o-form__input-group">
 //             <input tabindex="3" type="submit" value="login" class="o-form__submit-button o-button o-button--block o-button--blue--navy is-disabled js-login-button">
 //           </div>
 //         </form>

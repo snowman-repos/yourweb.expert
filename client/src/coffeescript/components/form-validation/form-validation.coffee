@@ -155,24 +155,31 @@ class FormValidation
 		for name, node of @el.contactForm.notifications
 			node.classList.add "is-hidden"
 
+		for name, node of @el.loginForm.notifications
+			node.classList.add "is-hidden"
+
 	login: ->
 
-		if true
+		if true #fake the login for now
 
 			@el.loginForm.form.classList.remove "is-error"
 
 			@hideAllNotifications()
-			@el.loginForm.form.classList.add "is-logging-in"
+			@el.loginForm.form.querySelector(".o-form").classList.add "is-sending"
 			@showNotifcation "logging in"
 
 			# pretend it's sent
 			setTimeout =>
 
 				@hideAllNotifications()
-				@el.loginForm.form.classList.remove "is-logging-in"
+				@el.loginForm.form.querySelector(".o-form").classList.remove "is-sending"
 
 				# just show error for now
 				@el.loginForm.form.classList.add "is-error"
+				inputGroups = @el.loginForm.form.querySelectorAll(".o-form__input-group")
+				for inputGroup in inputGroups
+					inputGroup.classList.remove "is-complete"
+					inputGroup.classList.add "is-error"
 
 			, 3000
 
@@ -232,16 +239,18 @@ class FormValidation
 
 	showError: (form, input) ->
 
-		@el[form][input].group.classList.add "is-error"
+		if form isnt "loginForm"
 
-		errors = @el[form][input].group.querySelectorAll ".o-form__error-message"
+			@el[form][input].group.classList.add "is-error"
 
-		if errors.length is 0
-			error = document.createElement "div"
-			error.classList.add "o-form__error-message"
-			if form is "contactForm" then error.classList.add "c-contact__form__error"
-			error.innerText = @el[form][input].input.dataset.error
-			@el[form][input].group.appendChild error
+			errors = @el[form][input].group.querySelectorAll ".o-form__error-message"
+
+			if errors.length is 0
+				error = document.createElement "div"
+				error.classList.add "o-form__error-message"
+				if form is "contactForm" then error.classList.add "c-contact__form__error"
+				error.innerText = @el[form][input].input.dataset.error
+				@el[form][input].group.appendChild error
 
 	showNotifcation: (notification) ->
 

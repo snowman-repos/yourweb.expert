@@ -2,6 +2,7 @@
 // @description All kinds of buttons found on the site.
 // @state .is-disabled - dims the button when disabled
 // @state .o-button--block - makes the button block-level (full-width)
+// @state .o-button--blue--cerulean - cerulean blue button
 // @state .o-button--blue--navy - navy blue button
 // @state .o-button--blue--sky - sky blue button
 // @state .o-button--icon - turns an icon into a button
@@ -15,6 +16,7 @@
 // <button class="o-button">button</button>
 // <button class="o-button o-button--block">Block button</button>
 // <button class="o-button o-button--blue--navy">Navy blue button button</button>
+// <button class="o-button o-button--blue--cerulean">Cerulean blue button button</button>
 // <button class="o-button o-button--blue--sky">Sky blue button button</button>
 // <button class="o-button o-button--icon">&times;</button>
 // <button class="o-button o-button--ghost">Ghost button</button>
@@ -56,6 +58,16 @@
 
 	&--blue
 
+		&--cerulean
+			background			lighten($blue--navy, 2.5%)
+			border				2px solid $blue--cerulean
+			color				$white
+			margin				0 auto
+
+			+ActiveFocusHover()
+				background		$blue--cerulean
+				outline			none
+
 		&--navy
 			background			$blue--navy
 			border				none
@@ -74,7 +86,7 @@
 			border				2px solid rgba($blue--navy, 0.5)
 			color				$blue--sky
 
-			&:focus
+			+ActiveFocusHover()
 				background		rgba($blue--sky, 0.2)
 
 	&--icon
@@ -114,10 +126,12 @@
 		&--white
 			border-color 		$white
 			color				$white
+			opacity 			0.6
 
 			+ActiveFocusHover()
 				background 		$white
 				color			$blue--cerulean
+				opacity 		1
 
 		&--white-and-blue
 			border-color 		$white

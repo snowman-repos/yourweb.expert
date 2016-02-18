@@ -7,18 +7,7 @@
 //   <div class="o-morph-button js-morph-button">
 //     <button type="button" class="o-button o-button--rounded o-morph-button__button js-morph-button-open">Morph button</button>
 //     <div class="o-dialog o-morph-button__dialog js-morph-dialog">
-//       <div class="o-dialog__content">
-//         <button type="button" class="o-dialog__close-button o-button o-button--icon js-morph-button-close">×</button>
-//         Modal content
-//       </div>
-//     </div>
-//   </div>
-// </div>
-// <div style="height: 20rem; position: relative;">
-//   <div class="o-morph-button js-morph-button is-hidden">
-//     <button type="button" class="o-button o-button--rounded o-morph-button__button js-morph-button-open">Morph button</button>
-//     <div class="o-dialog o-morph-button__dialog js-morph-dialog">
-//       <div class="o-dialog__content">
+//       <div class="o-morph-button__dialog__content o-dialog__content">
 //         <button type="button" class="o-dialog__close-button o-button o-button--icon js-morph-button-close">×</button>
 //         Modal content
 //       </div>
@@ -29,7 +18,7 @@
 //   <div class="o-morph-button js-morph-button is-open">
 //     <button type="button" class="o-button o-button--rounded o-morph-button__button js-morph-button-open">Morph button</button>
 //     <div class="o-dialog o-morph-button__dialog js-morph-dialog">
-//       <div class="o-dialog__content">
+//       <div class="o-morph-button__dialog__content o-dialog__content">
 //         <button type="button" class="o-dialog__close-button o-button o-button--icon js-morph-button-close">×</button>
 //         Modal content
 //       </div>
@@ -59,7 +48,6 @@
 
 	&__button
 		absolute()
-		border 								none
 		opacity								1
 		right 								0.5rem
 		top									0.5rem
@@ -76,6 +64,7 @@
 		left								auto
 		margin								0
 		opacity								0
+		pointer-events 						none
 		right								0.5rem
 		top									0.5rem
 		transition							opacity 0.1s 0.5s, width 0.5s 0.1s, height 0.5s 0.1s, top 0.5s 0.1s, right 0.5s 0.1s, border-radius 0.5s 0.1s
@@ -120,7 +109,7 @@
 
 			&__dialog
 				border-radius				0.25rem
-				height						340px
+				height						320px
 				opacity						1
 				pointer-events				auto
 				right						calc(50% - 160px)

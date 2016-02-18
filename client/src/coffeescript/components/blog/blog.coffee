@@ -27,7 +27,6 @@ class Blog
 
 			.catch (reason) =>
 
-				console.error reason
 				@el.component.parentNode.removeChild @el.component
 
 				if @el.navigation

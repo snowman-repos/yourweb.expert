@@ -1,27 +1,30 @@
-// @name Form Input
+// @name Form Inputs
 // @description All text inputs.
-// @state :disabled, --disabled - Dims the input when disabled
-// @state .is-disabled, --disabled - Dims the input when disabled
-// @state [disabled], --disabled - Dims the input when disabled
-// @state .input--block - Makes the input full-width
-// @state .input--blue - Blue input
+// @state :disabled, --disabled - dims the input when disabled
+// @state .is-disabled, --disabled - dims the input when disabled
+// @state [disabled], --disabled - dims the input when disabled
+// @state .input--block - makes the input full-width
+// @state .input--blue - blue input
 // @state .input--blue--navy - navy blue input
-// @state .input--textarea - Textarea input
+// @state .input--textarea - textarea input
 // @markup
-// <input class="o-form__input" id="input" placeholder="placeholder text" type="text"></input>
-// <input class="o-form__input" disabled placeholder="placeholder text" type="text"></input>
-// <input class="o-form__input o-form__input--block" placeholder="placeholder text" type="text"></input>
-// <input class="o-form__input o-form__input--blue" placeholder="placeholder text" type="text"></input>
-// <input class="o-form__input o-form__input--blue--navy" placeholder="placeholder text" type="text"></input>
-// <textarea class="o-form__input o-form__input--textarea" placeholder="placeholder text"></textarea>
+// <div class="c-styleguide__note">
+//   <strong>NOTE: </strong> For the purpose of this demo, all inputs have been given a bottom margin.
+// </div>
+// <input class="o-form__input" id="input" placeholder="placeholder text" style="margin-bottom: 1rem;" type="text"></input>
+// <input class="o-form__input" disabled placeholder="placeholder text" style="margin-bottom: 1rem;" type="text"></input>
+// <input class="o-form__input o-form__input--block" placeholder="placeholder text" style="margin-bottom: 1rem;" type="text"></input>
+// <input class="o-form__input o-form__input--blue" placeholder="placeholder text" style="margin-bottom: 1rem;" type="text"></input>
+// <input class="o-form__input o-form__input--blue--navy" placeholder="placeholder text" style="margin-bottom: 1rem;" type="text"></input>
+// <textarea class="o-form__input o-form__input--textarea" placeholder="placeholder text" style="margin-bottom: 1rem;"></textarea>
 
 .o-form__input
-	background					$white
+	background					rgba($white, 0.75)
 	border						1px solid $grey--light-1
 	border-radius				0.25rem
 	box-shadow					none
 	display						block
-	font-size					1rem
+	font-size					0.75rem
 	padding						0.5 * $base-spacing-unit
 	transition 					$fast-transition
 
@@ -36,6 +39,7 @@
 			cursor				not-allowed !important
 
 	&:focus
+		background				$white
 		outline					none
 
 	&--block
@@ -45,7 +49,6 @@
 		background				darken($blue--navy, 20%)
 		border					1px solid lighten($blue--dark, 20%)
 		color					$white
-		font-size				0.75rem
 
 		&::-moz-placeholder
 			color				rgba($silver, 0.5)

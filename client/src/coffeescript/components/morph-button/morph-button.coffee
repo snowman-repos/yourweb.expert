@@ -1,32 +1,58 @@
+###*
+ * This class provides the functionality for
+ * a button that transitions into a modal dialog
+ * when clicked.
+###
 class MorphButton
 
-	constructor: (el) ->
+	constructor: ->
 
-		@el =
-			close: el.querySelector ".js-morph-button-close"
-			component: el
-			open: el.querySelector ".js-morph-button-open"
+		# Gather all the morph button components
+		morphButtons = document.querySelectorAll ".js-morph-button"
 
-		@addEventListeners()
+		@components = []
+		for button in morphButtons
+			@components.push
+				closeButton: button.querySelector ".js-morph-button-close"
+				element: button
+				openButton: button.querySelector ".js-morph-button-open"
 
-		setTimeout =>
+		@config =
+			delay: 1000
 
-			@el.component.classList.remove "is-hidden"
+		# No need to add event listeners and show
+		# the morph buttons if there aren't any...
+		if @components.length
+			@addEventListeners()
+			@showMorphButtons()
 
-		, 1000
-
+	###*
+	 * Attach event listeners to the open and close
+	 * buttons of each component.
+	###
 	addEventListeners: ->
 
-		@el.open.addEventListener "click", (e) =>
-			@el.component.classList.add "is-open"
+		for component in @components
 
-		@el.close.addEventListener "click", (e) =>
-			@el.component.classList.remove "is-open"
+			component.openButton.addEventListener "click", (e) =>
+				component.element.classList.add "is-open"
 
-module.exports = do ->
+			component.closeButton.addEventListener "click", (e) =>
+				component.element.classList.remove "is-open"
 
-	morphButtons = document.querySelectorAll ".js-morph-button"
+	###*
+	 * Display the morph buttons via a CSS fade-in.
+	###
+	showMorphButtons: ->
 
-	for morphButton in morphButtons
+		# Allow for a short delay in order to highlight
+		# the morph button
+		setTimeout =>
 
-		new MorphButton morphButton
+			for component in @components
+				component.element.classList.remove "is-hidden"
+
+		, @config.delay
+
+
+module.exports = new MorphButton

@@ -1,3 +1,6 @@
+###*
+ * This class provides a function to zoom in on the map.
+###
 class Map
 
 	constructor: ->
@@ -5,6 +8,12 @@ class Map
 		@el =
 			map: document.querySelector ".js-map"
 
+		@config =
+			delay: 2000
+
+	###*
+	 * Zoom in on the map
+	###
 	zoom: ->
 
 		if @el.map
@@ -15,6 +24,7 @@ class Map
 
 				@el.map.classList.add "is-zoomed"
 
-			, 2000
+			, @config.delay
+
 
 module.exports = new Map

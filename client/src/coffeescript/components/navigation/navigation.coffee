@@ -1,5 +1,10 @@
 smoothScroll = require "smoothscroll"
 
+###*
+ * This class builds the navigation menu, based
+ * on the waypoint sections, and handles its
+ * functionality.
+###
 class Navigation
 
 	constructor: ->
@@ -7,20 +12,53 @@ class Navigation
 		@el =
 			menu: document.querySelector ".js-navigation-menu"
 
+		# This will maintain a stateful record
+		# of navigation menu item links
 		@links = {}
 
 		@config =
 			scrollDuration: 200
 
+	###*
+	 * Make a single navigation menu item link active.
+	 * @param  {Object} item A DOM node for a navigation menu item
+	 * @return {Object}      The JSON object representing the collection of navigation menu items
+	###
 	activateItem: (item) ->
 
-		@resetLinks()
+		@resetItems()
 		@links[item.id].classList.add "is-active"
 
+	###*
+	 * Attach an event listener to a navigation menu
+	 * item link so that when it's clicked the browser
+	 * smoothly scrolls to the target section.
+	 * @param {Object} link   The DOM node of the navigation menu item link
+	 * @param {String} target The ID attribute value of the target section
+	###
+	addEventListener: (link, target) ->
+
+		link.addEventListener "click", (e) =>
+
+			e.preventDefault()
+			target = document.querySelector "#" + target
+			smoothScroll target.offsetTop
+
+	###*
+	 * Add a navigation menu item to the menu.
+	 * @param {Object} item A DOM node for a navigation menu item
+	###
 	addItem: (item) ->
+
+		@el.menu.appendChild @generateListItem item
+
+	generateListItem: (item) ->
 
 		listItem = document.createElement "li"
 		listItem.classList.add "o-navigation__menu__item"
+		# some scroll-to sections should not be displayed until
+		# their data has loaded; consequently, the corresponding
+		# navigation menu item should not be displayed either
 		if item.dataset.waitForLoad then listItem.classList.add "is-hidden"
 
 		link = document.createElement "a"
@@ -29,19 +67,18 @@ class Navigation
 		link.classList.add "o-navigation__menu__item__link"
 
 		listItem.appendChild link
-		@el.menu.appendChild listItem
 
+		@addEventListener link, item.id
+
+		# Add the navigation item link to the state object
 		@links[item.id] = link
 
-		link.addEventListener "click", (e) =>
+		listItem
 
-			e.preventDefault()
-
-			target = document.querySelector "#" + item.id
-
-			smoothScroll target.offsetTop
-
-	resetLinks: ->
+	###*
+	 * Make all navigation item links inactive.
+	###
+	resetItems: ->
 
 		for key, link of @links
 			link.classList.remove "is-active"

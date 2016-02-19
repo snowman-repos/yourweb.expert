@@ -1,6 +1,6 @@
 include ../includes/mixins
 
-.c-contact.o-section__content(aria-labelledby="contact__header")
+.c-contact.o-section__content.js-full-height-section__content(aria-labelledby="contact__header")
 
 	h2.o-section__header.o-section__header--white#contact__header Get in touch
 
@@ -10,18 +10,18 @@ include ../includes/mixins
 
 			.o-form__input-group.js-name
 				label.o-form__label.o-form__label--silver(for="name") Your name:
-				input.o-form__input.o-form__input--block.o-form__input--blue.js-name-input(data-error="Don't forget your name!", id="name", maxlength="50", pattern="/^[^/!£@#\$%\^&*()\[\]+~?<>.0-9|\"]+$/", placeholder="e.g. Gordon Shumway", title="Your name", type="text")
+				input.o-form__input.o-form__input--block.o-form__input--blue.js-name-input(data-error="Don't forget your name!", id="name", maxlength="50", name="name", pattern="/^[^/!£@#\$%\^&*()\[\]+~?<>.0-9|\"]+$/", placeholder="e.g. Gordon Shumway", title="Your name", type="text")
 				+form-check()
 
 			.o-form__input-group.js-email
 				label.o-form__label.o-form__label--silver(for="email") Your email address:
-				input.o-form__input.o-form__input--block.o-form__input--blue.js-email-input(data-error="I need your email address :)", id="email", maxlength="50", placeholder="e.g. gordon.shumway@melmac.com", type="email")
+				input.o-form__input.o-form__input--block.o-form__input--blue.js-email-input(data-error="I need your email address :)", id="email", maxlength="50", name="email", pattern="[a-z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", placeholder="e.g. gordon.shumway@melmac.com", type="email")
 				+form-check()
 
 			.o-form__input-group.js-message
 				label.o-form__label.o-form__label--silver(for="message") Tell me about your project:
 					span.o-form__label__note (optional)
-				textarea.o-form__input.o-form__input--block.o-form__input--textarea.o-form__input--blue.js-message-input(data-error="What will we be working on?", id="message", placeholder="e.g. My project entails...\nMy budget is...\nMy deadline is...")
+				textarea.o-form__input.o-form__input--block.o-form__input--textarea.o-form__input--blue.js-message-input(data-error="What will we be working on?", id="message", name="message", placeholder="e.g. My project entails...\nMy budget is...\nMy deadline is...")
 				+form-check()
 
 			.o-form__group
@@ -38,7 +38,7 @@ include ../includes/mixins
 
 	aside.c-contact__info
 	
-		.o-local-conditions.o-local-conditions--light
+		.o-local-conditions.o-local-conditions--light.js-local-conditions
 
 			h3.o-local-conditions__location Kunming
 				.u-subheader Yunnan, China

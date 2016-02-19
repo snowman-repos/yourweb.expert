@@ -20,17 +20,6 @@ height: 30px;
 padding: 5px 55px;
 """
 
-# React = require "react"
-# ReactDOM = require "react-dom"
-#
-# ReactComponent = require "./react-components/react-component.coffee"
-#
-# MyApp = React.createClass
-# 	render: ->
-# 		<ReactComponent name="world" />
-#
-# ReactDOM.render <MyApp />, document.querySelectorAll(".js-my-app")[0]
-
 Blog = require "./components/blog/blog.coffee"
 ErrorPage = require "./components/error-page/error-page.coffee"
 FormValidation = require "./components/form-validation/form-validation.coffee"

@@ -15,7 +15,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'src/coffeescript/components/**/*.coffee'
+      'client/src/coffeescript/components/**/*.coffee'
     ],
 
 
@@ -41,8 +41,12 @@ module.exports = function(config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
+    reporters: ['progress', 'notify'],
 
+    notifyReporter: {
+      reportEachFailure: true,
+	  reportSuccess: false
+    },
 
     // web server port
     port: 9876,

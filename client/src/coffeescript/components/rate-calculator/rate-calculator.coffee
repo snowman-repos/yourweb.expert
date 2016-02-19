@@ -2,29 +2,33 @@ api = require "../api/api.coffee"
 
 class RateCalculator
 
-	constructor: (el) ->
+	constructor: ->
 
-		@el =
-			currencySelecor: el.querySelector ".js-currency"
-			currencySymbols: el.querySelectorAll ".js-currency-symbol"
-			hourlyRate: el.querySelector ".js-hourly-rate"
-			minRate: el.querySelector ".js-min-rate"
-			slider: el.querySelector ".js-time-slider"
-			sliderTime: el.querySelector ".js-time"
-			sliderLabel: el.querySelector ".js-time-slider-text"
-			sliderNotice: el.querySelector ".js-slider-notice"
-			weeklyRate: el.querySelector ".js-rate"
+		calculator = document.querySelector ".js-calculator"
 
-		@config =
-			baseRate: 3000
-			currency: "usd"
-			discountRate: 0.33333
-			discountTime: 12
-			rate: 3000
-			rates: {}
+		if calculator
 
-		@getRates()
-		@addEventListeners()
+			@el =
+				currencySelecor: calculator.querySelector ".js-currency"
+				currencySymbols: calculator.querySelectorAll ".js-currency-symbol"
+				hourlyRate: calculator.querySelector ".js-hourly-rate"
+				minRate: calculator.querySelector ".js-min-rate"
+				slider: calculator.querySelector ".js-time-slider"
+				sliderTime: calculator.querySelector ".js-time"
+				sliderLabel: calculator.querySelector ".js-time-slider-text"
+				sliderNotice: calculator.querySelector ".js-slider-notice"
+				weeklyRate: calculator.querySelector ".js-rate"
+
+			@config =
+				baseRate: 3000
+				currency: "usd"
+				discountRate: 0.33333
+				discountTime: 12
+				rate: 3000
+				rates: {}
+
+			@getRates()
+			@addEventListeners()
 
 	addEventListeners: ->
 
@@ -75,7 +79,7 @@ class RateCalculator
 
 	getRates: ->
 
-		url = api.getURL() + "/currency/"
+		url = api.getURL "currency"
 
 		fetch url
 		.then (response) ->
@@ -95,7 +99,7 @@ class RateCalculator
 
 		.catch (reason) =>
 
-			console.error reason
+			# console.error reason
 
 			# data fetch failed so just use rough defaults
 			@config.rates =
@@ -122,8 +126,4 @@ class RateCalculator
 		@el.sliderNotice.classList.add "is-shown"
 
 
-module.exports = do ->
-
-	calculator = document.querySelector ".js-calculator"
-
-	if calculator then new RateCalculator calculator
+module.exports = new RateCalculator

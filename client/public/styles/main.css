@@ -1,4 +1,4 @@
-/* your-web-expert : 2.0.0 : Thu Feb 18 2016 16:02:51 GMT+0800 (CST) */.u-fade-enter {
+/* your-web-expert : 2.0.0 : Fri Feb 19 2016 21:53:07 GMT+0800 (CST) */.u-fade-enter {
   opacity: 0.01;
   transition: opacity 0.5s ease-in;
 }
@@ -786,6 +786,20 @@ h6 {
   background: #137b9b;
   outline: none;
 }
+.o-button--blue--cerulean:disabled.active,
+.o-button--blue--cerulean[disabled].active,
+.o-button--blue--cerulean.is-disabled.active,
+.o-button--blue--cerulean:disabled:active,
+.o-button--blue--cerulean[disabled]:active,
+.o-button--blue--cerulean.is-disabled:active,
+.o-button--blue--cerulean:disabled:focus,
+.o-button--blue--cerulean[disabled]:focus,
+.o-button--blue--cerulean.is-disabled:focus,
+.o-button--blue--cerulean:disabled:hover,
+.o-button--blue--cerulean[disabled]:hover,
+.o-button--blue--cerulean.is-disabled:hover {
+  background: #004861;
+}
 .o-button--blue--navy {
   background: #004056;
   border: none;
@@ -797,9 +811,17 @@ h6 {
 .o-button--blue--navy:hover {
   background: #006f96;
 }
+.o-button--blue--navy:disabled.active,
+.o-button--blue--navy[disabled].active,
 .o-button--blue--navy.is-disabled.active,
+.o-button--blue--navy:disabled:active,
+.o-button--blue--navy[disabled]:active,
 .o-button--blue--navy.is-disabled:active,
+.o-button--blue--navy:disabled:focus,
+.o-button--blue--navy[disabled]:focus,
 .o-button--blue--navy.is-disabled:focus,
+.o-button--blue--navy:disabled:hover,
+.o-button--blue--navy[disabled]:hover,
 .o-button--blue--navy.is-disabled:hover {
   background: #004056;
 }
@@ -1051,6 +1073,10 @@ h6 {
 }
 .o-form__input-group.is-error .o-form__input {
   border: 1px solid #ea6153;
+  color: #ea6153;
+}
+.o-form__input-group.is-error .o-form__input--blue--navy {
+  border: 2px solid #ea6153;
 }
 .o-form__input-group.is-error .o-form__error-message {
   opacity: 1;
@@ -2590,6 +2616,11 @@ svg {
   font-size: 4rem;
   letter-spacing: -1px;
   line-height: 1;
+}
+@media (min-width: 54.857142857142854em) {
+  .c-introduction__header {
+    line-height: 1.19;
+  }
 }
 .c-introduction__header .subheader {
   color: #95a5a6;

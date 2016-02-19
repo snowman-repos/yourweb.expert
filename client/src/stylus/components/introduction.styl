@@ -3,7 +3,7 @@
 // @markup
 // <section data-nav-title="About me" id="introduction" class="o-section o-section--dark-blue js-full-height-section">
 //   <div class="o-section__content__container">
-//     <div aria-labelledby="introduction__header" itemscope="" itemtype="http://data-vocabulary.org/Person" class="c-introduction o-section__content o-media">
+//     <div aria-labelledby="introduction__header" itemscope="" itemtype="http://data-vocabulary.org/Person" class="c-introduction o-section__content o-media js-full-height-section__content">
 //       <meta itemprop="url" content="https://yourweb.expert">
 //       <div class="o-media__image"><img src="/images/darryl-snow.webp" alt="Darryl Snow" itemprop="photo" class="o-image--avatar c-introduction__image"></div>
 //       <div class="o-media__text">
@@ -65,6 +65,9 @@
 		font-size					4rem
 		letter-spacing				-1px
 		line-height 				1
+
+		+bp($screen-sm-min)
+			line-height 			1.19
 
 		.subheader
 			color					$silver

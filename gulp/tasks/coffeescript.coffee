@@ -12,11 +12,6 @@ module.exports = (gulp, $, config) ->
 
 	gulp.task "coffeescript", ->
 
-		# gulp.src config.paths.client.js.entry + "**/*.coffee"
-		# .pipe $.plumber()
-		# .pipe $.coffeelintCjsx()
-		# .pipe $.coffeelintCjsx.reporter()
-
 		b = browserify
 			entries: config.paths.client.js.entry + config.names.js.source
 			debug: true
@@ -42,17 +37,6 @@ module.exports = (gulp, $, config) ->
 				showFiles: true
 			.pipe $.if config.env is "dev", $.sourcemaps.write "./"
 			.pipe gulp.dest config.paths.client.js.dest
-
-		# gulp.src config.paths.client.js.entry + "service-worker.coffee"
-		# .pipe $.plumber()
-		# .pipe $.if config.env is "dev", $.sourcemaps.init()
-		# .pipe $.coffee()
-		# .pipe $.header "/* " + config.names.project + " : " + config.version + " : " + new Date() + " */"
-		# .pipe $.size
-		# 	showFiles: true
-		# .pipe $.if config.env is "dev", $.sourcemaps.write "./"
-		# .pipe $.if config.env isnt "dev", $.uglify()
-		# .pipe gulp.dest config.paths.client.build
 
 		b2.bundle()
 			.pipe source "service-worker.js"

@@ -68,6 +68,13 @@
 				background		$blue--cerulean
 				outline			none
 
+			&:disabled,
+			&[disabled],
+			&.is-disabled
+
+				+ActiveFocusHover()
+					background lighten($blue--navy, 2.5%)
+
 		&--navy
 			background			$blue--navy
 			border				none
@@ -76,6 +83,8 @@
 			+ActiveFocusHover()
 				background		lighten($blue--navy, 15%)
 
+			&:disabled,
+			&[disabled],
 			&.is-disabled
 
 				+ActiveFocusHover()

@@ -12,6 +12,9 @@ describe "Blog", ->
 
 	date = new Date()
 
+	beforeEach ->
+		usernameInput = document.createElement "input"
+
 	# beforeEach ->
 	#
 	# 	mockPromises.install Q.makePromise

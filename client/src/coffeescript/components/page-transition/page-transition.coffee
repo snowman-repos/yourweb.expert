@@ -1,20 +1,30 @@
 Page = require "page"
 svgLoader = require "../svg-loader/svg-loader.coffee"
 
+###*
+ * This class handles routing and page transitions,
+ * e.g.
+ * /about/me
+ * /contract
+###
 class PageTransition
 
-	constructor: (el) ->
+	constructor: ->
 
 		@el =
-			initialPageOverlay: el.querySelector ".o-page-transition__initial-overlay"
-			pages: el.querySelectorAll ".o-page-transition__page-container"
-			overlay: el.querySelector ".o-page-transition__overlay"
-			triggers: el.querySelectorAll ".js-trigger-page-transition"
-			wrapper: el
+			initialPageOverlay: document.querySelector ".js-page-transition__initial-overlay"
+			pages: document.querySelectorAll ".js-page-transition__page-container"
+			overlay: document.querySelector ".js-page-transition__overlay"
+			triggers: document.querySelectorAll ".js-trigger-page-transition"
+			wrapper: document.querySelector ".js-page-transition"
 
 		@currentPage = "home"
 
-		if @el.overlay and @el.pages.length
+		# Only run the code if there are pages to be
+		# transitioned
+		if @el.wrapper and @el.pages.length
+
+			# SVGLoader handles the transition animation
 			@loader = loader = new SVGLoader @el.overlay,
 				easingIn: mina.easeinout
 				speedIn: 400
@@ -24,6 +34,10 @@ class PageTransition
 			@addEventListeners()
 			@setupRouting()
 
+	###*
+	 * Trigger a page transition every time a
+	 * trigger link is clicked.
+	###
 	addEventListeners: ->
 
 		for trigger in @el.triggers
@@ -34,6 +48,10 @@ class PageTransition
 
 				@transition e.target.dataset.page
 
+	###*
+	 * Hide the page transition overlay.
+	 * @return {Object} The DOM node for the overlay
+	###
 	hideOverlay: ->
 
 		@loader.hide()
@@ -45,10 +63,20 @@ class PageTransition
 
 		, 400
 
+	###*
+	 * Hide a page.
+	 * @param  {String} page A reference to the page to be hidden
+	 * @return {Object}      The DOM node for the page container
+	###
 	hidePage: (page) ->
 
 		@pages[page].classList.remove "is-shown"
 
+	###*
+	 * Determine which pages are available.
+	 * for transitioning.
+	 * @return {Object} A collection of DOM nodes for pages, referenced by a String ID
+	###
 	indexPages: ->
 
 		pages = {}
@@ -59,6 +87,11 @@ class PageTransition
 
 		pages
 
+	###*
+	 * Show a page without running the transition,
+	 * i.e. when navigating directly to a URL.
+	 * @param  {String} targetPage A reference to the page to be transitioned to
+	###
 	noTransition: (targetPage) ->
 
 		if @currentPage isnt targetPage
@@ -68,6 +101,16 @@ class PageTransition
 
 			@currentPage = targetPage
 
+	###*
+	 * An overay is always shown on itinial page load.
+	 * That's because when navigating directly to a URL,
+	 * the home page will always be shown first because
+	 * the JavaScript is loaded last. By showing the
+	 * overlay, it acts as a cool loading screen, hiding
+	 * when the JavaScript has been loaded and the target
+	 * page has been displayed.
+	 * @return {Object} The DOM node for the initial page overlay
+	###
 	removeInitialPageOverlay: ->
 
 		@el.initialPageOverlay.classList.add "is-hidden"
@@ -80,8 +123,18 @@ class PageTransition
 
 		, 1500
 
+	###*
+	 * This uses PageJS to handle the routing. If
+	 * the user navigates directly to any of these
+	 * routes then the appropriate page will be
+	 * displayed and then the initial overlay hidden.
+	 * @return {[type]} [description]
+	###
 	setupRouting: ->
 
+		# Establish the routes
+		# (no need for transitions because the
+		# initial overlay is visible on page load)
 		Page "/", =>
 			console.info "Home page"
 			@noTransition "home"
@@ -94,45 +147,68 @@ class PageTransition
 			console.info "Contract page"
 			@noTransition "contract"
 
+		# Initialise PageJS
 		Page()
+
+		# Hide the loading screen to reveal the page
 		@removeInitialPageOverlay()
 
+	###*
+	 * Show the page transition overlay and begin the transition.
+	 * @return {Object} An instance of SVGLoader
+	###
 	showOverlay: ->
 
 		@el.wrapper.classList.add "is-loading"
 		@el.overlay.classList.add "is-shown"
 		@loader.show()
 
+	###*
+	 * Display a page.
+	 * @param  {String} page A reference to the page to be displayed
+	 * @return {Object}      The DOM node for the page that is displayed
+	###
 	showPage: (page) ->
 
 		@pages[page].classList.add "is-shown"
 
+	###*
+	 * Run the page transition from the current
+	 * page to the target page.
+	 * @param  {String} targetPage A reference to the target page
+	###
 	transition: (targetPage) ->
 
+		# Don't bother with this if we're already on
+		# the target page
 		if @currentPage isnt targetPage
 
+			# Show the overlay and begin the transition
 			@showOverlay()
 
+			# After 1s update the URL and hide the overlay
+			# (yes, the overlay is just to make it seem like
+			# the page is loaded remotely really fast ;)
 			setTimeout =>
 
 				@hidePage @currentPage
 				@showPage targetPage
 
+				# Update the URL and browser history using PageJS
 				switch targetPage
 					when "home" then Page "/"
 					when "about" then Page "/about/me"
 					when "contract" then Page "/contract"
 
-				@hideOverlay()
-				@currentPage = targetPage
-
+				# Ensure the user is at the top of the page
+				# before the overlay is hidden
 				window.scrollTo 0,0
+
+				@hideOverlay()
+
+				@currentPage = targetPage
 
 			, 1000
 
 
-module.exports = do ->
-
-	pageTransition = document.querySelector ".o-page-transition"
-
-	if pageTransition then new PageTransition pageTransition
+module.exports = new PageTransition

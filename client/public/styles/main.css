@@ -1,4 +1,4 @@
-/* your-web-expert : 2.0.0 : Fri Feb 19 2016 21:53:07 GMT+0800 (CST) */.u-fade-enter {
+/* your-web-expert : 2.0.0 : Sat Feb 20 2016 17:42:41 GMT+0800 (CST) */.u-fade-enter {
   opacity: 0.01;
   transition: opacity 0.5s ease-in;
 }
@@ -1721,6 +1721,12 @@ svg {
 .o-logo-grid__item__logo.is-shown {
   width: 8rem;
 }
+.o-logo-grid__item__logo.active,
+.o-logo-grid__item__logo:active,
+.o-logo-grid__item__logo:focus,
+.o-logo-grid__item__logo:hover {
+  opacity: 1;
+}
 .o-logo-grid__item__text {
   display: none;
 }
@@ -2425,6 +2431,12 @@ svg {
 }
 .c-clients {
   background: #14c9e7;
+}
+.c-clients__logo {
+  width: 0;
+}
+.c-clients__logo.is-shown {
+  width: 8rem;
 }
 .c-contact {
   display: -webkit-flex;

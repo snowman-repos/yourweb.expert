@@ -29,16 +29,21 @@ class Clients
 
 			logoCount = @logos.length
 
+			# Duplicate the array of logos
 			tmp = @logos.slice 0
 
-			# loop through each logo at
+			# Loop through each logo at
 			# the specified interval and
 			# display them
 			@interval = setInterval =>
+
+				# Get the next logo and show it
 				tmp.shift().classList.add "is-shown"
 				logoCount--
+
 				if logoCount is 0
 					clearInterval @interval
+
 			, @config.delay
 
 			@shown = true

@@ -9,7 +9,7 @@ _ = require "lodash/function/debounce"
  * may need to be updated if the browser window is
  * resized.
 ###
-class FullHeightSection
+class FullHeightSections
 
 	constructor: ->
 
@@ -35,6 +35,7 @@ class FullHeightSection
 			@updateAllSections()
 
 		window.addEventListener "resize", _ =>
+			console.log "resized!"
 			@updateAllSections()
 		, 500
 
@@ -51,7 +52,7 @@ class FullHeightSection
 		if section.el.classList.contains "o-section--padding-top"
 			extra = 100
 
-		section.content.offsetHeight + 100
+		section.content.offsetHeight + extra
 
 	###
 	Make a section full height only if the height
@@ -70,7 +71,6 @@ class FullHeightSection
 	###*
 	 * Go through each required section and apply
  	 * the correct CSS classes.
-	 * @return {null}
 	###
 	updateAllSections: ->
 
@@ -80,4 +80,4 @@ class FullHeightSection
 				@updateSection section, minHeight
 
 
-module.exports = new FullHeightSection
+module.exports = new FullHeightSections

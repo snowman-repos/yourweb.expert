@@ -180,7 +180,10 @@ class LocalConditions
 		if @el.icon
 
 			# take this out to a function
-			@el.icon.classList.add "o-icon--weather--" + icon
+			# (we're not using classList because of sketchy
+			# support when used on SVGs)
+			# @el.icon.classList.add "o-icon--weather--" + icon
+			@el.icon.setAttribute "class", @el.icon.getAttribute("class") + " o-icon--weather--" + icon
 			@el.icon.querySelector("use").setAttribute "xlink:href", "#icon--" + icon
 
 	###*

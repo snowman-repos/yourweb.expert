@@ -13,7 +13,7 @@ class Clients
 
 		# How long between each logo is displayed
 		@config =
-			delay: 100
+			delay: 200
 
 	###*
 	 * Show the client logos. This function is called
@@ -37,12 +37,19 @@ class Clients
 			# display them
 			@interval = setInterval =>
 
-				# Get the next logo and show it
-				tmp.shift().classList.add "is-shown"
-				logoCount--
-
 				if logoCount is 0
+
 					clearInterval @interval
+
+				else
+
+					# Get the next logo and show it
+					# (Not we're not using classList because it
+					# has sketchy support on SVG elements)
+					# tmp.shift().classList.add "is-shown"
+					el = tmp.shift()
+					el.setAttribute "class", el.getAttribute("class") + " is-shown"
+					logoCount--
 
 			, @config.delay
 

@@ -10,12 +10,17 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['browserify', 'jasmine', 'phantomjs-shim'],
+    frameworks: ['browserify', 'jasmine-jquery', 'jasmine', 'phantomjs-shim'],
 
 
     // list of files / patterns to load in the browser
     files: [
-      'client/src/coffeescript/components/**/*.coffee'
+      'client/src/coffeescript/components/**/*.coffee',
+	  {
+		  pattern: 'client/src/coffeescript/fixtures/*.html',
+		  included: false,
+		  served: true
+	  }
     ],
 
 
@@ -28,7 +33,7 @@ module.exports = function(config) {
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
       '**/*.coffee': ['browserify']
-    },
+      },
 
 
     browserify: {

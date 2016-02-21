@@ -20,6 +20,11 @@ class PageTransition
 
 		@currentPage = "home"
 
+		@config =
+			initialDelay: 1500 # the initial 'loading' time
+			transitionDuration: 1000 # the 'loading' time between pages
+			transitionTime: 400 # the time for the page transition animation
+
 		# Only run the code if there are pages to be
 		# transitioned
 		if @el.wrapper and @el.pages.length
@@ -27,7 +32,7 @@ class PageTransition
 			# SVGLoader handles the transition animation
 			@loader = loader = new SVGLoader @el.overlay,
 				easingIn: mina.easeinout
-				speedIn: 400
+				speedIn: @config.transitionTime
 
 			@pages = @indexPages()
 
@@ -61,7 +66,7 @@ class PageTransition
 
 			@el.overlay.classList.remove "is-shown"
 
-		, 400
+		, @config.transitionTime
 
 	###*
 	 * Hide a page.
@@ -121,7 +126,7 @@ class PageTransition
 
 			@el.initialPageOverlay.parentNode.removeChild @el.initialPageOverlay
 
-		, 1500
+		, @config.initialDelay
 
 	###*
 	 * This uses PageJS to handle the routing. If
@@ -208,7 +213,7 @@ class PageTransition
 
 				@currentPage = targetPage
 
-			, 1000
+			, @config.transitionDuration
 
 
 module.exports = new PageTransition

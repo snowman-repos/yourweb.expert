@@ -65,22 +65,18 @@ class Blog
 	getListItem: (article) ->
 
 		item = document.createElement "li"
-		item.classList.add "c-blog__list__item"
 		item.classList.add "o-blog-post-list__item"
 
 		link = document.createElement "a"
-		link.classList.add "c-blog__list__item__link"
 		link.classList.add "o-blog-post-list__item__link"
 		link.href = article.post_url
 		link.title = "Read more"
 
 		heading = document.createElement "h2"
-		heading.classList.add "c-blog__list__item__heading"
 		heading.classList.add "o-blog-post-list__item__heading"
 		heading.innerText = article.title
 
 		date = document.createElement "div"
-		date.classList.add "c-blog__list__item__date"
 		date.classList.add "o-blog-post-list__item__date"
 		date.innerHTML = @formatDate article.date
 
@@ -99,7 +95,7 @@ class Blog
 	getMenuItem: ->
 
 		link = @el.navigation.querySelector "[href='#" + @el.component.id + "']"
-		menuItem = link.parentNode
+		if link then menuItem = link.parentNode
 
 	###*
 	 * Get the short name of a month.
@@ -160,7 +156,7 @@ class Blog
 		# Trigger resize to update the navigation scroll
 		# spy functionality so that we're not watching
 		# for when we scroll to the blog section
-		window.dispatchEvent new Event "resize"
+		window.dispatchEvent new CustomEvent "resize"
 
 	###*
 	 * What to do when we can retrieve blog articles?
@@ -182,8 +178,7 @@ class Blog
 
 	###*
 	 * Generate a list of blog articles.
-	 * @param  {[type]} articles [description]
-	 * @return {[type]}          [description]
+	 * @param  {Object} articles A JSON object containing all the articles data
 	###
 	populateList: (articles) ->
 

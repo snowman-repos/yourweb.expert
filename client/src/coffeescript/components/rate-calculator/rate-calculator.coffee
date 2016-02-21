@@ -10,31 +10,34 @@ class RateCalculator
 
 	constructor: ->
 
-		calculator = document.querySelector ".js-calculator"
+		@el =
+			calculator: document.querySelector ".js-calculator"
+			currencySelector: document.querySelector ".js-currency"
+			currencySymbols: document.querySelectorAll ".js-currency-symbol"
+			hourlyRate: document.querySelector ".js-hourly-rate"
+			minRate: document.querySelector ".js-min-rate"
+			slider: document.querySelector ".js-time-slider"
+			sliderTime: document.querySelector ".js-time"
+			sliderLabel: document.querySelector ".js-time-slider-text"
+			sliderNotice: document.querySelector ".js-slider-notice"
+			weeklyRate: document.querySelector ".js-rate"
+
+		# Setup initial values
+		@config =
+			baseRate: 3000
+			currency: "usd"
+			discountRate: 0.33333 # This is how much discount I give for a project that's 12 weeks or longer
+			discountTime: 12 # The limit on the number of project weeks after wich I continue to increase my discount
+			rates: # Based on rates circa January 2016
+				usd: 3000
+				gbp: 2035
+				eur: 2760
+				cny: 19500
+				jpy: 361500
 
 		# Only run the code for this class if
 		# the calculator is on the page
-		if calculator
-
-			@el =
-				currencySelector: calculator.querySelector ".js-currency"
-				currencySymbols: calculator.querySelectorAll ".js-currency-symbol"
-				hourlyRate: calculator.querySelector ".js-hourly-rate"
-				minRate: calculator.querySelector ".js-min-rate"
-				slider: calculator.querySelector ".js-time-slider"
-				sliderTime: calculator.querySelector ".js-time"
-				sliderLabel: calculator.querySelector ".js-time-slider-text"
-				sliderNotice: calculator.querySelector ".js-slider-notice"
-				weeklyRate: calculator.querySelector ".js-rate"
-
-			# Setup initial values
-			@config =
-				baseRate: 3000
-				currency: "usd"
-				discountRate: 0.33333 # This is how much discount I give for a project that's 12 weeks or longer
-				discountTime: 12 # The limit on the number of project weeks after wich I continue to increase my discount
-				rates: {} # This will contain the latest exchange rate data
-
+		if @el.calculator
 			@getRates()
 			@addEventListeners()
 
@@ -49,35 +52,13 @@ class RateCalculator
 		# labels updated
 		@el.slider.addEventListener "input", =>
 
-			weeks = @el.slider.value
-
-			# Display the selected number of weeks
-			@el.sliderTime.innerText = weeks
-
-			if weeks > 1 then @el.sliderLabel.innerText = "weeks"
-
-			# Advise the user that there is a limit
-			# to my discount by showing a notice
-			if weeks is "12" then @showNotice() else @hideNotice()
-
-			# Update the displayed rates
-			@updateRateValues @calculateRates @config.currency
+			@updateProjectLength @el.slider.value
 
 		# When the user selects a different currency, the
 		# rates should be recalculated for that currency
 		@el.currencySelector.addEventListener "change", =>
 
-			@config.currency = @el.currencySelector.value
-			@updateRateValues @calculateRates @config.currency
-
-			# We also need to update the currency symbols
-			# displayed alongside any rates
-			switch @config.currency
-				when "usd" then @setSymbol "$"
-				when "gbp" then @setSymbol "£"
-				when "eur" then @setSymbol "€"
-				when "cny" then @setSymbol "¥"
-				when "jpy" then @setSymbol "¥"
+			@updateCurrency @el.currencySelector.value
 
 	###*
 	 * Calculate my hourly, weekly, and minimum rates
@@ -151,14 +132,6 @@ class RateCalculator
 
 		console.error "Failed to get exchange rates"
 
-		# Based on rates circa January 2016
-		@config.rates =
-			usd: @config.baseRate
-			gbp: 2035
-			eur: 2760
-			cny: 19500
-			jpy: 361500
-
 		@updateRateValues @calculateRates @config.currency
 
 	###*
@@ -167,7 +140,8 @@ class RateCalculator
 	###
 	hideNotice: ->
 
-		@el.sliderNotice.classList.remove "is-shown"
+		if parseInt(@el.slider.value) < @config.discountTime
+			@el.sliderNotice.classList.remove "is-shown"
 
 	###*
 	 * Set the currency symbol alongside any
@@ -186,7 +160,49 @@ class RateCalculator
 	###
 	showNotice: ->
 
-		@el.sliderNotice.classList.add "is-shown"
+		if @el.slider.value is @config.discountTime.toString()
+			@el.sliderNotice.classList.add "is-shown"
+
+	###*
+	 * Update the selected currency, recalculate
+	 * rates, and update the UI.
+	 * @param  {String} currency The newly selected currency
+	###
+	updateCurrency: (currency) ->
+
+		@config.currency = currency
+		@updateRateValues @calculateRates @config.currency
+
+		# We also need to update the currency symbols
+		# displayed alongside any rates
+		switch @config.currency
+			when "usd" then @setSymbol "$"
+			when "gbp" then @setSymbol "£"
+			when "eur" then @setSymbol "€"
+			when "cny" then @setSymbol "¥"
+			when "jpy" then @setSymbol "¥"
+
+	###*
+	 * Update the selected project length, recalculate
+	 * rates, and update the UI.
+	 * @param  {Integer} weeks The project length in weeks
+	###
+	updateProjectLength: (weeks) ->
+
+		# Display the selected number of weeks
+		@el.sliderTime.innerText = weeks
+
+		if weeks > 1
+			@el.sliderLabel.innerText = "weeks"
+		else
+			@el.sliderLabel.innerText = "week"
+
+		# Advise the user that there is a limit
+		# to my discount by showing a notice
+		if weeks is "12" then @showNotice() else @hideNotice()
+
+		# Update the displayed rates
+		@updateRateValues @calculateRates @config.currency
 
 	###*
 	 * Update the UI with the calculated rates.

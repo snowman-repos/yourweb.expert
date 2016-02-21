@@ -1,4 +1,4 @@
-/* your-web-expert : 2.0.0 : Sat Feb 20 2016 17:42:41 GMT+0800 (CST) */.u-fade-enter {
+/* your-web-expert : 2.0.0 : Sun Feb 21 2016 14:21:56 GMT+0800 (CST) */.u-fade-enter {
   opacity: 0.01;
   transition: opacity 0.5s ease-in;
 }
@@ -729,6 +729,7 @@ h6 {
   margin-right: 0.52083%;
   width: 15.6252%;
   font-size: 0.75rem;
+  text-align: center;
 }
 .o-blog-post-list__item__heading {
   margin-left: 0.52083%;

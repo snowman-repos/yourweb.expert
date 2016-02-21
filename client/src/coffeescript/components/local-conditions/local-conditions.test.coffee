@@ -1,16 +1,21 @@
+jasmine.getFixtures().fixturesPath = "base/client/src/coffeescript/fixtures"
+
 describe "Local Conditions", ->
 
 	LocalConditions = require "./local-conditions.coffee"
 
-	it "should get the current time in Kunming", ->
+	dummyData =
+		condition: "0"
+		temperature: 0
 
-		dateInKunming = new Date(new Date().getTime() + 8 * 3600 * 1000).toUTCString().replace( / GMT$/, "" )
-		now = new Date(dateInKunming)
-		hours = (if now.getHours() < 10 then "0" else "") + now.getHours()
-		minutes = (if now.getMinutes() < 10 then "0" else "") + now.getMinutes()
-		time = hours + ":" + minutes
+	beforeEach ->
+		loadFixtures "home-page.html"
 
-		expect(LocalConditions.getTime()).toMatch time
+		LocalConditions.el.component = document.querySelector ".js-local-conditions"
+		LocalConditions.el.icon = document.querySelector ".js-weather-icon"
+		LocalConditions.el.temperature = document.querySelector ".js-temperature"
+		LocalConditions.el.time = document.querySelector ".js-current-time"
+		LocalConditions.el.weather = document.querySelector ".js-weather"
 
 	it "should get the correct icon based on the time and weather conditions", ->
 
@@ -106,3 +111,54 @@ describe "Local Conditions", ->
 		expect(LocalConditions.getIcon(false, "281")).toMatch "heavy-snow"
 		expect(LocalConditions.getIcon(true, "182")).toMatch "heavy-snow"
 		expect(LocalConditions.getIcon(false, "182")).toMatch "heavy-snow"
+		expect(LocalConditions.getIcon(true, "test")).toMatch "clear--day"
+		expect(LocalConditions.getIcon(false, "test")).toMatch "clear--night"
+
+	it "should get the current time in Kunming", ->
+
+		dateInKunming = new Date(new Date().getTime() + 8 * 3600 * 1000).toUTCString().replace( / GMT$/, "" )
+		now = new Date(dateInKunming)
+		hours = (if now.getHours() < 10 then "0" else "") + now.getHours()
+		minutes = (if now.getMinutes() < 10 then "0" else "") + now.getMinutes()
+		time = hours + ":" + minutes
+
+		expect(LocalConditions.getTime()).toMatch time
+
+	it "should handle incoming weather data", ->
+
+		LocalConditions.handleData dummyData
+
+		expect(LocalConditions.el.weather.classList).not.toContain "is-hidden"
+
+	it "should run a clock showing local time", ->
+
+		getTimeString = ->
+			time = LocalConditions.getTime()
+			hours = time.substr 0, 2
+			minutes = time.substr -2, 2
+			html = hours + "<span class='o-local-conditions__time__colon'>:</span>" + minutes
+
+		LocalConditions.runClock()
+
+		setTimeout ->
+
+			expect(LocalConditions.el.time.innerHTML).toMatch getTimeString()
+
+		, 1000
+
+	it "should display the weather icon", ->
+
+		hour = LocalConditions.getTime().substr 0,2
+		isDaytime = if hour < 18 and hour >= 6 then true else false
+		icon = LocalConditions.getIcon isDaytime, dummyData.condition
+
+		LocalConditions.showCondition()
+
+		expect(LocalConditions.el.icon.getAttribute("class")).toContain("o-icon--weather--" + icon)
+		expect(LocalConditions.el.icon.querySelector("use").getAttribute("xlink:href")).toContain("#icon--" + icon)
+
+	it "should display the temperature", ->
+
+		LocalConditions.showTemperature dummyData.temperature
+
+		expect(LocalConditions.el.temperature.innerText).toMatch dummyData.temperature.toString()

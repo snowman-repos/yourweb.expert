@@ -37,12 +37,17 @@ class Services
 			# Show the checkmarks at intervals
 			@interval = setInterval =>
 
-				# Get the next checkmark and check it
-				tmp.shift().classList.add "is-checked"
-				checkmarkCount--
-
 				if checkmarkCount is 0
 					clearInterval @interval
+				else
+
+					# Get the next checkmark and check it
+					# (we're not using classList due to
+					# sketchy support with SVGs)
+					# tmp.shift().classList.add "is-checked"
+					el = tmp.shift()
+					el.setAttribute "class", el.getAttribute("class") + " is-checked"
+					checkmarkCount--
 
 			, @config.delay
 

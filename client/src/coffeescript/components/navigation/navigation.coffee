@@ -52,6 +52,12 @@ class Navigation
 
 		@el.menu.appendChild @generateListItem item
 
+	###*
+	 * Generate the required DOM nodes for a navigation
+	 * menu list item.
+	 * @param  {Object} item The DOM node for the section to be navigated to
+	 * @return {Object}      The DOM node for the generated list item
+	###
 	generateListItem: (item) ->
 
 		listItem = document.createElement "li"

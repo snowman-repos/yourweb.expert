@@ -185,7 +185,8 @@ class FormValidation
 
 		error = document.createElement "div"
 		error.classList.add "o-form__error-message"
-		error.innerText = @el[form][input].input.dataset.error
+		if @el[form][input].input
+			error.innerText = @el[form][input].input.dataset.error
 		error
 
 	###*
@@ -369,7 +370,7 @@ class FormValidation
 		, 10000
 
 	###*
-	 * Apply stateful classeto the input group
+	 * Apply stateful classes to the input group
 	 * based on the input's validation state.
 	 * @param  {String} form  A reference to the form
 	 * @param  {String} input A reference to the input
@@ -445,6 +446,18 @@ class FormValidation
 				@el[form][input].group.appendChild @getError form, input
 
 	###*
+	 * Show all errors for invalid inputs on the contact form.
+	 * @param  {String} form  A reference to the form
+	###
+	showErrors: (form) ->
+
+		if form isnt "loginForm"
+
+			for input, valid of @validations[form]
+
+				if not valid then @showError form, input
+
+	###*
 	 * Display a notification.
 	 * @param  {String} notification A reference to the notification
 	 * @return {Object}              The DOM node for the notification
@@ -510,6 +523,7 @@ class FormValidation
 			@removeAllErrors()
 		else
 			@disableButton form
+			@showErrors form
 
 	###*
 	 * Check that input isn't empty.

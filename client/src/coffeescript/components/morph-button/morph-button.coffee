@@ -35,10 +35,30 @@ class MorphButton
 		for component in @components
 
 			component.openButton.addEventListener "click", (e) =>
-				component.element.classList.add "is-open"
+				@openMorphButton component
 
 			component.closeButton.addEventListener "click", (e) =>
-				component.element.classList.remove "is-open"
+				@closeMorphButton component
+
+	###*
+	 * Opens the morph button, i.e.
+	 * button -> dialog
+	 * @param  {Object} component An object containing references to the pertinent DOM nodes for a morph button
+	 * @return {Object}           The DOM node for the morph button component
+	###
+	openMorphButton: (component) ->
+
+		component.element.classList.add "is-open"
+
+	###*
+	 * Closes the morph button, i.e.
+	 * dialog -> button
+	 * @param  {Object} component An object containing references to the pertinent DOM nodes for a morph button
+	 * @return {Object}           The DOM node for the morph button component
+	###
+	closeMorphButton: (component) ->
+
+		component.element.classList.remove "is-open"
 
 	###*
 	 * Display the morph buttons via a CSS fade-in.

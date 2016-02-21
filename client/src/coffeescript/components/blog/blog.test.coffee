@@ -1,31 +1,86 @@
-# fetch = require "isomorphic-fetch"
-# window.promise = Promise = require "promise-polyfill"
-# Q = require "q"
-# mockPromises = require "mock-promises"
-#
-# promise1 = null
+jasmine.getFixtures().fixturesPath = "base/client/src/coffeescript/fixtures"
 
 describe "Blog", ->
 
-	# API = require "../api/api.coffee"
 	Blog = require "./blog.coffee"
-
+	Navigation = require "../navigation/navigation.coffee"
 	date = new Date()
+	dummyData = [
+		date: new Date("Mon Feb 22 2016 00:08:32 GMT+0800 (CST)")
+		post_url: "URL"
+		title: "title"
+	,
+		date: new Date("Mon Feb 22 2016 00:08:32 GMT+0800 (CST)")
+		post_url: "URL"
+		title: "title"
+	,
+		date: new Date("Mon Feb 22 2016 00:08:32 GMT+0800 (CST)")
+		post_url: "URL"
+		title: "title"
+	,
+		date: new Date("Mon Feb 22 2016 00:08:32 GMT+0800 (CST)")
+		post_url: "URL"
+		title: "title"
+	,
+		date: new Date("Mon Feb 22 2016 00:08:32 GMT+0800 (CST)")
+		post_url: "URL"
+		title: "title"
+	,
+		date: new Date("Mon Feb 22 2016 00:08:32 GMT+0800 (CST)")
+		post_url: "URL"
+		title: "title"
+	]
 
 	beforeEach ->
-		usernameInput = document.createElement "input"
+		loadFixtures "home-page.html"
+		Blog.el.component = document.querySelector ".js-blog"
+		Blog.el.list = document.querySelector ".js-blog-list"
+		Blog.el.navigation = Navigation.el.menu = document.querySelector ".js-navigation-menu"
 
-	# beforeEach ->
-	#
-	# 	mockPromises.install Q.makePromise
-	# 	mockPromises.reset()
-	# 	promise1 = Q
-	# 		blog: "bleh"
-	#
-	# 	# spyOn(window, "fetch").and.callFake ->
-	# 	# 	new Promise (resolve, reject) ->
-	# 	# 		resolve
-	# 	# 			blog: "bleh"
+		spyOn(Blog, "getArticles").and.callFake ->
+			test: "ok"
+
+	it "correctly format dates", ->
+
+		expect(Blog.formatDate(new Date("Feb 19 2016"))).toMatch "19<sup>th</sup> Feb"
+		expect(Blog.formatDate(new Date("Jan 1 2016"))).toMatch "1<sup>st</sup> Jan"
+		expect(Blog.formatDate(new Date("Nov 3 2016"))).toMatch "3<sup>rd</sup> Nov"
+		expect(Blog.formatDate(new Date("Nov 13 2016"))).toMatch "13<sup>th</sup> Nov"
+		expect(Blog.formatDate(new Date("Jul 22 2016"))).toMatch "22<sup>nd</sup> Jul"
+		expect(Blog.formatDate(new Date("Mar 5 2016"))).toMatch "5<sup>th</sup> Mar"
+
+	it "gets data", ->
+
+		data = Blog.getArticles()
+		expect(data).toEqual
+			test: "ok"
+
+	it "generates a list item", ->
+
+		date = new Date()
+		formattedDate = Blog.formatDate date
+
+		article =
+			date: date
+			post_url: "url"
+			title: "title"
+
+		li = Blog.getListItem article
+		result = document.createElement "div"
+		result.appendChild li
+		expected = '<li class="o-blog-post-list__item"><a class="o-blog-post-list__item__link" href="url" title="Read more"><h2 class="o-blog-post-list__item__heading">title</h2><div class="o-blog-post-list__item__date">' + formattedDate + '</div></a></li>'
+
+		expect(result.innerHTML).toMatch expected
+
+	it "gets a navigation menu item", ->
+
+		Navigation.addItem Blog.el.component
+
+		item = Blog.getMenuItem()
+		result = document.createElement "div"
+		result.appendChild item
+
+		expect(result.innerHTML).toBe '<li class="o-navigation__menu__item is-hidden"><a href="#blog" title="Read my thoughts" class="o-navigation__menu__item__link"></a></li>'
 
 	it "gets the short name of the month", ->
 
@@ -41,15 +96,6 @@ describe "Blog", ->
 		expect(Blog.getMonth(9)).toMatch "Oct"
 		expect(Blog.getMonth(10)).toMatch "Nov"
 		expect(Blog.getMonth(11)).toMatch "Dec"
-
-	it "correctly format dates", ->
-
-		expect(Blog.formatDate(new Date("Feb 19 2016"))).toMatch "19<sup>th</sup> Feb"
-		expect(Blog.formatDate(new Date("Jan 1 2016"))).toMatch "1<sup>st</sup> Jan"
-		expect(Blog.formatDate(new Date("Nov 3 2016"))).toMatch "3<sup>rd</sup> Nov"
-		expect(Blog.formatDate(new Date("Nov 13 2016"))).toMatch "13<sup>th</sup> Nov"
-		expect(Blog.formatDate(new Date("Jul 22 2016"))).toMatch "22<sup>nd</sup> Jul"
-		expect(Blog.formatDate(new Date("Mar 5 2016"))).toMatch "5<sup>th</sup> Mar"
 
 	it "gets the ordinal for a date", ->
 
@@ -68,60 +114,27 @@ describe "Blog", ->
 		expect(Blog.getOrdinal(30)).toMatch "th"
 		expect(Blog.getOrdinal(31)).toMatch "st"
 
-	# it "gets data", ->
-	#
-	# 	data = Blog.test()
-	# 	console.log data
-	# 	expect(data).toMatch
-	# 		blog: "test"
+	it "removes the blog component and the corresponding navigation menu item if data cannot be retrieved", ->
 
-	# it "retrieves a list of articles", ->
-	#
-	# 	dfd = Q.defer()
-	# 	promise = dfd.promise
-	# 	spyOn(window, "fetch").and.callFake ->
-	# 		promise
-	#
-	# 	dfd.resolve
-	# 		blog: "bleh kjj"
-	#
-	# 	Blog.getArticles()
-	# 	.then (response) ->
-	# 		response.json()
-	# 	.then (data) ->
-	# 		expect(data).toEqual
-	# 			blog: "bleh"
-	#
-	# 	# Q.when Blog.getArticles(), (response) ->
-	# 	# 	console.log response
-	# 	# 	expect(true).toBe true
-	#
-	# 	# articles = Blog.getArticles()
-	# 	# .then (response) ->
-	# 	# 	response.json()
-	# 	# .then(data) ->
-	# 	# 	expect(data).toEqual
-	# 	# 		blog: "bleh"
-	# 	# 	done()
-	#
-	# 	# promisedValue = null
-	# 	#
-	# 	# promise1.then (value) ->
-	# 	# 	promisedValue = value
-	# 	#
-	# 	# promisedValue = "not foo"
-	# 	#
-	# 	# mockPromises.executeForPromise promise1
-	# 	# expect(promisedValue).toEqual
-	# 	# 	blog: "bleh"
-	#
-	# 	# ---
-	#
-	# 	# articles = Blog.getArticles()
-	# 	# .then (response)->
-	# 	# 	response.json()
-	# 	# .then (data) =>
-	# 	# 	console.log data
-	# 	#
-	# 	# 	expect(data).toEqual
-	# 	# 		blog: "blehkbi"
+		Navigation.addItem Blog.el.component
+
+		Blog.handleFailure()
+
+		expect(Blog.getMenuItem()).toBe undefined
+		expect(document.querySelector ".js-blog").toBe null
+
+	it "displays the component and its corresponding navigation menu item", ->
+
+		Navigation.addItem Blog.el.component
+		menuItem = Blog.getMenuItem()
+
+		Blog.handleSuccess dummyData
+
+		expect(Blog.el.component.classList).toContain "is-loaded"
+		expect(menuItem.classList).not.toContain "is-hidden"
+
+	it "populates a list of articles", ->
+
+		Blog.populateList dummyData
+
+		expect(Blog.el.list.innerHTML).toMatch '<li class="o-blog-post-list__item"><a class="o-blog-post-list__item__link" href="URL" title="Read more"><h2 class="o-blog-post-list__item__heading">title</h2><div class="o-blog-post-list__item__date">22<sup>nd</sup> Feb</div></a></li><li class="o-blog-post-list__item"><a class="o-blog-post-list__item__link" href="URL" title="Read more"><h2 class="o-blog-post-list__item__heading">title</h2><div class="o-blog-post-list__item__date">22<sup>nd</sup> Feb</div></a></li><li class="o-blog-post-list__item"><a class="o-blog-post-list__item__link" href="URL" title="Read more"><h2 class="o-blog-post-list__item__heading">title</h2><div class="o-blog-post-list__item__date">22<sup>nd</sup> Feb</div></a></li><li class="o-blog-post-list__item"><a class="o-blog-post-list__item__link" href="URL" title="Read more"><h2 class="o-blog-post-list__item__heading">title</h2><div class="o-blog-post-list__item__date">22<sup>nd</sup> Feb</div></a></li><li class="o-blog-post-list__item"><a class="o-blog-post-list__item__link" href="URL" title="Read more"><h2 class="o-blog-post-list__item__heading">title</h2><div class="o-blog-post-list__item__date">22<sup>nd</sup> Feb</div></a></li>'

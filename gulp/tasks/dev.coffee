@@ -46,7 +46,7 @@ module.exports = (gulp, $, config) ->
 			config.paths.client.js.dest + "/**/*.js"
 		], notifyLivereload
 
-		$.watch [config.paths.client.js.entry + "**/*.coffee", config.paths.client.js.entry + "*.coffee"], ->
+		$.watch [config.paths.client.js.entry + "**/*.coffee", config.paths.client.js.entry + "**/!*.test.coffee"], ->
 			gulp.start "coffeescript"
 
 		$.watch [config.paths.client.css.entry + "**/*.styl", config.paths.client.css.entry + "**/*.html"], ->

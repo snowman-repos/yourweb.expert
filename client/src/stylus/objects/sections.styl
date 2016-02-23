@@ -87,7 +87,10 @@
 			max-height		100vh
 
 	&--padding-top
-		padding-top			100px
+		padding-top			50px
+
+		+bp($screen-sm-min)
+			padding-top 	100px
 
 	&__content
 		row()
@@ -100,16 +103,21 @@
 	// @name Section Headers
 	// @description The titles for each section.
 	// @state .o-section__header--blue--medium - medium blue colour
+	// @state .o-section__header--grey--dark - dark grey colour
+	// @state .o-section__header--small - smaller font size
 	// @state .o-section__header--white - white colour
 	// @markup
 	// <h2 class="o-section__header">Section Header</h2>
 	// <h2 class="o-section__header o-section__header--blue--medium">Medium Blue Section Header</h2>
+	// <h2 class="o-section__header o-section__header--grey--dark">Dark Grey Section Header</h2>
+	// <h2 class="o-section__header o-section__header--small">Small Section Header</h2>
 	// <h2 class="o-section__header o-section__header--white">White Section Header</h2>
 
 	&__header
 		col(12)
 		font-size			2rem
 		margin-bottom		$base-spacing-unit
+		padding				0 0.5 * $base-spacing-unit
 		text-align			center
 
 		&--blue--medium
@@ -118,18 +126,25 @@
 		&--grey--dark
 			color			$grey--dark-1
 
+		&--small
+			font-size 		1.5rem
+
 		&--white
 			color			$white
 
 	&__end
 		absolute()
-		bottom				-100px
+		bottom				-50px
 		fill				transparent
-		height				100px
+		height				50px
 		left				0
 		pointer-events		none
 		width				100%
 		z-index				getZIndex("sectionEnd")
+
+		+bp($screen-sm-min)
+			bottom			-100px
+			height			100px
 
 	&--blue
 		background-color	$blue

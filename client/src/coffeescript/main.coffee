@@ -20,6 +20,8 @@ height: 30px;
 padding: 5px 55px;
 """
 
+if window.fetch is undefined then require "whatwg-fetch"
+
 Blog = require "./components/blog/blog.coffee"
 ErrorPage = require "./components/error-page/error-page.coffee"
 FormValidation = require "./components/form-validation/form-validation.coffee"
@@ -30,3 +32,4 @@ PageTransition = require "./components/page-transition/page-transition.coffee"
 RateCalculator = require "./components/rate-calculator/rate-calculator.coffee"
 ScrollWatcher = require "./components/scroll-watcher/scroll-watcher.coffee"
 ServiceWorker = require "./components/service-worker/service-worker.coffee"
+ZoomReset = require "./components/zoom-reset/zoom-reset.coffee"

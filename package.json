@@ -36,7 +36,8 @@
     "smoothscroll": "^0.2.2",
     "snapsvg-cjs": "0.0.3",
     "static-favicon": "^1.0.2",
-    "tumblr": "^0.4.1"
+    "tumblr": "^0.4.1",
+    "whatwg-fetch": "^0.11.0"
   },
   "devDependencies": {
     "browserify": "^12.0.1",

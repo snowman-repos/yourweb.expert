@@ -19,10 +19,13 @@
 		border-radius			50%
 		display					block
 		line-height				50%
-		margin					0.5em
+		margin					0.5em 0.25em
 		padding					0.5em
 		text-decoration 		none
 		transition				0.2s all ease-in-out
+
+		+bp($screen-sm-min)
+			margin				0.5em
 
 		&__icon
 			fill				$silver !important

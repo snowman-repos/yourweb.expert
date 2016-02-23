@@ -186,7 +186,7 @@ class FormValidation
 		error = document.createElement "div"
 		error.classList.add "o-form__error-message"
 		if @el[form][input].input
-			error.innerText = @el[form][input].input.dataset.error
+			error.textContent = @el[form][input].input.dataset.error
 		error
 
 	###*
@@ -235,6 +235,17 @@ class FormValidation
 			console.error "invalid input data"
 
 	###*
+	 * Adds a stateful class to an input element to signify
+	 * that data has at some point been enetered.
+	 * @param  {String} form  A reference to the form on which the input is to be made dirty
+	 * @param  {String} input A reference to the input to be made dirty
+	###
+	makeDirty: (form, input) ->
+
+		if @el[form][input].input.classList.contains "is-dirty" then
+		@el[form][input].input.classList.add "is-dirty"
+
+	###*
 	 * Remove all error messages from the DOM.
 	 * @return {Object} The DOM node for the last input group from which an error message is removed
 	###
@@ -244,19 +255,6 @@ class FormValidation
 
 		for error in errors
 			error.parentNode.removeChild error
-
-	###*
-	 * Delete the input value and reset the state
-	 * of the input group.
-	 * @param {String} form  A reference to the form in which the input resides
-	 * @param {String} input A reference to the input
-	###
-	resetInput: (form, input) ->
-
-		@el[form][input].input.value = ""
-		@el[form][input].group.classList.remove "is-complete"
-		@el[form][input].group.classList.remove "is-error"
-		@el[form][input].group.classList.remove "is-in-focus"
 
 	###*
 	 * Reset the form, removing all states from input
@@ -283,6 +281,21 @@ class FormValidation
 				@resetInput form, input
 
 		@disableButton form
+		@removeAllErrors()
+
+	###*
+	* Delete the input value and reset the state
+	* of the input group.
+	* @param {String} form  A reference to the form in which the input resides
+	* @param {String} input A reference to the input
+	###
+	resetInput: (form, input) ->
+
+		@el[form][input].input.value = ""
+		@el[form][input].group.classList.remove "is-complete"
+		@el[form][input].group.classList.remove "is-dirty"
+		@el[form][input].group.classList.remove "is-error"
+		@el[form][input].group.classList.remove "is-in-focus"
 
 	###*
 	 * Remove special characters from a form input
@@ -370,8 +383,9 @@ class FormValidation
 		, 10000
 
 	###*
-	 * Apply stateful classes to the input group
-	 * based on the input's validation state.
+	 * Apply stateful classes to the input and
+	 * the input group based on the input's
+	 * validation state.
 	 * @param  {String} form  A reference to the form
 	 * @param  {String} input A reference to the input
 	 * @return {Object}       The updated input group DOM node
@@ -388,9 +402,12 @@ class FormValidation
 				@el[form][input].group.classList.remove "is-complete"
 				@showError form, input
 
-		else
+		else if @validateIsntBlank @el[form][input].input.value
 
 			@setComplete form, input
+
+		if @validateIsntBlank @el[form][input].input.value
+			@makeDirty form, input
 
 	###*
 	 * Determine whether the input is valid and
@@ -402,11 +419,13 @@ class FormValidation
 	###
 	setInputValidationState: (form, input) ->
 
+		value = @el[form][input].input.value
+
 		# Email is required and should be a valid
 		# Email address
 		if input is "email"
-			isntBlank = @validateIsntBlank @el[form][input].input.value
-			isValidEmail = @validateEmail @el[form][input].input.value
+			isntBlank = @validateIsntBlank value
+			isValidEmail = @validateEmail value
 			@validations[form][input] = isntBlank and isValidEmail
 
 		# Message is optional - validation always set
@@ -416,11 +435,11 @@ class FormValidation
 
 		# Name is required
 		if input is "name"
-			@validations[form][input] = @validateIsntBlank @el[form][input].input.value
+			@validations[form][input] = @validateIsntBlank value
 
 		# Password is required
 		if input is "password"
-			@validations[form][input] = @validateIsntBlank @el[form][input].input.value
+			@validations[form][input] = @validateIsntBlank value
 
 		# Once we've updated the validation state
 		# of this input, check if the form has become
@@ -453,9 +472,16 @@ class FormValidation
 
 		if form isnt "loginForm"
 
-			for input, valid of @validations[form]
+			for input, elements of @el[form]
 
-				if not valid then @showError form, input
+				if input isnt  "button" and
+				input isnt "form" and
+				input isnt "notifications"
+
+					if (elements.input.classList.contains "is-dirty") and
+					not (elements.group.classList.contains "is-in-focus") and
+					not @validations[form][input]
+						@showError form, input
 
 	###*
 	 * Display a notification.

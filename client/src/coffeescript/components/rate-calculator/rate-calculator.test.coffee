@@ -160,13 +160,13 @@ describe "Rate Calculator", ->
 
 		for currencySymbol in RateCalculator.el.currencySymbols
 
-			currencySymbol.innerText = ""
+			currencySymbol.textContent = ""
 
 		RateCalculator.setSymbol "¥"
 
 		for currencySymbol in RateCalculator.el.currencySymbols
 
-			expect(currencySymbol.innerText).toMatch "¥"
+			expect(currencySymbol.textContent).toMatch "¥"
 
 	it "displays the notice beneath the slider when the maximum value has been reached", ->
 
@@ -186,35 +186,35 @@ describe "Rate Calculator", ->
 	it "updates the selected project length", ->
 
 		# Display the selected number of weeks
-		RateCalculator.el.sliderTime.innerText = ""
+		RateCalculator.el.sliderTime.textContent = ""
 		RateCalculator.el.sliderNotice.classList.add "is-shown"
 
 		RateCalculator.el.slider.value = 1
 		RateCalculator.updateProjectLength "1"
 
-		expect(RateCalculator.el.sliderTime.innerText).toMatch "1"
-		expect(RateCalculator.el.sliderLabel.innerText).toMatch "week"
+		expect(RateCalculator.el.sliderTime.textContent).toMatch "1"
+		expect(RateCalculator.el.sliderLabel.textContent).toMatch "week"
 		expect(RateCalculator.el.sliderNotice.classList).not.toContain "is-shown"
 
 		RateCalculator.el.slider.value = 5
 		RateCalculator.updateProjectLength "5"
 
-		expect(RateCalculator.el.sliderTime.innerText).toMatch "5"
-		expect(RateCalculator.el.sliderLabel.innerText).toMatch "weeks"
+		expect(RateCalculator.el.sliderTime.textContent).toMatch "5"
+		expect(RateCalculator.el.sliderLabel.textContent).toMatch "weeks"
 		expect(RateCalculator.el.sliderNotice.classList).not.toContain "is-shown"
 
 		RateCalculator.el.slider.value = 12
 		RateCalculator.updateProjectLength "12"
 
-		expect(RateCalculator.el.sliderTime.innerText).toMatch "12"
-		expect(RateCalculator.el.sliderLabel.innerText).toMatch "weeks"
+		expect(RateCalculator.el.sliderTime.textContent).toMatch "12"
+		expect(RateCalculator.el.sliderLabel.textContent).toMatch "weeks"
 		expect(RateCalculator.el.sliderNotice.classList).toContain "is-shown"
 
 	it "updates the UI with the calculated rates", ->
 
-		RateCalculator.el.hourlyRate.innerText = ""
-		RateCalculator.el.minRate.innerText = ""
-		RateCalculator.el.weeklyRate.innerText = ""
+		RateCalculator.el.hourlyRate.textContent = ""
+		RateCalculator.el.minRate.textContent = ""
+		RateCalculator.el.weeklyRate.textContent = ""
 
 		rates =
 			hourly: 1
@@ -223,6 +223,6 @@ describe "Rate Calculator", ->
 
 		RateCalculator.updateRateValues rates
 
-		expect(RateCalculator.el.hourlyRate.innerText).toMatch "1"
-		expect(RateCalculator.el.minRate.innerText).toMatch "2"
-		expect(RateCalculator.el.weeklyRate.innerText).toMatch "3"
+		expect(RateCalculator.el.hourlyRate.textContent).toMatch "1"
+		expect(RateCalculator.el.minRate.textContent).toMatch "2"
+		expect(RateCalculator.el.weeklyRate.textContent).toMatch "3"

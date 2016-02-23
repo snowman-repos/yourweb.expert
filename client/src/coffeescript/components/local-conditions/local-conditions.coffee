@@ -193,7 +193,7 @@ class LocalConditions
 	###
 	showTemperature: (temperature) ->
 
-		if @el.temperature then @el.temperature.innerText = temperature
+		if @el.temperature then @el.temperature.textContent = temperature
 
 
 module.exports = new LocalConditions

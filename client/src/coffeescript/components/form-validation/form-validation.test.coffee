@@ -115,6 +115,22 @@ describe "Form Validation", ->
 			expect(FormValidation.el.loginForm.form.classList).toContain "is-error"
 		, 3100
 
+	it "should signify when inputs have had data entered", ->
+
+		for form, inputs of FormValidation.el
+
+			for input, elements of inputs
+
+				if input isnt "button" and
+				input isnt "form" and
+				input isnt "notifications"
+
+					FormValidation.el[form][input].input.classList.remove "is-dirty"
+
+					FormValidation.makeDirty form, input
+
+					expect(FormValidation.el[form][input].input.classList).toContain "is-dirty"
+
 	it "should remove all errors", ->
 
 		for form, inputs of FormValidation.el
@@ -147,6 +163,7 @@ describe "Form Validation", ->
 
 					FormValidation.el[form][input].input.value = "test"
 					FormValidation.el[form][input].group.classList.add "is-complete"
+					FormValidation.el[form][input].group.classList.add "is-dirty"
 					FormValidation.el[form][input].group.classList.add "is-error"
 					FormValidation.el[form][input].group.classList.add "is-in-focus"
 
@@ -154,6 +171,7 @@ describe "Form Validation", ->
 
 					expect(FormValidation.el[form][input].input.value).toMatch ""
 					expect(FormValidation.el[form][input].group.classList).not.toContain "is-complete"
+					expect(FormValidation.el[form][input].group.classList).not.toContain "is-dirty"
 					expect(FormValidation.el[form][input].group.classList).not.toContain "is-error"
 					expect(FormValidation.el[form][input].group.classList).not.toContain "is-in-focus"
 
@@ -289,7 +307,7 @@ describe "Form Validation", ->
 			expect(FormValidation.el[form].form.classList).not.toContain "is-error"
 			expect(FormValidation.el[form].form.classList).not.toContain "is-sending"
 
-	it "should set the complete state on an input group based on the input's validation status", ->
+	it "should set the state on an input and input group based on the input's validation status", ->
 
 		for form, inputs of FormValidation.el
 
@@ -299,17 +317,37 @@ describe "Form Validation", ->
 				input isnt "form" and
 				input isnt "notifications"
 
+					FormValidation.validations[form][input] = false
+					FormValidation.setInputState form, input
+
+					expect(FormValidation.el[form][input].group.classList).not.toContain "is-in-focus"
+
 					if input isnt "message"
 
-						FormValidation.validations[form][input] = false
-						FormValidation.setInputState form, input
 						expect(FormValidation.el[form][input].group.classList).not.toContain "is-complete"
 						expect(FormValidation.el[form][input].group.classList).toContain "is-error"
 
+					else
+						FormValidation.el[form][input].input.value = "test"
+
 					FormValidation.validations[form][input] = true
 					FormValidation.setInputState form, input
+
 					expect(FormValidation.el[form][input].group.classList).not.toContain "is-error"
 					expect(FormValidation.el[form][input].group.classList).toContain "is-complete"
+
+					FormValidation.resetInput form, input
+					# Hacky, I know, but otherwise it won't pass and
+					# there's no good reason other than computational
+					# delay!
+					setTimeout ->
+						expect(FormValidation.el[form][input].input.classList).not.toContain "is-dirty"
+					, 500
+					FormValidation.el[form][input].input.value = "test"
+					FormValidation.setInputState form, input
+					setTimeout ->
+						expect(FormValidation.el[form][input].input.classList).toContain "is-dirty"
+					, 500
 
 	it "should validate all inputs", ->
 
@@ -383,6 +421,52 @@ describe "Form Validation", ->
 				expect(form[input].group.classList).toContain "is-error"
 				expect(form[input].group.querySelector ".o-form__error-message").not.toBe null
 
+	it "should display all errors on a form", ->
+
+		for form, inputs of FormValidation.el
+
+			if form isnt "loginForm"
+
+				FormValidation.resetForm form
+
+				errors = FormValidation.el[form].form.querySelectorAll ".o-form__error-message"
+				expect(errors.length).toBe 0
+
+				for input, elements of inputs
+
+					if input isnt "button" and
+					input isnt "form" and
+					input isnt "notifications"
+
+						FormValidation.setInputValidationState form, input
+						FormValidation.makeDirty form, input
+
+				FormValidation.showErrors form
+
+				errors = FormValidation.el[form].form.querySelectorAll ".o-form__error-message"
+				expect(errors.length).not.toBe 0
+
+				FormValidation.resetForm form
+
+				errors = FormValidation.el[form].form.querySelectorAll ".o-form__error-message"
+				expect(errors.length).toBe 0
+
+				for input, elements of inputs
+
+					if input isnt "button" and
+					input isnt "form" and
+					input isnt "notifications"
+
+						FormValidation.setFocus form, input
+						FormValidation.makeDirty form, input
+						FormValidation.setInputValidationState form, input
+
+				FormValidation.removeAllErrors()
+				FormValidation.showErrors form
+
+				errors = FormValidation.el[form].form.querySelectorAll ".o-form__error-message"
+				expect(errors.length).toBe 0
+
 	it "should display a notification", ->
 
 		FormValidation.hideAllNotifications()
@@ -437,6 +521,7 @@ describe "Form Validation", ->
 				input isnt "notifications"
 
 					FormValidation.setInputValidationState form, input
+					FormValidation.makeDirty form, input
 
 			FormValidation.validateForm form
 
@@ -445,7 +530,6 @@ describe "Form Validation", ->
 			if form isnt "loginForm"
 
 				errors = FormValidation.el[form].form.querySelectorAll ".o-form__error-message"
-
 				expect(errors.length).not.toBe 0
 
 			for input, elements of inputs
@@ -456,26 +540,6 @@ describe "Form Validation", ->
 
 					FormValidation.validations[form][input] = true
 
-					# if input is "email"
-					#
-					# 	FormValidation.el[form][input].input.value = "valid@email.com"
-					# 	FormValidation.setInputValidationState form, input
-					#
-					# if input is "message"
-					#
-					# 	FormValidation.el[form][input].input.value = "test"
-					# 	FormValidation.setInputValidationState form, input
-					#
-					# if input is "name"
-					#
-					# 	FormValidation.el[form][input].input.value = "test"
-					# 	FormValidation.setInputValidationState form, input
-					#
-					# if input is "password"
-					#
-					# 	FormValidation.el[form][input].input.value = "test"
-					# 	FormValidation.setInputValidationState form, input
-
 			FormValidation.validateForm form
 
 			expect(FormValidation.el[form].button.classList).not.toContain "is-disabled"
@@ -483,20 +547,6 @@ describe "Form Validation", ->
 			errors = FormValidation.el[form].form.querySelectorAll ".o-form__error-message"
 
 			expect(errors.length).toBe 0
-
-		# for each form
-		# enable button
-		# call function
-		# test button is disabled
-		#
-		# show errors
-		# confirm that there are errors
-		# confirm button is disabled
-		# enter valid data
-		# validate inputs
-		# call function
-		# test there are no errors
-		# test button is enabled
 
 	it "should validate that input isn't blank", ->
 

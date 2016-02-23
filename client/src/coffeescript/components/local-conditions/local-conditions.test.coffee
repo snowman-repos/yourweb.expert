@@ -161,4 +161,4 @@ describe "Local Conditions", ->
 
 		LocalConditions.showTemperature dummyData.temperature
 
-		expect(LocalConditions.el.temperature.innerText).toMatch dummyData.temperature.toString()
+		expect(LocalConditions.el.temperature.textContent).toMatch dummyData.temperature.toString()

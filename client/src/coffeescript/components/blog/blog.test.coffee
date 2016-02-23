@@ -6,27 +6,27 @@ describe "Blog", ->
 	Navigation = require "../navigation/navigation.coffee"
 	date = new Date()
 	dummyData = [
-		date: new Date("Mon Feb 22 2016 00:08:32 GMT+0800 (CST)")
+		date: "2016-02-22 00:00:00 GMT"
 		post_url: "URL"
 		title: "title"
 	,
-		date: new Date("Mon Feb 22 2016 00:08:32 GMT+0800 (CST)")
+		date: "2016-02-22 00:00:00 GMT"
 		post_url: "URL"
 		title: "title"
 	,
-		date: new Date("Mon Feb 22 2016 00:08:32 GMT+0800 (CST)")
+		date: "2016-02-22 00:00:00 GMT"
 		post_url: "URL"
 		title: "title"
 	,
-		date: new Date("Mon Feb 22 2016 00:08:32 GMT+0800 (CST)")
+		date: "2016-02-22 00:00:00 GMT"
 		post_url: "URL"
 		title: "title"
 	,
-		date: new Date("Mon Feb 22 2016 00:08:32 GMT+0800 (CST)")
+		date: "2016-02-22 00:00:00 GMT"
 		post_url: "URL"
 		title: "title"
 	,
-		date: new Date("Mon Feb 22 2016 00:08:32 GMT+0800 (CST)")
+		date: "2016-02-22 00:00:00 GMT"
 		post_url: "URL"
 		title: "title"
 	]
@@ -42,12 +42,12 @@ describe "Blog", ->
 
 	it "correctly format dates", ->
 
-		expect(Blog.formatDate(new Date("Feb 19 2016"))).toMatch "19<sup>th</sup> Feb"
-		expect(Blog.formatDate(new Date("Jan 1 2016"))).toMatch "1<sup>st</sup> Jan"
-		expect(Blog.formatDate(new Date("Nov 3 2016"))).toMatch "3<sup>rd</sup> Nov"
-		expect(Blog.formatDate(new Date("Nov 13 2016"))).toMatch "13<sup>th</sup> Nov"
-		expect(Blog.formatDate(new Date("Jul 22 2016"))).toMatch "22<sup>nd</sup> Jul"
-		expect(Blog.formatDate(new Date("Mar 5 2016"))).toMatch "5<sup>th</sup> Mar"
+		expect(Blog.formatDate("2016-02-19 00:00:00 GMT")).toMatch "19<sup>th</sup> Feb"
+		expect(Blog.formatDate("2016-01-01 00:00:00 GMT")).toMatch "1<sup>st</sup> Jan"
+		expect(Blog.formatDate("2016-11-03 00:00:00 GMT")).toMatch "3<sup>rd</sup> Nov"
+		expect(Blog.formatDate("2016-11-13 00:00:00 GMT")).toMatch "13<sup>th</sup> Nov"
+		expect(Blog.formatDate("2016-07-22 00:00:00 GMT")).toMatch "22<sup>nd</sup> Jul"
+		expect(Blog.formatDate("2016-03-05 00:00:00 GMT")).toMatch "5<sup>th</sup> Mar"
 
 	it "gets data", ->
 

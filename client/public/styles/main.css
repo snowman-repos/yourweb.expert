@@ -1,4 +1,4 @@
-/* your-web-expert : 2.0.0 : Sun Feb 21 2016 14:21:56 GMT+0800 (CST) */.u-fade-enter {
+/* your-web-expert : 2.0.0 : Tue Feb 23 2016 19:14:28 GMT+0800 (CST) */.u-fade-enter {
   opacity: 0.01;
   transition: opacity 0.5s ease-in;
 }
@@ -2275,6 +2275,10 @@ svg {
   cursor: pointer;
   height: 0.5rem;
   width: 100%;
+}
+.o-slider::-moz-focus-outer {
+  border: none;
+  outline: none;
 }
 .o-slider::-ms-track {
   background: #004056;

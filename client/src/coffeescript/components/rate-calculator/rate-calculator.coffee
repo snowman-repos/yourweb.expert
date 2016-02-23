@@ -38,6 +38,13 @@ class RateCalculator
 		# Only run the code for this class if
 		# the calculator is on the page
 		if @el.calculator
+
+			# set initial values because Firefox
+			# always remembers input values from
+			# previous sessions
+			@el.slider.value = 1
+			@el.currencySelector.value = "usd"
+
 			@getRates()
 			@addEventListeners()
 
@@ -152,7 +159,7 @@ class RateCalculator
 
 		for currencySymbol in @el.currencySymbols
 
-			currencySymbol.innerText = symbol
+			currencySymbol.textContent = symbol
 
 	###*
 	 * Show the notice beneath the slider.
@@ -190,12 +197,12 @@ class RateCalculator
 	updateProjectLength: (weeks) ->
 
 		# Display the selected number of weeks
-		@el.sliderTime.innerText = weeks
+		@el.sliderTime.textContent = weeks
 
 		if weeks > 1
-			@el.sliderLabel.innerText = "weeks"
+			@el.sliderLabel.textContent = "weeks"
 		else
-			@el.sliderLabel.innerText = "week"
+			@el.sliderLabel.textContent = "week"
 
 		# Advise the user that there is a limit
 		# to my discount by showing a notice
@@ -211,9 +218,9 @@ class RateCalculator
 	###
 	updateRateValues: (rates) ->
 
-		@el.hourlyRate.innerText = @formatNumber rates.hourly
-		@el.minRate.innerText = @formatNumber rates.minimum
-		@el.weeklyRate.innerText = @formatNumber rates.weekly
+		@el.hourlyRate.textContent = @formatNumber rates.hourly
+		@el.minRate.textContent = @formatNumber rates.minimum
+		@el.weeklyRate.textContent = @formatNumber rates.weekly
 
 
 module.exports = new RateCalculator

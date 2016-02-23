@@ -24,12 +24,14 @@ class Blog
 	 * Format the date so it can be displayed
 	 * alongside the blog title, i.e.
 	 * 25th Dec
-	 * @param  {Date}  date The date to be formatted
+	 * @param  {String}     Date The date to be formatted
 	 * @return {String}     An HTML string containing the formatted date
 	###
 	formatDate: (date) ->
 
-		date = new Date date
+		# date format is currently 'YYYY-MM-DD HH:MM:SS GMT'
+		# which is not standard, so...
+		date = new Date date.toString().substr 0, 10
 		day = date.getDate()
 		day = day + "<sup>" + @getOrdinal(day) + "</sup>"
 		month = @getMonth date.getMonth()
@@ -74,7 +76,7 @@ class Blog
 
 		heading = document.createElement "h2"
 		heading.classList.add "o-blog-post-list__item__heading"
-		heading.innerText = article.title
+		heading.textContent = article.title
 
 		date = document.createElement "div"
 		date.classList.add "o-blog-post-list__item__date"

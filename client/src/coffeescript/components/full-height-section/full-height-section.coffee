@@ -35,7 +35,6 @@ class FullHeightSections
 			@updateAllSections()
 
 		window.addEventListener "resize", _ =>
-			console.log "resized!"
 			@updateAllSections()
 		, 500
 

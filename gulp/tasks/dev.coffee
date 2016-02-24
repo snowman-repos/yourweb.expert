@@ -62,7 +62,7 @@ module.exports = (gulp, $, config) ->
 			fileName = path.relative basedir, file.path
 			dependants = []
 			inheritance = null
-			filter = ["!./src/jade/*/**/*.jade"]
+			filter = ["!./client/src/jade/*/**/*.jade"]
 
 			# get dependant of changed/add/remove file
 			try

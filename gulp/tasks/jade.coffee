@@ -6,7 +6,7 @@ module.exports = (gulp, $, config) ->
 
 	gulp.task "jade", ->
 
-		gulp.src config.paths.client.html.entry + "*.jade"
+		gulp.src [config.paths.client.html.entry + "*.jade", !config.paths.client.html.entry + "**/*.jade"]
 		.pipe $.plumber()
 		.pipe $.jade
 			pretty: true

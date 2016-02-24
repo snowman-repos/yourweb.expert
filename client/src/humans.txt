@@ -1,11 +1,21 @@
 /* TEAM */
 
-[Role]: [name]
-Contact: [email]
-[Social Media Network]: [username/link]
+Project Owner: Darryl Snow
+Contact: darryl@yourweb.expert
+Github: https://github.com/darryl-snow
 
-/* THANKS */
+Designer: Darryl Snow
+Contact: darryl@yourweb.expert
+Github: https://github.com/darryl-snow
 
-[Role]: [name]
-Contact: [email]
-[Social Media Network]: [username/link]
+Developer: Darryl Snow
+Contact: darryl@yourweb.expert
+Github: https://github.com/darryl-snow
+
+Project Manager: Darryl Snow
+Contact: darryl@yourweb.expert
+Github: https://github.com/darryl-snow
+
+QA Tester: Darryl Snow
+Contact: darryl@yourweb.expert
+Github: https://github.com/darryl-snow

@@ -104,11 +104,11 @@
   },
   "scripts": {
     "build": "gulp prod",
-    "start:dev": "gulp serve && gulp dev",
-    "start:prod": "./node_modules/nodemon/bin/nodemon ./server/app.coffee",
+    "start:dev": "npm run start & gulp dev",
+    "start": "./node_modules/nodemon/bin/nodemon.js ./server/app.coffee",
     "test:fe": "gulp test",
-    "test:be": "./node_modules/jasmine-node/bin/jasmine-node --coffee server/spec",
-    "test": "test:fe && test:be"
+    "test:be": "./node_modules/jasmine-node/bin/jasmine-node --coffee server/spec --captureExceptions",
+    "test": "npm run test:fe && npm run test:be"
   },
   "private": true
 }

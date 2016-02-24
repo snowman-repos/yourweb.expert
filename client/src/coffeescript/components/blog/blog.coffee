@@ -29,9 +29,7 @@ class Blog
 	###
 	formatDate: (date) ->
 
-		# date format is currently 'YYYY-MM-DD HH:MM:SS GMT'
-		# which is not standard, so...
-		date = new Date date.toString().substr 0, 10
+		date = new Date date
 		day = date.getDate()
 		day = day + "<sup>" + @getOrdinal(day) + "</sup>"
 		month = @getMonth date.getMonth()
@@ -71,7 +69,7 @@ class Blog
 
 		link = document.createElement "a"
 		link.classList.add "o-blog-post-list__item__link"
-		link.href = article.post_url
+		link.href = article.link
 		link.title = "Read more"
 
 		heading = document.createElement "h2"
@@ -80,7 +78,7 @@ class Blog
 
 		date = document.createElement "div"
 		date.classList.add "o-blog-post-list__item__date"
-		date.innerHTML = @formatDate article.date
+		date.innerHTML = @formatDate article.published
 
 		link.appendChild heading
 		link.appendChild date

@@ -6,28 +6,28 @@ describe "Blog", ->
 	Navigation = require "../navigation/navigation.coffee"
 	date = new Date()
 	dummyData = [
-		date: "2016-02-22 00:00:00 GMT"
-		post_url: "URL"
+		link: "URL"
+		published: "2016-02-22T00:00:00.000Z"
 		title: "title"
 	,
-		date: "2016-02-22 00:00:00 GMT"
-		post_url: "URL"
+		link: "URL"
+		published: "2016-02-22T00:00:00.000Z"
 		title: "title"
 	,
-		date: "2016-02-22 00:00:00 GMT"
-		post_url: "URL"
+		link: "URL"
+		published: "2016-02-22T00:00:00.000Z"
 		title: "title"
 	,
-		date: "2016-02-22 00:00:00 GMT"
-		post_url: "URL"
+		link: "URL"
+		published: "2016-02-22T00:00:00.000Z"
 		title: "title"
 	,
-		date: "2016-02-22 00:00:00 GMT"
-		post_url: "URL"
+		link: "URL"
+		published: "2016-02-22T00:00:00.000Z"
 		title: "title"
 	,
-		date: "2016-02-22 00:00:00 GMT"
-		post_url: "URL"
+		link: "URL"
+		published: "2016-02-22T00:00:00.000Z"
 		title: "title"
 	]
 
@@ -42,12 +42,12 @@ describe "Blog", ->
 
 	it "correctly format dates", ->
 
-		expect(Blog.formatDate("2016-02-19 00:00:00 GMT")).toMatch "19<sup>th</sup> Feb"
-		expect(Blog.formatDate("2016-01-01 00:00:00 GMT")).toMatch "1<sup>st</sup> Jan"
-		expect(Blog.formatDate("2016-11-03 00:00:00 GMT")).toMatch "3<sup>rd</sup> Nov"
-		expect(Blog.formatDate("2016-11-13 00:00:00 GMT")).toMatch "13<sup>th</sup> Nov"
-		expect(Blog.formatDate("2016-07-22 00:00:00 GMT")).toMatch "22<sup>nd</sup> Jul"
-		expect(Blog.formatDate("2016-03-05 00:00:00 GMT")).toMatch "5<sup>th</sup> Mar"
+		expect(Blog.formatDate("2016-02-19T00:00:00.000Z")).toMatch "19<sup>th</sup> Feb"
+		expect(Blog.formatDate("2016-01-01T00:00:00.000Z")).toMatch "1<sup>st</sup> Jan"
+		expect(Blog.formatDate("2016-11-03T00:00:00.000Z")).toMatch "3<sup>rd</sup> Nov"
+		expect(Blog.formatDate("2016-11-13T00:00:00.000Z")).toMatch "13<sup>th</sup> Nov"
+		expect(Blog.formatDate("2016-07-22T00:00:00.000Z")).toMatch "22<sup>nd</sup> Jul"
+		expect(Blog.formatDate("2016-03-05T00:00:00.000Z")).toMatch "5<sup>th</sup> Mar"
 
 	it "gets data", ->
 
@@ -61,8 +61,8 @@ describe "Blog", ->
 		formattedDate = Blog.formatDate date
 
 		article =
-			date: date
-			post_url: "url"
+			link: "url"
+			published: date
 			title: "title"
 
 		li = Blog.getListItem article

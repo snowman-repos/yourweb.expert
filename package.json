@@ -22,7 +22,6 @@
     "jsonwebtoken": "^5.5.4",
     "lodash": "^3.10.1",
     "mailgun-js": "^0.7.7",
-    "medium-sdk": "0.0.1",
     "method-override": "^2.3.5",
     "mongoose": "^4.3.5",
     "morgan": "^1.6.1",
@@ -30,8 +29,6 @@
     "page": "^1.6.4",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
-    "react": "^0.14.3",
-    "react-dom": "^0.14.3",
     "request": "^2.67.0",
     "scrollmonitor": "^1.0.12",
     "smoothscroll": "^0.2.2",
@@ -106,7 +103,7 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "build": "gulp prod",
+    "build": "gulp prod && gulp prod-optimise",
     "start:dev": "npm run start & gulp dev",
     "start": "./node_modules/nodemon/bin/nodemon.js ./server/app.coffee",
     "test:fe": "gulp test",

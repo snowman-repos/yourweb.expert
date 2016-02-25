@@ -3,7 +3,19 @@
 process.env.NODE_ENV = process.env.NODE_ENV || "development"
 
 if process.env.NODE_ENV is "development"
-	localenv = require "./config/local.env"
+	try
+		localenv = require "./config/local.env"
+	catch
+		localenv =
+			MAILGUN_DOMAIN: "xxxx"
+			MAILGUN_KEY: "xxxx"
+			MEDIUM_ID: "xxxx"
+			MEDIUM_SECRET: "xxxx"
+			OPENEXCHANGE_ID: "xxxx"
+			SESSION_SECRET: "xxxx"
+			TUMBLR_ID: "xxxx"
+			TUMBLR_SECRET: "xxxx"
+			WEATHERONLINE_ID: "xxxx"
 	process.env.MAILGUN_DOMAIN = localenv.MAILGUN_DOMAIN
 	process.env.MAILGUN_KEY = localenv.MAILGUN_KEY
 	process.env.MEDIUM_ID = localenv.MEDIUM_ID

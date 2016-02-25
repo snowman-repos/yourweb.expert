@@ -6,9 +6,9 @@ runSequence = require "run-sequence"
 
 module.exports = (gulp, $, config) ->
 
-	finish = ->
+	finish = (stage) ->
 
-		$.util.log $.util.colors.green "Build done!"
+		$.util.log $.util.colors.green "Finished: " + stage
 		process.exit 0
 
 	gulp.task "prod-optimise", (callback) ->
@@ -39,7 +39,7 @@ module.exports = (gulp, $, config) ->
 
 		setTimeout ->
 
-			finish()
+			finish "optimisation"
 
 		, 10000
 
@@ -85,6 +85,6 @@ module.exports = (gulp, $, config) ->
 			# FINISH before running the next
 			setTimeout ->
 
-				gulp.start "prod-optimise"
+				finish "build"
 
 			, 8000

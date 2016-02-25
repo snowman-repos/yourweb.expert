@@ -15,11 +15,11 @@ if process.env.NODE_ENV is "development"
 	process.env.WEATHERONLINE_ID = localenv.WEATHERONLINE_ID
 
 express = require "express"
-mongoose = require "mongoose"
+# mongoose = require "mongoose"
 config = require "./config/environment"
 
 # Connect to database
-mongoose.connect config.mongo.uri, config.mongo.options
+# mongoose.connect config.mongo.uri, config.mongo.options
 
 # Populate DB with sample data
 # if config.seedDB

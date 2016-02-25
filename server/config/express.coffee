@@ -26,13 +26,13 @@ module.exports = (app) ->
 	app.use passport.initialize()
 	app.use express.static __dirname + "/../../client/public"
 
-	# Persist sessions with mongoStore
-	app.use session
-		resave: true
-		saveUninitialized: true
-		secret: config.secrets.session
-		store: new mongoStore
-			url: config.mongo.uri
-			collection: "sessions"
-		, ->
-			console.log("db connection open")
+	# # Persist sessions with mongoStore
+	# app.use session
+	# 	resave: true
+	# 	saveUninitialized: true
+	# 	secret: config.secrets.session
+	# 	store: new mongoStore
+	# 		url: config.mongo.uri
+	# 		collection: "sessions"
+	# 	, ->
+	# 		console.log("db connection open")

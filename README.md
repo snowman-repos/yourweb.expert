@@ -1,5 +1,7 @@
 # YourWeb.Expert
 
+[![Build Status](https://travis-ci.org/darryl-snow/yourweb.expert.svg?branch=master)](https://travis-ci.org/darryl-snow/yourweb.expert)
+
 This is the repo for the personal site of Darryl Snow ([https://yourwebsite.expert](https://yourwebsite.expert)). It's built using the following technologies:
 
 * Jade

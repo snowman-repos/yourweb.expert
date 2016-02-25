@@ -6,6 +6,11 @@ runSequence = require "run-sequence"
 
 module.exports = (gulp, $, config) ->
 
+	finish = ->
+
+		$.util.log $.util.colors.green "Build done!"
+		process.exit 0
+
 	gulp.task "prod-optimise", (callback) ->
 
 		jsFilter = $.filter "**/*.js", restore: true
@@ -31,6 +36,12 @@ module.exports = (gulp, $, config) ->
 		.pipe notHTMLFilter.restore
 		.pipe $.revReplace()
 		.pipe gulp.dest config.paths.client.build
+
+		setTimeout ->
+
+			finish()
+
+		, 10000
 
 		callback()
 
@@ -63,7 +74,7 @@ module.exports = (gulp, $, config) ->
 		#
 		# 	callback()
 
-	gulp.task "prod", (callback)->
+	gulp.task "prod", (callback) ->
 
 		config.env = "prod"
 
@@ -74,12 +85,6 @@ module.exports = (gulp, $, config) ->
 			# FINISH before running the next
 			setTimeout ->
 
-				gulp.start "prod-optimise", ->
-
-					# setTimeout ->
-					#
-					# 	gulp.start "prod-inline-css"
-					#
-					# , 8000
+				gulp.start "prod-optimise"
 
 			, 8000

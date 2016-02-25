@@ -2,6 +2,7 @@
 /client/src/lib
 /server/config/local.env.coffee
 .DS_Store
+.token
 node_modules
 npm-debug.log
 todo

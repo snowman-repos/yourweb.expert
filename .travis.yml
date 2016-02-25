@@ -6,8 +6,7 @@ before_script:
   - npm install -g coffee
   - npm install
 script:
-  - gulp build
-  - gulp prod-optimise
+  - npm run build
   - gulp test
   - npm start
   - npm run test:be

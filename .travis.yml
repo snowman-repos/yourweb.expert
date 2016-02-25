@@ -8,5 +8,3 @@ before_script:
 script:
   - npm run build
   - gulp test
-  - npm start
-  - npm run test:be

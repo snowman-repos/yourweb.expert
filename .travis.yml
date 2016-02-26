@@ -10,8 +10,3 @@ before_script:
 script:
   - npm run build
   - gulp test
-after_success:
-  - eval "$(ssh-agent -s)"
-  - chmod 600 deploy-key.enc
-  - ssh-add deploy-key.enc
-  - ssh deploy@yourweb.expert '/var/www/deploy-yourweb.expert.sh'

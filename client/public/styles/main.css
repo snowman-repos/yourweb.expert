@@ -1,4 +1,4 @@
-/* your-web-expert : 2.0.0 : Thu Feb 25 2016 18:03:41 GMT+0800 (CST) */.u-fade-enter {
+/* your-web-expert : 2.0.0 : Sat Feb 27 2016 23:32:31 GMT+0800 (CST) */.u-fade-enter {
   opacity: 0.01;
   transition: opacity 0.5s ease-in;
 }
@@ -2604,6 +2604,7 @@ svg {
   display: block;
   font-size: 0.75rem;
   font-weight: 500;
+  margin-bottom: 1rem;
   text-transform: uppercase;
 }
 .c-cost__calculator__results__value {
@@ -2847,3 +2848,5 @@ svg {
   border-bottom: 1px solid #e5e5e5;
   margin-bottom: 1rem;
 }
+
+/*# sourceMappingURL=main.css.map */

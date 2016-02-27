@@ -11,6 +11,32 @@ class Map
 		@config =
 			delay: 2000
 
+		@addEventListeners()
+
+	###*
+	 * Listen to when the map is clicked.
+	###
+	addEventListeners: ->
+
+		if @el.map
+
+			@el.map.addEventListener "click", (e) =>
+
+				@toggleZoomState()
+
+			, true
+
+	###*
+	 * Toggle the zoom state of the map.
+	###
+	toggleZoomState: ->
+
+		if @el.map.classList.contains "is-zoomed"
+			@el.map.classList.remove "is-zoomed"
+			ga "send", "event", "map", "zoom", "zoom out"
+		else
+			@el.map.classList.add "is-zoomed"
+			ga "send", "event", "map", "zoom", "zoom in"
 	###*
 	 * Zoom in on the map
 	###

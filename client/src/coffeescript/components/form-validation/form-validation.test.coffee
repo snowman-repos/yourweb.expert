@@ -16,6 +16,9 @@ describe "Form Validation", ->
 		validations
 
 	beforeEach ->
+
+		window.ga = ->
+
 		loadFixtures "home-page.html"
 
 		FormValidation.el =

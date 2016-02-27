@@ -6,6 +6,9 @@ describe "Navigation", ->
 	scrollPoints = []
 
 	beforeEach ->
+
+		window.ga = ->
+
 		loadFixtures "home-page.html"
 
 		Navigation.el.menu = document.querySelector ".js-navigation-menu"

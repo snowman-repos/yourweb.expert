@@ -43,6 +43,8 @@ class Navigation
 			e.preventDefault()
 			target = document.querySelector "#" + target
 			smoothScroll target.offsetTop
+			ga "send", "event", "navigation", "click", "navigate to section", target,
+				nonInteraction: 1
 
 	###*
 	 * Add a navigation menu item to the menu.

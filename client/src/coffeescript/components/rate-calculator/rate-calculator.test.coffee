@@ -5,6 +5,9 @@ describe "Rate Calculator", ->
 	RateCalculator = require "./rate-calculator.coffee"
 
 	beforeEach ->
+
+		window.ga = ->
+
 		loadFixtures "home-page.html"
 
 		RateCalculator.el.currencySelector = document.querySelector ".js-currency"

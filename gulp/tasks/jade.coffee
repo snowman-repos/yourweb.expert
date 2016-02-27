@@ -14,6 +14,7 @@ module.exports = (gulp, $, config) ->
 				description: config.description
 				keywords: config.keywords
 				title: config.names.project
+				url: config.url
 		.on "error", (err) ->
 			notifier.notify
 				message: "Error: " + err.message

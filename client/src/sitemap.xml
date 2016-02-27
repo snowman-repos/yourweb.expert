@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<url>
+  <loc>https://yourweb.expert/</loc>
+  <lastmod>2016-02-26T10:22:29+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://yourweb.expert/about/me</loc>
+  <lastmod>2016-02-26T10:22:29+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://yourweb.expert/contract</loc>
+  <lastmod>2016-02-26T10:22:29+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://yourweb.expert/contract.pdf</loc>
+  <lastmod>2016-02-26T10:22:25+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+</url>
+</urlset>

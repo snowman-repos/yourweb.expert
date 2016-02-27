@@ -8,6 +8,9 @@ module.exports = (gulp, $, config) ->
 		.pipe $.plumber()
 		.pipe $.imagemin
 			cache: false
+			interlaced: true
+			optimizationLevel: 5
+			progressive: true
 		.pipe $.size
 			showFiles: false
 		.pipe gulp.dest config.paths.client.images.dest

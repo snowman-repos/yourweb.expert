@@ -20,7 +20,7 @@
 				| &nbsp;
 				span.c-cost__calculator__slider__label__text.js-time-slider-text week
 			
-			input.o-slider.c-cost__calculator__slider__control.js-time-slider(id="time-slider", max="12", min="1", step="1", type="range", value="1")
+			input.o-slider.c-cost__calculator__slider__control.js-time-slider(id="time-slider", name="projectLength", max="12", min="1", step="1", type="range", value="1")
 
 			p.c-cost__calculator__slider__notice.js-slider-notice (my minimum weekly rate is about 
 				span.c-cost__calculator__slider__notice__currency.js-currency-symbol $
@@ -31,9 +31,9 @@
 
 			.c-cost__calculator__results__content
 
-				p.c-cost__calculator__results__heading weekly rate:
+				label.c-cost__calculator__results__heading(for="currencySelector") weekly rate:
 
-				select.o-dropdown-list.o-button.o-button--blue--sky.js-currency
+				select.o-dropdown-list.o-button.o-button--blue--sky.js-currency(id="currencySelector", name="currencySelector", title="Select a different currency")
 					option(value="usd", selected) $ USD
 					option(value="gbp") £ GBP
 					option(value="eur") € EUR

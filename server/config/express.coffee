@@ -6,6 +6,7 @@ morgan			= require "morgan"
 compression		= require "compression"
 bodyParser		= require "body-parser"
 methodOverride	= require "method-override"
+# minifyHTML		= require "express-minify-html"
 cookieParser	= require "cookie-parser"
 errorHandler	= require "errorhandler"
 path			= require "path"
@@ -25,6 +26,16 @@ module.exports = (app) ->
 	app.use cookieParser()
 	app.use passport.initialize()
 	app.use express.static __dirname + "/../../client/public"
+
+	# app.use minifyHTML
+	# 	override: true
+	# 	displayErrors: process.env.NODE_ENV == "development"
+	# 	htmlMinifier:
+	# 		removeComments: true
+	# 		collapseWhitespace: true
+	# 		collapseBooleanAttributes: true
+	# 		removeEmptyAttributes: true
+	# 		minifyJS: true
 
 	# # Persist sessions with mongoStore
 	# app.use session

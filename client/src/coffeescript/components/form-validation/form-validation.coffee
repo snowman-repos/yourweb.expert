@@ -65,11 +65,14 @@ class FormValidation
 
 			e.preventDefault()
 			@submitContactForm()
+			ga "send", "event", "contact form", "submit"
 
 		@el.loginForm.button.addEventListener "click", (e) =>
 
 			e.preventDefault()
 			@login()
+			ga "send", "event", "login form", "submit", "", "",
+				nonInteraction: 1
 
 		# Focus events - when inputs are focused
 		# then error and completion states should
@@ -472,6 +475,9 @@ class FormValidation
 
 		if form isnt "loginForm"
 
+			ga "send", "event", "contact form", "show errors", "errors", @validations[form],
+				nonInteraction: 1
+
 			for input, elements of @el[form]
 
 				if input isnt  "button" and
@@ -524,6 +530,14 @@ class FormValidation
 				if data is "sent"
 
 					@setFormIsSent "contactForm"
+
+					ga "send", "event", "contact form", "sent", "data", dataToSend,
+						nonInteraction: 1
+
+				else
+
+					ga "send", "event", "contact form", "send failed", "errors", data,
+						nonInteraction: 1
 
 		else
 			console.error "invalid input data"

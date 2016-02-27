@@ -5,6 +5,9 @@ describe "Morph Button", ->
 	MorphButton = require "./morph-button.coffee"
 
 	beforeEach ->
+
+		window.ga = ->
+
 		loadFixtures "home-page.html"
 
 		morphButtons = document.querySelectorAll ".js-morph-button"

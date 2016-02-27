@@ -53,6 +53,9 @@ class PageTransition
 
 				@transition e.target.dataset.page
 
+				ga "send", "event", "page transition trigger", "click", "go to page", e.target.dataset.page,
+					nonInteraction: 1
+
 	###*
 	 * Hide the page transition overlay.
 	 * @return {Object} The DOM node for the overlay
@@ -143,14 +146,17 @@ class PageTransition
 		Page "/", =>
 			console.info "Home page"
 			@noTransition "home"
+			ga "send", "pageview", "/"
 
 		Page "/about/me", =>
 			console.info "About page"
 			@noTransition "about"
+			ga "send", "pageview", "/about/me"
 
 		Page "/contract", =>
 			console.info "Contract page"
 			@noTransition "contract"
+			ga "send", "pageview", "/contract"
 
 		# Initialise PageJS
 		Page()

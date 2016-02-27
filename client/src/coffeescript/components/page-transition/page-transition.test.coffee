@@ -9,6 +9,9 @@
 # 	svgLoader = require "../svg-loader/svg-loader.coffee"
 #
 # 	beforeEach ->
+#
+# 		window.ga = ->
+#
 # 		loadFixtures "home-page.html"
 #
 # 		PageTransition = require "./page-transition.coffee"

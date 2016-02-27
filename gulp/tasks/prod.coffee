@@ -19,29 +19,31 @@ module.exports = (gulp, $, config) ->
 
 		gulp.src config.paths.client.html.dest + "/**/*.html"
 		.pipe $.useref()
-		.pipe jsFilter
-		.pipe $.uglify()
-		.pipe $.size
-			showFiles: true
-		.pipe jsFilter.restore
-		.pipe cssFilter
-		# .pipe $.uncss
-		# 	html: config.paths.client.html.dest + "/index.html"
+		.pipe gulp.dest config.paths.client.build
+
+		gulp.src config.paths.client.css.dest + "/" + config.names.css.compiled
 		.pipe $.cssnano()
 		.pipe $.size
 			showFiles: true
-		.pipe cssFilter.restore
-		.pipe notHTMLFilter
-		.pipe $.rev()
-		.pipe notHTMLFilter.restore
-		.pipe $.revReplace()
-		.pipe gulp.dest config.paths.client.build
+		.pipe gulp.dest config.paths.client.css.dest
 
-		setTimeout ->
+		gulp.src config.paths.client.js.dest + "/" + config.names.js.compiled
+		.pipe $.uglify()
+		.pipe $.size
+			showFiles: true
+		.pipe gulp.dest config.paths.client.js.dest
 
-			finish "optimisation"
+		gulp.src config.paths.client.html.dest + "/*.html"
+		.pipe $.htmlmin()
+		.pipe $.size
+			showFiles: true
+		.pipe gulp.dest config.paths.client.html.dest
 
-		, 10000
+		# setTimeout ->
+		#
+		# 	finish "optimisation"
+		#
+		# , 10000
 
 		callback()
 

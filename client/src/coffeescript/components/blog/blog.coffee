@@ -21,6 +21,20 @@ class Blog
 			@getArticles()
 
 	###*
+	 * Add analytics tracking for blog post links.
+	###
+	addEventListeners: ->
+
+		links = document.querySelectorAll ".o-blog-post-list__item__link"
+
+		for link in links
+
+			link.addEventListener "click", (e) ->
+
+				ga "send", "event", "blog post", "click", "navigate to", e.target,
+					nonInteraction: 1
+
+	###*
 	 * Format the date so it can be displayed
 	 * alongside the blog title, i.e.
 	 * 25th Dec
@@ -193,6 +207,8 @@ class Blog
 		for article in articles
 
 			@el.list.appendChild @getListItem article
+
+		@addEventListeners()
 
 
 module.exports = new Blog

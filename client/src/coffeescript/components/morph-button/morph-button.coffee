@@ -36,9 +36,13 @@ class MorphButton
 
 			component.openButton.addEventListener "click", (e) =>
 				@openMorphButton component
+				ga "send", "event", "morph button", "click", "open", component,
+					nonInteraction: 1
 
 			component.closeButton.addEventListener "click", (e) =>
 				@closeMorphButton component
+				ga "send", "event", "morph button", "click", "close", component,
+					nonInteraction: 1
 
 	###*
 	 * Opens the morph button, i.e.

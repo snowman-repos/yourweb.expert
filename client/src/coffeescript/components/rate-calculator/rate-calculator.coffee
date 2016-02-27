@@ -60,12 +60,16 @@ class RateCalculator
 		@el.slider.addEventListener "input", =>
 
 			@updateProjectLength @el.slider.value
+			ga "send", "event", "slider", "slide", "project length change", @el.slider.value,
+				nonInteraction: 1
 
 		# When the user selects a different currency, the
 		# rates should be recalculated for that currency
 		@el.currencySelector.addEventListener "change", =>
 
 			@updateCurrency @el.currencySelector.value
+			ga "send", "event", "select", "selection", "currency change", @el.currencySelector.value,
+				nonInteraction: 1
 
 	###*
 	 * Calculate my hourly, weekly, and minimum rates

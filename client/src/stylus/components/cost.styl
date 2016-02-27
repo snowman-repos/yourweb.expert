@@ -9,13 +9,13 @@
 //       <div class="c-cost__calculator js-calculator">
 //         <div class="c-cost__calculator__slider">
 //           <label for="time-slider" class="c-cost__calculator__slider__label"><small class="c-cost__calculator__slider__label__heading">project length:</small><span class="c-cost__calculator__slider__label__value js-time-slider-value js-time">1</span>&nbsp;<span class="c-cost__calculator__slider__label__text js-time-slider-text">week</span></label>
-//           <input id="time-slider" max="12" min="1" step="1" type="range" value="1" class="o-slider c-cost__calculator__slider__control js-time-slider">
+//           <input id="time-slider" name="projectLength" max="12" min="1" step="1" type="range" value="1" class="o-slider c-cost__calculator__slider__control js-time-slider">
 //           <p class="c-cost__calculator__slider__notice js-slider-notice">(my minimum weekly rate is about <span class="c-cost__calculator__slider__notice__currency js-currency-symbol">$</span><span class="c-cost__calculator__slider__notice__value js-min-rate">2,000</span>)</p>
 //         </div>
 //         <div class="c-cost__calculator__results">
 //           <div class="c-cost__calculator__results__content">
-//             <p class="c-cost__calculator__results__heading">weekly rate:</p>
-//             <select class="o-dropdown-list o-button o-button--blue--sky js-currency">
+//             <label class="c-cost__calculator__results__heading" for="currencySelector">weekly rate:</label>
+//             <select class="o-dropdown-list o-button o-button--blue--sky js-currency" id="currencySelector" name="currencySelector" title="Select a different currency">
 //               <option value="usd" selected>$ USD</option>
 //               <option value="gbp">£ GBP</option>
 //               <option value="eur">€ EUR</option>
@@ -106,6 +106,7 @@ $module-colour = $blue--cerulean
 				display					block
 				font-size				0.75rem
 				font-weight				500
+				margin-bottom 			1rem
 				text-transform			uppercase
 
 			&__value

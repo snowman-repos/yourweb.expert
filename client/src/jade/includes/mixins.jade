@@ -21,7 +21,10 @@ mixin contact-method(item)
 
 	li.o-circular-icon-button
 		a.o-circular-icon-button__link(href="#{item.href}", title="#{item.title}")
-			span.o-circular-icon-button__text!= item.text
+			if item.itemprop
+				span.o-circular-icon-button__text(itemprop="#{item.itemprop}")!= item.text
+			else
+				span.o-circular-icon-button__text!= item.text
 			svg.o-circular-icon-button__link__icon.o-icon(class="o-icon--#{item.icon}", viewBox="0 0 32 32")
 				use(xlink:href="#icon--#{item.icon}")
 

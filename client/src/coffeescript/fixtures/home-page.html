@@ -4,16 +4,16 @@
 </nav>
 <section data-nav-title="About me" id="introduction" class="o-section o-section--dark-blue js-scroll-point js-full-height-section">
   <div class="o-section__content__container">
-    <div aria-labelledby="introduction__header" itemscope="" itemtype="http://data-vocabulary.org/Person" class="c-introduction o-section__content o-media js-full-height-section__content">
+    <div aria-labelledby="introduction__header" itemscope="" itemtype="http://schema.org/Person" class="c-introduction o-section__content o-media js-full-height-section__content">
       <meta itemprop="url" content="https://yourweb.expert"/>
-      <div class="o-media__image"><img alt="Darryl Snow" itemprop="photo" src="/images/darryl-snow.jpg" class="o-image--avatar c-introduction__image"/></div>
+      <div class="o-media__image"><img alt="Picture of me, Darryl Snow" itemprop="photo" src="/images/darryl-snow.jpg" class="o-image--avatar c-introduction__image"/></div>
       <div class="o-media__text">
-        <h1 id="introduction__header" itemprop="name" class="c-introduction__header">Darryl Snow
-          <div itemprop="title" class="u-subheader">web expert</div>
+        <h1 id="introduction__header" class="c-introduction__header"><span itemprop="name">Darryl Snow</span>
+          <div itemprop="jobTitle" class="u-subheader">web expert</div>
         </h1>
-        <p class="c-introduction__text">I'm a freelancer, based&nbsp;in <a href="https://www.google.com/maps/place/Kunming,+Yunnan,+China/@25.021747,102.4608384,10z/data=!3m1!4b1!4m2!3m1!1s0x36d083c31227d3cb:0xccb1f3a4984f0a36" itemprop="address" itemscope="" itemtype="http://data-vocabulary.org/Address" title="View Kunming (UTC-8:00) on a map" class="js-map-link o-inline-link o-inline-link--silver"><span itemprop="locality">Kunming,&nbsp;</span><span itemprop="country">China</span></a>, with over&nbsp;<span class="js-years-of-experience">17</span>&nbsp;years&nbsp;of&nbsp;experience working&nbsp;on&nbsp;the&nbsp;web.</p>
+        <p class="c-introduction__text">I'm a freelancer, based&nbsp;in <a href="https://www.google.com/maps/place/Kunming,+Yunnan,+China/@25.021747,102.4608384,10z/data=!3m1!4b1!4m2!3m1!1s0x36d083c31227d3cb:0xccb1f3a4984f0a36" itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress" title="View Kunming (UTC-8:00) on a map" class="js-map-link o-inline-link o-inline-link--silver"><span itemprop="addressLocality">Kunming,&nbsp;</span><span itemprop="addressCountry">China</span></a>, with over&nbsp;<span class="js-years-of-experience">17</span>&nbsp;years&nbsp;of&nbsp;experience working&nbsp;on&nbsp;the&nbsp;web.</p>
         <ul class="c-introduction__contact-list">
-              <li class="o-circular-icon-button"><a href="mailto:darryl@yourweb.expert" title="Contact me via email: darryl@yourweb.expert" class="o-circular-icon-button__link"><span class="o-circular-icon-button__text">Email: darryl@yourweb.expert</span>
+              <li class="o-circular-icon-button"><a href="mailto:darryl@yourweb.expert" title="Contact me via email: darryl@yourweb.expert" class="o-circular-icon-button__link"><span itemprop="email" class="o-circular-icon-button__text">Email: darryl@yourweb.expert</span>
                   <svg viewBox="0 0 32 32" class="o-circular-icon-button__link__icon o-icon o-icon--mail">
                     <use xlink:href="#icon--mail"></use>
                   </svg></a></li>
@@ -21,7 +21,7 @@
                   <svg viewBox="0 0 32 32" class="o-circular-icon-button__link__icon o-icon o-icon--skype">
                     <use xlink:href="#icon--skype"></use>
                   </svg></a></li>
-              <li class="o-circular-icon-button"><a href="tel:008618669117013" title="Phone me: (+86) 186-6911-7013" class="o-circular-icon-button__link"><span class="o-circular-icon-button__text">Telephone: (+86) 186-6911-7013</span>
+              <li class="o-circular-icon-button"><a href="tel:008618669117013" title="Phone me: (+86) 186-6911-7013" class="o-circular-icon-button__link"><span itemprop="telephone" class="o-circular-icon-button__text">Telephone: (+86) 186-6911-7013</span>
                   <svg viewBox="0 0 32 32" class="o-circular-icon-button__link__icon o-icon o-icon--phone">
                     <use xlink:href="#icon--phone"></use>
                   </svg></a></li>
@@ -175,13 +175,13 @@
       <div class="c-cost__calculator js-calculator">
         <div class="c-cost__calculator__slider">
           <label for="time-slider" class="c-cost__calculator__slider__label"><small class="c-cost__calculator__slider__label__heading">project length:</small><span class="c-cost__calculator__slider__label__value js-time-slider-value js-time">1</span>&nbsp;<span class="c-cost__calculator__slider__label__text js-time-slider-text">week</span></label>
-          <input id="time-slider" max="12" min="1" step="1" type="range" value="1" class="o-slider c-cost__calculator__slider__control js-time-slider"/>
+          <input id="time-slider" name="projectLength" max="12" min="1" step="1" type="range" value="1" class="o-slider c-cost__calculator__slider__control js-time-slider"/>
           <p class="c-cost__calculator__slider__notice js-slider-notice">(my minimum weekly rate is about <span class="c-cost__calculator__slider__notice__currency js-currency-symbol">$</span><span class="c-cost__calculator__slider__notice__value js-min-rate">2,000</span>)</p>
         </div>
         <div class="c-cost__calculator__results">
           <div class="c-cost__calculator__results__content">
-            <p class="c-cost__calculator__results__heading">weekly rate:</p>
-            <select class="o-dropdown-list o-button o-button--blue--sky js-currency">
+            <label for="currencySelector" class="c-cost__calculator__results__heading">weekly rate:</label>
+            <select id="currencySelector" name="currencySelector" title="Select a different currency" class="o-dropdown-list o-button o-button--blue--sky js-currency">
               <option value="usd" selected="selected">$ USD</option>
               <option value="gbp">£ GBP</option>
               <option value="eur">€ EUR</option>
@@ -312,20 +312,20 @@ My deadline is..." class="o-form__input o-form__input--block o-form__input--text
       <form action="/login" method="post" class="o-form c-client-login__form">
         <div class="o-form__input-group js-login-email">
           <label for="login-email" class="o-form__label o-form__label--blue--cerulean">Email:</label>
-          <input id="login-email" maxlength="50" name="login-email" pattern="[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" placeholder="e.g. gordon.shumway@melmac.com" tabindex="1" type="email" class="o-form__input o-form__input--block o-form__input--blue--navy js-login-email-input"/>
+          <input id="login-email" maxlength="50" name="login-email" pattern="[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" placeholder="e.g. gordon.shumway@melmac.com" type="email" class="o-form__input o-form__input--block o-form__input--blue--navy js-login-email-input"/>
           <svg viewBox="0 0 32 32" class="o-icon o-icon--check o-form__input-group__checkmark">
             <use xlink:href="#icon--check"></use>
           </svg>
         </div>
         <div class="o-form__input-group js-login-password">
           <label for="login-password" class="o-form__label o-form__label--blue--cerulean">Password:</label>
-          <input id="login-password" maxlength="50" name="login-password" tabindex="2" type="password" class="o-form__input o-form__input--block o-form__input--blue--navy js-login-password-input"/>
+          <input id="login-password" maxlength="50" name="login-password" type="password" class="o-form__input o-form__input--block o-form__input--blue--navy js-login-password-input"/>
           <svg viewBox="0 0 32 32" class="o-icon o-icon--check o-form__input-group__checkmark">
             <use xlink:href="#icon--check"></use>
           </svg>
         </div>
         <div class="o-form__input-group">
-          <input tabindex="3" type="submit" value="login" class="o-form__submit-button o-button o-button--block o-button--blue--navy is-disabled js-login-button"/>
+          <input type="submit" value="login" class="o-form__submit-button o-button o-button--block o-button--blue--navy is-disabled js-login-button"/>
         </div>
       </form>
     </div>

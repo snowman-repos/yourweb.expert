@@ -32,6 +32,9 @@ describe "Blog", ->
 	]
 
 	beforeEach ->
+
+		window.ga = ->
+
 		loadFixtures "home-page.html"
 		Blog.el.component = document.querySelector ".js-blog"
 		Blog.el.list = document.querySelector ".js-blog-list"

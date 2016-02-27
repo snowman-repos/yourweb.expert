@@ -4,27 +4,29 @@
 
 | Metric           | Target | Actual |
 |------------------|--------|--------|
-| Load time        |   1s   |        |
-| DOMContentLoaded |   1s   |        |
+| Load time        |   3s   |   3.6s |
+| DOMContentLoaded |   2s   |        |
 | Time to render   |   1s   |        |
 
 # Google PageSpeed Index Scores
 
 | Metric           | Target | Actual |
 |------------------|--------|--------|
-| Desktop          |   95   |        |
-| Mobile           |   95   |        |
+| Desktop          |   95   |    80  |
+| Mobile           |   95   |    77  |
 
 # Quantity-based Metrics
 
 | Metric                   | Target | Actual |
 |--------------------------|--------|--------|
-| Total number of requests |    5   |        |
-| Overall page weight      | 350kb  |        |
+| Total number of requests |    5   |    10  |
+| Overall page weight      | 350kb  | 334kb  |
 | Total image weight       | 200kb  |        |
 | Total scripts weight     | 100kb  |        |
 | Total stylesheet weight  |  25kb  |        |
 
 # Other Handy Links
 
-https://www.webpagetest.org/
+* [https://www.webpagetest.org/](https://www.webpagetest.org/)
+* [https://website.grader.com](https://website.grader.com)
+* [https://developers.google.com/speed/pagespeed/insights](https://developers.google.com/speed/pagespeed/insights)

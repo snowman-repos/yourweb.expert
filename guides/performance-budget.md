@@ -12,8 +12,8 @@
 
 | Metric           | Target | Actual |
 |------------------|--------|--------|
-| Desktop          |   95   |    80  |
-| Mobile           |   95   |    77  |
+| Desktop          |   95   |    96  |
+| Mobile           |   95   |    90  |
 
 # Quantity-based Metrics
 

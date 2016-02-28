@@ -51,24 +51,50 @@ class Blog
 		formatedDate = day + " " + month
 
 	###*
-	 * Query the API to retrieve the blog articles.
+	 * Query the API to retrieve the blog articles. I'm
+	 * not worried about having the most up to date
+	 * articles on here and would rather save a request if I
+	 * can so I'll first check if we have articles saved from
+	 * a previous visit in the past week, otherwise we'll
+	 * fetch from the server.
 	###
 	getArticles: ->
 
-		url = api.getURL "blog"
+		makeRequest = =>
 
-		fetch url
-		.then (response)->
+			url = api.getURL "blog"
 
-			response.json()
+			fetch url
+			.then (response)->
 
-		.then (data) =>
+				response.json()
 
-			@handleSuccess data
+			.then (data) =>
 
-		.catch (reason) =>
+				@handleSuccess data
 
-			@handleFailure()
+			.catch (reason) =>
+
+				@handleFailure()
+
+		# localStorage.setItem('testObject', JSON.stringify(testObject));
+		data = JSON.parse localStorage.getItem "articles"
+
+		ONE_WEEK = 60 * 60 * 24 * 7 * 1000
+
+		if data isnt null
+
+			if ((new Date()) - (new Date(data.date))) < ONE_WEEK
+
+				@handleSuccess data.articles
+
+			else
+
+				makeRequest()
+
+		else
+
+			makeRequest()
 
 	###*
 	 * Create a list item DOM node for a blog
@@ -179,6 +205,12 @@ class Blog
 	 * @param  {Object} data A JSON object containing all data for all articles
 	###
 	handleSuccess: (data) ->
+
+		# Save to local storage
+		dataToSave =
+			date: new Date()
+			articles: data
+		localStorage.setItem "articles", JSON.stringify dataToSave
 
 		# Generate the list
 		@populateList data

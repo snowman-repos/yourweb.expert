@@ -106,6 +106,7 @@ class PageTransition
 
 			@hidePage @currentPage
 			@showPage targetPage
+			@resizeWindow()
 
 			@currentPage = targetPage
 
@@ -130,6 +131,13 @@ class PageTransition
 			@el.initialPageOverlay.parentNode.removeChild @el.initialPageOverlay
 
 		, @config.initialDelay
+
+	###*
+	 * Trigger resize to update the full-height sections
+	###
+	resizeWindow: ->
+
+		window.dispatchEvent new CustomEvent "resize"
 
 	###*
 	 * This uses PageJS to handle the routing. If

@@ -48,3 +48,5 @@ npm install -g gulp
 ## TODO
 
 * Lint coffeescript
+* Fix build script on server
+* implement CDN

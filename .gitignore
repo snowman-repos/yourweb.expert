@@ -1,4 +1,3 @@
-/client/public
 /client/src/lib
 /server/config/local.env.coffee
 .DS_Store

@@ -18,7 +18,7 @@ updateStaticCache = ->
 			"/images/icon.png"
 			"/images/twitter-bg.png"
 			"/images/twitter-bg.png"
-			"/fullweb-logo.svg"
+			"/images/fullweb-logo.svg"
 		]
 
 stashInCache = (cacheName, request, response) ->

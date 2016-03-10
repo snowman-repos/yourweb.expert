@@ -15,7 +15,7 @@ module.exports = (gulp, $, config) ->
 			$.util.log $.util.colors.red err.message
 		.pipe $.autoprefixer "last 2 versions", "> 1%"
 		.pipe $.rename config.names.css.compiled
-		.pipe $.header "/* " + config.names.project + " : " + config.version + " : " + new Date() + " */"
+		.pipe $.header "/* " + config.names.project + " : " + config.version + " : " + new Date() + " */\n\n"
 		.pipe $.size
 			showFiles: true
 		.pipe $.if config.env is "dev", $.sourcemaps.write "./"

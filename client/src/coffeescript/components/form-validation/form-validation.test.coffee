@@ -146,12 +146,22 @@ describe "Form Validation", ->
 
 					FormValidation.el[form][input].group.appendChild FormValidation.getError form, input
 
-		errorMessages = document.querySelectorAll ".o-form__error-message"
+		forms = document.querySelectorAll ".o-form"
+
+		errorMessages = []
+
+		for form in forms
+			errorMessages.push.apply errorMessages, Array.prototype.slice.call form.querySelectorAll ".o-form__error-message"
+
 		expect(errorMessages.length).not.toBe 0
 
 		FormValidation.removeAllErrors()
 
-		errorMessages = document.querySelectorAll ".o-form__error-message"
+		errorMessages = []
+
+		for form in forms
+			errorMessages.push.apply errorMessages, Array.prototype.slice.call form.querySelectorAll ".o-form__error-message"
+
 		expect(errorMessages.length).toBe 0
 
 	it "should reset an input", ->

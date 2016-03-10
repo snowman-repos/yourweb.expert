@@ -6,8 +6,8 @@ imagesCacheName = version + "images"
 
 updateStaticCache = ->
 
-	caches.open(staticCacheName).then
-	cache = ->
+	caches.open(staticCacheName)
+	.then (cache) ->
 		# These items must be cached for the Service Worker to complete installation
 		cache.addAll [
 			"/scripts/main.min.js"
@@ -23,18 +23,16 @@ updateStaticCache = ->
 
 stashInCache = (cacheName, request, response) ->
 
-	caches.open(cacheName).then
-	cache = ->
+	caches.open(cacheName).then (cache) ->
+
 		cache.put request, response
 
 # Limit the number of items in a specified cache.
 trimCache = (cacheName, maxItems) ->
 
-	caches.open(cacheName).then
-	cache = ->
+	caches.open(cacheName).then (cache) ->
 
-		cache.keys().then
-		keys = ->
+		cache.keys().then (keys) ->
 
 			if keys.length > maxItems
 
@@ -43,45 +41,35 @@ trimCache = (cacheName, maxItems) ->
 # Remove caches whose name is no longer valid
 clearOldCaches = ->
 
-	caches.keys().then
-	keys = ->
+	caches.keys().then (keys) ->
 
-		Promise.all keys.filter(
+		Promise.all keys.filter (key) ->
 
-			key = ->
+			key.indexOf(version) != 0
 
-				key.indexOf(version) != 0
+		.map (key) ->
 
-		).map(
+			caches.delete key
 
-			key = ->
-
-				caches.delete key
-		)
-
-self.addEventListener "install",
-event = ->
+self.addEventListener "install", (event) ->
 
 	event.waitUntil updateStaticCache().then ->
 
 		self.skipWaiting()
 
-self.addEventListener "activate",
-event = ->
+self.addEventListener "activate", (event) ->
 
 	event.waitUntil clearOldCaches().then ->
 
 		self.clients.claim()
 
-self.addEventListener "message",
-event = ->
+self.addEventListener "message", (event) ->
 
 	if event.data.command == "trimCaches"
 		trimCache pagesCacheName, 35
 		trimCache imagesCacheName, 20
 
-self.addEventListener "fetch",
-event = ->
+self.addEventListener "fetch", (event) ->
 
 	request = event.request
 	url = new URL request.url
@@ -140,112 +128,3 @@ event = ->
 					return new Response("<svg role='img' aria-labelledby='offline-title' viewBox='0 0 400 300' xmlns='http://www.w3.org/2000/svg'><title id='offline-title'>Offline</title><g fill='none' fill-rule='evenodd'><path fill='#D8D8D8' d='M0 0h400v300H0z'/><text fill='#9B9B9B' font-family='Helvetica Neue,Arial,Helvetica,sans-serif' font-size='72' font-weight='bold'><tspan x='93' y='172'>offline</tspan></text></g></svg>", headers: "Content-Type": "image/svg+xml")
 			)
 	)
-
-# "use strict"
-# console.info "WORKER: executing."
-#
-# version = "v1::"
-#
-# offlineFundamentals = [
-# 	""
-# 	"styles/main.min.css"
-# 	"scripts/main.min.js"
-# 	"images/icon.png"
-# 	"images/darryl-snow.jpg"
-# 	"images/darryl-snow.webp"
-# 	"images/fullweb-logo.svg"
-# ]
-#
-# self.addEventListener "install", (event) ->
-#
-# 	console.info "WORKER: install event in progress."
-#
-# 	event.waitUntil caches.open(version + "fundamentals").then (cache) ->
-#
-# 		cache.addAll offlineFundamentals
-#
-# 	.then ->
-#
-# 		console.info "WORKER: install completed"
-#
-# self.addEventListener "fetch", (event) ->
-#
-# 	console.info "WORKER: fetch event in progress."
-#
-# 	if event.request.method isnt "GET"
-#
-# 		console.info "WORKER: fetch event ignored.", event.request.method, event.request.url
-#
-# 	if /\.jpg$|.png$/.test event.request.url
-#
-# 		supportsWebp = false
-#
-# 		if event.request.headers.has "accept"
-#
-# 			supportsWebp = event.request.headers.get("accept").includes "webp"
-#
-# 		console.log supportsWebp
-#
-# 		if supportsWebp
-#
-# 			req = event.request.clone()
-#
-# 			returnUrl = req.url.substr(0, req.url.lastIndexOf(".")) + ".webp"
-#
-# 			event.respondWith fetch returnUrl,
-# 				mode: "no-cors"
-#
-# 	event.respondWith caches.match(event.request).then (cached) ->
-#
-# 		networked = fetch(event.request).then(fetchedFromNetwork, unableToResolve).catch(unableToResolve)
-#
-# 		fetchedFromNetwork = (response) ->
-#
-# 			cacheCopy = response.clone()
-#
-# 			console.info "WORKER: fetch response from network.", event.request.url
-#
-# 			caches.open(version + "pages").then (cache) ->
-#
-# 				cache.put event.request, cacheCopy
-#
-# 			.then ->
-#
-# 				console.info "WORKER: fetch response stored in cache.", event.request.url
-#
-# 			response
-#
-# 		unableToResolve = ->
-#
-# 			console.info "WORKER: fetch request failed in both cache and network."
-#
-# 			new Response("<h1>Service Unavailable</h1>",
-# 				status: 503
-# 				statusText: "Service Unavailable"
-# 				headers: new Headers "Content-Type": "text/html")
-#
-# 		if cached
-#
-# 			console.info "WORKER: fetch event (cached)", event.request.url
-#
-# 		else
-#
-# 			console.info "WORKER: fetch event (networked)", event.request.url
-#
-# self.addEventListener "activate", (event) ->
-#
-# 	console.info "WORKER: activate event in progress."
-#
-# 	event.waitUntil caches.keys().then (keys) ->
-#
-# 		Promise.all keys.filter (key) ->
-#
-# 			!key.startsWith(version)
-#
-# 		.map (key) ->
-#
-# 			caches.delete key
-#
-# 	.then ->
-#
-# 		console.info "WORKER: activate completed."

@@ -17,19 +17,19 @@ head
 	meta(name="twitter:url", property="og:url", content="https://yourweb.expert")
 	meta(name="twitter:title", property="og:title", content="Darryl Snow - Your Web Expert")
 	meta(name="twitter:description", property="og:description", content="#{description}")
-	meta(name="twitter:image", property="og:image", content="#{url}/images/darryl-snow.png")
+	meta(name="twitter:image", property="og:image", content="#{url}/images/darryl-snow.jpg")
 	meta(name="Baiduspider", content="noarchive")
 
 	link(rel="canonical", href="#{url}")
-	//- link(rel="alternate amphtml", href="#{url}/amp", type="text/html")
+	link(rel="alternate amphtml", href="#{url}/amp", type="text/html")
 	link(rel="me", href="mailto:darryl@yourweb.expert")
 	link(rel="me", href="sms:+8618669117013")
-	link(rel="webmention", href="#{url}/webmention")
+	link(rel="me", href="https://github.com/darryl-snow")
+	link(rel="me", href="https://twitter.com/dazsnow")
 	link(rel="authorization_endpoint", href="https://indieauth.com/auth")
 	link(rel="authorization_endpoint", href="https://indiecert.net/auth")
 	link(rel="token_endpoint", href="https://tokens.indieauth.com/token")
 	link(rel="token_endpoint", href="https://indiecert.net/token")
-	link(rel="micropub", href="#{url}/micropub")
 	link(rel="openid.server", href="https://indieauth.com/openid")
 	link(rel="openid.delegate", href="#{url}/")
 	link(rel="author", href="/about/me", title="About Darryl Snow")
@@ -64,5 +64,5 @@ head
 			}
 		})();
 	
-	script(async, src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js")
+	script(async, defer, src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js")
 	link(rel="preconnect", crossorigin, href="https://fonts.googleapis.com/css?family=Raleway:100,300,600")

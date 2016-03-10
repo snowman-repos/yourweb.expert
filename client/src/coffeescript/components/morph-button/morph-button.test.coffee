@@ -24,15 +24,15 @@ describe "Morph Button", ->
 		for component in MorphButton.components
 
 			expect(component.element.classList).not.toContain "is-open"
-			MorphButton.openMorphButton component
+			MorphButton.openMorphButton component.element
 			expect(component.element.classList).toContain "is-open"
 
 	it "should morph from dialog to button", ->
 
 		for component in MorphButton.components
-			MorphButton.openMorphButton component
+			MorphButton.openMorphButton component.element
 			expect(component.element.classList).toContain "is-open"
-			MorphButton.closeMorphButton component
+			MorphButton.closeMorphButton component.element
 			expect(component.element.classList).not.toContain "is-open"
 
 	it "should show the morph button components", ->

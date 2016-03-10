@@ -254,7 +254,13 @@ class FormValidation
 	###
 	removeAllErrors: ->
 
-		errors = document.querySelectorAll ".o-form__error-message"
+		forms = document.querySelectorAll(".o-form")
+
+		errors = []
+
+		for form in forms
+
+			errors.push.apply errors, Array.prototype.slice.call form.querySelectorAll ".o-form__error-message"
 
 		for error in errors
 			error.parentNode.removeChild error

@@ -32,7 +32,7 @@ module.exports = (gulp, $, config) ->
 			.pipe $.plumber()
 			.pipe buffer()
 			.pipe $.if config.env is "dev", $.sourcemaps.init()
-			.pipe $.header "/* " + config.names.project + " : " + config.version + " : " + new Date() + " */"
+			.pipe $.header "/* " + config.names.project + " : " + config.version + " : " + new Date() + " */\n\n"
 			.pipe $.size
 				showFiles: true
 			.pipe $.if config.env is "dev", $.sourcemaps.write "./"
@@ -48,7 +48,7 @@ module.exports = (gulp, $, config) ->
 			.pipe $.plumber()
 			.pipe buffer()
 			.pipe $.if config.env is "dev", $.sourcemaps.init()
-			.pipe $.header "/* " + config.names.project + " : " + config.version + " : " + new Date() + " */"
+			.pipe $.header "/* " + config.names.project + " : " + config.version + " : " + new Date() + " */\n\n"
 			.pipe $.size
 				showFiles: true
 			.pipe $.if config.env is "dev", $.sourcemaps.write "./"

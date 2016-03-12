@@ -21,7 +21,9 @@ include ../includes/mixins
 				use(xlink:href="#icon--cool")
 			| .
 
-		img.o-image.o-image--small.o-image--bordered.o-image--right(alt="My wife and 3 dogs", src="/images/family.jpg")
+		figure.o-image.o-image--right.o-image--small
+			img.o-image.o-image--bordered(alt="My wife and 3 dogs", src="/images/family.jpg")
+			figcaption My wife and some of our dogs
 
 		p Since moving to China, the only 2 things I really missed from home were beer and people. Well, I taught myself to brew beer, set up a little nanobrewery, and also established the 
 			a.o-inline-link.o-inline-link--blue--cerulean(href="http://kunmingbeer.org", title="Go to the Kunming Craft Beer Society website") Kunming Craft Beer Society
@@ -60,7 +62,8 @@ include ../includes/mixins
 			a.o-inline-link.o-inline-link--blue--cerulean(href="https://github.com/darryl-snow/new-site", title="Go to the github repo for this site") Check out the code for this site
 			| .
 
-		img.o-image.o-image--bordered.o-image--left(alt="An example of my clean code", src="/images/clean-code.png")
+		figure.o-image
+			img.o-image.o-image--bordered(alt="An example of my clean code", src="/images/clean-code.png")
 
 		p The UI design is increasingly dependent on front-end coding as well. The industry is only now starting to realise that the limitations of the code places constraints on the design possibilities. Not just that, the shift towards the mobile web has forced us to think up cleaner, more efficient user interfaces that perform faster and more smoothly. The best way to design, then, is to do it right in the web browser. I like to design small, modular chunks that get put together to make the final product; in this way the design is modular and scalable. After all, a web project is no longer a collection of pages, but a system for delivering some content or functionality. By doing the design work using code, rather than a tool like Photoshop, I can show you the design exactly as it will appear in the final product. You can not only see it, but you can test it, use it, touch it, pinch it and zoom it, turn it, interact with it. I design websites and apps, not pictures of websites and apps. If there's anything that needs changing, it's a very quick and easy fix. The best part? No more development work is needed - the design doesn't have to be passed on to someone to code up because it's already coded up. It saves you time and money!
 

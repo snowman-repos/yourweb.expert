@@ -1,4 +1,3 @@
-"use strict"
 version = "v1.01::"
 staticCacheName = version + "static"
 pagesCacheName = version + "pages"
@@ -16,7 +15,6 @@ updateStaticCache = ->
 			"/images/clean-code.png"
 			"/images/family.jpg"
 			"/images/icon.png"
-			"/images/twitter-bg.png"
 			"/images/twitter-bg.png"
 			"/images/fullweb-logo.svg"
 		]
@@ -46,6 +44,7 @@ clearOldCaches = ->
 		Promise.all keys.filter (key) ->
 
 			key.indexOf(version) != 0
+			return
 
 		.map (key) ->
 

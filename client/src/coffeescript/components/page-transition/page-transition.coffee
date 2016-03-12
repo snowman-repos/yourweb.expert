@@ -152,17 +152,14 @@ class PageTransition
 		# (no need for transitions because the
 		# initial overlay is visible on page load)
 		Page "/", =>
-			console.info "Home page"
 			@noTransition "home"
 			ga "send", "pageview", "/"
 
 		Page "/about/me", =>
-			console.info "About page"
 			@noTransition "about"
 			ga "send", "pageview", "/about/me"
 
 		Page "/contract", =>
-			console.info "Contract page"
 			@noTransition "contract"
 			ga "send", "pageview", "/contract"
 

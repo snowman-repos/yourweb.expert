@@ -86,7 +86,11 @@ class Blog
 
 			if ((new Date()) - (new Date(data.date))) < ONE_WEEK
 
-				@handleSuccess data.articles
+				# Wait for the navigation menu items
+				# to be added by the navigation component
+				setTimeout =>
+					@handleSuccess data.articles
+				, 1000
 
 			else
 

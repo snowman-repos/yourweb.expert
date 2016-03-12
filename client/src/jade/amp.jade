@@ -7,8 +7,7 @@ html(amp, lang="en")
 
 		meta(charset="utf-8")
 
-		title
-			block title
+		title Darryl Snow - Your Web Expert
 
 		meta(http-equiv="X-UA-Compatible", content="IE=edge")
 		meta(name="description", content="#{description}")
@@ -234,9 +233,6 @@ html(amp, lang="en")
 			}
 			img {
 				border: 0;
-			}
-			svg:not(:root) {
-				overflow: hidden;
 			}
 			figure {
 				margin: 1em 40px;
@@ -607,6 +603,7 @@ html(amp, lang="en")
 				position: relative;
 				background: rgba(52,73,94,0.4);
 				border-radius: 50%;
+				color: #95a5a6;
 				display: block;
 				line-height: 50%;
 				margin: 0.5em 0.25em;
@@ -916,7 +913,8 @@ html(amp, lang="en")
 			.o-list-item__content {
 				font-weight: 300;
 				line-height: 1.5;
-				margin-bottom: 0;
+				margin: 1em auto 0 auto;
+				max-width: 75ch;
 				text-align: center;
 			}
 			.o-list-item--blue--medium {
@@ -1105,13 +1103,11 @@ html(amp, lang="en")
 				overflow: hidden;
 			}
 			.o-section__header {
-				margin-left: 0.52083%;
-				margin-right: 0.52083%;
-				width: 98.95949999999999%;
 				font-size: 2rem;
 				margin-bottom: 1.5rem;
 				padding: 0 0.75rem;
 				text-align: center;
+				width: calc(100% - 1.5rem);
 			}
 			.o-section__header--blue--medium {
 				color: #34495e;
@@ -1192,7 +1188,8 @@ html(amp, lang="en")
 				text-align: center;
 			}
 			.c-cost__text {
-				margin-top: 0;
+				margin: 0 auto 1em auto;
+				max-width: 75ch;
 			}
 			.c-cost__calculator {
 				display: -webkit-flex;
@@ -1278,6 +1275,10 @@ html(amp, lang="en")
 			.c-introduction {
 				background: #243342;
 				color: #95a5a6;
+			}
+			.c-introduction__text {
+				margin: 1em auto;
+				max-width: 75ch;
 			}
 			.c-introduction__image {
 				position: relative;

@@ -1,4 +1,4 @@
-version = "v1.01::"
+version = "v1.02::"
 staticCacheName = version + "static"
 pagesCacheName = version + "pages"
 imagesCacheName = version + "images"
@@ -41,14 +41,10 @@ clearOldCaches = ->
 
 	caches.keys().then (keys) ->
 
-		Promise.all keys.filter (key) ->
-
-			key.indexOf(version) != 0
-			return
-
-		.map (key) ->
-
-			caches.delete key
+		return Promise.all(keys
+			.filter((key) -> key.indexOf(version) isnt 0)
+			.map((key) -> caches.delete(key))
+		)
 
 self.addEventListener "install", (event) ->
 

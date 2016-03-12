@@ -17,3 +17,6 @@ module.exports = (gulp, $, config) ->
 
 		gulp.src config.paths.client.images.entry + "*.xml"
 		.pipe gulp.dest config.paths.client.images.dest
+
+		gulp.src config.paths.client.images.entry + "**/*.ico"
+		.pipe gulp.dest config.paths.client.images.dest

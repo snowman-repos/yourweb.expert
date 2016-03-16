@@ -33,6 +33,9 @@ module.exports = (app) ->
 	app.get "/about/me", (req, res) ->
 		res.sendFile path.join __dirname + "/../client/public/about.html"
 
+	app.get "/offline", (req, res) ->
+		res.sendFile path.join __dirname + "/../client/public/offline.html"
+
 	# All undefined asset or API routes should return a 404
 
 	app.route "/:url(api|auth|about)/*", (req, res) ->

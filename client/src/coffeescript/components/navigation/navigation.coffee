@@ -27,7 +27,10 @@ class Navigation
 	activateItem: (item) ->
 
 		@resetItems()
-		@links[item.id].classList.add "is-active"
+
+		if @el.menu
+
+			@links[item.id].classList.add "is-active"
 
 	###*
 	 * Attach an event listener to a navigation menu
@@ -52,7 +55,9 @@ class Navigation
 	###
 	addItem: (item) ->
 
-		@el.menu.appendChild @generateListItem item
+		if @el.menu
+
+			@el.menu.appendChild @generateListItem item
 
 	###*
 	 * Generate the required DOM nodes for a navigation

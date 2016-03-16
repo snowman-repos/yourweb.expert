@@ -27,6 +27,7 @@ npm install -g gulp
 * npm run start:dev		(run the back-end API server then run the dev server for the front-end )
 * npm run build			(compile front-end code for production)
 * npm start				(run the server)
+* npm run stop			(stop the server)
 * npm run test:fe		(run front-end tests)
 * npm run test:be		(run back-end tests)
 * npm test				(run both front-end and back-end tests)

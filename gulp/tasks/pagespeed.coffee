@@ -8,14 +8,33 @@ module.exports = (gulp, $, config) ->
 
 		psi config.url,
 			strategy: "mobile"
-			threshold: 85
 		.then (data) ->
-			$.util.log "Speed score: " + data.ruleGroups.SPEED.score
-			$.util.log "Usability score: " + data.ruleGroups.USABILITY.score
+
+			$.util.log "\nMOBILE\n=========="
+
+			usabilityScore = data.ruleGroups.USABILITY.score
+
+			if usabilityScore >= 95 # performance budget
+				$.util.log $.util.colors.green "Speed score: " + usabilityScore
+			else
+				$.util.log $.util.colors.red "Speed score: " + usabilityScore
+
+			speedScore = data.ruleGroups.SPEED.score
+
+			if speedScore >= 95 # performance budget
+				$.util.log $.util.colors.green "Speed score: " + speedScore
+			else
+				$.util.log $.util.colors.red "Speed score: " + speedScore
 
 		psi config.url,
 			strategy: "desktop"
-			threshold: 85
 		.then (data) ->
-			$.util.log "Speed score: " + data.ruleGroups.SPEED.score
-			$.util.log "Usability score: " + data.ruleGroups.USABILITY.score
+
+			$.util.log "\nDESKTOP\n=========="
+
+			score = data.ruleGroups.SPEED.score
+
+			if score >= 95 # performance budget
+				$.util.log $.util.colors.green "Speed score: " + score
+			else
+				$.util.log $.util.colors.red "Speed score: " + score

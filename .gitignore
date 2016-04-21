@@ -1,5 +1,6 @@
 /client/src/lib
 /server/config/local.env.coffee
+/server/config/currencies.json
 .DS_Store
 .token
 node_modules

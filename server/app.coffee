@@ -33,10 +33,6 @@ config = require "./config/environment"
 # Connect to database
 # mongoose.connect config.mongo.uri, config.mongo.options
 
-# Populate DB with sample data
-# if config.seedDB
-# 	require "./config/seed"
-
 # Setup server
 app = express()
 server = require("http").createServer app

@@ -1,11 +1,11 @@
 {
-  "author": "Your Name",
+  "author": "Darryl Snow",
   "background_color": "#ffffff",
   "default_locale": "en",
   "description": "",
   "display": "browser",
   "homepage_url": "https://url.com",
-  "icons": [ 
+  "icons": [
     {
      "src": "\/images\/icons\/android-icon-36x36.png",
      "sizes": "36x36",

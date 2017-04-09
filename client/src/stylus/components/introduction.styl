@@ -1,43 +1,57 @@
 // @name Introduction Component
 // @description Section introducing who I am, what I do, and how to contact me.
 // @markup
-// <section data-nav-title="About me" id="introduction" class="o-section o-section--dark-blue js-full-height-section">
+// <section data-nav-title="About me" id="introduction" class="o-section o-section--dark-blue js-scroll-point js-full-height-section o-section--full-height">
 //   <div class="o-section__content__container">
 //     <div aria-labelledby="introduction__header" itemscope="" itemtype="http://schema.org/Person" class="c-introduction o-section__content o-media js-full-height-section__content">
 //       <meta itemprop="url" content="https://yourweb.expert">
-//       <div class="o-media__image"><img src="/images/darryl-snow.jpg" alt="Picture of me, Darryl Snow" itemprop="image" class="o-image--avatar c-introduction__image"></div>
+//       <div class="o-media__image"><img alt="Picture of me, Darryl Snow" itemprop="image" src="/images/darryl-snow.jpg" class="o-image--avatar c-introduction__image"></div>
 //       <div class="o-media__text">
-//         <h1 id="introduction__header" class="c-introduction__header">
-//           <span itemprop="name">Darryl Snow</span>
+//         <h1 id="introduction__header" class="c-introduction__header"><span itemprop="name">Darryl Snow</span>
 //           <div itemprop="jobTitle" class="u-subheader">web expert</div>
 //         </h1>
-//         <p class="c-introduction__text">I'm&nbsp;a&nbsp;freelancer, based&nbsp;in&nbsp;<a href="https://www.google.com/maps/place/Kunming,+Yunnan,+China/@25.021747,102.4608384,10z/data=!3m1!4b1!4m2!3m1!1s0x36d083c31227d3cb:0xccb1f3a4984f0a36" title="View Kunming (UTC-8:00) on a map" itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress" class="js-map-link o-inline-link o-inline-link--silver"><span itemprop="addressLocality">Kunming,&nbsp;</span><span itemprop="addressCountry">China</span></a>, with&nbsp;over&nbsp;<span class="js-years-of-experience">17</span>&nbsp;years&nbsp;of&nbsp;experience working&nbsp;on&nbsp;the&nbsp;web.</p>
+//         <p class="c-introduction__text">I'm a digital product manager, based&nbsp;in <a href="https://www.google.com/maps/@31.2052858,121.439904,12z" itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress" title="View Shanghai (UTC-8:00) on a map" class="js-map-link o-inline-link o-inline-link--silver"><span itemprop="addressLocality">Shanghai,&nbsp;</span><span itemprop="addressCountry">China</span></a>, with over&nbsp;<span class="js-years-of-experience">18</span>&nbsp;years&nbsp;of&nbsp;experience working&nbsp;on&nbsp;the&nbsp;web.</p>
 //         <ul class="c-introduction__contact-list">
-//           <li class="o-circular-icon-button"><a href="mailto:darryl@yourweb.expert" title="Contact me via email: darryl@yourweb.expert" class="o-circular-icon-button__link"><span class="o-circular-icon-button__text" itemprop="email">Email: darryl@yourweb.expert</span>
-//             <svg viewBox="0 0 32 32" class="o-circular-icon-button__link__icon o-icon o-icon--mail">
-//               <use xlink:href="#icon--mail"></use>
-//             </svg></a></li>
-//           <li class="o-circular-icon-button"><a href="skype:darryl.snow?add" title="Add me on Skype: darryl.snow" class="o-circular-icon-button__link"><span class="o-circular-icon-button__text">Skype: darryl.snow</span>
-//             <svg viewBox="0 0 32 32" class="o-circular-icon-button__link__icon o-icon o-icon--skype">
-//               <use xlink:href="#icon--skype"></use>
-//             </svg></a></li>
-//           <li class="o-circular-icon-button"><a href="tel:008618669117013" title="Phone me: (+86) 186-6911-7013" class="o-circular-icon-button__link"><span class="o-circular-icon-button__text" itemprop="telephone">Telephone: (+86) 186-6911-7013</span>
-//             <svg viewBox="0 0 32 32" class="o-circular-icon-button__link__icon o-icon o-icon--phone">
-//               <use xlink:href="#icon--phone"></use>
-//             </svg></a></li>
-//           <li class="o-circular-icon-button"><a href="https://github.com/darryl-snow" title="Follow me on Github: darryl-snow" class="o-circular-icon-button__link"><span class="o-circular-icon-button__text">Github: https://github.com/darryl-snow</span>
-//             <svg viewBox="0 0 32 32" class="o-circular-icon-button__link__icon o-icon o-icon--github-alt">
-//               <use xlink:href="#icon--github-alt"></use>
-//             </svg></a></li>
-//           <li class="o-circular-icon-button"><a href="https://www.linkedin.com/profile/view?id=AAMAAApURbQB8js72nhiwqJ5zNxxxUjjU_viclI" title="Read my Linkedin profile" class="o-circular-icon-button__link"><span class="o-circular-icon-button__text">Linkedin: https://www.linkedin.com/profile/view?id=AAMAAApURbQB8js72nhiwqJ5zNxxxUjjU_viclI</span>
-//             <svg viewBox="0 0 32 32" class="o-circular-icon-button__link__icon o-icon o-icon--linkedin">
-//               <use xlink:href="#icon--linkedin"></use>
-//             </svg></a></li>
+//           <li class="o-circular-icon-button">
+// 					  <a href="mailto:darryl@yourweb.expert" title="Contact me via email: darryl@yourweb.expert" class="o-circular-icon-button__link"><span itemprop="email" class="o-circular-icon-button__text">darryl@yourweb.expert</span>
+//               <svg viewBox="0 0 32 32" class="o-circular-icon-button__link__icon o-icon o-icon--mail">
+//                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--mail"></use>
+//               </svg>
+// 						</a>
+// 					</li>
+//           <li class="o-circular-icon-button">
+// 					  <a href="skype:darryl.snow?add" title="Add me on Skype: darryl.snow" class="o-circular-icon-button__link"><span class="o-circular-icon-button__text">Skype: darryl.snow</span>
+//               <svg viewBox="0 0 32 32" class="o-circular-icon-button__link__icon o-icon o-icon--skype">
+//                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--skype"></use>
+//               </svg>
+// 						</a>
+// 					</li>
+//           <li class="o-circular-icon-button">
+// 					  <a href="tel:008615618012702" title="Phone me: (+86) 156-1801-2702" class="o-circular-icon-button__link"><span itemprop="telephone" class="o-circular-icon-button__text">(+86) 156-1801-2702</span>
+//               <svg viewBox="0 0 32 32" class="o-circular-icon-button__link__icon o-icon o-icon--phone">
+//                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--phone"></use>
+//               </svg>
+// 						</a>
+// 					</li>
+//           <li class="o-circular-icon-button">
+// 					  <a href="https://github.com/darryl-snow" title="Follow me on Github: darryl-snow" class="o-circular-icon-button__link"><span class="o-circular-icon-button__text">Github: https://github.com/darryl-snow</span>
+//               <svg viewBox="0 0 32 32" class="o-circular-icon-button__link__icon o-icon o-icon--github-alt">
+//                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--github-alt"></use>
+//               </svg>
+// 						</a>
+// 					</li>
+//           <li class="o-circular-icon-button">
+// 					  <a href="https://www.linkedin.com/profile/view?id=AAMAAApURbQB8js72nhiwqJ5zNxxxUjjU_viclI" title="Read my Linkedin profile" class="o-circular-icon-button__link"><span class="o-circular-icon-button__text">Linkedin: https://www.linkedin.com/profile/view?id=AAMAAApURbQB8js72nhiwqJ5zNxxxUjjU_viclI</span>
+//               <svg viewBox="0 0 32 32" class="o-circular-icon-button__link__icon o-icon o-icon--linkedin">
+//                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--linkedin"></use>
+//               </svg>
+// 						</a>
+// 					</li>
 //         </ul>
 //       </div>
 //     </div>
 //   </div>
-//   <svg preserveAspectRatio="none" role="separator" viewBox="0 0 612 100" version="1.1" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" class="o-section__end">
+//   <svg preserveAspectRatio="none" role="separator" version="1.1" viewBox="0 0 612 100" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" class="o-section__end">
 //     <g>
 //       <path d="M612,0H0.912C306.459,100,489.777,100,612,0z"></path>
 //     </g>

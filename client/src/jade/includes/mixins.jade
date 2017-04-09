@@ -62,7 +62,6 @@ mixin section-end(colour)
 mixin service-list-item(config)
 
 	li.o-list-item.o-list-item--blue--medium
-		h3.o-list-item__header
+		h3.o-list-item__header.c-services__list__header
 			+checkmark
-			| #{config.header}
-		p.o-list-item__content!=config.content
+			| #{config.content}

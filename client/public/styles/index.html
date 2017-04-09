@@ -897,43 +897,57 @@
 		<h3 class="c-styleguide__subsection__header">Example</h3>
 
 		<div class="c-styleguide__example">
-			 <section data-nav-title="About me" id="introduction" class="o-section o-section--dark-blue js-full-height-section">
+			 <section data-nav-title="About me" id="introduction" class="o-section o-section--dark-blue js-scroll-point js-full-height-section o-section--full-height">
    <div class="o-section__content__container">
      <div aria-labelledby="introduction__header" itemscope="" itemtype="http://schema.org/Person" class="c-introduction o-section__content o-media js-full-height-section__content">
        <meta itemprop="url" content="https://yourweb.expert">
-       <div class="o-media__image"><img src="/images/darryl-snow.jpg" alt="Picture of me, Darryl Snow" itemprop="image" class="o-image--avatar c-introduction__image"></div>
+       <div class="o-media__image"><img alt="Picture of me, Darryl Snow" itemprop="image" src="/images/darryl-snow.jpg" class="o-image--avatar c-introduction__image"></div>
        <div class="o-media__text">
-         <h1 id="introduction__header" class="c-introduction__header">
-           <span itemprop="name">Darryl Snow</span>
+         <h1 id="introduction__header" class="c-introduction__header"><span itemprop="name">Darryl Snow</span>
            <div itemprop="jobTitle" class="u-subheader">web expert</div>
          </h1>
-         <p class="c-introduction__text">I'm&nbsp;a&nbsp;freelancer, based&nbsp;in&nbsp;<a href="https://www.google.com/maps/place/Kunming,+Yunnan,+China/@25.021747,102.4608384,10z/data=!3m1!4b1!4m2!3m1!1s0x36d083c31227d3cb:0xccb1f3a4984f0a36" title="View Kunming (UTC-8:00) on a map" itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress" class="js-map-link o-inline-link o-inline-link--silver"><span itemprop="addressLocality">Kunming,&nbsp;</span><span itemprop="addressCountry">China</span></a>, with&nbsp;over&nbsp;<span class="js-years-of-experience">17</span>&nbsp;years&nbsp;of&nbsp;experience working&nbsp;on&nbsp;the&nbsp;web.</p>
+         <p class="c-introduction__text">I'm a digital product manager, based&nbsp;in <a href="https://www.google.com/maps/@31.2052858,121.439904,12z" itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress" title="View Shanghai (UTC-8:00) on a map" class="js-map-link o-inline-link o-inline-link--silver"><span itemprop="addressLocality">Shanghai,&nbsp;</span><span itemprop="addressCountry">China</span></a>, with over&nbsp;<span class="js-years-of-experience">18</span>&nbsp;years&nbsp;of&nbsp;experience working&nbsp;on&nbsp;the&nbsp;web.</p>
          <ul class="c-introduction__contact-list">
-           <li class="o-circular-icon-button"><a href="mailto:darryl@yourweb.expert" title="Contact me via email: darryl@yourweb.expert" class="o-circular-icon-button__link"><span class="o-circular-icon-button__text" itemprop="email">Email: darryl@yourweb.expert</span>
-             <svg viewBox="0 0 32 32" class="o-circular-icon-button__link__icon o-icon o-icon--mail">
-               <use xlink:href="#icon--mail"></use>
-             </svg></a></li>
-           <li class="o-circular-icon-button"><a href="skype:darryl.snow?add" title="Add me on Skype: darryl.snow" class="o-circular-icon-button__link"><span class="o-circular-icon-button__text">Skype: darryl.snow</span>
-             <svg viewBox="0 0 32 32" class="o-circular-icon-button__link__icon o-icon o-icon--skype">
-               <use xlink:href="#icon--skype"></use>
-             </svg></a></li>
-           <li class="o-circular-icon-button"><a href="tel:008618669117013" title="Phone me: (+86) 186-6911-7013" class="o-circular-icon-button__link"><span class="o-circular-icon-button__text" itemprop="telephone">Telephone: (+86) 186-6911-7013</span>
-             <svg viewBox="0 0 32 32" class="o-circular-icon-button__link__icon o-icon o-icon--phone">
-               <use xlink:href="#icon--phone"></use>
-             </svg></a></li>
-           <li class="o-circular-icon-button"><a href="https://github.com/darryl-snow" title="Follow me on Github: darryl-snow" class="o-circular-icon-button__link"><span class="o-circular-icon-button__text">Github: https://github.com/darryl-snow</span>
-             <svg viewBox="0 0 32 32" class="o-circular-icon-button__link__icon o-icon o-icon--github-alt">
-               <use xlink:href="#icon--github-alt"></use>
-             </svg></a></li>
-           <li class="o-circular-icon-button"><a href="https://www.linkedin.com/profile/view?id=AAMAAApURbQB8js72nhiwqJ5zNxxxUjjU_viclI" title="Read my Linkedin profile" class="o-circular-icon-button__link"><span class="o-circular-icon-button__text">Linkedin: https://www.linkedin.com/profile/view?id=AAMAAApURbQB8js72nhiwqJ5zNxxxUjjU_viclI</span>
-             <svg viewBox="0 0 32 32" class="o-circular-icon-button__link__icon o-icon o-icon--linkedin">
-               <use xlink:href="#icon--linkedin"></use>
-             </svg></a></li>
+           <li class="o-circular-icon-button">
+ 					  <a href="mailto:darryl@yourweb.expert" title="Contact me via email: darryl@yourweb.expert" class="o-circular-icon-button__link"><span itemprop="email" class="o-circular-icon-button__text">darryl@yourweb.expert</span>
+               <svg viewBox="0 0 32 32" class="o-circular-icon-button__link__icon o-icon o-icon--mail">
+                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--mail"></use>
+               </svg>
+ 						</a>
+ 					</li>
+           <li class="o-circular-icon-button">
+ 					  <a href="skype:darryl.snow?add" title="Add me on Skype: darryl.snow" class="o-circular-icon-button__link"><span class="o-circular-icon-button__text">Skype: darryl.snow</span>
+               <svg viewBox="0 0 32 32" class="o-circular-icon-button__link__icon o-icon o-icon--skype">
+                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--skype"></use>
+               </svg>
+ 						</a>
+ 					</li>
+           <li class="o-circular-icon-button">
+ 					  <a href="tel:008615618012702" title="Phone me: (+86) 156-1801-2702" class="o-circular-icon-button__link"><span itemprop="telephone" class="o-circular-icon-button__text">(+86) 156-1801-2702</span>
+               <svg viewBox="0 0 32 32" class="o-circular-icon-button__link__icon o-icon o-icon--phone">
+                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--phone"></use>
+               </svg>
+ 						</a>
+ 					</li>
+           <li class="o-circular-icon-button">
+ 					  <a href="https://github.com/darryl-snow" title="Follow me on Github: darryl-snow" class="o-circular-icon-button__link"><span class="o-circular-icon-button__text">Github: https://github.com/darryl-snow</span>
+               <svg viewBox="0 0 32 32" class="o-circular-icon-button__link__icon o-icon o-icon--github-alt">
+                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--github-alt"></use>
+               </svg>
+ 						</a>
+ 					</li>
+           <li class="o-circular-icon-button">
+ 					  <a href="https://www.linkedin.com/profile/view?id=AAMAAApURbQB8js72nhiwqJ5zNxxxUjjU_viclI" title="Read my Linkedin profile" class="o-circular-icon-button__link"><span class="o-circular-icon-button__text">Linkedin: https://www.linkedin.com/profile/view?id=AAMAAApURbQB8js72nhiwqJ5zNxxxUjjU_viclI</span>
+               <svg viewBox="0 0 32 32" class="o-circular-icon-button__link__icon o-icon o-icon--linkedin">
+                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--linkedin"></use>
+               </svg>
+ 						</a>
+ 					</li>
          </ul>
        </div>
      </div>
    </div>
-   <svg preserveAspectRatio="none" role="separator" viewBox="0 0 612 100" version="1.1" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" class="o-section__end">
+   <svg preserveAspectRatio="none" role="separator" version="1.1" viewBox="0 0 612 100" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" class="o-section__end">
      <g>
        <path d="M612,0H0.912C306.459,100,489.777,100,612,0z"></path>
      </g>
@@ -943,43 +957,57 @@
 		</div>
 
 		<pre class="c-styleguide__markup">
- &lt;section data-nav-title="About me" id="introduction" class="o-section o-section--dark-blue js-full-height-section"&gt;
+ &lt;section data-nav-title="About me" id="introduction" class="o-section o-section--dark-blue js-scroll-point js-full-height-section o-section--full-height"&gt;
    &lt;div class="o-section__content__container"&gt;
      &lt;div aria-labelledby="introduction__header" itemscope="" itemtype="http://schema.org/Person" class="c-introduction o-section__content o-media js-full-height-section__content"&gt;
        &lt;meta itemprop="url" content="https://yourweb.expert"&gt;
-       &lt;div class="o-media__image"&gt;&lt;img src="/images/darryl-snow.jpg" alt="Picture of me, Darryl Snow" itemprop="image" class="o-image--avatar c-introduction__image"&gt;&lt;/div&gt;
+       &lt;div class="o-media__image"&gt;&lt;img alt="Picture of me, Darryl Snow" itemprop="image" src="/images/darryl-snow.jpg" class="o-image--avatar c-introduction__image"&gt;&lt;/div&gt;
        &lt;div class="o-media__text"&gt;
-         &lt;h1 id="introduction__header" class="c-introduction__header"&gt;
-           &lt;span itemprop="name"&gt;Darryl Snow&lt;/span&gt;
+         &lt;h1 id="introduction__header" class="c-introduction__header"&gt;&lt;span itemprop="name"&gt;Darryl Snow&lt;/span&gt;
            &lt;div itemprop="jobTitle" class="u-subheader"&gt;web expert&lt;/div&gt;
          &lt;/h1&gt;
-         &lt;p class="c-introduction__text"&gt;I'm&nbsp;a&nbsp;freelancer, based&nbsp;in&nbsp;&lt;a href="https://www.google.com/maps/place/Kunming,+Yunnan,+China/@25.021747,102.4608384,10z/data=!3m1!4b1!4m2!3m1!1s0x36d083c31227d3cb:0xccb1f3a4984f0a36" title="View Kunming (UTC-8:00) on a map" itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress" class="js-map-link o-inline-link o-inline-link--silver"&gt;&lt;span itemprop="addressLocality"&gt;Kunming,&nbsp;&lt;/span&gt;&lt;span itemprop="addressCountry"&gt;China&lt;/span&gt;&lt;/a&gt;, with&nbsp;over&nbsp;&lt;span class="js-years-of-experience"&gt;17&lt;/span&gt;&nbsp;years&nbsp;of&nbsp;experience working&nbsp;on&nbsp;the&nbsp;web.&lt;/p&gt;
+         &lt;p class="c-introduction__text"&gt;I'm a digital product manager, based&nbsp;in &lt;a href="https://www.google.com/maps/@31.2052858,121.439904,12z" itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress" title="View Shanghai (UTC-8:00) on a map" class="js-map-link o-inline-link o-inline-link--silver"&gt;&lt;span itemprop="addressLocality"&gt;Shanghai,&nbsp;&lt;/span&gt;&lt;span itemprop="addressCountry"&gt;China&lt;/span&gt;&lt;/a&gt;, with over&nbsp;&lt;span class="js-years-of-experience"&gt;18&lt;/span&gt;&nbsp;years&nbsp;of&nbsp;experience working&nbsp;on&nbsp;the&nbsp;web.&lt;/p&gt;
          &lt;ul class="c-introduction__contact-list"&gt;
-           &lt;li class="o-circular-icon-button"&gt;&lt;a href="mailto:darryl@yourweb.expert" title="Contact me via email: darryl@yourweb.expert" class="o-circular-icon-button__link"&gt;&lt;span class="o-circular-icon-button__text" itemprop="email"&gt;Email: darryl@yourweb.expert&lt;/span&gt;
-             &lt;svg viewBox="0 0 32 32" class="o-circular-icon-button__link__icon o-icon o-icon--mail"&gt;
-               &lt;use xlink:href="#icon--mail"&gt;&lt;/use&gt;
-             &lt;/svg&gt;&lt;/a&gt;&lt;/li&gt;
-           &lt;li class="o-circular-icon-button"&gt;&lt;a href="skype:darryl.snow?add" title="Add me on Skype: darryl.snow" class="o-circular-icon-button__link"&gt;&lt;span class="o-circular-icon-button__text"&gt;Skype: darryl.snow&lt;/span&gt;
-             &lt;svg viewBox="0 0 32 32" class="o-circular-icon-button__link__icon o-icon o-icon--skype"&gt;
-               &lt;use xlink:href="#icon--skype"&gt;&lt;/use&gt;
-             &lt;/svg&gt;&lt;/a&gt;&lt;/li&gt;
-           &lt;li class="o-circular-icon-button"&gt;&lt;a href="tel:008618669117013" title="Phone me: (+86) 186-6911-7013" class="o-circular-icon-button__link"&gt;&lt;span class="o-circular-icon-button__text" itemprop="telephone"&gt;Telephone: (+86) 186-6911-7013&lt;/span&gt;
-             &lt;svg viewBox="0 0 32 32" class="o-circular-icon-button__link__icon o-icon o-icon--phone"&gt;
-               &lt;use xlink:href="#icon--phone"&gt;&lt;/use&gt;
-             &lt;/svg&gt;&lt;/a&gt;&lt;/li&gt;
-           &lt;li class="o-circular-icon-button"&gt;&lt;a href="https://github.com/darryl-snow" title="Follow me on Github: darryl-snow" class="o-circular-icon-button__link"&gt;&lt;span class="o-circular-icon-button__text"&gt;Github: https://github.com/darryl-snow&lt;/span&gt;
-             &lt;svg viewBox="0 0 32 32" class="o-circular-icon-button__link__icon o-icon o-icon--github-alt"&gt;
-               &lt;use xlink:href="#icon--github-alt"&gt;&lt;/use&gt;
-             &lt;/svg&gt;&lt;/a&gt;&lt;/li&gt;
-           &lt;li class="o-circular-icon-button"&gt;&lt;a href="https://www.linkedin.com/profile/view?id=AAMAAApURbQB8js72nhiwqJ5zNxxxUjjU_viclI" title="Read my Linkedin profile" class="o-circular-icon-button__link"&gt;&lt;span class="o-circular-icon-button__text"&gt;Linkedin: https://www.linkedin.com/profile/view?id=AAMAAApURbQB8js72nhiwqJ5zNxxxUjjU_viclI&lt;/span&gt;
-             &lt;svg viewBox="0 0 32 32" class="o-circular-icon-button__link__icon o-icon o-icon--linkedin"&gt;
-               &lt;use xlink:href="#icon--linkedin"&gt;&lt;/use&gt;
-             &lt;/svg&gt;&lt;/a&gt;&lt;/li&gt;
+           &lt;li class="o-circular-icon-button"&gt;
+ 					  &lt;a href="mailto:darryl@yourweb.expert" title="Contact me via email: darryl@yourweb.expert" class="o-circular-icon-button__link"&gt;&lt;span itemprop="email" class="o-circular-icon-button__text"&gt;darryl@yourweb.expert&lt;/span&gt;
+               &lt;svg viewBox="0 0 32 32" class="o-circular-icon-button__link__icon o-icon o-icon--mail"&gt;
+                 &lt;use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--mail"&gt;&lt;/use&gt;
+               &lt;/svg&gt;
+ 						&lt;/a&gt;
+ 					&lt;/li&gt;
+           &lt;li class="o-circular-icon-button"&gt;
+ 					  &lt;a href="skype:darryl.snow?add" title="Add me on Skype: darryl.snow" class="o-circular-icon-button__link"&gt;&lt;span class="o-circular-icon-button__text"&gt;Skype: darryl.snow&lt;/span&gt;
+               &lt;svg viewBox="0 0 32 32" class="o-circular-icon-button__link__icon o-icon o-icon--skype"&gt;
+                 &lt;use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--skype"&gt;&lt;/use&gt;
+               &lt;/svg&gt;
+ 						&lt;/a&gt;
+ 					&lt;/li&gt;
+           &lt;li class="o-circular-icon-button"&gt;
+ 					  &lt;a href="tel:008615618012702" title="Phone me: (+86) 156-1801-2702" class="o-circular-icon-button__link"&gt;&lt;span itemprop="telephone" class="o-circular-icon-button__text"&gt;(+86) 156-1801-2702&lt;/span&gt;
+               &lt;svg viewBox="0 0 32 32" class="o-circular-icon-button__link__icon o-icon o-icon--phone"&gt;
+                 &lt;use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--phone"&gt;&lt;/use&gt;
+               &lt;/svg&gt;
+ 						&lt;/a&gt;
+ 					&lt;/li&gt;
+           &lt;li class="o-circular-icon-button"&gt;
+ 					  &lt;a href="https://github.com/darryl-snow" title="Follow me on Github: darryl-snow" class="o-circular-icon-button__link"&gt;&lt;span class="o-circular-icon-button__text"&gt;Github: https://github.com/darryl-snow&lt;/span&gt;
+               &lt;svg viewBox="0 0 32 32" class="o-circular-icon-button__link__icon o-icon o-icon--github-alt"&gt;
+                 &lt;use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--github-alt"&gt;&lt;/use&gt;
+               &lt;/svg&gt;
+ 						&lt;/a&gt;
+ 					&lt;/li&gt;
+           &lt;li class="o-circular-icon-button"&gt;
+ 					  &lt;a href="https://www.linkedin.com/profile/view?id=AAMAAApURbQB8js72nhiwqJ5zNxxxUjjU_viclI" title="Read my Linkedin profile" class="o-circular-icon-button__link"&gt;&lt;span class="o-circular-icon-button__text"&gt;Linkedin: https://www.linkedin.com/profile/view?id=AAMAAApURbQB8js72nhiwqJ5zNxxxUjjU_viclI&lt;/span&gt;
+               &lt;svg viewBox="0 0 32 32" class="o-circular-icon-button__link__icon o-icon o-icon--linkedin"&gt;
+                 &lt;use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon--linkedin"&gt;&lt;/use&gt;
+               &lt;/svg&gt;
+ 						&lt;/a&gt;
+ 					&lt;/li&gt;
          &lt;/ul&gt;
        &lt;/div&gt;
      &lt;/div&gt;
    &lt;/div&gt;
-   &lt;svg preserveAspectRatio="none" role="separator" viewBox="0 0 612 100" version="1.1" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" class="o-section__end"&gt;
+   &lt;svg preserveAspectRatio="none" role="separator" version="1.1" viewBox="0 0 612 100" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" class="o-section__end"&gt;
      &lt;g&gt;
        &lt;path d="M612,0H0.912C306.459,100,489.777,100,612,0z"&gt;&lt;/path&gt;
      &lt;/g&gt;
@@ -1063,82 +1091,89 @@
 		<h3 class="c-styleguide__subsection__header">Example</h3>
 
 		<div class="c-styleguide__example">
-			 <section data-nav-title="Find out what I do" data-when-in-view="check-checkmarks" id="services" class="o-section o-section--sky-blue">
+			 <section data-nav-title="Find out what I do" data-when-in-view="check-checkmarks" id="services" class="o-section o-section--padding-top o-section--sky-blue js-scroll-point is-in-view">
    <div class="o-section__content__container">
      <div aria-labelledby="services__header" class="c-services o-section__content">
- 	     <h2 id="services__header" class="o-section__header o-section__header--blue--medium">What I do</h2>
- 	     <ul class="c-services__list">
- 	       <li class="o-list-item o-list-item--blue--medium">
- 	         <h3 class="o-list-item__header">
- 	           <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 98.5 98.5" enable-background="new 0 0 98.5 98.5" xml:space="preserve" class="o-list-item__header__icon o-icon o-icon--checkmark o-icon--checkmark--blue--medium js-checkmark is-checked">
- 	             <g>
- 	           	   <polyline fill="none" points="26.7,54.4 40,67.7 71.8,34.8 " stroke-width="8" stroke-miterlimit="2" class="o-icon--checkmark__check"></polyline>
- 	           	   <g>
- 	           	     <circle fill="none" stroke-width="12" stroke-miterlimit="10" cx="49.2" cy="49.2" r="49.2" class="o-icon--checkmark__circle"></circle>
- 	           	   </g>
- 	             </g>
- 	           </svg>Full-stack development
- 	         </h3>
- 	         <p class="o-list-item__content">I can support your design and development teams with front and back-end development, Content Management System (CMS) setup, database setup, as well as testing, deployment, and workflow setup.</p>
- 	       </li>
- 	       <li class="o-list-item o-list-item--blue--medium">
- 	         <h3 class="o-list-item__header">
- 	           <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 98.5 98.5" enable-background="new 0 0 98.5 98.5" xml:space="preserve" class="o-list-item__header__icon o-icon o-icon--checkmark o-icon--checkmark--blue--medium js-checkmark is-checked">
- 	             <g>
- 	           	   <polyline fill="none" points="26.7,54.4 40,67.7 71.8,34.8 " stroke-width="8" stroke-miterlimit="2" class="o-icon--checkmark__check"></polyline>
- 	           	   <g>
- 	           	     <circle fill="none" stroke-width="12" stroke-miterlimit="10" cx="49.2" cy="49.2" r="49.2" class="o-icon--checkmark__circle"></circle>
- 	           	   </g>
- 	             </g>
- 	           </svg>JavaScript Apps
- 	         </h3>
- 	         <p class="o-list-item__content">I &heart; JavaScript and always keep up to date with the latest frameworks like Angular and React. That means fast, responsive, and modular apps that can run on any device.</p>
- 	       </li>
- 	       <li class="o-list-item o-list-item--blue--medium">
- 	         <h3 class="o-list-item__header">
- 	       	   <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 98.5 98.5" enable-background="new 0 0 98.5 98.5" xml:space="preserve" class="o-list-item__header__icon o-icon o-icon--checkmark o-icon--checkmark--blue--medium js-checkmark is-checked">
- 	             <g>
- 	           	   <polyline fill="none" points="26.7,54.4 40,67.7 71.8,34.8 " stroke-width="8" stroke-miterlimit="2" class="o-icon--checkmark__check"></polyline>
- 	           	   <g>
- 	           	     <circle fill="none" stroke-width="12" stroke-miterlimit="10" cx="49.2" cy="49.2" r="49.2" class="o-icon--checkmark__circle"></circle>
- 	           	   </g>
- 	             </g>
- 	           </svg>Design / UX
- 	         </h3>
- 	         <p class="o-list-item__content">I design clean and simple user interfaces directly in the web browser, without the need for static comps. That makes my designs testable, modular, scalable, reusable, more realistic, and quicker to produce.</p>
- 	       </li>
- 	       <li class="o-list-item o-list-item--blue--medium">
- 	         <h3 class="o-list-item__header">
- 	       	   <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 98.5 98.5" enable-background="new 0 0 98.5 98.5" xml:space="preserve" class="o-list-item__header__icon o-icon o-icon--checkmark o-icon--checkmark--blue--medium js-checkmark is-checked">
- 	             <g>
- 	           	   <polyline fill="none" points="26.7,54.4 40,67.7 71.8,34.8 " stroke-width="8" stroke-miterlimit="2" class="o-icon--checkmark__check"></polyline>
- 	           	   <g>
- 	           	     <circle fill="none" stroke-width="12" stroke-miterlimit="10" cx="49.2" cy="49.2" r="49.2" class="o-icon--checkmark__circle"></circle>
- 	           	   </g>
- 	             </g>
- 	           </svg>Project Management
- 	         </h3>
- 	         <p class="o-list-item__content">Producing a web project on time and on budget requires the coordination of many different roles. I have experience in all of these roles and follow an agile methodology that involves breaking the project into small workable chunks, then tracking and reporting on a daily basis.</p>
- 	       </li>
- 	       <li class="o-list-item o-list-item--blue--medium">
- 	         <h3 class="o-list-item__header">
- 	       	   <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 98.5 98.5" enable-background="new 0 0 98.5 98.5" xml:space="preserve" class="o-list-item__header__icon o-icon o-icon--checkmark o-icon--checkmark--blue--medium js-checkmark is-checked">
- 	             <g>
- 	           	   <polyline fill="none" points="26.7,54.4 40,67.7 71.8,34.8 " stroke-width="8" stroke-miterlimit="2" class="o-icon--checkmark__check"></polyline>
- 	           	   <g>
- 	           	     <circle fill="none" stroke-width="12" stroke-miterlimit="10" cx="49.2" cy="49.2" r="49.2" class="o-icon--checkmark__circle"></circle>
- 	           	   </g>
- 	             </g>
- 	           </svg>Consultancy
- 	         </h3>
- 	         <p class="o-list-item__content">I enjoy teaching and fixing things. If you or your team are finding problems with how you work together, how to scale your codebase, how to optimise your design process, how to write more modular UIs then I can help increase the value of your product or organisation.</p>
- 	       </li>
+       <h2 id="services__header" class="o-section__header o-section__header--blue--medium">What I do</h2>
+       <p class="c-services__text">I’m a hyper-organised agile fanatic, and a certified Scrum Product Owner who genuinely geeks out on process. I’ve covered many roles in the industry, so fit well into any team, and have years of experience in building, managing, and training such digital product teams. What do I do? I work with great teams to make great products for the web and mobile devices.</p>
+       <ul class="c-services__list">
+         <li class="o-list-item o-list-item--blue--medium">
+           <h3 class="o-list-item__header c-services__list__header">
+             <svg enable-background="new 0 0 98.5 98.5" version="1.1" viewBox="0 0 98.5 98.5" x="0px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" y="0px" class="o-list-item__header__icon o-icon o-icon--checkmark o-icon--checkmark--blue--medium js-checkmark is-checked">
+               <g>
+                 <polyline fill="none" points="26.7,54.4 40,67.7 71.8,34.8 " stroke-miterlimit="2" stroke-width="8" class="o-icon--checkmark__check"></polyline>
+                 <g>
+                   <circle cx="49.2" cy="49.2" fill="none" r="49.2" stroke-miterlimit="10" stroke-width="12" class="o-icon--checkmark__circle"></circle>
+                 </g>
+               </g>
+             </svg>Product Management
+           </h3>
+         </li>
+         <li class="o-list-item o-list-item--blue--medium">
+           <h3 class="o-list-item__header c-services__list__header">
+             <svg enable-background="new 0 0 98.5 98.5" version="1.1" viewBox="0 0 98.5 98.5" x="0px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" y="0px" class="o-list-item__header__icon o-icon o-icon--checkmark o-icon--checkmark--blue--medium js-checkmark is-checked">
+               <g>
+                 <polyline fill="none" points="26.7,54.4 40,67.7 71.8,34.8 " stroke-miterlimit="2" stroke-width="8" class="o-icon--checkmark__check"></polyline>
+                 <g>
+                   <circle cx="49.2" cy="49.2" fill="none" r="49.2" stroke-miterlimit="10" stroke-width="12" class="o-icon--checkmark__circle"></circle>
+                 </g>
+               </g>
+             </svg>Agile Scrum
+           </h3>
+         </li>
+         <li class="o-list-item o-list-item--blue--medium">
+           <h3 class="o-list-item__header c-services__list__header">
+             <svg enable-background="new 0 0 98.5 98.5" version="1.1" viewBox="0 0 98.5 98.5" x="0px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" y="0px" class="o-list-item__header__icon o-icon o-icon--checkmark o-icon--checkmark--blue--medium js-checkmark is-checked">
+               <g>
+                 <polyline fill="none" points="26.7,54.4 40,67.7 71.8,34.8 " stroke-miterlimit="2" stroke-width="8" class="o-icon--checkmark__check"></polyline>
+                 <g>
+                   <circle cx="49.2" cy="49.2" fill="none" r="49.2" stroke-miterlimit="10" stroke-width="12" class="o-icon--checkmark__circle"></circle>
+                 </g>
+               </g>
+             </svg>User Experience
+           </h3>
+         </li>
+         <li class="o-list-item o-list-item--blue--medium">
+           <h3 class="o-list-item__header c-services__list__header">
+             <svg enable-background="new 0 0 98.5 98.5" version="1.1" viewBox="0 0 98.5 98.5" x="0px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" y="0px" class="o-list-item__header__icon o-icon o-icon--checkmark o-icon--checkmark--blue--medium js-checkmark is-checked">
+               <g>
+                 <polyline fill="none" points="26.7,54.4 40,67.7 71.8,34.8 " stroke-miterlimit="2" stroke-width="8" class="o-icon--checkmark__check"></polyline>
+                 <g>
+                   <circle cx="49.2" cy="49.2" fill="none" r="49.2" stroke-miterlimit="10" stroke-width="12" class="o-icon--checkmark__circle"></circle>
+                 </g>
+               </g>
+             </svg>Full-Stack Web Development
+           </h3>
+         </li>
+         <li class="o-list-item o-list-item--blue--medium">
+           <h3 class="o-list-item__header c-services__list__header">
+             <svg enable-background="new 0 0 98.5 98.5" version="1.1" viewBox="0 0 98.5 98.5" x="0px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" y="0px" class="o-list-item__header__icon o-icon o-icon--checkmark o-icon--checkmark--blue--medium js-checkmark is-checked">
+               <g>
+                 <polyline fill="none" points="26.7,54.4 40,67.7 71.8,34.8 " stroke-miterlimit="2" stroke-width="8" class="o-icon--checkmark__check"></polyline>
+                 <g>
+                   <circle cx="49.2" cy="49.2" fill="none" r="49.2" stroke-miterlimit="10" stroke-width="12" class="o-icon--checkmark__circle"></circle>
+                 </g>
+               </g>
+             </svg>Digital Marketing Strategy
+           </h3>
+         </li>
+         <li class="o-list-item o-list-item--blue--medium">
+           <h3 class="o-list-item__header c-services__list__header">
+             <svg enable-background="new 0 0 98.5 98.5" version="1.1" viewBox="0 0 98.5 98.5" x="0px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" y="0px" class="o-list-item__header__icon o-icon o-icon--checkmark o-icon--checkmark--blue--medium js-checkmark is-checked">
+               <g>
+                 <polyline fill="none" points="26.7,54.4 40,67.7 71.8,34.8 " stroke-miterlimit="2" stroke-width="8" class="o-icon--checkmark__check"></polyline>
+                 <g>
+                   <circle cx="49.2" cy="49.2" fill="none" r="49.2" stroke-miterlimit="10" stroke-width="12" class="o-icon--checkmark__circle"></circle>
+                 </g>
+               </g>
+             </svg>Mobile Apps
+           </h3>
+         </li>
        </ul>
- 	   <div class="c-services__footer">
- 	     <a data-page="about" href="/about/me" title="" class="o-button o-button--ghost o-button--ghost--blue--medium js-trigger-page-transition">want to know more?</a></div>
- 	   </div>
+       <div class="c-services__footer"><a data-page="about" href="/about/me" title="" class="o-button o-button--ghost o-button--ghost--blue--medium js-trigger-page-transition">want to know more?</a></div>
+     </div>
    </div>
-   <svg preserveAspectRatio="none" role="separator" viewBox="0 0 612 100" version="1.1" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" class="o-section__end">
+   <svg preserveAspectRatio="none" role="separator" version="1.1" viewBox="0 0 612 100" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" class="o-section__end">
      <g>
        <path d="M612,0H0.912C306.459,100,489.777,100,612,0z"></path>
      </g>
@@ -1148,82 +1183,89 @@
 		</div>
 
 		<pre class="c-styleguide__markup">
- &lt;section data-nav-title="Find out what I do" data-when-in-view="check-checkmarks" id="services" class="o-section o-section--sky-blue"&gt;
+ &lt;section data-nav-title="Find out what I do" data-when-in-view="check-checkmarks" id="services" class="o-section o-section--padding-top o-section--sky-blue js-scroll-point is-in-view"&gt;
    &lt;div class="o-section__content__container"&gt;
      &lt;div aria-labelledby="services__header" class="c-services o-section__content"&gt;
- 	     &lt;h2 id="services__header" class="o-section__header o-section__header--blue--medium"&gt;What I do&lt;/h2&gt;
- 	     &lt;ul class="c-services__list"&gt;
- 	       &lt;li class="o-list-item o-list-item--blue--medium"&gt;
- 	         &lt;h3 class="o-list-item__header"&gt;
- 	           &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 98.5 98.5" enable-background="new 0 0 98.5 98.5" xml:space="preserve" class="o-list-item__header__icon o-icon o-icon--checkmark o-icon--checkmark--blue--medium js-checkmark is-checked"&gt;
- 	             &lt;g&gt;
- 	           	   &lt;polyline fill="none" points="26.7,54.4 40,67.7 71.8,34.8 " stroke-width="8" stroke-miterlimit="2" class="o-icon--checkmark__check"&gt;&lt;/polyline&gt;
- 	           	   &lt;g&gt;
- 	           	     &lt;circle fill="none" stroke-width="12" stroke-miterlimit="10" cx="49.2" cy="49.2" r="49.2" class="o-icon--checkmark__circle"&gt;&lt;/circle&gt;
- 	           	   &lt;/g&gt;
- 	             &lt;/g&gt;
- 	           &lt;/svg&gt;Full-stack development
- 	         &lt;/h3&gt;
- 	         &lt;p class="o-list-item__content"&gt;I can support your design and development teams with front and back-end development, Content Management System (CMS) setup, database setup, as well as testing, deployment, and workflow setup.&lt;/p&gt;
- 	       &lt;/li&gt;
- 	       &lt;li class="o-list-item o-list-item--blue--medium"&gt;
- 	         &lt;h3 class="o-list-item__header"&gt;
- 	           &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 98.5 98.5" enable-background="new 0 0 98.5 98.5" xml:space="preserve" class="o-list-item__header__icon o-icon o-icon--checkmark o-icon--checkmark--blue--medium js-checkmark is-checked"&gt;
- 	             &lt;g&gt;
- 	           	   &lt;polyline fill="none" points="26.7,54.4 40,67.7 71.8,34.8 " stroke-width="8" stroke-miterlimit="2" class="o-icon--checkmark__check"&gt;&lt;/polyline&gt;
- 	           	   &lt;g&gt;
- 	           	     &lt;circle fill="none" stroke-width="12" stroke-miterlimit="10" cx="49.2" cy="49.2" r="49.2" class="o-icon--checkmark__circle"&gt;&lt;/circle&gt;
- 	           	   &lt;/g&gt;
- 	             &lt;/g&gt;
- 	           &lt;/svg&gt;JavaScript Apps
- 	         &lt;/h3&gt;
- 	         &lt;p class="o-list-item__content"&gt;I &heart; JavaScript and always keep up to date with the latest frameworks like Angular and React. That means fast, responsive, and modular apps that can run on any device.&lt;/p&gt;
- 	       &lt;/li&gt;
- 	       &lt;li class="o-list-item o-list-item--blue--medium"&gt;
- 	         &lt;h3 class="o-list-item__header"&gt;
- 	       	   &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 98.5 98.5" enable-background="new 0 0 98.5 98.5" xml:space="preserve" class="o-list-item__header__icon o-icon o-icon--checkmark o-icon--checkmark--blue--medium js-checkmark is-checked"&gt;
- 	             &lt;g&gt;
- 	           	   &lt;polyline fill="none" points="26.7,54.4 40,67.7 71.8,34.8 " stroke-width="8" stroke-miterlimit="2" class="o-icon--checkmark__check"&gt;&lt;/polyline&gt;
- 	           	   &lt;g&gt;
- 	           	     &lt;circle fill="none" stroke-width="12" stroke-miterlimit="10" cx="49.2" cy="49.2" r="49.2" class="o-icon--checkmark__circle"&gt;&lt;/circle&gt;
- 	           	   &lt;/g&gt;
- 	             &lt;/g&gt;
- 	           &lt;/svg&gt;Design / UX
- 	         &lt;/h3&gt;
- 	         &lt;p class="o-list-item__content"&gt;I design clean and simple user interfaces directly in the web browser, without the need for static comps. That makes my designs testable, modular, scalable, reusable, more realistic, and quicker to produce.&lt;/p&gt;
- 	       &lt;/li&gt;
- 	       &lt;li class="o-list-item o-list-item--blue--medium"&gt;
- 	         &lt;h3 class="o-list-item__header"&gt;
- 	       	   &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 98.5 98.5" enable-background="new 0 0 98.5 98.5" xml:space="preserve" class="o-list-item__header__icon o-icon o-icon--checkmark o-icon--checkmark--blue--medium js-checkmark is-checked"&gt;
- 	             &lt;g&gt;
- 	           	   &lt;polyline fill="none" points="26.7,54.4 40,67.7 71.8,34.8 " stroke-width="8" stroke-miterlimit="2" class="o-icon--checkmark__check"&gt;&lt;/polyline&gt;
- 	           	   &lt;g&gt;
- 	           	     &lt;circle fill="none" stroke-width="12" stroke-miterlimit="10" cx="49.2" cy="49.2" r="49.2" class="o-icon--checkmark__circle"&gt;&lt;/circle&gt;
- 	           	   &lt;/g&gt;
- 	             &lt;/g&gt;
- 	           &lt;/svg&gt;Project Management
- 	         &lt;/h3&gt;
- 	         &lt;p class="o-list-item__content"&gt;Producing a web project on time and on budget requires the coordination of many different roles. I have experience in all of these roles and follow an agile methodology that involves breaking the project into small workable chunks, then tracking and reporting on a daily basis.&lt;/p&gt;
- 	       &lt;/li&gt;
- 	       &lt;li class="o-list-item o-list-item--blue--medium"&gt;
- 	         &lt;h3 class="o-list-item__header"&gt;
- 	       	   &lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 98.5 98.5" enable-background="new 0 0 98.5 98.5" xml:space="preserve" class="o-list-item__header__icon o-icon o-icon--checkmark o-icon--checkmark--blue--medium js-checkmark is-checked"&gt;
- 	             &lt;g&gt;
- 	           	   &lt;polyline fill="none" points="26.7,54.4 40,67.7 71.8,34.8 " stroke-width="8" stroke-miterlimit="2" class="o-icon--checkmark__check"&gt;&lt;/polyline&gt;
- 	           	   &lt;g&gt;
- 	           	     &lt;circle fill="none" stroke-width="12" stroke-miterlimit="10" cx="49.2" cy="49.2" r="49.2" class="o-icon--checkmark__circle"&gt;&lt;/circle&gt;
- 	           	   &lt;/g&gt;
- 	             &lt;/g&gt;
- 	           &lt;/svg&gt;Consultancy
- 	         &lt;/h3&gt;
- 	         &lt;p class="o-list-item__content"&gt;I enjoy teaching and fixing things. If you or your team are finding problems with how you work together, how to scale your codebase, how to optimise your design process, how to write more modular UIs then I can help increase the value of your product or organisation.&lt;/p&gt;
- 	       &lt;/li&gt;
+       &lt;h2 id="services__header" class="o-section__header o-section__header--blue--medium"&gt;What I do&lt;/h2&gt;
+       &lt;p class="c-services__text"&gt;I’m a hyper-organised agile fanatic, and a certified Scrum Product Owner who genuinely geeks out on process. I’ve covered many roles in the industry, so fit well into any team, and have years of experience in building, managing, and training such digital product teams. What do I do? I work with great teams to make great products for the web and mobile devices.&lt;/p&gt;
+       &lt;ul class="c-services__list"&gt;
+         &lt;li class="o-list-item o-list-item--blue--medium"&gt;
+           &lt;h3 class="o-list-item__header c-services__list__header"&gt;
+             &lt;svg enable-background="new 0 0 98.5 98.5" version="1.1" viewBox="0 0 98.5 98.5" x="0px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" y="0px" class="o-list-item__header__icon o-icon o-icon--checkmark o-icon--checkmark--blue--medium js-checkmark is-checked"&gt;
+               &lt;g&gt;
+                 &lt;polyline fill="none" points="26.7,54.4 40,67.7 71.8,34.8 " stroke-miterlimit="2" stroke-width="8" class="o-icon--checkmark__check"&gt;&lt;/polyline&gt;
+                 &lt;g&gt;
+                   &lt;circle cx="49.2" cy="49.2" fill="none" r="49.2" stroke-miterlimit="10" stroke-width="12" class="o-icon--checkmark__circle"&gt;&lt;/circle&gt;
+                 &lt;/g&gt;
+               &lt;/g&gt;
+             &lt;/svg&gt;Product Management
+           &lt;/h3&gt;
+         &lt;/li&gt;
+         &lt;li class="o-list-item o-list-item--blue--medium"&gt;
+           &lt;h3 class="o-list-item__header c-services__list__header"&gt;
+             &lt;svg enable-background="new 0 0 98.5 98.5" version="1.1" viewBox="0 0 98.5 98.5" x="0px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" y="0px" class="o-list-item__header__icon o-icon o-icon--checkmark o-icon--checkmark--blue--medium js-checkmark is-checked"&gt;
+               &lt;g&gt;
+                 &lt;polyline fill="none" points="26.7,54.4 40,67.7 71.8,34.8 " stroke-miterlimit="2" stroke-width="8" class="o-icon--checkmark__check"&gt;&lt;/polyline&gt;
+                 &lt;g&gt;
+                   &lt;circle cx="49.2" cy="49.2" fill="none" r="49.2" stroke-miterlimit="10" stroke-width="12" class="o-icon--checkmark__circle"&gt;&lt;/circle&gt;
+                 &lt;/g&gt;
+               &lt;/g&gt;
+             &lt;/svg&gt;Agile Scrum
+           &lt;/h3&gt;
+         &lt;/li&gt;
+         &lt;li class="o-list-item o-list-item--blue--medium"&gt;
+           &lt;h3 class="o-list-item__header c-services__list__header"&gt;
+             &lt;svg enable-background="new 0 0 98.5 98.5" version="1.1" viewBox="0 0 98.5 98.5" x="0px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" y="0px" class="o-list-item__header__icon o-icon o-icon--checkmark o-icon--checkmark--blue--medium js-checkmark is-checked"&gt;
+               &lt;g&gt;
+                 &lt;polyline fill="none" points="26.7,54.4 40,67.7 71.8,34.8 " stroke-miterlimit="2" stroke-width="8" class="o-icon--checkmark__check"&gt;&lt;/polyline&gt;
+                 &lt;g&gt;
+                   &lt;circle cx="49.2" cy="49.2" fill="none" r="49.2" stroke-miterlimit="10" stroke-width="12" class="o-icon--checkmark__circle"&gt;&lt;/circle&gt;
+                 &lt;/g&gt;
+               &lt;/g&gt;
+             &lt;/svg&gt;User Experience
+           &lt;/h3&gt;
+         &lt;/li&gt;
+         &lt;li class="o-list-item o-list-item--blue--medium"&gt;
+           &lt;h3 class="o-list-item__header c-services__list__header"&gt;
+             &lt;svg enable-background="new 0 0 98.5 98.5" version="1.1" viewBox="0 0 98.5 98.5" x="0px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" y="0px" class="o-list-item__header__icon o-icon o-icon--checkmark o-icon--checkmark--blue--medium js-checkmark is-checked"&gt;
+               &lt;g&gt;
+                 &lt;polyline fill="none" points="26.7,54.4 40,67.7 71.8,34.8 " stroke-miterlimit="2" stroke-width="8" class="o-icon--checkmark__check"&gt;&lt;/polyline&gt;
+                 &lt;g&gt;
+                   &lt;circle cx="49.2" cy="49.2" fill="none" r="49.2" stroke-miterlimit="10" stroke-width="12" class="o-icon--checkmark__circle"&gt;&lt;/circle&gt;
+                 &lt;/g&gt;
+               &lt;/g&gt;
+             &lt;/svg&gt;Full-Stack Web Development
+           &lt;/h3&gt;
+         &lt;/li&gt;
+         &lt;li class="o-list-item o-list-item--blue--medium"&gt;
+           &lt;h3 class="o-list-item__header c-services__list__header"&gt;
+             &lt;svg enable-background="new 0 0 98.5 98.5" version="1.1" viewBox="0 0 98.5 98.5" x="0px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" y="0px" class="o-list-item__header__icon o-icon o-icon--checkmark o-icon--checkmark--blue--medium js-checkmark is-checked"&gt;
+               &lt;g&gt;
+                 &lt;polyline fill="none" points="26.7,54.4 40,67.7 71.8,34.8 " stroke-miterlimit="2" stroke-width="8" class="o-icon--checkmark__check"&gt;&lt;/polyline&gt;
+                 &lt;g&gt;
+                   &lt;circle cx="49.2" cy="49.2" fill="none" r="49.2" stroke-miterlimit="10" stroke-width="12" class="o-icon--checkmark__circle"&gt;&lt;/circle&gt;
+                 &lt;/g&gt;
+               &lt;/g&gt;
+             &lt;/svg&gt;Digital Marketing Strategy
+           &lt;/h3&gt;
+         &lt;/li&gt;
+         &lt;li class="o-list-item o-list-item--blue--medium"&gt;
+           &lt;h3 class="o-list-item__header c-services__list__header"&gt;
+             &lt;svg enable-background="new 0 0 98.5 98.5" version="1.1" viewBox="0 0 98.5 98.5" x="0px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" y="0px" class="o-list-item__header__icon o-icon o-icon--checkmark o-icon--checkmark--blue--medium js-checkmark is-checked"&gt;
+               &lt;g&gt;
+                 &lt;polyline fill="none" points="26.7,54.4 40,67.7 71.8,34.8 " stroke-miterlimit="2" stroke-width="8" class="o-icon--checkmark__check"&gt;&lt;/polyline&gt;
+                 &lt;g&gt;
+                   &lt;circle cx="49.2" cy="49.2" fill="none" r="49.2" stroke-miterlimit="10" stroke-width="12" class="o-icon--checkmark__circle"&gt;&lt;/circle&gt;
+                 &lt;/g&gt;
+               &lt;/g&gt;
+             &lt;/svg&gt;Mobile Apps
+           &lt;/h3&gt;
+         &lt;/li&gt;
        &lt;/ul&gt;
- 	   &lt;div class="c-services__footer"&gt;
- 	     &lt;a data-page="about" href="/about/me" title="" class="o-button o-button--ghost o-button--ghost--blue--medium js-trigger-page-transition"&gt;want to know more?&lt;/a&gt;&lt;/div&gt;
- 	   &lt;/div&gt;
+       &lt;div class="c-services__footer"&gt;&lt;a data-page="about" href="/about/me" title="" class="o-button o-button--ghost o-button--ghost--blue--medium js-trigger-page-transition"&gt;want to know more?&lt;/a&gt;&lt;/div&gt;
+     &lt;/div&gt;
    &lt;/div&gt;
-   &lt;svg preserveAspectRatio="none" role="separator" viewBox="0 0 612 100" version="1.1" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" class="o-section__end"&gt;
+   &lt;svg preserveAspectRatio="none" role="separator" version="1.1" viewBox="0 0 612 100" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" class="o-section__end"&gt;
      &lt;g&gt;
        &lt;path d="M612,0H0.912C306.459,100,489.777,100,612,0z"&gt;&lt;/path&gt;
      &lt;/g&gt;

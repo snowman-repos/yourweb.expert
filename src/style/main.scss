@@ -1,10 +1,21 @@
+// NORMALIZE
 @import "~normalize-scss/sass/normalize/_import-now";
 
+// VARIABLES
 @import "variables";
+
+// BASE
+@import "./base/base";
+@import "./base/utilities";
+
+// OBJECTS
 @import "./objects/icon";
+@import "./objects/image";
 @import "./objects/link";
 @import "./objects/list";
 @import "./objects/pill";
+
+// COMPONENTS
 @import "./components/blog";
 @import "./components/description";
 @import "./components/hero";

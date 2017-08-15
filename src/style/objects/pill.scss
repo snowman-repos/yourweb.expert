@@ -1,0 +1,14 @@
+.o-pill {
+  border-radius: 999px;
+  border-style: solid;
+  border-width: 2px;
+  font-weight: 600;
+  padding: 0.3em 0.6em;
+  text-transform: uppercase;
+
+  &--grey {
+    color: map-get($colors, grey);
+    border-color: lighten(map-get($colors, grey), 15%);
+  }
+
+}

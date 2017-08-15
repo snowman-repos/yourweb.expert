@@ -1,2 +1,30 @@
-$brand-primary: #900000;
-$break-point: 800px;
+$colors: (
+  black: #000000,
+  blue: #0E5CAD,
+  cyan: #2468d6,
+  green: #79F1A4,
+  grey: #aaa,
+  greyBlue: #abccd8,
+  pink: #f742d5,
+  white: #FFFFFF
+);
+
+$zIndices: (
+  hero: 30,
+  description: 20,
+  blog: 10
+);
+
+$breakpoints: ();
+
+// BASE
+$bodyBackgroundColor: map-get($colors, white);
+$bodyFontWeight: 300;
+$bodyTextColor: map-get($colors, grey);
+$bodyTypeface: "Source Sans Pro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$gradient: linear-gradient( 135deg, map-get($colors, green) 10%, map-get($colors, blue) 100%);
+$headingFontWeight: 900;
+$headingTypeface: "Montserrat", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+
+// HERO
+$heroBackgroundColor: map-get($colors, white);

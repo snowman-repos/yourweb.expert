@@ -41,7 +41,7 @@
     <link rel="apple-touch-icon" href="/images/icons/favicon-96x96.png" type="image/png">
     <link rel="manifest" href="/manifest.json">
 
-    <script>WebFontConfig={active:function(){sessionStorage.fonts=!0},google:{families:["Montserrat:900", "Source+Sans+Pro:300, 600"]}},function(){sessionStorage.fonts?(console.info("Fonts installed"),document.documentElement.classList.add("wf-active")):console.info("No fonts installed")}();</script>
+    <script>WebFontConfig={active:function(){sessionStorage.fonts=!0},google:{families:["Montserrat:900", "Source Sans Pro:300, 600"]}},function(){sessionStorage.fonts?(console.info("Fonts installed"),document.documentElement.classList.add("wf-active")):console.info("No fonts installed")}();</script>
     <script async defer src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
     <link rel="preconnect" crossorigin href="https://fonts.googleapis.com/css?family=Montserrat:900">
     <link rel="preconnect" crossorigin href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300, 600">
@@ -56,15 +56,15 @@
         <p>It seems you have JavaScript turned off, which is rather unfortunate. If you have any problems using this website then please let me know: <a href="mailto:<%= htmlWebpackPlugin.options.email %>" title="Email me"><%= htmlWebpackPlugin.options.email %></a></p>
       </noscript>
 
-      <section aria-labelledby="title" class="c-hero" id="introduction" itemscope itemtype="http://schema.org/Person">
+      <section aria-labelledby="title" class="c-hero u-padding" id="introduction" itemscope itemtype="http://schema.org/Person">
 
         <meta itemprop="url" content="<%= htmlWebpackPlugin.options.url %>">
 
-        <img alt="Picture of me, Darryl Snow" itemprop="image" src="<%= htmlWebpackPlugin.options.image %>" class="o-image--avatar c-hero-image">
+        <img alt="Picture of me, Darryl Snow" itemprop="image" src="<%= htmlWebpackPlugin.options.image %>" class="o-image o-image--rounded c-hero-image">
 
-        <h1 class="c-hero-title js-color-change" id="title" itemprop="name"><%= htmlWebpackPlugin.options.name %></h1>
+        <h1 class="c-hero-title js-color-change u-no-margin" id="title" itemprop="name"><%= htmlWebpackPlugin.options.name %></h1>
 
-        <p class="c-hero-tagline">
+        <p class="c-hero-tagline u-no-margin">
           <span itemprop="jobTitle">Web Expert</span>
           &nbsp;&bull;&nbsp;
           <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
@@ -72,40 +72,40 @@
           </span>
         </p>
 
-        <aside class="o-pill c-hero-status c-hero-status--unavailable">Unavailable for freelance work</aside>
+        <aside class="c-hero-status o-pill o-pill--grey u-inline u-margin--top ">Unavailable for freelance work</aside>
 
-        <ul class="o-list o-list--inline c-hero-contact-list">
+        <ul class="o-list o-list--unstyled c-hero-contact-list">
 
-          <li class="o-list o-list--inline-item c-hero-contact-list-item">
+          <li class="o-list c-hero-contact-list-item u-inline-block">
             <a href="mailto:<%= htmlWebpackPlugin.options.email %>" title="Email me: <%= htmlWebpackPlugin.options.email %>" class="o-link o-link--icon">
-              <span itemprop="email" class="o-hidden-text"><%= htmlWebpackPlugin.options.email %></span>
+              <span itemprop="email" class="u-visually-hidden"><%= htmlWebpackPlugin.options.email %></span>
               <svg viewBox="0 0 32 32" class="o-icon">
                 <use xlink:href="#icon-email"></use>
               </svg>
             </a>
           </li>
 
-          <li class="o-list o-list--inline-item c-hero-contact-list-item">
+          <li class="o-list c-hero-contact-list-item u-inline-block">
             <a href="tel:<%= htmlWebpackPlugin.options.phone %>" title="Phone me: <%= htmlWebpackPlugin.options.phone %>" class="o-link o-link--icon">
-              <span itemprop="telephone" class="o-hidden-text"><%= htmlWebpackPlugin.options.phone %></span>
+              <span itemprop="telephone" class="u-visually-hidden"><%= htmlWebpackPlugin.options.phone %></span>
               <svg viewBox="0 0 32 32" class="o-icon">
                 <use xlink:href="#icon-phone"></use>
               </svg>
             </a>
           </li>
 
-          <li class="o-list o-list--inline-item c-hero-contact-list-item">
+          <li class="o-list c-hero-contact-list-item u-inline-block">
             <a href="<%= htmlWebpackPlugin.options.github %>" title="Follow me on Github: <%= htmlWebpackPlugin.options.github %>" class="o-link o-link--icon">
-              <span class="o-hidden-text"><%= htmlWebpackPlugin.options.github %></span>
+              <span class="u-visually-hidden"><%= htmlWebpackPlugin.options.github %></span>
               <svg viewBox="0 0 32 32" class="o-icon">
                 <use xlink:href="#icon-github"></use>
               </svg>
             </a>
           </li>
 
-          <li class="o-list o-list--inline-item c-hero-contact-list-item">
+          <li class="o-list c-hero-contact-list-item u-inline-block">
             <a href="<%= htmlWebpackPlugin.options.linkedin %>" title="Read my Linkedin profile: <%= htmlWebpackPlugin.options.linkedin %>" class="o-link o-link--icon">
-              <span class="o-hidden-text"><%= htmlWebpackPlugin.options.linkedin %></span>
+              <span class="u-visually-hidden"><%= htmlWebpackPlugin.options.linkedin %></span>
               <svg viewBox="0 0 32 32" class="o-icon">
                 <use xlink:href="#icon-phone"></use>
               </svg>
@@ -116,13 +116,13 @@
 
       </section>
 
-      <section class="c-description js-color-change">
+      <section class="c-description js-color-change u-padding">
 
         <h2 class="c-description-title">I am a Certified Scrum Product Owner</h2>
 
       </section>
 
-      <section class="c-blog">
+      <section class="c-blog u-padding">
 
         <h2 class="c-blog-title">A few of my blog posts&hellip;</h2>
 

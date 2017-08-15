@@ -1,0 +1,29 @@
+.c-hero {
+  background: $heroBackgroundColor;
+  box-shadow: 0 10px 10px rgba(map-get($colors, black),0.05);
+  min-height: 50vh;
+  position: relative;
+  text-align: center;
+  z-index: map-get($zIndices, hero);
+
+  &-image {
+    width: 12em;
+  }
+
+  &-tagline {
+    color: map-get($colors, pink);
+    font-size: 2em;
+    letter-spacing: 1px;
+  }
+
+  &-title {
+    background-image: $gradient;
+    font-family: $headingTypeface;
+    font-weight: $headingFontWeight;
+    font-size: 6em;
+    text-shadow: 1px 4px 6px rgba(map-get($colors, white),0.2);
+    text-transform: uppercase;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}

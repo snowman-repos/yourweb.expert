@@ -1,7 +1,0 @@
-User-agent: *
-Disallow: /styles/index.html
-Disallow: /styles
-Disallow: /styles/
-
-User-agent: Baiduspider
-Disallow: /

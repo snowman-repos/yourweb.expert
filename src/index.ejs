@@ -50,13 +50,15 @@
 
   <body>
 
+    <%- include(assets/icon-sprite.svg)%>
+
     <main>
 
       <noscript>
         <p>It seems you have JavaScript turned off, which is rather unfortunate. If you have any problems using this website then please let me know: <a href="mailto:<%= htmlWebpackPlugin.options.email %>" title="Email me"><%= htmlWebpackPlugin.options.email %></a></p>
       </noscript>
 
-      <section aria-labelledby="title" class="c-hero u-padding" id="introduction" itemscope itemtype="http://schema.org/Person">
+      <section aria-labelledby="title" class="c-hero u-centered-text u-padding" id="introduction" itemscope itemtype="http://schema.org/Person">
 
         <meta itemprop="url" content="<%= htmlWebpackPlugin.options.url %>">
 
@@ -116,7 +118,7 @@
 
       </section>
 
-      <section class="c-description js-color-change u-padding">
+      <section class="c-description js-color-change u-centered-text u-padding">
 
         <h2 class="c-description-title">I am a Certified Scrum Product Owner</h2>
 

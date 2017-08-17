@@ -1,0 +1,11 @@
+.c-description {
+  background-image: $gradient;
+  box-shadow: 0 10px 10px rgba(map-get($colors, black),0.15);
+  position: relative;
+  overflow: hidden;
+  padding: 1em 2em;
+  color: #abccd8;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 3.5em;
+  font-weight: 300;
+}

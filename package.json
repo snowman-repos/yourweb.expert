@@ -65,6 +65,7 @@
     "node-sass": "^4.5.3",
     "npmlog": "^2.0.2",
     "pre-commit": "^1.1.2",
+    "require-text": "^0.0.1",
     "sass-loader": "^6.0.6",
     "serve": "^1.4.0",
     "style-loader": "^0.18.2",

@@ -8,9 +8,11 @@ log.level = 'silly';
 const webpack = require('webpack');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const requireText = require('require-text');
 const myLocalIp = require('my-local-ip');
 const common = require('./common');
 const info = require('./info');
+const sprite = requireText('./src/assets/svg-defs.svg', require);
 const plugins = [];
 
 const BANNER = common.getBanner();
@@ -77,6 +79,7 @@ plugins.push(new HtmlWebpackPlugin({
   github: info.github,
   linkedin: info.linkedin,
   analytics: info.analytics,
+  iconSprite: sprite,
   template: 'src/index.ejs', // Load a custom template
   inject: MODE_DEV_SERVER, // inject scripts in dev-server mode - in build mode, use the template tags
   MODE_DEV_SERVER: MODE_DEV_SERVER,

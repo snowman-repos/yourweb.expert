@@ -39,6 +39,10 @@ const main = () => {
   const { document } = global;
   if (document && document.querySelector) {
 
+    import('./scripts/button-click.js')
+      .then(() => {})
+      .catch(error => console.error('Chunk loading failed', error));
+
     import('./scripts/color-change.js')
       .then(() => {})
       .catch(error => console.error('Chunk loading failed', error));

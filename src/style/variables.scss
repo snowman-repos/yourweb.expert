@@ -1,6 +1,7 @@
 $colors: (
   black: #000000,
   blue: #0E5CAD,
+  charcoal: #181818,
   cyan: #2468d6,
   green: #79F1A4,
   grey: #aaa,
@@ -15,16 +16,20 @@ $zIndices: (
   blog: 10
 );
 
-$breakpoints: ();
+$breakpoints: (
+  small: 55rem
+);
 
 // BASE
 $bodyBackgroundColor: map-get($colors, white);
 $bodyFontWeight: 300;
 $bodyTextColor: map-get($colors, grey);
 $bodyTypeface: "Source Sans Pro", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$borderRadius: 0.3em;
 $gradient: linear-gradient( 135deg, map-get($colors, green) 10%, map-get($colors, blue) 100%);
 $headingFontWeight: 900;
 $headingTypeface: "Montserrat", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$margin: 1rem;
 
 // HERO
 $heroBackgroundColor: map-get($colors, white);

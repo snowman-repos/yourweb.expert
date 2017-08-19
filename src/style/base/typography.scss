@@ -1,0 +1,42 @@
+$min-width: 400;
+$max-width: 800;
+$min-width-px: $min-width + 0px;
+$max-width-px: $max-width + 0px;
+$min-font: 10;
+$max-font: 16;
+$min-font-px: $min-font + 0px;
+$max-font-px: $max-font + 0px;
+
+:root {
+  font-size: $min-font + 0px;
+}
+
+@media (min-width: $min-width-px) and (max-width: $max-width-px) {
+  :root {
+    font-size: calc($min-font-px + ($max-font - $min-font) * ((100vw - $min-width-px) / ($max-width - $min-width)));
+  }
+}
+
+@media (min-width: $max-width-px) {
+  :root {
+    font-size: $max-font + 0px;
+  }
+}
+
+html, body {
+  font-family: sans-serif;
+  font-kerning: auto;
+  font-smooth: always;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+html.wf-active, body.wf-active, html.wf-active body, body.wf-active body {
+  font-family: $bodyTypeface;
+}
+
+p {
+  line-height: 1.365;
+}

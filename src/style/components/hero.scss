@@ -1,7 +1,6 @@
 .c-hero {
   background: $heroBackgroundColor;
   box-shadow: 0 10px 10px rgba(map-get($colors, black),0.05);
-  min-height: 50vh;
   position: relative;
   text-align: center;
   z-index: map-get($zIndices, hero);

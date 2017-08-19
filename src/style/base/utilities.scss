@@ -1,25 +1,52 @@
-.u-centered-text {
-  text-align: center;
-}
+.u-align {
 
-.u-inline {
-  display: inline-block;
-}
-
-.u-margin {
-
-  &--top {
-    margin-top: 1em;
+  &--center {
+    text-align: center;
   }
 
 }
 
-.u-no-margin {
-  margin: 0;
+.u-display {
+
+  &--inline {
+    display: inline;
+  }
+
+  &--inline-block {
+    display: inline-block;
+  }
+
+}
+
+.u-margin {
+  margin: 0 auto;
+
+  &--bottom {
+    margin: 0 0 $margin 0;
+  }
+
+  &--none {
+    margin: 0;
+  }
+
+  &--top {
+    margin: $margin 0 0 0;
+  }
+
 }
 
 .u-padding {
-  padding: 1em 2em;
+  padding: 2 * $margin;
+
+  &--large {
+    padding: 2 * $margin;
+
+    @media (min-width: map-get($breakpoints, small)) {
+      padding: 4 * $margin 2 * $margin;
+    }
+
+  }
+
 }
 
 .u-visually-hidden {

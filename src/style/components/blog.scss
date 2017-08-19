@@ -1,0 +1,42 @@
+.c-blog {
+  background: map-get($colors, charcoal);
+  position: relative;
+
+  &-title {
+    color: map-get($colors, greyBlue);
+    font-family: $bodyTypeface;
+    font-size: 2em;
+    font-weight: $bodyFontWeight;
+  }
+
+  &-article-list {
+    border-color: rgba(map-get($colors, greyBlue), 0.5);
+    border-radius: $borderRadius;
+    border-style: dotted;
+    border-width: 1px;
+    margin: 0 auto;
+
+    @media (min-width: map-get($breakpoints, small)) {
+      width: 60vw;
+    }
+
+    &-item {
+      border-bottom-color: rgba(map-get($colors, greyBlue), 0.25);
+      border-bottom-style: dotted;
+      border-bottom-width: 1px;
+
+      &:last-of-type {
+        border: none;
+      }
+    }
+  }
+
+  &-link {
+    color: map-get($colors, greyBlue);
+    display: block;
+    font-size: 1.5em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+}

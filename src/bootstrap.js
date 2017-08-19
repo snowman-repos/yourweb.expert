@@ -51,6 +51,10 @@ const main = () => {
       .then(() => {})
       .catch(error => console.error('Chunk loading failed', error));
 
+    import('./scripts/type-effect.js')
+      .then(() => {})
+      .catch(error => console.error('Chunk loading failed', error));
+
   }
 };
 

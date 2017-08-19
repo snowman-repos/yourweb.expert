@@ -13,7 +13,47 @@
     font-size: 2.5em;
     font-weight: $bodyFontWeight;
     mix-blend-mode: color-dodge;
+    position: relative;
     text-shadow: 0 0 3px map-get($colors, cyan);
+  }
+
+  &-phrases {
+    overflow: hidden;
+    vertical-align: top;
+
+    &:after {
+      background-color: map-get($colors, greyBlue);
+      bottom: auto;
+      content: '';
+      height: 90%;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 1px;
+    }
+
+    &.is-waiting:after {
+      animation: pulse 1s infinite;
+    }
+  }
+
+  &-phrase {
+    visibility: hidden;
+
+    &.is-visible {
+      visibility: visible;
+    }
+  }
+
+  &-letter {
+    position: absolute;
+    visibility: hidden;
+
+    &.is-on {
+      position: relative;
+      visibility: visible;
+    }
   }
 
 }

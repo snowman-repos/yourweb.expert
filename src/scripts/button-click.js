@@ -8,7 +8,6 @@ class ButtonClick {
 
     this.buttons.forEach(button => {
       button.addEventListener('click', e => {
-        e.preventDefault();
         e.target.classList.add('o-link--icon--clicked');
       });
       button.addEventListener('animationend', e => {

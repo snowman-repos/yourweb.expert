@@ -32,29 +32,17 @@ if (process.env.DEVTOOLS && process.env.NODE_ENV !== 'production') {
 /** This is where the "real code" start */
 
 const main = () => {
-  console.log('Welcome! More infos at https://github.com/topheman/webpack-babel-starter');
+
+  console.log('%c Welcome to YourWeb.Expert ', 'background: #0E5CAD; color: #FFFFFF; font-size: 18px; font-family: "Helvetica Neue"; font-weight: 300; line-height: 30px; height: 30px; padding: 5px');
+  console.log('%c darryl@yourweb.expert ', 'background: #0E5CAD; color: #FFFFFF; font-size: 13px; font-family: "Helvetica Neue"; font-weight: 300; line-height: 14px; height: 30px; padding: 5px 55px;');
+
   const { document } = global;
-  // the following is nothing extraordinary ... just to show that the requiring of images work (as well from sass and require / direct and inlined)
   if (document && document.querySelector) {
 
-    const testRequireEnsureLink = document.querySelector('.test-require-ensure');
-    const logo = global.document.querySelector('.logo');
+    import('./scripts/color-change.js')
+      .then(() => {})
+      .catch(error => console.error('Chunk loading failed', error));
 
-    /** display logos */
-    // const cssClasses = ['babel', 'npm', 'eslint', 'sass'];
-    // let current = 0;
-    // document.getElementById('copyright-year').innerHTML = `© ${(new Date()).getFullYear()} `;
-
-    testRequireEnsureLink.addEventListener('click', () => {
-      // the following won't be included in the original build but will be lazy loaded only when needed
-      import('./scripts/css-utils.js')
-        .then(module => {
-          const { toggleCssClassName } = module;
-          toggleCssClassName(logo, 'rotate');
-          toggleCssClassName(testRequireEnsureLink, 'active');
-        })
-        .catch(error => console.error('Chunk loading failed', error));
-    });
   }
 };
 

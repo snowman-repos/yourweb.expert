@@ -1,11 +1,14 @@
 .c-description {
+  align-items: center;
   background-image: $gradient;
   box-shadow: 0 10px 10px rgba(map-get($colors, black),0.15);
+  display: flex;
   overflow: hidden;
   position: relative;
 
   &-title {
     color: map-get($colors, greyBlue);
+    flex: 1;
     font-family: $bodyTypeface;
     font-size: 2.5em;
     font-weight: $bodyFontWeight;

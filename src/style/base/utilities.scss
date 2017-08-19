@@ -38,13 +38,8 @@
 .u-padding {
   padding: 2 * $margin;
 
-  &--large {
-    padding: 2 * $margin;
-
-    @media (min-width: map-get($breakpoints, small)) {
-      padding: 4 * $margin 2 * $margin;
-    }
-
+  &--left-right {
+    padding: 0 2 * $margin;
   }
 
 }

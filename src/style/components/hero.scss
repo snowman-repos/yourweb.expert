@@ -10,7 +10,7 @@
   }
 
   &-tagline {
-    color: map-get($colors, pink);
+    color: lighten(map-get($colors, pink), 10%);
     font-size: 2em;
     letter-spacing: 1px;
   }

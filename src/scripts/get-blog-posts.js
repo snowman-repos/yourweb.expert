@@ -6,7 +6,8 @@ class GetBlogPosts {
 
     this.el = {
       blogSection: document.querySelectorAll('.js-blog')[0],
-      blogList: document.querySelectorAll('.js-blog-list')[0]
+      blogList: document.querySelectorAll('.js-blog-list')[0],
+      blogTitle: document.querySelectorAll('.js-blog-title')[0]
     };
 
     this.getPosts();
@@ -18,6 +19,7 @@ class GetBlogPosts {
       this.posts = json.payload.references.Post;
       this.parsePosts();
       this.renderPosts();
+      this.showPosts();
     }).catch(ex => {
       console.error('parsing failed', ex);
     });
@@ -40,8 +42,6 @@ class GetBlogPosts {
 
   renderPosts() {
 
-    // Object.entries(this.posts).forEach(([key, post]) => {
-
     this.posts.forEach(post => {
       const li = document.createElement('li');
       const a = document.createElement('a');
@@ -57,6 +57,20 @@ class GetBlogPosts {
       li.appendChild(a);
       this.el.blogList.appendChild(li);
     });
+
+  }
+
+  showPosts() {
+
+    this.el.blogSection.classList.remove('is-hidden');
+
+    setTimeout(() => {
+      this.el.blogTitle.classList.remove('is-hidden');
+    }, 200);
+
+    setTimeout(() => {
+      this.el.blogList.classList.remove('is-hidden');
+    }, 400);
 
   }
 }

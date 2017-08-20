@@ -1,12 +1,26 @@
 .c-blog {
   background: map-get($colors, charcoal);
+  max-height: 65rem;
+  overflow: hidden;
   position: relative;
+
+  &.is-hidden {
+    max-height: 0;
+    padding: 0;
+    transition: 0.2s all ease-in-out;
+  }
 
   &-title {
     color: map-get($colors, greyBlue);
     font-family: $bodyTypeface;
     font-size: 2em;
     font-weight: $bodyFontWeight;
+    opacity: 1;
+    transition: 0.2s opacity ease-in-out;
+
+    &.is-hidden {
+      opacity: 0;
+    }
   }
 
   &-article-list {
@@ -15,9 +29,15 @@
     border-style: dotted;
     border-width: 1px;
     margin: 0 auto;
+    opacity: 1;
+    transition: 0.2s ease-in-out;
 
     @media (min-width: map-get($breakpoints, small)) {
       width: 60vw;
+    }
+
+    &.is-hidden {
+      opacity: 0;
     }
 
     &-item {

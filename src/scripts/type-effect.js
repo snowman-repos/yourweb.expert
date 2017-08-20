@@ -6,8 +6,8 @@ const typeAnimationDelay = selectionDuration + 800;
 
 const getNextWord = word => {
   let nextWord = null;
-  if (typeof word.nextElementSibling === 'undefined') {
-    nextWord = word.parentNode.firstChild;
+  if (typeof word.nextElementSibling === 'undefined' || word.nextElementSibling == null) {
+    nextWord = word.parentNode.firstElementChild;
   }
   else {
     nextWord = word.nextElementSibling;

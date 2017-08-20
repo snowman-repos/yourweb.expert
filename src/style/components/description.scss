@@ -6,15 +6,20 @@
   overflow: hidden;
   position: relative;
 
+  &-wrapper {
+    flex: 1;
+  }
+
   &-title {
     color: map-get($colors, greyBlue);
-    flex: 1;
+    // flex: 1;
     font-family: $bodyTypeface;
     font-size: 2.5em;
     font-weight: $bodyFontWeight;
     mix-blend-mode: color-dodge;
     position: relative;
     text-shadow: 0 0 3px map-get($colors, cyan);
+    white-space: nowrap;
   }
 
   &-phrases {

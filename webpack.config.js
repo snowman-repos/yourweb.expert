@@ -166,6 +166,7 @@ else {
 const config = {
   bail: FAIL_ON_ERROR,
   entry: {
+    'whatwg-fetch': 'whatwg-fetch',
     'bundle': './src/bootstrap.js',
     'main': './src/style/main.scss'
   },

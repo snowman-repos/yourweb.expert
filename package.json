@@ -75,6 +75,7 @@
   },
   "private": true,
   "dependencies": {
-    "normalize-scss": "^7.0.0"
+    "normalize-scss": "^7.0.0",
+    "whatwg-fetch": "^2.0.3"
   }
 }

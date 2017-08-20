@@ -1,0 +1,21 @@
+/* TEAM */
+
+Project Owner: Darryl Snow
+Contact: darryl@yourweb.expert
+Github: https://github.com/darryl-snow
+
+Designer: Darryl Snow
+Contact: darryl@yourweb.expert
+Github: https://github.com/darryl-snow
+
+Developer: Darryl Snow
+Contact: darryl@yourweb.expert
+Github: https://github.com/darryl-snow
+
+Project Manager: Darryl Snow
+Contact: darryl@yourweb.expert
+Github: https://github.com/darryl-snow
+
+QA Tester: Darryl Snow
+Contact: darryl@yourweb.expert
+Github: https://github.com/darryl-snow

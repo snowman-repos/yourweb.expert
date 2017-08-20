@@ -18,7 +18,6 @@
     mix-blend-mode: color-dodge;
     position: relative;
     text-shadow: 0 0 5px map-get($colors, cyan);
-    white-space: nowrap;
   }
 
   &-phrases {

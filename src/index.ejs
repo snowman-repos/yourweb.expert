@@ -36,10 +36,10 @@
     <link rel="token_endpoint" href="https://indiecert.net/token">
     <link rel="openid.server" href="https://indieauth.com/openid">
     <link rel="openid.delegate" href="<%= htmlWebpackPlugin.options.url %>">
-    <link rel="shortcut icon" href="/images/icons/favicon.ico" type="image/ico">
-    <link rel="shortcut icon" href="/images/icons/favicon-96x96.png" type="image/png">
-    <link rel="apple-touch-icon" href="/images/icons/favicon-96x96.png" type="image/png">
-    <link rel="manifest" href="/manifest.json">
+    <link rel="shortcut icon" href="<%= require('./assets/icons/favicon.ico') %>" type="image/ico">
+    <link rel="shortcut icon" href="<%= require('./assets/icons/favicon-96x96.png') %>" type="image/png">
+    <link rel="apple-touch-icon" href="<%= require('./assets/icons/favicon-96x96.png') %>" type="image/png">
+    <link rel="manifest" href="<%= require('./manifest.json') %>">
 
     <script>WebFontConfig={active:function(){sessionStorage.fonts=!0},google:{families:["Montserrat:900", "Source Sans Pro:300, 600"]}},function(){sessionStorage.fonts?(console.info("Fonts installed"),document.documentElement.classList.add("wf-active")):console.info("No fonts installed")}();</script>
     <script async defer src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
@@ -62,7 +62,7 @@
 
         <meta itemprop="url" content="<%= htmlWebpackPlugin.options.url %>">
 
-        <img alt="Picture of me, Darryl Snow" itemprop="image" src="<%= htmlWebpackPlugin.options.image %>" class="o-image o-image--rounded c-hero-image">
+        <img alt="Picture of me, Darryl Snow" itemprop="image" src="<%= require('./assets/images/darryl-snow.webp') %>" class="o-image o-image--rounded c-hero-image">
 
         <h1 class="c-hero-title js-color-change u-margin--none" id="title" itemprop="name"><%= htmlWebpackPlugin.options.name %></h1>
 

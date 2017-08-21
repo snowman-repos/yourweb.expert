@@ -213,7 +213,8 @@ const config = {
       { test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/, loader: 'url-loader?limit=' + ASSETS_LIMIT + '&mimetype=application/font-woff&name=assets/[hash].[ext]' },
       { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'url-loader?limit=' + ASSETS_LIMIT + '&mimetype=application/octet-stream&name=assets/[hash].[ext]' },
       { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file-loader?&name=assets/[hash].[ext]' },
-      { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url-loader?limit=' + ASSETS_LIMIT + '&mimetype=image/svg+xml&name=assets/[hash].[ext]' }
+      { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url-loader?limit=' + ASSETS_LIMIT + '&mimetype=image/svg+xml&name=assets/[hash].[ext]' },
+      { test: /\.(ico)$/, loader: 'file-loader?name=assets/[hash].[ext]' }
     ]
   },
   plugins: plugins,

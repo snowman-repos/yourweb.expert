@@ -51,6 +51,10 @@ const main = () => {
       .then(() => {})
       .catch(error => console.error('Chunk loading failed', error));
 
+    import('./scripts/register-service-worker.js')
+      .then(() => {})
+      .catch(error => console.error('Chunk loading failed', error));
+
     import('./scripts/resize-description.js')
       .then(() => {})
       .catch(error => console.error('Chunk loading failed', error));

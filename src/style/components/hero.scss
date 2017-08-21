@@ -6,7 +6,7 @@
   z-index: map-get($zIndices, hero);
 
   &-image {
-    width: 12em;
+    width: 2 * $heroImageSize;
   }
 
   &-tagline {

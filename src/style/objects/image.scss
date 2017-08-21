@@ -1,7 +1,7 @@
 .o-image {
 
   &--rounded {
-    border-radius: 50% 50%;
+    clip-path: circle($heroImageSize at center);
   }
 
 }

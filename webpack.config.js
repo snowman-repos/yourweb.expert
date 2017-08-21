@@ -4,19 +4,33 @@
 
 const path = require('path');
 const log = require('npmlog');
+
 log.level = 'silly';
+
 const webpack = require('webpack');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 const requireText = require('require-text');
 const myLocalIp = require('my-local-ip');
 const common = require('./common');
 const info = require('./info');
+
 const sprite = requireText('./src/assets/svg-defs.svg', require);
 const plugins = [];
 
 const BANNER = common.getBanner();
 const BANNER_HTML = common.getBannerHtml();
+
+const SERVICE_WORKER_FILENAME = 'service-worker.js';
+const SERVICE_WORKER_CACHEID = 'your-web-expert';
+const SERVICE_WORKER_IGNORE_PATTERNS = [/\.map$/, /manifest\.json$/];
+const SW_PRECACHE_CONFIG = {
+  minify: true,
+  cacheId: SERVICE_WORKER_CACHEID,
+  filename: SERVICE_WORKER_FILENAME,
+  staticFileGlobsIgnorePatterns: SERVICE_WORKER_IGNORE_PATTERNS,
+};
 
 const root = __dirname;
 
@@ -107,6 +121,8 @@ plugins.push(new webpack.DefinePlugin({
     'LINTER': LINTER // You can choose to log a warning in dev if the linter is disabled
   }
 }));
+
+plugins.push(new SWPrecacheWebpackPlugin(SW_PRECACHE_CONFIG));
 
 if (OPTIMIZE) {
   plugins.push(new webpack.optimize.UglifyJsPlugin({

@@ -84,7 +84,10 @@ plugins.push(new HtmlWebpackPlugin({
   inject: MODE_DEV_SERVER, // inject scripts in dev-server mode - in build mode, use the template tags
   MODE_DEV_SERVER: MODE_DEV_SERVER,
   DEVTOOLS: DEVTOOLS,
-  BANNER_HTML: BANNER_HTML
+  BANNER_HTML: BANNER_HTML,
+  minify: {
+    collapseWhitespace: true
+  }
 }));
 // extract css into one main.css file
 const extractSass = new ExtractTextPlugin({

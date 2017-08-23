@@ -28,9 +28,9 @@ html, body {
   font-kerning: auto;
   font-smooth: always;
   font-weight: 300;
-  letter-spacing: 0.5px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-font-feature-settings: "kern" 1;
 }
 
 html.wf-active, body.wf-active, html.wf-active body, body.wf-active body {

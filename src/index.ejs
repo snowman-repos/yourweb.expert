@@ -62,7 +62,11 @@
 
         <meta itemprop="url" content="<%= htmlWebpackPlugin.options.url %>">
 
-        <img alt="Picture of me, Darryl Snow" itemprop="image" src="<%= require('./assets/images/darryl-snow.webp') %>" class="o-image o-image--rounded c-hero-image">
+        <picture itemprop="image">
+          <source srcset="<%= require('./assets/images/darryl-snow.webp') %>" type="image/webp">
+          <source srcset="<%= require('./assets/images/darryl-snow.jpg') %>" type="image/jpeg">
+          <img class="o-image o-image--rounded c-hero-image" src="<%= require('./assets/images/darryl-snow.jpg') %>" alt="Picture of me, Darryl Snow">
+        </picture>
 
         <h1 class="c-hero-title js-color-change u-margin--none" id="title" itemprop="name"><%= htmlWebpackPlugin.options.name %></h1>
 

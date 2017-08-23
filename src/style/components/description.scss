@@ -18,6 +18,16 @@
     mix-blend-mode: color-dodge;
     position: relative;
     text-shadow: 0 0 5px map-get($colors, cyan);
+
+    // UGLY Safari hack... Safari is the new IE
+    @media not all and (min-resolution:.001dpcm)
+    { @supports (-webkit-appearance:none) {
+      text-shadow: none;
+      mix-blend-mode: none;
+      text-shadow: rgba(255,255,255,0.01) 0 0 1px;
+      text-stroke: rgba(255,255,255,0.01) 0.1px;
+      -webkit-font-smoothing: antialiased;
+    }}
   }
 
   &-phrases {

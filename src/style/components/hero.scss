@@ -6,7 +6,15 @@
   z-index: map-get($zIndices, hero);
 
   &-image {
-    width: 2 * $heroImageSize;
+    margin-top: -1.5em;
+    width: 100%;
+
+    &-wrapper {
+      border-radius: 50%;
+      height: 2 * $heroImageSize;
+      overflow: hidden;
+      width: 2 * $heroImageSize;
+    }
   }
 
   &-tagline {

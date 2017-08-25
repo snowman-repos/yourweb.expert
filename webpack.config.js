@@ -16,7 +16,7 @@ const myLocalIp = require('my-local-ip');
 const common = require('./common');
 const info = require('./info');
 
-const sprite = requireText('./src/assets/svg-defs.svg', require);
+const sprite = requireText('./src/assets/symbol-defs.svg', require);
 const plugins = [];
 
 const BANNER = common.getBanner();

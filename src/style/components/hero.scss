@@ -6,7 +6,6 @@
   z-index: map-get($zIndices, hero);
 
   &-image {
-    margin-top: -1.5em;
     width: 100%;
 
     &-wrapper {
@@ -15,6 +14,16 @@
       overflow: hidden;
       width: 2 * $heroImageSize;
     }
+  }
+
+  &-music-link {
+    background: linear-gradient( 0deg, lighten(map-get($colors, blue), 30%) 25%, map-get($colors, pink) 100%);
+    line-height: 2 * $heroImageSize;
+
+    &-icon {
+      fill: map-get($colors, white);
+    }
+
   }
 
   &-tagline {
@@ -32,5 +41,13 @@
     text-transform: uppercase;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+
+  &-contact-list {
+
+    &-icon {
+      fill: lighten(desaturate(map-get($colors, blue), 40%), 20%);
+    }
+
   }
 }

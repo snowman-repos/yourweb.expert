@@ -22,10 +22,6 @@
       width: 4em;
     }
 
-    &-svg {
-      fill: lighten(desaturate(map-get($colors, blue), 40%), 20%);
-    }
-
     &--clicked:after {
       animation: link-icon-click-animation 0.3s forwards;
     }

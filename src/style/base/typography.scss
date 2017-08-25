@@ -40,3 +40,7 @@ html.wf-active, body.wf-active, html.wf-active body, body.wf-active body {
 p {
   line-height: 1.365;
 }
+
+a > * {
+  pointer-events: none;
+}

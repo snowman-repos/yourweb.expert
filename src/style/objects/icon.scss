@@ -3,4 +3,9 @@
   width: 2em;
   display: inline-block;
   vertical-align: middle;
+
+  &--large {
+    font-size: 2em;
+  }
+
 }

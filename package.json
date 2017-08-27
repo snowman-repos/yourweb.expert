@@ -58,6 +58,7 @@
     "extract-text-webpack-plugin": "2",
     "file-loader": "^0.11.2",
     "git-rev-sync": "^1.4.0",
+    "html-webpack-inline-source-plugin": "^0.0.9",
     "html-webpack-plugin": "^2.9.0",
     "lodash.template": "^4.2.2",
     "mocha": "^3.4.2",

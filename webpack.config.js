@@ -10,6 +10,7 @@ log.level = 'silly';
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin');
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 const requireText = require('require-text');
 const myLocalIp = require('my-local-ip');
@@ -99,10 +100,12 @@ plugins.push(new HtmlWebpackPlugin({
   MODE_DEV_SERVER: MODE_DEV_SERVER,
   DEVTOOLS: DEVTOOLS,
   BANNER_HTML: BANNER_HTML,
+  inlineSource: /\.css$/,
   minify: {
     collapseWhitespace: true
   }
 }));
+
 // extract css into one main.css file
 const extractSass = new ExtractTextPlugin({
   filename: `main${hash}.css`,
@@ -123,6 +126,8 @@ plugins.push(new webpack.DefinePlugin({
 }));
 
 plugins.push(new SWPrecacheWebpackPlugin(SW_PRECACHE_CONFIG));
+
+plugins.push(new HtmlWebpackInlineSourcePlugin());
 
 if (OPTIMIZE) {
   plugins.push(new webpack.optimize.UglifyJsPlugin({

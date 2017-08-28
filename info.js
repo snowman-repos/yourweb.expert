@@ -13,5 +13,5 @@ module.exports = {
   twitterURL: 'https://twitter.com/dazsnow',
   github: 'https://github.com/darryl-snow',
   linkedin: 'https://www.linkedin.com/in/darrylsnow/',
-  analytics: 'UA-xxxxxxxx-x'
+  analytics: 'UA-57304409-1'
 }

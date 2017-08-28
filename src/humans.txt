@@ -19,3 +19,11 @@ Github: https://github.com/darryl-snow
 QA Tester: Darryl Snow
 Contact: darryl@yourweb.expert
 Github: https://github.com/darryl-snow
+
+/* THANKS */
+
+Christophe Rosset
+for his most excellent Webpack Babel Starter
+https://github.com/topheman/webpack-babel-starter
+http://dev.topheman.com/my-projects/
+https://twitter.com/topheman

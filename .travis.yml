@@ -3,7 +3,7 @@ node_js:
   - "5"
   - "6"
 before_script:
-  - yarn install -production
+  - npm install yarn
   - yarn list --depth=0
 script:
   - npm test

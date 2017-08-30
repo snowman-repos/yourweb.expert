@@ -70,3 +70,30 @@
   }
 
 }
+
+// IE11 hack....
+@media all and (-ms-high-contrast:none) {
+  .c-description {
+    height: 12em !important;
+  }
+  .c-description-wrapper {
+    flex: 0 1 auto;
+  }
+  .c-description-title {
+    text-shadow: none;
+    mix-blend-mode: none;
+  }
+  *::-ms-backdrop,
+  .c-description {
+    height: 12em !important;
+  }
+  *::-ms-backdrop,
+  .c-description-wrapper {
+    flex: 0 1 auto;
+  }
+  *::-ms-backdrop,
+  .c-description-title {
+    text-shadow: none;
+    mix-blend-mode: none;
+  }
+}

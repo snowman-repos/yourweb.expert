@@ -1,3 +1,5 @@
+import Promise from 'promise-polyfill';
+
 /* eslint-disable max-len */
 /** This is how you use the environments variables passed by the webpack.DefinePlugin **/
 
@@ -36,8 +38,13 @@ const main = () => {
   console.log('%c Welcome to YourWeb.Expert ', 'background: #0E5CAD; color: #FFFFFF; font-size: 18px; font-family: "Helvetica Neue"; font-weight: 300; line-height: 30px; height: 30px; padding: 5px');
   console.log('%c darryl@yourweb.expert ', 'background: #0E5CAD; color: #FFFFFF; font-size: 13px; font-family: "Helvetica Neue"; font-weight: 300; line-height: 14px; height: 30px; padding: 5px 55px;');
 
-  const { document } = global;
+  const { document, window } = global;
   if (document && document.querySelector) {
+
+    // To add to window
+    if (!window.Promise) {
+      window.Promise = Promise;
+    }
 
     import('./scripts/button-click.js')
       .then(() => {})

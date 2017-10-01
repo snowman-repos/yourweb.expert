@@ -11,6 +11,7 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin');
+const HtmlCriticalPlugin = require('html-critical-webpack-plugin');
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 const requireText = require('require-text');
 const myLocalIp = require('my-local-ip');
@@ -127,8 +128,6 @@ plugins.push(new webpack.DefinePlugin({
 
 plugins.push(new SWPrecacheWebpackPlugin(SW_PRECACHE_CONFIG));
 
-plugins.push(new HtmlWebpackInlineSourcePlugin());
-
 if (OPTIMIZE) {
   plugins.push(new webpack.optimize.UglifyJsPlugin({
     compress: {
@@ -184,6 +183,22 @@ if (LINTER) {
 else {
   log.info('webpack', 'LINTER DISABLED');
 }
+
+plugins.push(new HtmlWebpackInlineSourcePlugin());
+
+plugins.push(new HtmlCriticalPlugin({
+  base: path.join(__dirname, BUILD_DIR, DIST_DIR),
+  src: 'index.html',
+  dest: 'index.html',
+  inline: true,
+  minify: true,
+  extract: true,
+  width: 9999,
+  height: 99999,
+  penthouse: {
+    blockJSRequests: false,
+  }
+}));
 
 /** webpack config */
 

@@ -23,7 +23,8 @@
 
     <title><%= htmlWebpackPlugin.options.title %></title>
 
-    <% if (!htmlWebpackPlugin.options.MODE_DEV_SERVER) { %><link href="<%= webpack.assetsByChunkName['main'][1] %>" rel="stylesheet"><% } %>
+    <link href="<%= webpack.assetsByChunkName['main'][1] %>" rel="preload" as="style" onload="this.rel='stylesheet'">
+
     <link rel="canonical" href="<%= htmlWebpackPlugin.options.url %>">
     <link rel="alternate amphtml" href="<%= htmlWebpackPlugin.options.url %>/amp" type="text/html">
     <link rel="me" href="mailto:<%= htmlWebpackPlugin.options.email %>">

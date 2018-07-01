@@ -16,18 +16,14 @@
         ]
       }
     </script>
-    <style amp-boilerplate>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <style amp-custom>
       body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}
 
       /* NEED TO MANUALLY PASTE IN CSS HERE - CRITICAL CSS CAN'T ADD THE AMP-BOILERPLATE ATTRIBUTE */
 
       html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}aside,section{display:block}h1{font-size:2em;margin:.67em 0}main{display:block}a{background-color:transparent;-webkit-text-decoration-skip:objects}img{border-style:none}svg:not(:root){overflow:hidden}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}body{background:#fff;color:#aaa}.u-align--center{text-align:center}.u-display--inline-block{display:inline-block}.u-margin--bottom{margin:0 0 1rem}.u-margin--bottom-top{margin:1rem 0}.u-margin--none{margin:0}.u-padding{padding:2rem}.u-visually-hidden{border:0!important;clip:rect(1px 1px 1px 1px);clip:rect(1px,1px,1px,1px);height:1px!important;overflow:hidden;padding:0!important;position:absolute!important;width:1px!important}:root{font-size:10px}@media (min-width:400px) and (max-width:800px){:root{font-size:calc($min-font-px + ($max-font - $min-font) * ((100vw - $min-width-px)/ ($max-width - $min-width)))}}@media (min-width:800px){:root{font-size:16px}}body,html{font-family:sans-serif;font-kerning:auto;font-smooth:always;font-weight:300;text-rendering:optimizeLegibility;-webkit-font-smoothing:subpixel-antialiased;-webkit-font-feature-settings:"kern" 1}p{line-height:1.365}.o-icon{width:2em;display:inline-block;vertical-align:middle}.o-icon--large{font-size:2em}.o-link{opacity:.75;text-decoration:none}.o-link--icon{display:inline-block;padding:1rem;position:relative}.o-link--icon:after{background:rgba(14,92,173,.1);border-radius:50%;content:"";height:4em;left:50%;margin:-2em 0 0 -2em;opacity:0;position:absolute;top:50%;width:4em}.o-list--unstyled{list-style:none}.o-list--unstyled,.o-list--unstyled li{margin:0;padding:0}.o-pill{border-radius:999px;border-style:solid;border-width:2px;font-weight:600;padding:.3em .6em;text-transform:uppercase}.o-pill--grey{color:#aaa;border-color:#d0d0d0}@media (-ms-high-contrast:none){::-ms-backdrop{height:12em!important}::-ms-backdrop{flex:0 1 auto}::-ms-backdrop{text-shadow:none;mix-blend-mode:none}}.c-hero{background:#fff;box-shadow:0 10px 10px rgba(0,0,0,.05);position:relative;text-align:center;z-index:30}.c-hero-image{width:100%}.c-hero-image-wrapper{border-radius:50%;height:12em;overflow:hidden;width:12em}.c-hero-music-link{background:linear-gradient(0deg,#62a9f2 25%,#f973e0);line-height:12em}.c-hero-music-link-icon{fill:#fff}.c-hero-tagline{color:#fba4eb;font-size:2em;letter-spacing:1px}.c-hero-title{background-image:linear-gradient(135deg,#79f1a4 10%,#0e5cad);font-family:Montserrat,HelveticaNeue-Light,Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;font-weight:900;font-size:6em;text-shadow:1px 4px 6px hsla(0,0%,100%,.2);text-transform:uppercase;-webkit-background-clip:text;-webkit-text-fill-color:transparent}.c-hero-contact-list-icon{fill:#5f90c2}@media (-ms-high-contrast:none){.c-hero-title{background-image:none;color:#2468d6;text-shadow:none}.c-hero-title,::-ms-backdrop{background-image:none;color:#2468d6;text-shadow:none}}.c-image-flipper-wrapper{position:relative}.c-image-flipper-back,.c-image-flipper-front{backface-visibility:hidden;left:0;position:absolute;top:0;transform-style:preserve-3d}.c-image-flipper-front{transform:rotateY(0);z-index:2}.c-image-flipper-back{transform:rotateY(180deg)}
     </style>
-    <noscript>
-      <style amp-boilerplate>
-        body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}
-      </style>
-    </noscript>
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="<%= htmlWebpackPlugin.options.description %>">
@@ -47,8 +43,6 @@
     <meta name="twitter:image" property="og:image" content="<%= htmlWebpackPlugin.options.image %>">
 
     <title><%= htmlWebpackPlugin.options.title %></title>
-
-    <link rel="stylesheet" href="../<%= webpack.assetsByChunkName['main'][1] %>">
 
     <link rel="canonical" href="<%= htmlWebpackPlugin.options.url %>">
     <link rel="alternate amphtml" href="<%= htmlWebpackPlugin.options.url %>/amp" type="text/html">
@@ -88,7 +82,7 @@
             <div class="c-image-flipper-front">
 
               <div class="c-hero-image-wrapper">
-                <amp-img alt="Picture of me, Darryl Snow" class="o-image c-hero-image" height="192" itemprop="image" layout="responsive" src="<%= require('../assets/images/darryl-snow.jpg') %>" width="192">
+                <amp-img alt="Picture of me, Darryl Snow" class="o-image c-hero-image" height="192" itemprop="image" layout="responsive" src="../<%= require('../assets/images/darryl-snow.jpg') %>" width="192">
               </div>
 
             </div>

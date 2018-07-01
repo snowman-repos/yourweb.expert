@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html amp lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "headline": "<%= htmlWebpackPlugin.options.title %>",
+        "datePublished": (new Date()).toString(),
+        "image": [
+          "<%= htmlWebpackPlugin.options.image %>"
+        ]
+      }
+    </script>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
+    <noscript>
+      <style amp-boilerplate>
+        body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}
+      </style>
+    </noscript>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="<%= htmlWebpackPlugin.options.description %>">
+    <meta name="keywords" content="<%= htmlWebpackPlugin.options.keywords %>">
+    <meta name="author" content="<%= htmlWebpackPlugin.options.name %>">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="robots" content="index,follow">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="<%= htmlWebpackPlugin.options.twitterUsername %>">
+    <meta name="twitter:site:id" content="<%= htmlWebpackPlugin.options.twitterID %>">
+    <meta name="twitter:creator" content="<%= htmlWebpackPlugin.options.twitterUsername %>">
+    <meta name="twitter:creator:id" content="<%= htmlWebpackPlugin.options.twitterID %>">
+    <meta name="twitter:url" property="og:url" content="<%= htmlWebpackPlugin.options.url %>">
+    <meta name="twitter:title" property="og:title" content="<%= htmlWebpackPlugin.options.title %>">
+    <meta name="twitter:description" property="og:description" content="<%= htmlWebpackPlugin.options.description %>">
+    <meta name="twitter:image" property="og:image" content="<%= htmlWebpackPlugin.options.image %>">
+
+    <title><%= htmlWebpackPlugin.options.title %></title>
+
+    <link rel="stylesheet" href="<%= webpack.assetsByChunkName['main'][1] %>">
+
+    <link rel="canonical" href="<%= htmlWebpackPlugin.options.url %>">
+    <link rel="alternate amphtml" href="<%= htmlWebpackPlugin.options.url %>/amp" type="text/html">
+    <link rel="me" href="mailto:<%= htmlWebpackPlugin.options.email %>">
+    <link rel="me" href="sms:<%= htmlWebpackPlugin.options.phone %>">
+    <link rel="me" href="<%= htmlWebpackPlugin.options.github %>">
+    <link rel="me" href="<%= htmlWebpackPlugin.options.twitterURL %>">
+    <link rel="authorization_endpoint" href="https://indieauth.com/auth">
+    <link rel="authorization_endpoint" href="https://indiecert.net/auth">
+    <link rel="token_endpoint" href="https://tokens.indieauth.com/token">
+    <link rel="token_endpoint" href="https://indiecert.net/token">
+    <link rel="openid.server" href="https://indieauth.com/openid">
+    <link rel="openid.delegate" href="<%= htmlWebpackPlugin.options.url %>">
+    <link rel="shortcut icon" href="<%= require('../assets/icons/favicon.ico') %>" type="image/ico">
+    <link rel="shortcut icon" href="<%= require('../assets/icons/favicon-96x96.png') %>" type="image/png">
+    <link rel="apple-touch-icon" href="<%= require('../assets/icons/favicon-96x96.png') %>" type="image/png">
+    <link rel="manifest" href="manifest.json">
+
+    <script>WebFontConfig={active:function(){sessionStorage.fonts=!0},google:{families:["Montserrat:900", "Source Sans Pro:300, 600"]}},function(){sessionStorage.fonts?(console.info("Fonts installed"),document.documentElement.classList.add("wf-active")):console.info("No fonts installed")}();</script>
+    <script async defer src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+    <link rel="preconnect" crossorigin href="https://fonts.googleapis.com/css?family=Montserrat:900">
+    <link rel="preconnect" crossorigin href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600">
+
+  </head>
+
+  <body>
+
+    <%= htmlWebpackPlugin.options.iconSprite %>
+
+    <main>
+
+      <noscript>
+        <p>It seems you have JavaScript turned off, which is rather unfortunate. If you have any problems using this website then please let me know: <a href="mailto:<%= htmlWebpackPlugin.options.email %>" title="Email me"><%= htmlWebpackPlugin.options.email %></a></p>
+      </noscript>
+
+      <section aria-labelledby="title" class="c-hero js-hero u-align--center u-padding" id="introduction" itemscope itemtype="http://schema.org/Person">
+
+        <meta itemprop="url" content="<%= htmlWebpackPlugin.options.url %>">
+
+        <a class="c-hero-image-wrapper c-image-flipper u-display--inline-block u-margin--bottom-top" href="https://www.youtube.com/watch?v=s36eQwgPNSE&list=PLx81gELV3HJ8L2Q6CSl9dop5QT9l8ruxe&index=1">
+          <div class="c-image-flipper-wrapper">
+
+            <div class="c-image-flipper-front">
+
+              <div class="c-hero-image-wrapper">
+                <amp-img class="o-image c-hero-image" itemprop="image" src="<%= require('../assets/images/darryl-snow.jpg') %>" alt="Picture of me, Darryl Snow">
+              </div>
+
+            </div>
+            <div class="c-image-flipper-back">
+
+              <div class="c-hero-image-wrapper c-hero-music-link">
+                <svg viewBox="0 0 32 32" class="c-hero-music-link-icon o-icon o-icon--large">
+                  <use xlink:href="#icon-music">
+                  </use>
+                </svg>
+              </div>
+
+            </div>
+
+          </div>
+        </a>
+
+
+        <h1 class="c-hero-title js-color-change u-margin--none" id="title" itemprop="name"><%= htmlWebpackPlugin.options.name %></h1>
+
+        <p class="c-hero-tagline u-margin--bottom">
+          <span itemprop="jobTitle">Web Expert</span>
+          &nbsp;&bull;&nbsp;
+          <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+            <span itemprop="addressCountry">Singapore</span>
+          </span>
+        </p>
+
+        <aside class="c-hero-status o-pill o-pill--grey u-display--inline-block u-margin--bottom">Unavailable for freelance work</aside>
+
+        <ul class="o-list o-list--unstyled c-hero-contact-list">
+
+          <li class="o-list c-hero-contact-list-item u-display--inline-block">
+            <a href="mailto:<%= htmlWebpackPlugin.options.email %>" title="Email me: <%= htmlWebpackPlugin.options.email %>" class="o-link o-link--icon js-button">
+              <span itemprop="email" class="u-visually-hidden"><%= htmlWebpackPlugin.options.email %></span>
+              <svg viewBox="0 0 32 32" class="c-hero-contact-list-icon o-icon">
+                <use xlink:href="#icon-mail"></use>
+              </svg>
+            </a>
+          </li>
+
+          <li class="o-list c-hero-contact-list-item u-display--inline-block">
+            <a href="tel:<%= htmlWebpackPlugin.options.phone %>" title="Phone me: <%= htmlWebpackPlugin.options.phone %>" class="o-link o-link--icon js-button">
+              <span itemprop="telephone" class="u-visually-hidden"><%= htmlWebpackPlugin.options.phone %></span>
+              <svg viewBox="0 0 32 32" class="c-hero-contact-list-icon o-icon">
+                <use xlink:href="#icon-phone"></use>
+              </svg>
+            </a>
+          </li>
+
+          <li class="o-list c-hero-contact-list-item u-display--inline-block">
+            <a href="<%= htmlWebpackPlugin.options.github %>" title="Follow me on Github: <%= htmlWebpackPlugin.options.github %>" class="o-link o-link--icon js-button">
+              <span class="u-visually-hidden"><%= htmlWebpackPlugin.options.github %></span>
+              <svg viewBox="0 0 32 32" class="c-hero-contact-list-icon o-icon">
+                <use xlink:href="#icon-github-alt"></use>
+              </svg>
+            </a>
+          </li>
+
+          <li class="o-list c-hero-contact-list-item u-display--inline-block">
+            <a href="<%= htmlWebpackPlugin.options.linkedin %>" title="Read my Linkedin profile: <%= htmlWebpackPlugin.options.linkedin %>" class="o-link o-link--icon js-button">
+              <span class="u-visually-hidden"><%= htmlWebpackPlugin.options.linkedin %></span>
+              <svg viewBox="0 0 32 32" class="c-hero-contact-list-icon o-icon">
+                <use xlink:href="#icon-linkedin-square"></use>
+              </svg>
+            </a>
+          </li>
+
+        </ul>
+
+      </section>
+
+      <section class="c-description js-color-change js-description u-align--center u-padding--left-right">
+
+        <div class="c-description-wrapper">
+
+          <h2 class="c-description-title u-display--inline-block u-margin--none">
+            <span>I&nbsp;</span>
+            <span class="c-description-phrases is-waiting">
+              <span class="c-description-phrase js-phrase is-visible">am a digital project manager</span>
+              <span class="c-description-phrase js-phrase">am a Certified Scrum Product Owner</span>
+              <span class="c-description-phrase js-phrase">dig JavaScript and Progressive Web Apps</span>
+              <span class="c-description-phrase js-phrase">am a React and React Native developer</span>
+              <span class="c-description-phrase js-phrase">am a UX designer</span>
+              <span class="c-description-phrase js-phrase">have <%=new Date().getFullYear() - 1999 %> years of experience</span>
+              <span class="c-description-phrase js-phrase">work as a Product Analyst at Standard Chartered Bank</span>
+              <span class="c-description-phrase js-phrase">am an information junkie</span>
+              <span class="c-description-phrase js-phrase">am a quick learner</span>
+              <span class="c-description-phrase js-phrase">am ultra organized</span>
+              <span class="c-description-phrase js-phrase">speak fluent Chinese</span>
+              <span class="c-description-phrase js-phrase">eat spicy food</span>
+              <span class="c-description-phrase js-phrase">am a home brewer</span>
+              <span class="c-description-phrase js-phrase">used to be a TV weatherman</span>
+              <span class="c-description-phrase js-phrase">can't believe you're still reading&hellip;</span>
+            </span>
+          </h2>
+
+        </div>
+
+      </section>
+
+      <section class="c-blog is-hidden js-blog u-padding">
+
+        <h2 class="c-blog-title is-hidden js-blog-title u-align--center u-margin--bottom">A few of my blog posts&hellip;</h2>
+
+        <ul class="c-blog-article-list is-hidden js-blog-list o-list o-list--unstyled"></ul>
+
+      </section>
+
+    </main>
+
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', '<%= htmlWebpackPlugin.options.analytics %>']);
+      _gaq.push(['_setDomainName', '<%= htmlWebpackPlugin.options.domain %>']);
+      _gaq.push(['_setAllowLinker', true]);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+
+  </body>
+
+</html><%= htmlWebpackPlugin.options.BANNER_HTML %>

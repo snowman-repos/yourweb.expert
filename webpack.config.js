@@ -104,7 +104,37 @@ plugins.push(new HtmlWebpackPlugin({
   inlineSource: /\.css$/,
   minify: {
     collapseWhitespace: true
-  }
+  },
+  filename: './index.html'
+}));
+
+plugins.push(new HtmlWebpackPlugin({
+  name: info.name,
+  title: info.title,
+  image: info.image,
+  description: info.description,
+  keywords: info.keywords,
+  url: info.url,
+  domain: info.domain,
+  email: info.email,
+  phone: info.phone,
+  twitterID: info.twitterID,
+  twitterUsername: info.twitterUsername,
+  twitterURL: info.twitterURL,
+  github: info.github,
+  linkedin: info.linkedin,
+  analytics: info.analytics,
+  iconSprite: sprite,
+  template: 'src/amp/index-amp.ejs', // Load a custom template
+  inject: MODE_DEV_SERVER, // inject scripts in dev-server mode - in build mode, use the template tags
+  MODE_DEV_SERVER: MODE_DEV_SERVER,
+  DEVTOOLS: DEVTOOLS,
+  BANNER_HTML: BANNER_HTML,
+  inlineSource: /\.css$/,
+  minify: {
+    collapseWhitespace: true
+  },
+  filename: './amp/index.html'
 }));
 
 // extract css into one main.css file

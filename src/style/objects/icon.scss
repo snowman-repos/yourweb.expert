@@ -8,4 +8,11 @@
     font-size: 2em;
   }
 
+  &-sprite {
+    height: 0;
+    overflow: hidden;
+    position: absolute;
+    width: 0;
+  }
+
 }
